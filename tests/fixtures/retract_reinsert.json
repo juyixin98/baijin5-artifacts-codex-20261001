@@ -1,0 +1,61 @@
+{
+  "description": "Retract must delete every match depending on the fact (across multiple rules and deeper joins); re-inserting the same fact must recreate exactly the same match identities; retracting a different occurrence via refcount must not remove matches early.",
+  "rules": [
+    {
+      "name": "joined",
+      "conditions": [
+        {"kind": "a", "fields": ["?x"]},
+        {"kind": "b", "fields": ["?x"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "emit", "tag": "joined", "fields": ["?x"]}
+      ]
+    },
+    {
+      "name": "deep",
+      "conditions": [
+        {"kind": "a", "fields": ["?x"]},
+        {"kind": "b", "fields": ["?x"]},
+        {"kind": "c", "fields": ["?x"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "emit", "tag": "deep", "fields": ["?x"]}
+      ]
+    }
+  ],
+  "script": [
+    {"op": "insert", "kind": "a", "fields": ["k1"]},
+    {"op": "insert", "kind": "a", "fields": ["k1"], "note": "duplicate occurrence: refcount 2, still one fact"},
+    {"op": "insert", "kind": "a", "fields": ["k2"]},
+    {"op": "insert", "kind": "b", "fields": ["k1"]},
+    {"op": "insert", "kind": "b", "fields": ["k2"]},
+    {"op": "insert", "kind": "c", "fields": ["k1"]},
+    {"op": "assert_matches", "rules": {
+      "joined": [[["a", "k1"], ["b", "k1"]], [["a", "k2"], ["b", "k2"]]],
+      "deep":   [[["a", "k1"], ["b", "k1"], ["c", "k1"]]]
+    }},
+    {"op": "retract", "kind": "a", "fields": ["k1"], "note": "first retract only drops refcount 2->1: matches survive"},
+    {"op": "assert_matches", "rules": {
+      "joined": [[["a", "k1"], ["b", "k1"]], [["a", "k2"], ["b", "k2"]]],
+      "deep":   [[["a", "k1"], ["b", "k1"], ["c", "k1"]]]
+    }},
+    {"op": "retract", "kind": "a", "fields": ["k1"], "note": "second retract removes the WME: all dependent matches and activations vanish"},
+    {"op": "assert_matches", "rules": {
+      "joined": [[["a", "k2"], ["b", "k2"]]],
+      "deep":   []
+    }},
+    {"op": "assert_facts", "facts": [["a", "k2"], ["b", "k1"], ["b", "k2"], ["c", "k1"]]},
+    {"op": "insert", "kind": "a", "fields": ["k1"], "note": "re-add: same matches must be recreated"},
+    {"op": "assert_matches", "rules": {
+      "joined": [[["a", "k1"], ["b", "k1"]], [["a", "k2"], ["b", "k2"]]],
+      "deep":   [[["a", "k1"], ["b", "k1"], ["c", "k1"]]]
+    }},
+    {"op": "retract", "kind": "b", "fields": ["k2"]},
+    {"op": "assert_matches", "rules": {
+      "joined": [[["a", "k1"], ["b", "k1"]]],
+      "deep":   [[["a", "k1"], ["b", "k1"], ["c", "k1"]]]
+    }}
+  ]
+}

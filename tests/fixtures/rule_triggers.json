@@ -1,0 +1,90 @@
+{
+  "description": "Rules trigger other rules: assignment -> completion -> notification. Hand-derived firing order with shared salience ordering and stable fact-id tiebreak. Each activation must name its source facts.",
+  "rules": [
+    {
+      "name": "assign",
+      "salience": 10,
+      "conditions": [
+        {"kind": "task", "fields": ["?tid", "queued"]},
+        {"kind": "worker", "fields": ["?wid", "free"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "retract", "kind": "task", "fields": ["?tid", "queued"]},
+        {"op": "assert", "kind": "task", "fields": ["?tid", "assigned", "?wid"]},
+        {"op": "emit", "tag": "assigned", "fields": ["?tid", "?wid"]}
+      ]
+    },
+    {
+      "name": "complete",
+      "salience": 5,
+      "conditions": [
+        {"kind": "task", "fields": ["?tid", "assigned", "?wid"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "retract", "kind": "task", "fields": ["?tid", "assigned", "?wid"]},
+        {"op": "assert", "kind": "task", "fields": ["?tid", "done"]},
+        {"op": "emit", "tag": "done", "fields": ["?tid"]}
+      ]
+    },
+    {
+      "name": "notify",
+      "salience": 0,
+      "conditions": [
+        {"kind": "task", "fields": ["?tid", "done"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "emit", "tag": "notify", "fields": ["?tid"]}
+      ]
+    }
+  ],
+  "facts": [
+    {"op": "insert", "kind": "worker", "fields": ["w1", "free"]},
+    {"op": "insert", "kind": "task", "fields": ["t1", "queued"]},
+    {"op": "insert", "kind": "task", "fields": ["t2", "queued"]}
+  ],
+  "run_max_cycles": 20,
+  "expected_status": "quiescent",
+  "expected_fire_sequence": [
+    {"cycle": 1, "rule": "assign", "bindings": {"?tid": "t1", "?wid": "w1"}},
+    {"cycle": 2, "rule": "assign", "bindings": {"?tid": "t2", "?wid": "w1"}},
+    {"cycle": 3, "rule": "complete", "bindings": {"?tid": "t1", "?wid": "w1"}},
+    {"cycle": 4, "rule": "complete", "bindings": {"?tid": "t2", "?wid": "w1"}},
+    {"cycle": 5, "rule": "notify", "bindings": {"?tid": "t1"}},
+    {"cycle": 6, "rule": "notify", "bindings": {"?tid": "t2"}}
+  ],
+  "expected_emits": [
+    {"tag": "assigned", "fields": ["t1", "w1"]},
+    {"tag": "assigned", "fields": ["t2", "w1"]},
+    {"tag": "done", "fields": ["t1"]},
+    {"tag": "done", "fields": ["t2"]},
+    {"tag": "notify", "fields": ["t1"]},
+    {"tag": "notify", "fields": ["t2"]}
+  ],
+  "expected_final_facts": [
+    ["task", "t1", "done"],
+    ["task", "t2", "done"],
+    ["worker", "w1", "free"]
+  ],
+  "expected_final_match_count": 2,
+  "expected_final_matches": [
+    {"rule": "notify", "fact_keys": [["task", "t1", "done"]]},
+    {"rule": "notify", "fact_keys": [["task", "t2", "done"]]}
+  ],
+  "new_task_then_run": {
+    "insert": {"kind": "task", "fields": ["t3", "queued"]},
+    "expected_fire_sequence": [
+      {"rule": "assign", "bindings": {"?tid": "t3", "?wid": "w1"}},
+      {"rule": "complete", "bindings": {"?tid": "t3", "?wid": "w1"}},
+      {"rule": "notify", "bindings": {"?tid": "t3"}}
+    ],
+    "expected_final_facts": [
+      ["task", "t1", "done"],
+      ["task", "t2", "done"],
+      ["task", "t3", "done"],
+      ["worker", "w1", "free"]
+    ]
+  }
+}

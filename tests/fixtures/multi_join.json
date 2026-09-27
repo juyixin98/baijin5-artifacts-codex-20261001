@@ -1,0 +1,54 @@
+{
+  "description": "Three-condition join across supplier/part/shipment with inter-condition variable links, an intra-condition repeated variable (self-link via field==field), a constant test ('late') and comparison tests.",
+  "rules": [
+    {
+      "name": "risky-foreign-shipment",
+      "conditions": [
+        {"kind": "supplier", "fields": ["?sid", "?region"]},
+        {"kind": "part", "fields": ["?pid", "?sid", "?cat"]},
+        {"kind": "shipment", "fields": ["?did", "?pid", "late"]}
+      ],
+      "tests": [["!=", "?region", "local"]],
+      "actions": [
+        {"op": "emit", "tag": "risk", "fields": ["?did", "?sid", "?pid"]}
+      ]
+    },
+    {
+      "name": "self-link",
+      "conditions": [
+        {"kind": "link", "fields": ["?x", "?x"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "emit", "tag": "self", "fields": ["?x"]}
+      ]
+    }
+  ],
+  "facts": [
+    {"op": "insert", "kind": "supplier", "fields": ["s1", "eu"]},
+    {"op": "insert", "kind": "supplier", "fields": ["s2", "local"]},
+    {"op": "insert", "kind": "supplier", "fields": ["s3", "apac"]},
+    {"op": "insert", "kind": "part", "fields": ["p1", "s1", "gear"]},
+    {"op": "insert", "kind": "part", "fields": ["p2", "s2", "gear"]},
+    {"op": "insert", "kind": "part", "fields": ["p3", "s1", "bolt"]},
+    {"op": "insert", "kind": "shipment", "fields": ["d1", "p1", "late"]},
+    {"op": "insert", "kind": "shipment", "fields": ["d2", "p3", "late"]},
+    {"op": "insert", "kind": "shipment", "fields": ["d3", "p2", "late"]},
+    {"op": "insert", "kind": "shipment", "fields": ["d4", "p1", "on-time"]},
+    {"op": "insert", "kind": "link", "fields": ["a", "a"]},
+    {"op": "insert", "kind": "link", "fields": ["a", "b"]},
+    {"op": "insert", "kind": "link", "fields": ["b", "b"]}
+  ],
+  "expected_matches": [
+    {"rule": "risky-foreign-shipment", "fact_keys": [["supplier", "s1", "eu"], ["part", "p1", "s1", "gear"], ["shipment", "d1", "p1", "late"]], "bindings": {"?sid": "s1", "?region": "eu", "?pid": "p1", "?cat": "gear", "?did": "d1"}},
+    {"rule": "risky-foreign-shipment", "fact_keys": [["supplier", "s1", "eu"], ["part", "p3", "s1", "bolt"], ["shipment", "d2", "p3", "late"]], "bindings": {"?sid": "s1", "?region": "eu", "?pid": "p3", "?cat": "bolt", "?did": "d2"}},
+    {"rule": "self-link", "fact_keys": [["link", "a", "a"]], "bindings": {"?x": "a"}},
+    {"rule": "self-link", "fact_keys": [["link", "b", "b"]], "bindings": {"?x": "b"}}
+  ],
+  "excluded_combos": [
+    {"reason": "supplier s2 is local (comparison test fails)", "rule": "risky-foreign-shipment", "fact_keys": [["supplier", "s2", "local"], ["part", "p2", "s2", "gear"], ["shipment", "d3", "p2", "late"]]},
+    {"reason": "supplier s3 has no parts (no join)", "rule": "risky-foreign-shipment", "fact_keys": [["supplier", "s3", "apac"]]},
+    {"reason": "shipment d4 is on-time (constant test fails)", "rule": "risky-foreign-shipment", "fact_keys": [["supplier", "s1", "eu"], ["part", "p1", "s1", "gear"], ["shipment", "d4", "p1", "on-time"]]},
+    {"reason": "link a,b has unequal fields (intra-condition test fails)", "rule": "self-link", "fact_keys": [["link", "a", "b"]]}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "description": "Two rules share the identical first condition (same kind, same constants) to exercise alpha-memory sharing; the second adds another condition (beta join).",
+  "rules": [
+    {
+      "name": "any-vip-order",
+      "salience": 0,
+      "conditions": [
+        {"kind": "order", "fields": ["?oid", "?cid", "?amount"]},
+        {"kind": "customer", "fields": ["?cid", "vip"]}
+      ],
+      "tests": [],
+      "actions": [
+        {"op": "emit", "tag": "vip-order", "fields": ["?oid"]}
+      ]
+    },
+    {
+      "name": "big-vip-order",
+      "salience": 10,
+      "conditions": [
+        {"kind": "order", "fields": ["?oid", "?cid", "?amount"]},
+        {"kind": "customer", "fields": ["?cid", "vip"]}
+      ],
+      "tests": [[">", "?amount", 1000]],
+      "actions": [
+        {"op": "emit", "tag": "big-vip-order", "fields": ["?oid", "?amount"]}
+      ]
+    }
+  ],
+  "facts": [
+    {"op": "insert", "kind": "customer", "fields": ["c1", "vip"]},
+    {"op": "insert", "kind": "customer", "fields": ["c2", "standard"]},
+    {"op": "insert", "kind": "customer", "fields": ["c3", "vip"]},
+    {"op": "insert", "kind": "order", "fields": ["o1", "c1", 5000]},
+    {"op": "insert", "kind": "order", "fields": ["o2", "c1", 200]},
+    {"op": "insert", "kind": "order", "fields": ["o3", "c2", 9000]},
+    {"op": "insert", "kind": "order", "fields": ["o4", "c3", 1500]}
+  ],
+  "expected_matches": [
+    {"rule": "any-vip-order", "fact_keys": [["order", "o1", "c1", 5000], ["customer", "c1", "vip"]], "bindings": {"?oid": "o1", "?cid": "c1", "?amount": 5000}},
+    {"rule": "any-vip-order", "fact_keys": [["order", "o2", "c1", 200], ["customer", "c1", "vip"]], "bindings": {"?oid": "o2", "?cid": "c1", "?amount": 200}},
+    {"rule": "any-vip-order", "fact_keys": [["order", "o4", "c3", 1500], ["customer", "c3", "vip"]], "bindings": {"?oid": "o4", "?cid": "c3", "?amount": 1500}},
+    {"rule": "big-vip-order", "fact_keys": [["order", "o1", "c1", 5000], ["customer", "c1", "vip"]], "bindings": {"?oid": "o1", "?cid": "c1", "?amount": 5000}},
+    {"rule": "big-vip-order", "fact_keys": [["order", "o4", "c3", 1500], ["customer", "c3", "vip"]], "bindings": {"?oid": "o4", "?cid": "c3", "?amount": 1500}}
+  ],
+  "expected_fire_order": ["big-vip-order", "big-vip-order", "any-vip-order", "any-vip-order", "any-vip-order"],
+  "expected_first_fire_sources": {
+    "rule": "big-vip-order",
+    "fact_keys": [["order", "o1", "c1", 5000], ["customer", "c1", "vip"]]
+  }
+}
