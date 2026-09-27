@@ -1,0 +1,16 @@
+% =============================================================================
+% 样例 4: 失败即否定 (NAF) 与开放世界
+%
+% 规则: 鸟且不能证明无翅 => 默认有翅。
+%   Wings(tweety) accepted; 但 Wingless(tweety) 是 no_evidence (未知, 非假)。
+%
+% 对 polly 追加严格事实链 Penguin -> Wingless 后, NAF 假设 not Wingless
+% 被证成, Wings(polly) 被 ASSUMPTION 攻击击败 (不是被相反结论反驳)。
+% =============================================================================
+
+Bird(tweety).
+Bird(polly).
+Penguin(polly).
+
+@has_wings Wings(X) := Bird(X), not Wingless(X).
+@penguin_wingless Wingless(X) :- Penguin(X).

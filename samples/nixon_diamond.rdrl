@@ -1,0 +1,16 @@
+% =============================================================================
+% 样例 2: 尼克松菱形 (无优先级互斥默认 => 冲突悬置)
+%
+% 两条默认结论强否定互斥, 且没有任何可比优先级。
+% 按验收规则 2, 系统不得"选先出现者", 必须保留冲突:
+%   Pacifist(nixon)  undecided / PENDING_MUTUAL_CONFLICT
+%   -Pacifist(nixon) undecided / PENDING_MUTUAL_CONFLICT
+%
+% 若追加 priority(quaker_default, republican_default), 结论才会被定向。
+% =============================================================================
+
+Quaker(nixon).
+Republican(nixon).
+
+@quaker_default Pacifist(X) := Quaker(X).
+@republican_default -Pacifist(X) := Republican(X).

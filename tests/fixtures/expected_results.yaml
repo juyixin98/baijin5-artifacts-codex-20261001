@@ -1,0 +1,162 @@
+# =============================================================================
+# 手工编写的期望结果 (独立于被测内核, 不是由核心代码生成)。
+#
+# 每条用例给出理论文本、查询, 以及必须严格成立的具体断言:
+#   status / reason_code / 三类链数量 / 反证链的 attack_kind 与优先依据。
+# 单测与集成测试都以本文件为唯一期望来源, 防止"用被测代码生成答案"。
+# =============================================================================
+
+cases:
+  - id: birds-tweety-flies
+    theory_file: birds.rdrl
+    query: "Flies(tweety)"
+    expect:
+      goal: "Flies(tweety)"
+      status: accepted
+      reason_code: ACCEPTED_GROUNDED
+      supporting: 1
+      defeated: 0
+      pending: 0
+      supporting_rule_ids: ["r1"]
+
+  - id: birds-polly-penguin-wins
+    theory_file: birds.rdrl
+    query: "Flies(polly)"
+    expect:
+      goal: "Flies(polly)"
+      status: rejected
+      reason_code: REJECTED_OPPOSITE_GROUNDED
+      supporting: 0
+      defeated: 1
+      pending: 0
+      defeated_rule_ids: ["r1"]
+      counter_attack_kinds: ["REBUTTAL"]
+      counter_rule_ids: ["r2"]
+      counter_detail_contains: "r2 > r1"
+
+  - id: birds-negative-of-polly-accepted
+    theory_file: birds.rdrl
+    query: "-Flies(polly)"
+    expect:
+      goal: "-Flies(polly)"
+      status: accepted
+      reason_code: ACCEPTED_GROUNDED
+      supporting: 1
+      supporting_rule_ids: ["r2"]
+
+  - id: birds-enumeration
+    theory_file: birds.rdrl
+    query: "Flies(X)"
+    expect_answers:
+      - {goal: "Flies(polly)",  status: rejected, substitution: {X: polly}}
+      - {goal: "Flies(tweety)", status: accepted, substitution: {X: tweety}}
+
+  - id: nixon-conflict-pending
+    theory_file: nixon_diamond.rdrl
+    query: "Pacifist(nixon)"
+    expect:
+      goal: "Pacifist(nixon)"
+      status: undecided
+      reason_code: PENDING_MUTUAL_CONFLICT
+      supporting: 0
+      defeated: 0
+      pending: 1
+      pending_rule_ids: ["quaker_default"]
+      counter_attack_kinds: ["REBUTTAL"]
+      counter_detail_contains: "不可比较"
+
+  - id: nixon-negative-also-pending
+    theory_file: nixon_diamond.rdrl
+    query: "-Pacifist(nixon)"
+    expect:
+      status: undecided
+      reason_code: PENDING_MUTUAL_CONFLICT
+      pending: 1
+      pending_rule_ids: ["republican_default"]
+
+  - id: naf-wings-default-holds
+    theory_file: naf_open_world.rdrl
+    query: "Wings(tweety)"
+    expect:
+      status: accepted
+      reason_code: ACCEPTED_GROUNDED
+      supporting: 1
+      supporting_rule_ids: ["has_wings"]
+      supporting_assumptions: ["not Wingless(tweety)"]
+
+  - id: naf-missing-evidence-is-unknown
+    theory_file: naf_open_world.rdrl
+    query: "Wingless(tweety)"
+    expect:
+      status: no_evidence
+      reason_code: NO_EVIDENCE_AT_ALL
+      supporting: 0
+      defeated: 0
+      pending: 0
+
+  - id: naf-assumption-rebutted
+    theory_file: naf_open_world.rdrl
+    query: "Wings(polly)"
+    expect:
+      status: rejected
+      reason_code: REJECTED_ALL_CHAINS_ATTACKED
+      supporting: 0
+      defeated: 1
+      counter_attack_kinds: ["ASSUMPTION"]
+      counter_rule_ids: ["penguin_wingless"]
+
+  - id: priority-chain-transitive
+    theory_file: mutual_exclusion.rdrl
+    query: "Red(x)"
+    expect:
+      status: accepted
+      # a 直接胜 b; c 的唯一攻击者 b 被 grounded 的 a 击败, 故 c 被恢复
+      # (reinstatement)。两条推出 Red 的链都成立, 顺序按规则名稳定排列。
+      supporting_rule_ids: ["a", "c"]
+
+  - id: priority-chain-negative-loses
+    theory_file: mutual_exclusion.rdrl
+    query: "-Red(x)"
+    expect:
+      status: rejected
+      reason_code: REJECTED_OPPOSITE_GROUNDED
+      defeated: 1
+      counter_rule_ids: ["a"]
+
+# 非法输入/非法状态: 期望具体错误类别与细节
+error_cases:
+  - id: priority-cycle-rejected
+    theory_file: priority_cycle.rdrl.bad
+    category: input_error
+    error: RuleLanguageError
+    detail_path: ["cycle"]
+
+  - id: strict-contradiction-rejected
+    theory_file: strict_contradiction.rdrl.bad
+    category: state_conflict
+    error: KnowledgeStateError
+    message_contains: "严格理论不一致"
+
+  - id: unsafe-rule-rejected
+    theory_inline: "@u Flies(X) := Bird(Y)."
+    category: input_error
+    error: RuleLanguageError
+    message_contains: "不安全"
+
+  - id: non-ground-fact-rejected
+    theory_inline: "Bird(X)."
+    category: input_error
+    error: RuleLanguageError
+    message_contains: "接地"
+
+  - id: naf-in-strict-rule-rejected
+    theory_inline: "P. @s Q :- P, not R."
+    category: input_error
+    error: RuleLanguageError
+    message_contains: "严格规则"
+
+  - id: unknown-rule-in-priority
+    theory_inline: "@a P := Q. priority(a, missing)."
+    category: input_error
+    error: RuleLanguageError
+    message_contains: "不存在的规则"

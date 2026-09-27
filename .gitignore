@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# 本地运行产物 (SQLite WAL 模式会产生 -wal / -shm)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+logs/*.jsonl
+logs/*.log

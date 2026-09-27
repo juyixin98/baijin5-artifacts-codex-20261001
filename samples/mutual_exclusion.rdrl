@@ -1,0 +1,20 @@
+% =============================================================================
+% 样例 3: 互斥默认 + 优先链 (传递、无环) 与 优先环拒绝
+%
+% 本文件是合法理论: a > b > c 形成无环链, 传递后 a 强于 c。
+%   Red(x) accepted; -Red(x) rejected。
+%
+% 配套非法理论见 samples/priority_cycle.rdrl.bad:
+%   解析阶段即报 input_error, details.cycle 给出环。
+% =============================================================================
+
+LooksRed(x).
+Shaded(x).
+InDark(x).
+
+@a Red(X) := LooksRed(X).
+@b -Red(X) := Shaded(X).
+@c Red(X) := InDark(X).
+
+priority(a, b).
+priority(b, c).

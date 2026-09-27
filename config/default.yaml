@@ -1,0 +1,36 @@
+# =============================================================================
+# 独立配置文件 —— 可解释受限默认推理后端
+# 被以下模块读取: app/config.py (Settings.load)
+# 环境变量 REASONER__DB_PATH / REASONER__LOG_DIR 可覆盖路径项
+# =============================================================================
+
+server:
+  host: "127.0.0.1"
+  port: 8000
+
+logging:
+  # 每个推理请求落盘一条 JSONL, 含 run_id / 中间状态 / 判断理由
+  request_log: "logs/runs.jsonl"
+  # 内核计算细节日志 (便于回放问题)
+  kernel_trace: "logs/kernel.trace.jsonl"
+  # 错误分类统计
+  error_log: "logs/errors.log"
+
+storage:
+  db_path: "data/reasoner.db"
+
+kernel:
+  # 单项查询中, 每个目标文字最多展开的论证链条数
+  max_chains_per_goal: 64
+  # 单项查询允许的最大接地规则实例数 (资源耗尽保护)
+  max_ground_instances: 20000
+  # 全库枚举论证 (证明树) 的总数上限; 超出则报资源耗尽, 绝不截断后静默给出标签
+  max_arguments: 50000
+  # 推导步数上限, 单调迭代用; 同时作为循环检测
+  fixpoint_iterations: 512
+  # 事实/规则加载的硬性上限, 防止恶意超大输入耗尽内存
+  max_input_facts: 10000
+  max_input_rules: 5000
+
+testing:
+  db_path: "data/test_reasoner.db"
