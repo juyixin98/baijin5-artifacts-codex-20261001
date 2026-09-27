@@ -1,0 +1,28 @@
+{
+  "name": "variant-resource-service",
+  "version": "1.0.0",
+  "description": "Resource service with explainable Accept / Accept-Language content negotiation over multiple media representations and languages (Fastify + SQLite)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "main": "dist/src/http/server.js",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "start": "node --disable-warning=ExperimentalWarning dist/src/http/server.js",
+    "seed": "npm run build && node --disable-warning=ExperimentalWarning dist/scripts/seed.js",
+    "pretest": "npm run build",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-reporter=spec dist/test/contract/*.test.js dist/test/core/*.test.js dist/test/state/*.test.js dist/test/http/*.test.js",
+    "test:oracle": "node --disable-warning=ExperimentalWarning test/oracle/run-oracle.mjs",
+    "clean": "rm -rf dist coverage data/app.db"
+  },
+  "dependencies": {
+    "fastify": "5.12.5"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.4",
+    "typescript": "5.9.3"
+  }
+}

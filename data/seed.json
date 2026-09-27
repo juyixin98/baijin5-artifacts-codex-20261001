@@ -1,0 +1,160 @@
+{
+  "resources": [
+    {
+      "id": "article-001",
+      "name": "Shop front-page article",
+      "representations": [
+        {
+          "ordinal": 0,
+          "mediaType": "application",
+          "mediaSubtype": "json",
+          "mediaParams": { "version": "1" },
+          "language": "en",
+          "charset": "utf-8",
+          "body": "{\"id\":\"article-001\",\"schema\":\"v1\",\"lang\":\"en\",\"title\":\"Welcome to the shop\"}"
+        },
+        {
+          "ordinal": 1,
+          "mediaType": "application",
+          "mediaSubtype": "vnd.shop.v2+json",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "{\"id\":\"article-001\",\"schema\":\"v2\",\"lang\":\"en\",\"headline\":\"Welcome to the shop\"}"
+        },
+        {
+          "ordinal": 2,
+          "mediaType": "application",
+          "mediaSubtype": "vnd.shop.v2+json",
+          "mediaParams": {},
+          "language": "en-gb",
+          "charset": "utf-8",
+          "body": "{\"id\":\"article-001\",\"schema\":\"v2\",\"lang\":\"en-gb\",\"headline\":\"Welcome to the shop\"}"
+        },
+        {
+          "ordinal": 3,
+          "mediaType": "application",
+          "mediaSubtype": "vnd.shop.v2+json",
+          "mediaParams": {},
+          "language": "fr",
+          "charset": "utf-8",
+          "body": "{\"id\":\"article-001\",\"schema\":\"v2\",\"lang\":\"fr\",\"headline\":\"Bienvenue au magasin\"}"
+        },
+        {
+          "ordinal": 4,
+          "mediaType": "application",
+          "mediaSubtype": "vnd.shop.v2+json",
+          "mediaParams": {},
+          "language": "de",
+          "charset": "utf-8",
+          "body": "{\"id\":\"article-001\",\"schema\":\"v2\",\"lang\":\"de\",\"headline\":\"Willkommen im Geschaeft\"}"
+        },
+        {
+          "ordinal": 5,
+          "mediaType": "application",
+          "mediaSubtype": "xml",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<article id=\"article-001\" lang=\"en\"><title>Welcome to the shop</title></article>"
+        },
+        {
+          "ordinal": 6,
+          "mediaType": "application",
+          "mediaSubtype": "xml",
+          "mediaParams": {},
+          "language": "fr",
+          "charset": "utf-8",
+          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<article id=\"article-001\" lang=\"fr\"><title>Bienvenue au magasin</title></article>"
+        },
+        {
+          "ordinal": 7,
+          "mediaType": "text",
+          "mediaSubtype": "html",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Welcome</title></head><body><h1>Welcome to the shop</h1></body></html>"
+        },
+        {
+          "ordinal": 8,
+          "mediaType": "text",
+          "mediaSubtype": "html",
+          "mediaParams": {},
+          "language": "fr",
+          "charset": "utf-8",
+          "body": "<!doctype html>\n<html lang=\"fr\"><head><meta charset=\"utf-8\"><title>Bienvenue</title></head><body><h1>Bienvenue au magasin</h1></body></html>"
+        },
+        {
+          "ordinal": 9,
+          "mediaType": "text",
+          "mediaSubtype": "html",
+          "mediaParams": {},
+          "language": "de",
+          "charset": "utf-8",
+          "body": "<!doctype html>\n<html lang=\"de\"><head><meta charset=\"utf-8\"><title>Willkommen</title></head><body><h1>Willkommen im Geschaeft</h1></body></html>"
+        },
+        {
+          "ordinal": 10,
+          "mediaType": "text",
+          "mediaSubtype": "plain",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "Welcome to the shop"
+        }
+      ]
+    },
+    {
+      "id": "greeting",
+      "name": "Multilingual greeting",
+      "representations": [
+        {
+          "ordinal": 0,
+          "mediaType": "application",
+          "mediaSubtype": "json",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "{\"message\":\"Hello\",\"language\":\"en\"}"
+        },
+        {
+          "ordinal": 1,
+          "mediaType": "application",
+          "mediaSubtype": "json",
+          "mediaParams": {},
+          "language": "zh",
+          "charset": "utf-8",
+          "body": "{\"message\":\"你好\",\"language\":\"zh\"}"
+        },
+        {
+          "ordinal": 2,
+          "mediaType": "application",
+          "mediaSubtype": "json",
+          "mediaParams": {},
+          "language": "ja",
+          "charset": "utf-8",
+          "body": "{\"message\":\"こんにちは\",\"language\":\"ja\"}"
+        },
+        {
+          "ordinal": 3,
+          "mediaType": "text",
+          "mediaSubtype": "plain",
+          "mediaParams": {},
+          "language": "en",
+          "charset": "utf-8",
+          "body": "Hello"
+        },
+        {
+          "ordinal": 4,
+          "mediaType": "text",
+          "mediaSubtype": "plain",
+          "mediaParams": {},
+          "language": "zh",
+          "charset": "utf-8",
+          "body": "你好"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "requestTimeoutMs": 15000
+  },
+  "database": {
+    "file": "data/app.db",
+    "seedOnBoot": true
+  },
+  "negotiation": {
+    "absentAccept": "wildcard",
+    "absentAcceptLanguage": "wildcard",
+    "unknownParameters": "ignore",
+    "languageFallback": "lookup",
+    "defaultMediaType": "application/json",
+    "defaultLanguage": "en"
+  },
+  "logging": {
+    "level": "info"
+  },
+  "resources": {
+    "basePath": "/resources"
+  }
+}

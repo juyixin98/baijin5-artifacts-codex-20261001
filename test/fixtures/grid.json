@@ -1,0 +1,14 @@
+{
+  "resource": { "id": "grid", "name": "Hand-computed negotiation grid" },
+  "representations": [
+    { "id": "v0", "ordinal": 0, "mediaType": "application", "mediaSubtype": "json", "mediaParams": { "version": "1" }, "language": "en", "charset": "utf-8", "body": "v0" },
+    { "id": "v1", "ordinal": 1, "mediaType": "application", "mediaSubtype": "vnd.shop.v2+json", "mediaParams": {}, "language": "en", "charset": "utf-8", "body": "v1" },
+    { "id": "v2", "ordinal": 2, "mediaType": "application", "mediaSubtype": "vnd.shop.v2+json", "mediaParams": {}, "language": "en-gb", "charset": "utf-8", "body": "v2" },
+    { "id": "v3", "ordinal": 3, "mediaType": "application", "mediaSubtype": "vnd.shop.v2+json", "mediaParams": {}, "language": "fr", "charset": "utf-8", "body": "v3" },
+    { "id": "v4", "ordinal": 4, "mediaType": "application", "mediaSubtype": "xml", "mediaParams": {}, "language": "en", "charset": "utf-8", "body": "v4" },
+    { "id": "v5", "ordinal": 5, "mediaType": "application", "mediaSubtype": "xml", "mediaParams": {}, "language": "fr", "charset": "utf-8", "body": "v5" },
+    { "id": "v6", "ordinal": 6, "mediaType": "text", "mediaSubtype": "html", "mediaParams": {}, "language": "en", "charset": "utf-8", "body": "v6" },
+    { "id": "v7", "ordinal": 7, "mediaType": "text", "mediaSubtype": "html", "mediaParams": {}, "language": "fr", "charset": "utf-8", "body": "v7" },
+    { "id": "v8", "ordinal": 8, "mediaType": "text", "mediaSubtype": "plain", "mediaParams": {}, "language": "en", "charset": "utf-8", "body": "v8" }
+  ]
+}
