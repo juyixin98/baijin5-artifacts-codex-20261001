@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "case_id": "nixon",
+      "description": "尼克松菱形：贵格会教徒通常和平主义，共和党人通常非和平主义；无优先级 -> 冲突保留。",
+      "theory": {
+        "rules": [
+          {"id": "r_quaker", "kind": "default", "body": ["quaker(X)"], "head": "pacifist(X)"},
+          {"id": "r_republican", "kind": "default", "body": ["republican(X)"], "head": "-pacifist(X)"}
+        ],
+        "priorities": []
+      },
+      "evidence": [
+        "quaker(nixon)",
+        "republican(nixon)"
+      ]
+    }
+  ]
+}

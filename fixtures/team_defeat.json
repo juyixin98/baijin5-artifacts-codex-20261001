@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "case_id": "team_defeat",
+      "description": "团队击败：r2 击败 r1，r3 击败 r2；结论 p 由 r3 守住，即使 r1 被击败，p 仍可证明（歧义不阻塞团队中更强的成员）。",
+      "theory": {
+        "rules": [
+          {"id": "r1", "kind": "default", "body": ["a(X)"], "head": "p(X)"},
+          {"id": "r2", "kind": "default", "body": ["b(X)"], "head": "-p(X)"},
+          {"id": "r3", "kind": "default", "body": ["c(X)"], "head": "p(X)"}
+        ],
+        "priorities": [
+          {"higher": "r2", "lower": "r1"},
+          {"higher": "r3", "lower": "r2"}
+        ]
+      },
+      "evidence": ["a(t)", "b(t)", "c(t)"]
+    }
+  ]
+}

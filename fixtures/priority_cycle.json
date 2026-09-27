@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case_id": "priority_cycle",
+      "description": "反例夹具：r_a > r_b > r_c > r_a 构成优先环。加载后任何求值都必须以 state_conflict 拒绝。",
+      "theory": {
+        "rules": [
+          {"id": "r_a", "kind": "default", "body": ["p(X)"], "head": "q(X)"},
+          {"id": "r_b", "kind": "default", "body": ["r(X)"], "head": "-q(X)"},
+          {"id": "r_c", "kind": "default", "body": ["s(X)"], "head": "q(X)"}
+        ],
+        "priorities": [
+          {"higher": "r_a", "lower": "r_b"},
+          {"higher": "r_b", "lower": "r_c"},
+          {"higher": "r_c", "lower": "r_a"}
+        ]
+      },
+      "evidence": ["p(t)", "r(t)", "s(t)"]
+    }
+  ]
+}

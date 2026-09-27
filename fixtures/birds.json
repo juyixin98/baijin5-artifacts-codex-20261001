@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "case_id": "birds",
+      "description": "经典鸟类例：鸟通常会飞；企鹅是鸟且通常不会飞；企鹅规则优先。Tweety 是普通鸟，Polly 是企鹅。",
+      "theory": {
+        "rules": [
+          {"id": "r_bird_flies", "kind": "default", "body": ["bird(X)"], "head": "flies(X)", "label": "鸟通常会飞"},
+          {"id": "r_penguin_not", "kind": "default", "body": ["penguin(X)"], "head": "-flies(X)", "label": "企鹅通常不会飞"},
+          {"id": "s_penguin_bird", "kind": "strict", "body": ["penguin(X)"], "head": "bird(X)", "label": "企鹅严格属于鸟"}
+        ],
+        "priorities": [
+          {"higher": "r_penguin_not", "lower": "r_bird_flies"}
+        ]
+      },
+      "evidence": [
+        "bird(tweety)",
+        "penguin(polly)"
+      ]
+    }
+  ]
+}
