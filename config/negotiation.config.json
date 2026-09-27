@@ -1,0 +1,15 @@
+{
+  "configVersion": "1.0.0",
+  "port": 4080,
+  "databasePath": "data/negotiation.db",
+  "seedFixtures": true,
+  "maxAcceptEntries": 50,
+  "languageFallback": {
+    "enabled": true,
+    "penaltyPerStrippedSubtag": 0.9
+  },
+  "invalidEntryPolicy": "drop-with-warning",
+  "duplicatePolicy": "first-wins",
+  "tieBreak": ["mediaQ desc", "languageQ desc", "ordinal asc"],
+  "traceBufferSize": 128
+}

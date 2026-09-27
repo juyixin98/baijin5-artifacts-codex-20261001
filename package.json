@@ -1,0 +1,27 @@
+{
+  "name": "opp408-negotiation-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Resource service with explainable Accept / Accept-Language content negotiation",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --no-warnings dist/server.js",
+    "dev": "tsx src/server.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fastify": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.8"
+  }
+}
