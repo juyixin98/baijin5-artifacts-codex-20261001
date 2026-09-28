@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tensorcraft"
+version = "0.1.0"
+description = "Backend for slicing, transposing, reshaping and basic arithmetic on contiguous and non-contiguous stride-layout tensors"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==2.4.6",
+    "fastapi==0.141.1",
+    "starlette==1.7.0",
+    "uvicorn==0.54.0",
+    "pydantic==2.13.5",
+]
+
+[project.optional-dependencies]
+test = [
+    "httpx==0.28.1",
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+]
+
+[tool.setuptools]
+packages = [
+    "tensorcraft",
+    "tensorcraft.tensor",
+    "tensorcraft.graph",
+    "tensorcraft.state",
+    "tensorcraft.validation",
+    "tensorcraft.api",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=tensorcraft --cov-report=term-missing"
+markers = [
+    "slow: end-to-end style tests that build larger graphs",
+]
+filterwarnings = [
+    "error",
+    # Starlette's bundled TestClient shim deprecation (httpx->httpx2);
+    # httpx2 is not available in this environment and the warning category
+    # is Starlette's own StarletteDeprecationWarning.
+    "ignore:Using `httpx` with `starlette.testclient`",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["tensorcraft"]

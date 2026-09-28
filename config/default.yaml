@@ -1,0 +1,24 @@
+# TensorCraft local configuration.
+# Everything here is local synthetic configuration; no external services.
+
+server:
+  host: "127.0.0.1"
+  port: 8000
+
+storage:
+  # Per-session tensor store capacity (number of handles). Bounded so a
+  # runaway client cannot grow the in-memory store without limit.
+  max_tensors: 4096
+  max_graphs: 256
+  # Reject element counts above this at the boundary before allocating.
+  max_elements: 100_000_000
+
+semantics:
+  # What to do when a write targets an overlapping (self-aliasing) view:
+  #   reject        -> raise OverlapWriteError (default; safest)
+  #   temp_copy     -> materialise a temporary contiguous buffer, write,
+  #                    then scatter back deterministically
+  overlap_write_policy: "reject"
+  # Bounds checks are mandatory and cannot be disabled; documented for
+  # transparency only.
+  bounds_check: true
