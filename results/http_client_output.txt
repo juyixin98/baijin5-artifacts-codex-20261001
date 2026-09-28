@@ -1,0 +1,30 @@
+
+--- health [200] ---
+{'ok': True, 'version': '1.0.0', 'numpy': '2.4.6'}
+
+--- create table (global clipping @2.0) [200] ---
+{'ok': True, 'table': 'embed', 'vocab_size': 8, 'dim': 4, 'global_step': 0}
+
+--- duplicate ids aggregated before step [200] ---
+stepped=True reason=applied step=1 touched=[1, 3] pre_norm=0.426989 clipped=False
+
+--- empty batch -> no step, not an error [200] ---
+stepped=False reason=empty_batch_no_step step=1 touched=[] pre_norm=0.000000 clipped=False
+
+--- large gradients -> clipped, step still applied [200] ---
+stepped=True reason=applied step=2 touched=[2, 5] pre_norm=17.851237 clipped=True
+
+--- ABNORMAL: out-of-range index -> whole batch rejected (400) [400] ---
+ok=False category=index_out_of_range
+message=index 8 at position 1 is outside [0, 8)
+details={'bad_position': 1, 'bad_index': 8, 'vocab_size': 8, 'n_bad': 1}
+
+--- ABNORMAL: shape mismatch -> validation_error (422) [422] ---
+ok=False category=validation_error
+message=indices and values row count differ: 2 != 1
+details={'nnz_indices': 2, 'nnz_values': 1}
+
+--- optimizer state of touched row 2 and untouched row 6 [200] ---
+{'ok': True, 'indices': [2, 6], 'weights': [[-0.07970993965864182, -0.11795264482498169, -0.07054349780082703, 0.006373338866978884], [0.09034702181816101, 0.0094012301415205, -0.07434992492198944, -0.0921725407242775]], 'momentum': [[0.9336420893669128, -0.8589507341384888, 0.8216050267219543, -0.2240741103887558], [0.0, 0.0, 0.0, 0.0]], 'row_steps': [1, 0]}
+
+Example sequence complete.

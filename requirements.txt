@@ -1,0 +1,8 @@
+# Direct dependencies, pinned to the versions used for the verified test run.
+# Full transitive lock: requirements.lock
+numpy==2.4.6
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn==0.54.0
+httpx==0.28.1
+pytest==9.1.1

@@ -1,0 +1,60 @@
+========================================================================
+SPARSE EMBEDDING OPTIMIZER - DIRECT API DEMO
+vocab=8 dim=4 optimizer=momentum_sgd clip=global@2.0
+========================================================================
+
+[scenario] duplicate_ids  tokens=5
+  stepped=True reason=applied
+  global_step 0 -> 1
+  touched=[1, 3] counts=[2, 3]
+  pre_norm=0.604083 post_norm=0.604083 clipped=False
+  verification: MATCHES independent dense reference
+
+[scenario] hot_cold_alternating  tokens=5
+  stepped=True reason=applied
+  global_step 1 -> 2
+  touched=[0, 7] counts=[2, 3]
+  pre_norm=0.382649 post_norm=0.382649 clipped=False
+  verification: MATCHES independent dense reference
+
+[scenario] empty  tokens=0
+  stepped=False reason=empty_batch_no_step
+  global_step 2 -> 2
+  touched=[] counts=[]
+  pre_norm=0.000000 post_norm=0.000000 clipped=False
+  verification: MATCHES independent dense reference
+
+[scenario] large_gradients  tokens=3
+  stepped=True reason=applied
+  global_step 2 -> 3
+  touched=[2, 5] counts=[2, 1]
+  pre_norm=30.777852 post_norm=2.000000 clipped=True
+  verification: MATCHES independent dense reference
+
+[scenario] zero_gradient_touched  tokens=2
+  stepped=True reason=applied
+  global_step 3 -> 4
+  touched=[4] counts=[2]
+  pre_norm=0.000000 post_norm=0.000000 clipped=False
+  zero-gradient touched rows=[4] (momentum decayed, step counted)
+  verification: MATCHES independent dense reference
+
+[scenario] out_of_range_invalid  tokens=3
+  REJECTED category=index_out_of_range: index 8 at position 1 is outside [0, 8)
+  decision: whole batch rejected, state unchanged (expected)
+
+------------------------------------------------------------------------
+Final state checks
+------------------------------------------------------------------------
+global_step=4 (empty batch and rejected batch add no step)
+row_steps=[1, 1, 1, 1, 1, 1, 0, 1]
+untouched rows=[6] (momentum exactly zero, weights at seed init)
+
+checkpoint: results/demo_runtime/data/checkpoints/demo_embed.npz
+  rows persisted=[0, 1, 2, 3, 4, 5, 7] (only touched rows)
+  restore: weights and momentum reproduced exactly
+
+structured log: results/demo_runtime/logs/demo.jsonl
+result directory: results/demo_runtime
+
+ALL DEMO CHECKS PASSED
