@@ -1,0 +1,30 @@
+{
+  "folds": 5,
+  "trim_propensity": {
+    "enabled": true,
+    "lower": 0.01,
+    "upper": 0.99
+  },
+  "stabilize_weight": false,
+  "propensity_model": {
+    "type": "logistic",
+    "l2_penalty": 0.0,
+    "max_iter": 200,
+    "tol": 1e-10
+  },
+  "outcome_models": {
+    "type": "ols",
+    "intercept": true,
+    "standardize": true
+  },
+  "estimand": "ATE",
+  "cluster": {
+    "enabled": false,
+    "id_field": "cluster_id"
+  },
+  "jobs": {
+    "storage": "sqlite",
+    "database": "aipw_jobs.db",
+    "stale_after_seconds": 3600
+  }
+}

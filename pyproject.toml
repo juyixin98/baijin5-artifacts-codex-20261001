@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aipw-backend"
+version = "1.0.0"
+description = "Cross-fitted Augmented Inverse Probability Weighting (AIPW) estimator backend with influence-function inference"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.15.3",
+    "fastapi==0.141.1",
+    "pydantic==2.13.5",
+    "uvicorn==0.54.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1", "pytest-cov==7.1.0", "httpx==0.28.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "slow: end-to-end reproduction experiments with larger n",
+]
