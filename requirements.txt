@@ -1,0 +1,11 @@
+# Pinned direct dependencies (resolved on Python 3.12.3, Linux).
+# Transitive dependencies (starlette, anyio, pydantic-core, ...) are
+# resolved by pip from these pins; `pip freeze` on the verification
+# environment is reproduced in verify.sh output.
+numpy==2.4.6
+scipy==1.15.3
+pydantic==2.13.5
+fastapi==0.141.1
+uvicorn==0.54.0
+pytest==9.1.1
+httpx==0.28.1

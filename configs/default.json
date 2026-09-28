@@ -1,0 +1,20 @@
+{
+  "folds": {
+    "n_splits": 5,
+    "seed": 7301,
+    "stratified": true
+  },
+  "treatment_model": {
+    "kind": "logistic_ridge",
+    "penalty": 1e-06,
+    "max_iter": 100,
+    "tol": 1e-08
+  },
+  "outcome_model": {
+    "kind": "ols_ridge",
+    "penalty": 1e-06
+  },
+  "propensity_trim": 0.0,
+  "max_feature_cells": 10000000,
+  "estimand": "ATE"
+}

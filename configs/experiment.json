@@ -1,0 +1,20 @@
+{
+  "replications": 200,
+  "n": 4000,
+  "seed": 20260928,
+  "tau": 2.0,
+  "scenarios": ["both_correct", "propensity_only", "outcome_only", "both_wrong"],
+  "cluster": {
+    "replications": 200,
+    "n_clusters": 150,
+    "cluster_size": 10,
+    "icc": 0.6,
+    "cluster_randomized": true,
+    "seed": 20260929
+  },
+  "folds": {
+    "n_splits": 5,
+    "seed": 55125,
+    "stratified": true
+  }
+}
