@@ -1,0 +1,37 @@
+[package]
+name = "iejoin-range"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.98"
+description = "IEJoin-style batch range join backend with two inequality predicates (Axum + Arrow2)"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "iejoin_range"
+path = "src/lib.rs"
+
+[[bin]]
+name = "iejoin-server"
+path = "src/main.rs"
+
+[dependencies]
+# Pinned, exact versions (see Cargo.lock for the fully frozen transitive set).
+arrow2 = { version = "=0.18.0", default-features = false }
+axum = { version = "=0.7.9", features = ["json"] }
+serde = { version = "=1.0.219", features = ["derive"] }
+serde_json = { version = "=1.0.140" }
+thiserror = { version = "=2.0.12" }
+tokio = { version = "=1.44.2", features = ["rt", "rt-multi-thread", "macros", "net", "sync", "time"] }
+
+[dev-dependencies]
+# tower 0.4 matches the tower Service version axum 0.7 is built on;
+# used only for ServiceExt::oneshot in API tests.
+tower = { version = "=0.4.13", features = ["util"] }
+
+[profile.dev]
+# Differential tests touch 10k+ rows; keep debug builds reasonably fast.
+opt-level = 1
+
+[profile.release]
+opt-level = 3
+lto = "thin"
