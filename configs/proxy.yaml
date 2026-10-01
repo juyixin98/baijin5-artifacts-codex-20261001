@@ -1,0 +1,57 @@
+# SOCKS5 local-whitelist proxy — example configuration.
+#
+# Every limit is explicit. The proxy fails fast on startup if a bound is
+# missing or non-positive, so it never runs unbounded.
+
+listen: "127.0.0.1:1080"
+
+# SQLite database holding the whitelist, credential verifiers and the
+# append-only request log. Created automatically.
+database: "./data/proxy.db"
+
+auth:
+  # true  -> the server offers ONLY username/password (RFC 1929)
+  # false  -> the server offers ONLY no-authentication
+  # There is deliberately no "offer both" mode: the negotiated method is
+  # unambiguous and audit logs can attribute every request to a user.
+  required: true
+
+limits:
+  max_concurrent_connections: 64
+  handshake_timeout: 10s     # whole method+auth+request negotiation
+  resolve_timeout: 5s        # one DNS lookup
+  dial_timeout: 10s          # one TCP connect attempt (per resolved address)
+  idle_timeout: 2m           # no read/write activity in either direction
+  max_bytes_up: 67108864     # 64 MiB client -> upstream, per connection
+  max_bytes_down: 67108864   # 64 MiB upstream -> client, per connection
+
+log:
+  level: "info"              # debug | info | warn | error
+  text_format: false         # false = JSON lines
+
+# Whitelist. Two rule kinds:
+#
+#   cidr:   an IP network. IP-literal requests, and EVERY address a
+#           whitelisted domain resolves to, must be covered here.
+#   domain: an exact name ("localhost") or a single-label wildcard
+#           ("*.local.test" matches "a.local.test" but NOT "local.test",
+#           NOT "a.b.local.test" and NOT "evillocal.test").
+#
+# ports: a whitelist of TCP ports; [0] means any port.
+rules:
+  - kind: cidr
+    host: "127.0.0.0/8"
+    ports: [0]
+    note: "IPv4 loopback"
+  - kind: cidr
+    host: "::1/128"
+    ports: [0]
+    note: "IPv6 loopback"
+  - kind: domain
+    host: "localhost"
+    ports: [0]
+    note: "loopback name"
+  - kind: domain
+    host: "*.local.test"
+    ports: [8080, 9000]
+    note: "synthetic local test services"

@@ -1,0 +1,14 @@
+# build output
+/bin/
+/socksproxy
+/cmd/socksproxy/socksproxy
+
+# local SQLite data (proxy.db, WAL/SHM)
+/data/
+*.db
+*.db-wal
+*.db-shm
+
+# test/coverage artifacts
+*.out
+coverage.txt
