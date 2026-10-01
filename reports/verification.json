@@ -1,0 +1,97 @@
+{
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "mpmath": "1.3.0",
+    "fastapi": "0.141.1"
+  },
+  "runs": [
+    {
+      "fixture": "grid_5pt",
+      "n": 49,
+      "spd": true,
+      "nnz_l": 252,
+      "fill": 119,
+      "fill_ratio": 1.894736842105263,
+      "residual_rel": 9.689722175014701e-17,
+      "reconstruction": 1.1102230246251565e-16,
+      "vs_lapack": 1.6653345369377348e-16,
+      "vs_mpmath": 1.1102230246251565e-16,
+      "passed": true
+    },
+    {
+      "fixture": "banded_tri",
+      "n": 60,
+      "spd": true,
+      "nnz_l": 119,
+      "fill": 0,
+      "fill_ratio": 1.0,
+      "residual_rel": 4.4008007664419986e-17,
+      "reconstruction": 1.1102230246251565e-16,
+      "vs_lapack": 1.1102230246251565e-16,
+      "vs_mpmath": 5.551115123125783e-17,
+      "passed": true
+    },
+    {
+      "fixture": "arrowhead",
+      "n": 30,
+      "spd": true,
+      "nnz_l": 59,
+      "fill": 0,
+      "fill_ratio": 1.0,
+      "residual_rel": 1.49860759882668e-16,
+      "reconstruction": 0.0,
+      "vs_lapack": 3.885780586188048e-16,
+      "vs_mpmath": 6.938893903907228e-18,
+      "passed": true
+    },
+    {
+      "fixture": "nonspd_negative_diag",
+      "status": "error",
+      "error_code": "NON_SPD_PIVOT",
+      "original_index": 3,
+      "expected_index": 3,
+      "pivot_correct": true,
+      "pivot_value": -1.2678571428571428
+    },
+    {
+      "fixture": "nonspd_indefinite",
+      "status": "error",
+      "error_code": "NON_SPD_PIVOT",
+      "original_index": 1,
+      "expected_index": 1,
+      "pivot_correct": true,
+      "pivot_value": -3.0
+    },
+    {
+      "fixture": "singular_zero_pivot",
+      "status": "error",
+      "error_code": "SINGULAR_PIVOT",
+      "original_index": 4,
+      "expected_index": 4,
+      "pivot_correct": true,
+      "pivot_value": 0.0
+    }
+  ],
+  "ordering_compare": [
+    {
+      "method": "natural",
+      "nnz_l": 5919,
+      "fill_entries": 5054,
+      "fill_ratio": 6.842774566473988
+    },
+    {
+      "method": "minimum_degree",
+      "nnz_l": 2577,
+      "fill_entries": 1712,
+      "fill_ratio": 2.9791907514450866
+    },
+    {
+      "method": "nested_dissection",
+      "nnz_l": 3010,
+      "fill_entries": 2145,
+      "fill_ratio": 3.479768786127168
+    }
+  ]
+}
