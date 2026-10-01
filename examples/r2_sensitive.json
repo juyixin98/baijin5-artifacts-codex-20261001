@@ -1,0 +1,9 @@
+{
+  "column": "s",
+  "rule_version": "2026R2",
+  "values": [
+    "Cafe",
+    "cafe",
+    "caf\u00e9"
+  ]
+}

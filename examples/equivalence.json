@@ -1,0 +1,18 @@
+{
+  "column": "label",
+  "rule_version": "2026R1",
+  "values": [
+    "Caf\u00e9",
+    "cafe",
+    "CAFE",
+    "Cafe\u0301",
+    "caf\u00e9",
+    "item2",
+    "ITEM02",
+    "item10",
+    "item100",
+    "na\u00efve",
+    "NAIVE",
+    "naive"
+  ]
+}

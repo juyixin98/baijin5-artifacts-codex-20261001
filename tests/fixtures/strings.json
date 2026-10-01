@@ -1,0 +1,142 @@
+{
+  "description": "Synthetic fixture: accent/case equivalence, numeric sequences, Unicode normalization (NFC vs NFD via JSON \\u escapes). No real business data.",
+  "column": "label",
+  "rule_version": "2026R1",
+  "rows": [
+    {
+      "id": 0,
+      "value": "Caf\u00e9",
+      "note": "NFC e-acute U+00E9, uppercase C"
+    },
+    {
+      "id": 1,
+      "value": "cafe",
+      "note": "plain lowercase -> equiv row0 R1"
+    },
+    {
+      "id": 2,
+      "value": "CAFE",
+      "note": "all caps -> class 0,1"
+    },
+    {
+      "id": 3,
+      "value": "Cafe\u0301",
+      "note": "e + combining acute U+0301 (NFD) -> normalizes to row0"
+    },
+    {
+      "id": 4,
+      "value": "caf\u00e9",
+      "note": "NFC lowercase acute -> same class"
+    },
+    {
+      "id": 5,
+      "value": "item2",
+      "note": "numeric sequence 2"
+    },
+    {
+      "id": 6,
+      "value": "ITEM02",
+      "note": "case + leading zero -> equiv item2"
+    },
+    {
+      "id": 7,
+      "value": "item10",
+      "note": "10 numerically > 2; distinct, ordered after item2"
+    },
+    {
+      "id": 8,
+      "value": "item100",
+      "note": "100 distinct"
+    },
+    {
+      "id": 9,
+      "value": "Item 2",
+      "note": "space -> distinct"
+    },
+    {
+      "id": 10,
+      "value": "stra\u00dfe",
+      "note": "sharp s U+00DF; R1 case fold only"
+    },
+    {
+      "id": 11,
+      "value": "STRASSE",
+      "note": "NOT equiv to sharp-s form (no ss mapping in scope)"
+    },
+    {
+      "id": 12,
+      "value": "na\u00efve",
+      "note": "i-diaeresis stripped -> naive"
+    },
+    {
+      "id": 13,
+      "value": "NAIVE",
+      "note": "class row12 R1"
+    },
+    {
+      "id": 14,
+      "value": "naive",
+      "note": "class row12,13"
+    }
+  ],
+  "expected_under_2026R1": {
+    "group_count": 8,
+    "classes": [
+      {
+        "representative": "Caf\u00e9",
+        "rows": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "representative": "item2",
+        "rows": [
+          5,
+          6
+        ]
+      },
+      {
+        "representative": "item10",
+        "rows": [
+          7
+        ]
+      },
+      {
+        "representative": "item100",
+        "rows": [
+          8
+        ]
+      },
+      {
+        "representative": "Item 2",
+        "rows": [
+          9
+        ]
+      },
+      {
+        "representative": "stra\u00dfe",
+        "rows": [
+          10
+        ]
+      },
+      {
+        "representative": "STRASSE",
+        "rows": [
+          11
+        ]
+      },
+      {
+        "representative": "na\u00efve",
+        "rows": [
+          12,
+          13,
+          14
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "column": "s",
+  "rule_version": "2026R1",
+  "row_rule_versions": [
+    "2026R1",
+    "2026R2"
+  ],
+  "values": [
+    "cafe",
+    "CAFE"
+  ]
+}

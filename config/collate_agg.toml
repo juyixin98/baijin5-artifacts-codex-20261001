@@ -1,0 +1,7 @@
+# collate_agg local configuration (synthetic/offline — no production accounts).
+bind_addr = "127.0.0.1:8080"
+default_rule_version = "2026R1"
+representative_policy = "first_wins"   # first_wins | last_wins | shortest_wins
+oracle_crosscheck = true
+redact_sensitive = true
+max_rows = 100000
