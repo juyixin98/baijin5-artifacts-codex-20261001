@@ -1,0 +1,202 @@
+{
+  "rfc": [
+    "RFC 7252",
+    "RFC 7959"
+  ],
+  "cases": [
+    {
+      "name": "empty_ack",
+      "note": "empty message",
+      "hex": "60001234",
+      "parsed": {
+        "type": "ACK",
+        "code": "0.00",
+        "mid": 4660,
+        "token_hex": "",
+        "payload_hex": "",
+        "options": []
+      }
+    },
+    {
+      "name": "con_get_time",
+      "note": "basic CON GET, token independent of mid",
+      "hex": "4201abcd0102b474696d65",
+      "parsed": {
+        "type": "CON",
+        "code": "GET",
+        "mid": 43981,
+        "token_hex": "0102",
+        "payload_hex": "",
+        "options": [
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "74696d65"
+          }
+        ]
+      }
+    },
+    {
+      "name": "con_content_multipath",
+      "note": "repeated options + payload marker",
+      "hex": "44450001deadbeefb1610b6c6f6e677365676d656e74017a1100ff68656c6c6f2d626c6f636b77697365",
+      "parsed": {
+        "type": "CON",
+        "code": "2.05",
+        "mid": 1,
+        "token_hex": "deadbeef",
+        "payload_hex": "68656c6c6f2d626c6f636b77697365",
+        "options": [
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "61"
+          },
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "6c6f6e677365676d656e74"
+          },
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "7a"
+          },
+          {
+            "number": 12,
+            "name": "Content-Format",
+            "value_hex": "00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "block1_mid_put",
+      "note": "Block1 num3/more/szx2(size64) raw value 0x3a",
+      "hex": "4103777709b27570d1033aff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "parsed": {
+        "type": "CON",
+        "code": "PUT",
+        "mid": 30583,
+        "token_hex": "09",
+        "payload_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+        "options": [
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "7570"
+          },
+          {
+            "number": 27,
+            "name": "Block1",
+            "value_hex": "3a",
+            "block": {
+              "num": 3,
+              "more": true,
+              "szx": 2,
+              "size": 64
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "block2_bignum_ack",
+      "note": "block num above 20 bits bounds in 3-byte option",
+      "hex": "60450100d30a010045ff5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+      "parsed": {
+        "type": "ACK",
+        "code": "2.05",
+        "mid": 256,
+        "token_hex": "",
+        "payload_hex": "5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a",
+        "options": [
+          {
+            "number": 23,
+            "name": "Block2",
+            "value_hex": "010045",
+            "block": {
+              "num": 4100,
+              "more": false,
+              "szx": 5,
+              "size": 512
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "valid_etag_block2",
+      "note": "2.03 Valid carries ETag",
+      "hex": "604302004300cafed10600",
+      "parsed": {
+        "type": "ACK",
+        "code": "2.03",
+        "mid": 512,
+        "token_hex": "",
+        "payload_hex": "",
+        "options": [
+          {
+            "number": 4,
+            "name": "ETag",
+            "value_hex": "00cafe"
+          },
+          {
+            "number": 23,
+            "name": "Block2",
+            "value_hex": "00",
+            "block": {
+              "num": 0,
+              "more": false,
+              "szx": 0,
+              "size": 16
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "size2_413",
+      "note": "Request Entity Too Large advertises Size2",
+      "hex": "608d0300d20f1388",
+      "parsed": {
+        "type": "ACK",
+        "code": "4.13",
+        "mid": 768,
+        "token_hex": "",
+        "payload_hex": "",
+        "options": [
+          {
+            "number": 28,
+            "name": "Size2",
+            "value_hex": "1388"
+          }
+        ]
+      }
+    },
+    {
+      "name": "con_5byte_token",
+      "note": "5-byte token, short mid: proves token/mid independence",
+      "hex": "45010042aabbccddeeb1740135",
+      "parsed": {
+        "type": "CON",
+        "code": "GET",
+        "mid": 66,
+        "token_hex": "aabbccddee",
+        "payload_hex": "",
+        "options": [
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "74"
+          },
+          {
+            "number": 11,
+            "name": "Uri-Path",
+            "value_hex": "35"
+          }
+        ]
+      }
+    }
+  ]
+}

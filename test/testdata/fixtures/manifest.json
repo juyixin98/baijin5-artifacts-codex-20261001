@@ -1,0 +1,25 @@
+{
+  "files": {
+    "payload_2500.bin": {
+      "length": 2500,
+      "sha256": "f1bb20a0ff0684970fc1e2445de3c1cc8d272d75348f1338bb94baf7dd0bfc9c"
+    },
+    "payload_300.bin": {
+      "length": 300,
+      "sha256": "ae7ae7313484913eefd5931abb1f324b82ab5f352130c30109429c5149891338"
+    },
+    "payload_5000.bin": {
+      "length": 5000,
+      "sha256": "8d5a9c2cec82beebb637aec9d6414593c7d2351f1d776374e36f5756f5368504"
+    },
+    "payload_64.bin": {
+      "length": 64,
+      "sha256": "5d41482921440475d4a610642b62a7ba4b2927e9e067f04507cc89cdefe6a935"
+    },
+    "payload_alt_900.bin": {
+      "length": 900,
+      "sha256": "1349762613a03ebe61be51552b4e0708108bf858b0902770d35a478ebc8ccf4e"
+    }
+  },
+  "recipe": "byte(i) = ((i*73)&0xff) ^ ((i//97)&0xff)"
+}
