@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": null,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "run_id_conflict",
+      "kind": "state_conflict"
+    },
+    "message": "run log /tmp/spill-demo/logs/dup-id.jsonl already exists: File exists (os error 17)"
+  },
+  "status": "error"
+}

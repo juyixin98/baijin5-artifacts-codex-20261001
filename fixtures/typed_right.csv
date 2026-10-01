@@ -1,0 +1,11 @@
+id:bigint,grp:bigint,label:text,flag:boolean,score:double
+1,0,123,false,0.00
+2,0,"1,23",true,0.00
+5,3,\N,true,0.42
+7,0,"""q""",true,0.00
+8,0,dup000,false,0.00
+10,1,dup001,true,0.28
+13,9,123,true,1.28
+14,9,"1,23",,
+15,0,,false,0.00
+16,4,dup000,true,0.57

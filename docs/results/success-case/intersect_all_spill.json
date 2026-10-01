@@ -1,0 +1,45 @@
+{
+  "replay": {
+    "count_arithmetic_events": 2,
+    "events": 49,
+    "max_resident_bytes": 164,
+    "output_rows": 2,
+    "recursions": 2,
+    "run_id": "demo-intersect",
+    "spill_rows": 32,
+    "spills": 17
+  },
+  "rows": [
+    [
+      5,
+      3,
+      null,
+      true,
+      0.42
+    ],
+    [
+      8,
+      0,
+      "dup000",
+      false,
+      0.0
+    ]
+  ],
+  "run_id": "demo-intersect",
+  "stats": {
+    "left_rows": 12,
+    "max_resident_bytes": 164,
+    "mode": "auto",
+    "op": "intersect",
+    "output_distinct": 2,
+    "output_rows": 2,
+    "qualifier": "all",
+    "recursions": 2,
+    "right_rows": 10,
+    "run_id": "demo-intersect",
+    "spill_bytes": 1660,
+    "spilled_rows": 32,
+    "spills": 17
+  },
+  "status": "ok"
+}

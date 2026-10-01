@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": null,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "schema_mismatch",
+      "kind": "input"
+    },
+    "message": "input arity differs: left has 2 columns, right has 5"
+  },
+  "status": "error"
+}

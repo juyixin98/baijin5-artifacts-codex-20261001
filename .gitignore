@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+*.csv.bak
+
+# 运行产物：可由 scripts/verify_e2e.py 重新生成（报告本身保留一份在版本库）
+docs/results/e2e-*/fixtures/
+docs/results/e2e-*/spill-auto/
+docs/results/e2e-*/spill-ext/
+__pycache__/

@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": null,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "partition_depth",
+      "kind": "resource_exhausted"
+    },
+    "message": "partition p00 still exceeds the 32-byte resident key budget at max recursion depth 0; distinct keys cannot be split further"
+  },
+  "status": "error"
+}

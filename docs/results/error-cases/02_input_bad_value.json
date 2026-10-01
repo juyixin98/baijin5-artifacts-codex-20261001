@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": 2,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "parse_value",
+      "kind": "input"
+    },
+    "message": "'nope' is not a bigint"
+  },
+  "status": "error"
+}

@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": null,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "count_overflow",
+      "kind": "resource_exhausted"
+    },
+    "message": "row multiplicity exceeds configured cap of 1"
+  },
+  "status": "error"
+}

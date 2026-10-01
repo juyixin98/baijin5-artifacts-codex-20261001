@@ -1,0 +1,16 @@
+{
+  "error": {
+    "context": {
+      "detail": null,
+      "line": null,
+      "location": null,
+      "run_id": null
+    },
+    "kind": {
+      "code": "memory_budget",
+      "kind": "resource_exhausted"
+    },
+    "message": "L side needs 78 resident key bytes but in-memory budget is 64"
+  },
+  "status": "error"
+}

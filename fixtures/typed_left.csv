@@ -1,0 +1,13 @@
+id:bigint,grp:bigint,label:text,flag:boolean,score:double
+1,0,123,true,0.00
+2,0,"1,23",false,
+3,7,"12,3",true,2.33
+4,7,héllo,,0.14
+5,3,\N,true,0.42
+6,3,héllo,false,1.00
+7,0,"""q""",true,
+8,0,dup000,false,0.00
+9,1,dup000,true,0.14
+10,1,dup001,,0.28
+11,0,,true,0.00
+12,0,\N,false,

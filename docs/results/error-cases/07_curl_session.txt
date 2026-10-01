@@ -1,0 +1,225 @@
+== 0. 健康检查 ==
+{
+    "service": "set_ops",
+    "status": "ok"
+}
+== 1. EXCEPT ALL（小内存预算，真实溢写） ==
+{
+    "replay": {
+        "count_arithmetic_events": 2,
+        "events": 8,
+        "max_resident_bytes": 0,
+        "output_rows": 2,
+        "recursions": 0,
+        "run_id": "run-1790694478-0000-80594d",
+        "spill_rows": 0,
+        "spills": 0
+    },
+    "rows": [
+        [
+            1,
+            "a"
+        ],
+        [
+            3,
+            "12"
+        ]
+    ],
+    "run_id": "run-1790694478-0000-80594d",
+    "schema": [
+        {
+            "name": "id",
+            "type": "bigint"
+        },
+        {
+            "name": "label",
+            "type": "text"
+        }
+    ],
+    "stats": {
+        "left_rows": 4,
+        "max_resident_bytes": 47,
+        "mode": "auto",
+        "op": "except",
+        "output_distinct": 2,
+        "output_rows": 2,
+        "qualifier": "all",
+        "recursions": 0,
+        "right_rows": 3,
+        "run_id": "run-1790694478-0000-80594d",
+        "spill_bytes": 0,
+        "spilled_rows": 0,
+        "spills": 0
+    },
+    "status": "ok"
+}
+== 2. 输入错误（400）：未知算子 ==
+HTTP 400
+{
+    "error": {
+        "code": "invalid_request",
+        "context": {
+            "detail": null,
+            "line": null,
+            "location": null,
+            "run_id": null
+        },
+        "kind": "input",
+        "message": "unknown set operator 'OUTER'"
+    },
+    "status": "error"
+}
+== 3. 资源耗尽（422）：in_memory 超出预算 ==
+HTTP 422
+{
+    "error": {
+        "code": "memory_budget",
+        "context": {
+            "detail": null,
+            "line": null,
+            "location": null,
+            "run_id": null
+        },
+        "kind": "resource_exhausted",
+        "message": "L side needs 16 resident key bytes but in-memory budget is 8"
+    },
+    "status": "error"
+}
+== 4. 计数溢出（422）：max_count 拒绝 ==
+HTTP 422
+{
+    "error": {
+        "code": "count_overflow",
+        "context": {
+            "detail": null,
+            "line": null,
+            "location": null,
+            "run_id": null
+        },
+        "kind": "resource_exhausted",
+        "message": "row multiplicity exceeds configured cap of 3"
+    },
+    "status": "error"
+}
+== 5. 状态冲突（409）：重复 run_id（先成功再冲突） ==
+first:  HTTP 200
+second: HTTP 409
+{
+    "error": {
+        "code": "run_id_conflict",
+        "context": {
+            "detail": null,
+            "line": null,
+            "location": null,
+            "run_id": null
+        },
+        "kind": "state_conflict",
+        "message": "run log /tmp/spill-serve-a/logs/demo-run.jsonl already exists: File exists (os error 17)"
+    },
+    "status": "error"
+}
+== 6. 夹具文件输入 + 重放事件 ==
+{
+    "replay": {
+        "count_arithmetic_events": 5,
+        "events": 35,
+        "max_resident_bytes": 0,
+        "output_rows": 5,
+        "recursions": 5,
+        "run_id": "run-1790694478-0003-ce84be",
+        "spill_rows": 10,
+        "spills": 10
+    },
+    "rows": [
+        [
+            "1",
+            "23"
+        ],
+        [
+            "12",
+            "3"
+        ],
+        [
+            "x",
+            null
+        ],
+        [
+            null,
+            "y"
+        ],
+        [
+            null,
+            null
+        ]
+    ],
+    "run_id": "run-1790694478-0003-ce84be",
+    "schema": [
+        {
+            "name": "a",
+            "type": "text"
+        },
+        {
+            "name": "b",
+            "type": "text"
+        }
+    ],
+    "stats": {
+        "left_rows": 6,
+        "max_resident_bytes": 52,
+        "mode": "external",
+        "op": "intersect",
+        "output_distinct": 5,
+        "output_rows": 5,
+        "qualifier": "all",
+        "recursions": 5,
+        "right_rows": 6,
+        "run_id": "run-1790694478-0003-ce84be",
+        "spill_bytes": 224,
+        "spilled_rows": 10,
+        "spills": 10
+    },
+    "status": "ok"
+}
+{
+    "events": [
+        {
+            "columns": 1,
+            "event": "query_start",
+            "left_rows": 1,
+            "mode": "auto",
+            "op": "UNION",
+            "qualifier": "DISTINCT",
+            "right_rows": 0
+        },
+        {
+            "batches": 1,
+            "event": "input_read",
+            "rows": 1,
+            "side": "L",
+            "source": "batch#0"
+        },
+        {
+            "event": "count_arithmetic",
+            "key_hex_prefix": "0100000000000000",
+            "left_count": 1,
+            "op": "UNION",
+            "reason": "presence test -> 1",
+            "result_count": 1,
+            "right_count": 0
+        },
+        {
+            "distinct_keys": 1,
+            "event": "output_batch",
+            "rows": 1,
+            "running_total": 1
+        },
+        {
+            "error_code": null,
+            "error_kind": null,
+            "event": "verdict",
+            "message": "UNION DISTINCT produced 1 rows (1 distinct)",
+            "status": "success"
+        }
+    ],
+    "run_id": "demo-run"
+}
