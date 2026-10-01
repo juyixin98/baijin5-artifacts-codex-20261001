@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /home/admin/Downloads/xinbiaozhul/opp422/a/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/admin/Downloads/xinbiaozhul/opp422/a
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.1
+collecting ... collected 39 items
+
+tests/test_api.py::TestSolveHappyPath::test_solve_returns_sorted_roots_with_evidence PASSED [  2%]
+tests/test_api.py::TestSolveHappyPath::test_conjugate_pairing_reported PASSED [  5%]
+tests/test_api.py::TestErrorCategories::test_zero_polynomial_is_input_invalid PASSED [  7%]
+tests/test_api.py::TestErrorCategories::test_non_finite_coefficient_is_input_invalid PASSED [ 10%]
+tests/test_api.py::TestErrorCategories::test_degree_cap_is_resource_exhausted PASSED [ 12%]
+tests/test_api.py::TestErrorCategories::test_state_conflict_on_run_id_reuse PASSED [ 15%]
+tests/test_api.py::TestErrorCategories::test_run_id_replay_is_idempotent PASSED [ 17%]
+tests/test_api.py::TestErrorCategories::test_unknown_run_lookup_404 PASSED [ 20%]
+tests/test_api.py::TestIterationExhaustion::test_partial_status_preserves_unconverged_state PASSED [ 23%]
+tests/test_api.py::TestRunLog::test_log_records_replayable_state_and_reasons PASSED [ 25%]
+tests/test_evidence.py::TestResidualsAndReconstruction::test_well_conditioned_case PASSED [ 28%]
+tests/test_evidence.py::TestResidualsAndReconstruction::test_vieta_via_newton_identities PASSED [ 30%]
+tests/test_evidence.py::TestResidualsAndReconstruction::test_reconstruction_detects_wrong_roots PASSED [ 33%]
+tests/test_evidence.py::TestClusters::test_near_multiple_roots_clustered PASSED [ 35%]
+tests/test_evidence.py::TestClusters::test_clustered_roots_not_validated_by_residuals PASSED [ 38%]
+tests/test_evidence.py::TestClusters::test_isolated_roots_have_residual_based_bounds PASSED [ 41%]
+tests/test_kernel.py::TestCompanion::test_cubic_known_roots PASSED       [ 43%]
+tests/test_kernel.py::TestCompanion::test_quartic_complex_conjugates PASSED [ 46%]
+tests/test_kernel.py::TestCompanion::test_sparse_high_order PASSED       [ 48%]
+tests/test_kernel.py::TestCompanion::test_wilkinson_8_against_mpmath PASSED [ 51%]
+tests/test_kernel.py::TestAberth::test_converges_from_cauchy_guesses PASSED [ 53%]
+tests/test_kernel.py::TestAberth::test_polishes_companion_roots PASSED   [ 56%]
+tests/test_kernel.py::TestAberth::test_iteration_exhaustion_preserves_state PASSED [ 58%]
+tests/test_kernel.py::TestAberth::test_tiny_budget_reports_unconverged PASSED [ 61%]
+tests/test_kernel.py::TestAberth::test_mismatched_guess_count_fails PASSED [ 64%]
+tests/test_ordering.py::TestOrdering::test_permutation_invariant PASSED  [ 66%]
+tests/test_ordering.py::TestOrdering::test_sort_key_is_real_then_imag PASSED [ 69%]
+tests/test_ordering.py::TestConjugatePairs::test_exact_conjugates_paired PASSED [ 71%]
+tests/test_ordering.py::TestConjugatePairs::test_tolerance_is_explicit PASSED [ 74%]
+tests/test_ordering.py::TestConjugatePairs::test_real_roots_not_forced_into_pairs PASSED [ 76%]
+tests/test_validation.py::TestParse::test_valid_pairs PASSED             [ 79%]
+tests/test_validation.py::TestParse::test_empty_list_rejected PASSED     [ 82%]
+tests/test_validation.py::TestParse::test_non_finite_rejected PASSED     [ 84%]
+tests/test_validation.py::TestParse::test_malformed_pair_rejected PASSED [ 87%]
+tests/test_validation.py::TestNormalize::test_leading_zeros_stripped PASSED [ 89%]
+tests/test_validation.py::TestNormalize::test_zero_polynomial_rejected PASSED [ 92%]
+tests/test_validation.py::TestNormalize::test_tiny_scale_polynomial_accepted PASSED [ 94%]
+tests/test_validation.py::TestNormalize::test_constant_polynomial_rejected PASSED [ 97%]
+tests/test_validation.py::TestNormalize::test_degree_cap_is_resource_error PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/admin/Downloads/xinbiaozhul/opp422/a/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 39 passed, 1 warning in 0.88s =========================
