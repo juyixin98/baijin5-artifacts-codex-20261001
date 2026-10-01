@@ -1,0 +1,132 @@
+{
+  "http_status": 200,
+  "response": {
+    "run_id": "run-20260928T010749-a4c3ffeb",
+    "verdict": "solved",
+    "reason": null,
+    "optimal_guarantee": true,
+    "plan": [
+      {
+        "name": "move",
+        "args": [
+          "w1",
+          "bench",
+          "press"
+        ],
+        "cost": 1
+      },
+      {
+        "name": "press",
+        "args": [
+          "w1"
+        ],
+        "cost": 2
+      }
+    ],
+    "cost": 3,
+    "path_length": 2,
+    "verification": {
+      "valid": true,
+      "goal_reached": true,
+      "total_cost": 3,
+      "steps": [
+        {
+          "index": 0,
+          "action": "move(w1, bench, press)",
+          "cost": 1,
+          "state_before": [
+            "at(w1, bench)",
+            "clear(press)"
+          ],
+          "state_after": [
+            "at(w1, press)",
+            "clear(bench)"
+          ]
+        },
+        {
+          "index": 1,
+          "action": "press(w1)",
+          "cost": 2,
+          "state_before": [
+            "at(w1, press)",
+            "clear(bench)"
+          ],
+          "state_after": [
+            "at(w1, press)",
+            "clear(bench)",
+            "pressed(w1)"
+          ]
+        }
+      ],
+      "failure": null
+    },
+    "search": {
+      "status": "solved",
+      "cost": 3,
+      "path_length": 2,
+      "expanded": 3,
+      "generated": 15,
+      "reopened": 0,
+      "pruned_dead_end": 0,
+      "frontier_peak": 13,
+      "optimal_guarantee": true,
+      "reason": null,
+      "bounds": {
+        "max_expansions": 100000,
+        "max_frontier": 100000,
+        "max_depth": null,
+        "time_limit_seconds": 30.0
+      },
+      "elapsed_seconds": 0.002831
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "depth": 0,
+        "g": 0,
+        "h": 3,
+        "f": 3,
+        "action": null,
+        "state_hash": "1c36e4ba00a09e10",
+        "state": [
+          "at(w1, bench)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 2,
+        "depth": 1,
+        "g": 1,
+        "h": 2,
+        "f": 3,
+        "action": "move(w1, bench, press)",
+        "state_hash": "c68057a7d0d554c7",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)"
+        ]
+      },
+      {
+        "seq": 3,
+        "depth": 2,
+        "g": 3,
+        "h": 0,
+        "f": 3,
+        "action": "press(w1)",
+        "state_hash": "9ae30f11697141be",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "pressed(w1)"
+        ]
+      }
+    ],
+    "states": {
+      "initial_hash": "1c36e4ba00a09e10",
+      "initial": [
+        "at(w1, bench)",
+        "clear(press)"
+      ]
+    }
+  }
+}

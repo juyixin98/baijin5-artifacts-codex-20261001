@@ -1,0 +1,111 @@
+{
+  "http_status": 200,
+  "response": {
+    "run_id": "run-20260928T010749-193bb082",
+    "verdict": "solved",
+    "reason": null,
+    "optimal_guarantee": true,
+    "plan": [
+      {
+        "name": "teleport",
+        "args": [
+          "a",
+          "d"
+        ],
+        "cost": 5
+      }
+    ],
+    "cost": 5,
+    "path_length": 1,
+    "verification": {
+      "valid": true,
+      "goal_reached": true,
+      "total_cost": 5,
+      "steps": [
+        {
+          "index": 0,
+          "action": "teleport(a, d)",
+          "cost": 5,
+          "state_before": [
+            "at(a)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ],
+          "state_after": [
+            "at(d)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ]
+        }
+      ],
+      "failure": null
+    },
+    "search": {
+      "status": "solved",
+      "cost": 5,
+      "path_length": 1,
+      "expanded": 2,
+      "generated": 2,
+      "reopened": 0,
+      "pruned_dead_end": 0,
+      "frontier_peak": 1,
+      "optimal_guarantee": true,
+      "reason": null,
+      "bounds": {
+        "max_expansions": 100000,
+        "max_frontier": 100000,
+        "max_depth": null,
+        "time_limit_seconds": 30.0
+      },
+      "elapsed_seconds": 5.7e-05
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "depth": 0,
+        "g": 0,
+        "h": null,
+        "f": null,
+        "action": null,
+        "state_hash": "978b33d7132b1d77",
+        "state": [
+          "at(a)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      },
+      {
+        "seq": 2,
+        "depth": 1,
+        "g": 5,
+        "h": 0,
+        "f": 5,
+        "action": "teleport(a, d)",
+        "state_hash": "10ec396616d11008",
+        "state": [
+          "at(d)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      }
+    ],
+    "states": {
+      "initial_hash": "978b33d7132b1d77",
+      "initial": [
+        "at(a)",
+        "edge(a, b)",
+        "edge(b, c)",
+        "edge(c, d)",
+        "fastlink(a, d)"
+      ]
+    }
+  }
+}

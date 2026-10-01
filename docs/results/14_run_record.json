@@ -1,0 +1,197 @@
+{
+  "run_id": "run-20260928T010749-9cd66fae",
+  "created_at": 1790528869.6066267,
+  "domain_name": "resource-ops",
+  "problem_name": "unsolvable-missing-predicate",
+  "algorithm": "astar",
+  "heuristic": "h_max",
+  "status": "ok",
+  "result_status": "unknown",
+  "reason": "node_limit",
+  "optimal_guarantee": 1,
+  "cost": null,
+  "path_length": null,
+  "expanded": 50,
+  "generated": 576,
+  "frontier_peak": 222,
+  "elapsed_seconds": 0.10380628300117678,
+  "request_json": {
+    "domain": {
+      "actions": [
+        {
+          "add": [
+            "at(?w,?to)",
+            "clear(?from)"
+          ],
+          "cost": 1,
+          "delete": [
+            "at(?w,?from)",
+            "clear(?to)"
+          ],
+          "name": "move",
+          "parameters": [
+            "?w",
+            "?from",
+            "?to"
+          ],
+          "preconditions": {
+            "neg": [
+              "sealed(?to)",
+              "at(?w,?to)"
+            ],
+            "pos": [
+              "at(?w,?from)",
+              "clear(?to)"
+            ]
+          }
+        },
+        {
+          "add": [
+            "at(?w,?to)"
+          ],
+          "cost": 4,
+          "delete": [
+            "at(?w,?from)"
+          ],
+          "name": "direct_haul",
+          "parameters": [
+            "?w",
+            "?from",
+            "?to"
+          ],
+          "preconditions": {
+            "neg": [
+              "sealed(?to)",
+              "at(?w,?to)"
+            ],
+            "pos": [
+              "at(?w,?from)"
+            ]
+          }
+        },
+        {
+          "add": [
+            "pressed(?w)"
+          ],
+          "cost": 2,
+          "delete": [],
+          "name": "press",
+          "parameters": [
+            "?w"
+          ],
+          "preconditions": {
+            "neg": [
+              "pressed(?w)"
+            ],
+            "pos": [
+              "at(?w,press)"
+            ]
+          }
+        },
+        {
+          "add": [
+            "heated(?w)"
+          ],
+          "cost": 2,
+          "delete": [],
+          "name": "heat",
+          "parameters": [
+            "?w"
+          ],
+          "preconditions": {
+            "neg": [
+              "heated(?w)"
+            ],
+            "pos": [
+              "at(?w,oven)"
+            ]
+          }
+        },
+        {
+          "add": [
+            "shipped(?w)"
+          ],
+          "cost": 1,
+          "delete": [],
+          "name": "ship",
+          "parameters": [
+            "?w"
+          ],
+          "preconditions": {
+            "neg": [
+              "shipped(?w)"
+            ],
+            "pos": [
+              "at(?w,dock)",
+              "heated(?w)",
+              "pressed(?w)"
+            ]
+          }
+        },
+        {
+          "add": [
+            "powered(?m)"
+          ],
+          "cost": 1,
+          "delete": [],
+          "name": "toggle_power",
+          "parameters": [
+            "?m"
+          ],
+          "preconditions": {
+            "neg": [
+              "powered(?m)"
+            ],
+            "pos": []
+          }
+        },
+        {
+          "add": [],
+          "cost": 1,
+          "delete": [
+            "powered(?m)"
+          ],
+          "name": "cut_power",
+          "parameters": [
+            "?m"
+          ],
+          "preconditions": {
+            "neg": [],
+            "pos": [
+              "powered(?m)"
+            ]
+          }
+        }
+      ],
+      "description": "Synthetic workshop domain: workpieces move between capacity-1 stations, are pressed/heated, and shipped. Includes an expensive unrestricted hauler and power toggles that create action cycles.",
+      "name": "resource-ops"
+    },
+    "options": {
+      "max_expansions": 50
+    },
+    "problem": {
+      "goal": {
+        "neg": [],
+        "pos": [
+          "certified(w1)"
+        ]
+      },
+      "init": [
+        "at(w1,bench)",
+        "clear(press)",
+        "clear(oven)",
+        "clear(dock)"
+      ],
+      "name": "unsolvable-missing-predicate",
+      "objects": [
+        "w1",
+        "bench",
+        "press",
+        "oven",
+        "dock"
+      ]
+    }
+  },
+  "plan_json": null,
+  "verification_json": null
+}

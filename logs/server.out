@@ -1,0 +1,30 @@
+INFO:     Started server process [85675]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52182 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52186 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52200 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41900 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41904 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41918 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41932 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41936 - "POST /plan HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41938 - "POST /plan HTTP/1.1" 200 OK
+2026-09-28 01:04:00,770 WARNING [strips_planner] run run-20260928T010400-c6a93360 failed category=input_error code=UNBOUND_VARIABLE: validation failed with 1 issue(s): UNBOUND_VARIABLE
+INFO:     127.0.0.1:41952 - "POST /plan HTTP/1.1" 422 Unprocessable Entity
+2026-09-28 01:04:00,774 WARNING [strips_planner] run run-20260928T010400-a8ede74a failed category=input_error code=EFFECT_ADD_DELETE_CONFLICT: validation failed with 1 issue(s): EFFECT_ADD_DELETE_CONFLICT
+INFO:     127.0.0.1:41954 - "POST /plan HTTP/1.1" 422 Unprocessable Entity
+2026-09-28 01:04:00,781 WARNING [strips_planner] run run-20260928T010400-bf21cee6 failed category=resource_exhausted code=GROUNDING_LIMIT: grounding action 'walk' would produce up to 12 instances (limit 5)
+INFO:     127.0.0.1:41970 - "POST /plan HTTP/1.1" 507 Insufficient Storage
+INFO:     127.0.0.1:41982 - "POST /plan HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:52606 - "GET /runs/run-20260928T010351-58005a53/steps HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52614 - "GET /runs/run-20260928T010351-58005a53/trace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52624 - "GET /runs/run-20260928T010400-36229da9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52634 - "POST /runs/run-20260928T010351-58005a53/replay HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52636 - "GET /runs?limit=5 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85675]

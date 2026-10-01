@@ -1,0 +1,12 @@
+{
+  "http_status": 422,
+  "response": {
+    "run_id": "run-20260928T010749-e382cdf5",
+    "error": {
+      "category": "input_error",
+      "code": "REQUEST_MALFORMED",
+      "message": "request body is not valid JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "details": []
+    }
+  }
+}

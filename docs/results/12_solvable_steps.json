@@ -1,0 +1,134 @@
+{
+  "run_id": "run-20260928T010740-5a466d51",
+  "steps": [
+    {
+      "index": 0,
+      "action": "move(w1, bench, press)",
+      "cost": 1,
+      "state_before": [
+        "at(w1, bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(oven)",
+        "clear(press)"
+      ],
+      "state_after": [
+        "at(w1, press)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(oven)"
+      ]
+    },
+    {
+      "index": 1,
+      "action": "press(w1)",
+      "cost": 2,
+      "state_before": [
+        "at(w1, press)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(oven)"
+      ],
+      "state_after": [
+        "at(w1, press)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(oven)",
+        "pressed(w1)"
+      ]
+    },
+    {
+      "index": 2,
+      "action": "move(w1, press, oven)",
+      "cost": 1,
+      "state_before": [
+        "at(w1, press)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(oven)",
+        "pressed(w1)"
+      ],
+      "state_after": [
+        "at(w1, oven)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(press)",
+        "pressed(w1)"
+      ]
+    },
+    {
+      "index": 3,
+      "action": "heat(w1)",
+      "cost": 2,
+      "state_before": [
+        "at(w1, oven)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(press)",
+        "pressed(w1)"
+      ],
+      "state_after": [
+        "at(w1, oven)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(press)",
+        "heated(w1)",
+        "pressed(w1)"
+      ]
+    },
+    {
+      "index": 4,
+      "action": "move(w1, oven, dock)",
+      "cost": 1,
+      "state_before": [
+        "at(w1, oven)",
+        "clear(bench)",
+        "clear(dock)",
+        "clear(mill)",
+        "clear(press)",
+        "heated(w1)",
+        "pressed(w1)"
+      ],
+      "state_after": [
+        "at(w1, dock)",
+        "clear(bench)",
+        "clear(mill)",
+        "clear(oven)",
+        "clear(press)",
+        "heated(w1)",
+        "pressed(w1)"
+      ]
+    },
+    {
+      "index": 5,
+      "action": "ship(w1)",
+      "cost": 1,
+      "state_before": [
+        "at(w1, dock)",
+        "clear(bench)",
+        "clear(mill)",
+        "clear(oven)",
+        "clear(press)",
+        "heated(w1)",
+        "pressed(w1)"
+      ],
+      "state_after": [
+        "at(w1, dock)",
+        "clear(bench)",
+        "clear(mill)",
+        "clear(oven)",
+        "clear(press)",
+        "heated(w1)",
+        "pressed(w1)",
+        "shipped(w1)"
+      ]
+    }
+  ]
+}

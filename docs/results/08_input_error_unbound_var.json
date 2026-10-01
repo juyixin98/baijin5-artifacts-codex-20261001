@@ -1,0 +1,19 @@
+{
+  "http_status": 422,
+  "response": {
+    "run_id": "run-20260928T010749-068e1cb4",
+    "error": {
+      "category": "input_error",
+      "code": "UNBOUND_VARIABLE",
+      "message": "validation failed with 1 issue(s): UNBOUND_VARIABLE",
+      "details": [
+        {
+          "code": "UNBOUND_VARIABLE",
+          "source": "action move.add",
+          "message": "variable '?zz' in ghost is not a parameter",
+          "value": "?zz"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "http_status": 507,
+  "response": {
+    "run_id": "run-20260928T010749-366460fa",
+    "error": {
+      "category": "resource_exhausted",
+      "code": "GROUNDING_LIMIT",
+      "message": "grounding action 'walk' would produce up to 12 instances (limit 5)",
+      "details": [
+        {
+          "action": "walk",
+          "estimated_instances": 12,
+          "limit": 5
+        }
+      ]
+    }
+  }
+}

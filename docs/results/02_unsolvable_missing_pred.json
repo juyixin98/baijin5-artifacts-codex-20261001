@@ -1,0 +1,8561 @@
+{
+  "http_status": 200,
+  "response": {
+    "run_id": "run-20260928T010740-f1efb979",
+    "verdict": "unsolvable",
+    "reason": null,
+    "optimal_guarantee": true,
+    "plan": [],
+    "cost": null,
+    "path_length": null,
+    "verification": null,
+    "search": {
+      "status": "unsolvable",
+      "cost": null,
+      "path_length": null,
+      "expanded": 8960,
+      "generated": 87360,
+      "reopened": 672,
+      "pruned_dead_end": 9631,
+      "frontier_peak": 2332,
+      "optimal_guarantee": true,
+      "reason": null,
+      "bounds": {
+        "max_expansions": 100000,
+        "max_frontier": 100000,
+        "max_depth": null,
+        "time_limit_seconds": 30.0
+      },
+      "elapsed_seconds": 6.826047
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "depth": 0,
+        "g": 0,
+        "h": null,
+        "f": 0,
+        "action": null,
+        "state_hash": "efd91d3de59c4683",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 2,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "move(w1, bench, press)",
+        "state_hash": "eae457beb41c6836",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 3,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "move(w1, bench, oven)",
+        "state_hash": "68ec336c53f1acc9",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 4,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "move(w1, bench, dock)",
+        "state_hash": "7a8d396797c215e8",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 5,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "toggle_power(w1)",
+        "state_hash": "153928991f540c4d",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 6,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "toggle_power(bench)",
+        "state_hash": "aaca21ecaa95d3c0",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 7,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "toggle_power(press)",
+        "state_hash": "f3308080ae13d743",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 8,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "toggle_power(oven)",
+        "state_hash": "44145b619a708040",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 9,
+        "depth": 1,
+        "g": 1,
+        "h": null,
+        "f": 1,
+        "action": "toggle_power(dock)",
+        "state_hash": "df62d850bac222dc",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 10,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(w1)",
+        "state_hash": "b54aa3398babf93d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 11,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(bench)",
+        "state_hash": "e0e5beca6993db77",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 12,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(press)",
+        "state_hash": "c062a87aa63f34a4",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 13,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "47fbd8538de19ed7",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 14,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "d6383c4e6c457309",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 15,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(w1)",
+        "state_hash": "81532d694e32d0fc",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 16,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(bench)",
+        "state_hash": "a6c61c4241b7eeb4",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 17,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(press)",
+        "state_hash": "4991cd5187bfcf91",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 18,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "fee46e1684b62f34",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 19,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "b92ab915aefdd1b9",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 20,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(w1)",
+        "state_hash": "ddad9f47ccbb0473",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 21,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(bench)",
+        "state_hash": "982d32051f499989",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 22,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(press)",
+        "state_hash": "f01c1800beebc315",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 23,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "53255f8e3f239fa5",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 24,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "bfeef248b968d4db",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 25,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(bench)",
+        "state_hash": "77d63c21dc53e50b",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 26,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(press)",
+        "state_hash": "f1a282e24b13b1da",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 27,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "d351f612a2a5ded5",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 28,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "b58151caf7faa20e",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 29,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(press)",
+        "state_hash": "eebb0395696f5839",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 30,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "7f0440076bdaa404",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 31,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "11d8be4150a4439e",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 32,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(oven)",
+        "state_hash": "64d28a6db1e0463e",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 33,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "fc5b067ccfcfd853",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 34,
+        "depth": 2,
+        "g": 2,
+        "h": null,
+        "f": 2,
+        "action": "toggle_power(dock)",
+        "state_hash": "dc47bcb590fe823c",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 35,
+        "depth": 2,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "press(w1)",
+        "state_hash": "29bd8f1c0ea3a984",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 36,
+        "depth": 2,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "heat(w1)",
+        "state_hash": "c05bff31c5a54a88",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 37,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(bench)",
+        "state_hash": "1c919e77a960f943",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 38,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "7bb85c6350d47f0b",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 39,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "e756352713ddaa0f",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 40,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "cd478014368ae8e8",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 41,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "a2537fefe8e88201",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 42,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "bd85deedaeaa293d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 43,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "1a7aa21ade948045",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 44,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "da6a90c82ec60178",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 45,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "900e7311a5d2450a",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 46,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "90f37e13adf4180a",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 47,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(bench)",
+        "state_hash": "651ae476233e6ab4",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 48,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "24f536c8e331e3bf",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 49,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "28d8afd3977f877f",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 50,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "f052e03c92106459",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 51,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "d3215774c93674fa",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 52,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "d4c51baf5dcfcbfd",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 53,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "f2aa1b2f40de98af",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 54,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "c79753f5ae27f608",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 55,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "0eea8e15a6f4daca",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 56,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "ac02438075b22b47",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 57,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(bench)",
+        "state_hash": "3a46fca9d2ab409b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 58,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "8975f7c6f8ea1447",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 59,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "d4a2749262066998",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 60,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "e4bcb4fe14f4d21c",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 61,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "d102b638b4678021",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 62,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "c8efec6fb8784eb5",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 63,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "b50ba9aa239d40f5",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 64,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "ad67d533afd4808f",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 65,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "ebcd19fab0ef7ed6",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 66,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "3bf7d748287ae5ec",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 67,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(press)",
+        "state_hash": "3c28d958ad4a3bb4",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 68,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "b5579fd17849d42a",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 69,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "0039ab0c09b8d26f",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 70,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "c7cad65b479f59bc",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 71,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "79cc4c25e4ae9ab3",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 72,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "a9f80e049c03f38c",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 73,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(oven)",
+        "state_hash": "266d10d1d2d93294",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 74,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "50aac618e7ec6319",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 75,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "64950095194fc9b2",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 76,
+        "depth": 3,
+        "g": 3,
+        "h": null,
+        "f": 3,
+        "action": "toggle_power(dock)",
+        "state_hash": "6366df0890d6860f",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 77,
+        "depth": 1,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "de86c92b26ff583d",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 78,
+        "depth": 1,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "954834484353d1f9",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 79,
+        "depth": 1,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "e6978811be045d48",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 80,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "press(w1)",
+        "state_hash": "90b4a276f6c52b59",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 81,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "press(w1)",
+        "state_hash": "309f813aae44db4c",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 82,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "press(w1)",
+        "state_hash": "bdf44f0259bb7294",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 83,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "press(w1)",
+        "state_hash": "1425094e294ba7bd",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 84,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "press(w1)",
+        "state_hash": "1288504c97d7ca9e",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 85,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "heat(w1)",
+        "state_hash": "f660927b8daf3321",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 86,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "heat(w1)",
+        "state_hash": "9532ca1dc90e0f26",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 87,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "heat(w1)",
+        "state_hash": "e510bc2ada74ad6a",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 88,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "heat(w1)",
+        "state_hash": "05dd835e2e4f7dad",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 89,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "heat(w1)",
+        "state_hash": "89d7d8602809a243",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 90,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, press, bench)",
+        "state_hash": "83c031deb0fc769f",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 91,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, press, oven)",
+        "state_hash": "de9ebdfab90c55af",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 92,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, press, dock)",
+        "state_hash": "743524ded01c102d",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 93,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "a69a7a6c0f148518",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 94,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, oven, press)",
+        "state_hash": "78a2221670fa8206",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 95,
+        "depth": 3,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "7baa139a49c2b72d",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 96,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(press)",
+        "state_hash": "f2de4ef2c0afcdca",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 97,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "b5cda60754a88faf",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 98,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "3f825ff5d3ac0bcf",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 99,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "81242b043921e1af",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 100,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "e1f54a0f2ab34d10",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 101,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "cb09577e62dc7ec0",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 102,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "90e85aab13a4f6f6",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 103,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "690d08d9f1d51f83",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 104,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "02e044beed11d9c6",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 105,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "1f8b778e82850566",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 106,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(press)",
+        "state_hash": "1d872bf0b00957f3",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 107,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "6bac8b2e9d495ea6",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 108,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "d96357f3fa8eae9d",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 109,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "e8317b8fbdbd3576",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 110,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "556850e5b5017529",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 111,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "e3e50b738f7d9297",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 112,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "e9c97974ede699fc",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 113,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "0591067740edd62f",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 114,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "71727d8dc093a9a8",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 115,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "62951da408384cc6",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 116,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(press)",
+        "state_hash": "bb933b7fd7c5ff61",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 117,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "6387c747936dd395",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 118,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "93f643e5791d66c5",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 119,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "9a175142bf55be3b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 120,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "21f9c110949cd3d9",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 121,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "7609196017becaee",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 122,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "a26ddea8c3098ebe",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 123,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "a08d3771eb2a9c32",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 124,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "ebe203cc5a867c89",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 125,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "0a2d44ff7290f8e6",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 126,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(oven)",
+        "state_hash": "a76e4ce469110633",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 127,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "708ec035d7c60fc3",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 128,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "bdc51a7f436d19d6",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 129,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "88a6cc86f9055025",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 130,
+        "depth": 4,
+        "g": 4,
+        "h": null,
+        "f": 4,
+        "action": "toggle_power(dock)",
+        "state_hash": "61bfcdef54cbb3cd",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 131,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "bcf43ed3bb7a6ad8",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 132,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "b124992fa2899418",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 133,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "9c27188b5354fcf3",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 134,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "68a2f1446c9ee488",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 135,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "a3a599b5828a4d25",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 136,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "6b19277d2e500ad9",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 137,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "36695ba4c5a37418",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 138,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "e8de86e8be061bad",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 139,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "0ea44d6e462e6ec5",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 140,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "c0f23e85aa916332",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 141,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "0d084d8dcac61581",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 142,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "19b707d859579467",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 143,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "426797fc7e923de1",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 144,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "cb23418588cac0ed",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 145,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "e1464ebe7bb5dc3e",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 146,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "354938c83f47d969",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 147,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "acd3ceba26ceec1e",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 148,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "9d1338bdcda52649",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 149,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "096056ffcaf39f8e",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 150,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "2eeeee77edf88b64",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 151,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "9bd8154efadac5f8",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 152,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "353b980835f4e198",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 153,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "61c65bf7564eb351",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 154,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "c797a68547e87bd7",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 155,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "e9bdb16a57f60b13",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 156,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "8fabc6561d51e290",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 157,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "b421579e443e9121",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 158,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "85b996dfbdcd1b1d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 159,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "94de3ec5107192ad",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 160,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "107712d8dacc44c1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 161,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "b8ff17eaeca8d5e1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 162,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "cb63d8eeedca574f",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 163,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "9e9345d0881b76ee",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 164,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "press(w1)",
+        "state_hash": "b099a9cad61e9d45",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 165,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "d1c8dc58c02e52fd",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 166,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "a5d8f57953e495d2",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 167,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "6d3de82b69db64a5",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 168,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "21c3c366d8fc75ff",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 169,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "0c1f38e9f21210c6",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 170,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "c295bc5ac25cc943",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 171,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "081b67290deec2ef",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 172,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "3c5085e33db2e77c",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 173,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "27f832d40e5735e1",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 174,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "heat(w1)",
+        "state_hash": "48d8d176cb79e010",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 175,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "1c501480ff4faaf0",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 176,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "1a61916755e86b20",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 177,
+        "depth": 2,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "11a991ae5f853b15",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 178,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, bench)",
+        "state_hash": "77b276d5d177a8a9",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 179,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "7f94d7a0f8219928",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 180,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "26c3ac73306c896d",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 181,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, bench)",
+        "state_hash": "8e914ebdccff1884",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 182,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "b4708107d0760ccb",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 183,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "c95d30d418fc6a97",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 184,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, bench)",
+        "state_hash": "d5d1081ae8b253d6",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 185,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "d9c96c8d8eeabda5",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 186,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "4074bfa94b611a96",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 187,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, bench)",
+        "state_hash": "15c1d469668b1f05",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 188,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "a2d658533c3c3e95",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 189,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "8edf0d7fb3c7aa7a",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 190,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, bench)",
+        "state_hash": "b45108eea6cfa57c",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 191,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, oven)",
+        "state_hash": "4c8d3c81afb8352c",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 192,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, press, dock)",
+        "state_hash": "f231c59307eb2ae3",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 193,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "d1d2dde4ffa6fb81",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 194,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "eb1636de3ced69fc",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 195,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "a3ce327dec86f882",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 196,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "44813c931f4f460d",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 197,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "976544eaf5012ad7",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 198,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "7730f601014175bb",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 199,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "afffbd25d7b36d23",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 200,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "73044b6e1d5600ed",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 201,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "9304fb9125aaeb9b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 202,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "b594161237d8aa3f",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 203,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "0d523d971c6b6080",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 204,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "8bc23bae0f306129",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 205,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "bf3a9496e4aa92c1",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 206,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, press)",
+        "state_hash": "3931bc88054f5344",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 207,
+        "depth": 4,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "300ca9136c73d6a3",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 208,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(oven)",
+        "state_hash": "102264d6cf032921",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 209,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "a00d13a4e24033df",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 210,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "ec09c7923ac6bef1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 211,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "f563f38d072da24a",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 212,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "a1d3129c3331d60d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 213,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(oven)",
+        "state_hash": "1bf7b8fb9544cb17",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 214,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "da344cae73911b7e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 215,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "1edf9222bc220ef3",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 216,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "4fe3cf363cfa86e9",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 217,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "b017348741d912ec",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 218,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(oven)",
+        "state_hash": "2ab6790a11cd1b94",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 219,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "19faeb5d8352813f",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 220,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "ffb291af8c027be5",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 221,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "475731baa99b9312",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 222,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "f6d877274bafea26",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 223,
+        "depth": 5,
+        "g": 5,
+        "h": null,
+        "f": 5,
+        "action": "toggle_power(dock)",
+        "state_hash": "44802c6436d30193",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 224,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "70ed48e0008d2fa1",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 225,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "e775c7ae0df97fcd",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 226,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "d9317db40b5ce0c3",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 227,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "0b41c0c334dea6e4",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 228,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "76d3a3b1378df098",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 229,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "d1f87e3a72210467",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 230,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "12b550412be43c0b",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 231,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "b0a9611a6c7dd14b",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 232,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "411972e12afb0f18",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 233,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "f1499732aea4e4ce",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 234,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "872a554658062bda",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 235,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "046629471f220f20",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 236,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "1411a3090eba33d7",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 237,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "1f77853a46df8ce2",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 238,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "b6bf7bdcef4a188d",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 239,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "6859db1b9ddcaf32",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 240,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "6c11ab3daf399c83",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 241,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "52eec859656c3f9a",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 242,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "fa5aca36fe8eaa33",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 243,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "67ba870682bdf42d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 244,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "c4fd23a947531a7b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 245,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "cca4c35097e2099d",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 246,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "5fb058061ad8cb43",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 247,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "928aa3da085044a6",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 248,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "f161c215f927fe06",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 249,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "bb713464e2bdc669",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 250,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "662cb0051fab6843",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 251,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "01efe89033293e28",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 252,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "0ba50ae13e0a185d",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 253,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "ff0afa624c9abbbe",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 254,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "ded03fc614a05a3d",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 255,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "d10351e56250ab88",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 256,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "12085c31d6f033b4",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 257,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "f59afecc5c1b3cea",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 258,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "50d24c6bf1390774",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 259,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "e643f441b8e60306",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 260,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "d076a3c3cb59d5ad",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 261,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "42207120013a49c1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 262,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "144cca92071e011e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 263,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "4c6d7995da6dbde3",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 264,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "86575d1d93a2aec2",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 265,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "54ade3a66fdffb3e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 266,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "99bb781f316ebf7b",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 267,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "641211978ebd400f",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 268,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "e7792aa46a3f148f",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 269,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "405fc08732aa0533",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 270,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "c0345f2e87bd7eb4",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 271,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "cb79f5f0273b6aec",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 272,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "8cbcbad1b9092a0a",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 273,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "cfb1af647e99800a",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 274,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "5bc76329c58dc78c",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 275,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "9708ebf0fe3d7ebf",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 276,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "cbd15202cd734d0a",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 277,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "6a62ef0cb10dd1fd",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 278,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "b546e49959348ef3",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 279,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "d5a1f25bb1803e5a",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 280,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "8ff1801c45d0bdca",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 281,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "2ca7e327da6f43ea",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 282,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "cb8af948dc175b5b",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 283,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "1d96c26949c4fea5",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 284,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "961b47a9759d924d",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 285,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "0210af56ed8bc937",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 286,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "cff58b0841a9e0b9",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 287,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "5d691b82c67b8cb1",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 288,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "aea4605ffebaedc9",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 289,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "dcd3d09fde62c352",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 290,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "e80993917d3504eb",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 291,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "d5cda8d80503f576",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 292,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "e74d780dc687e33b",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 293,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "a0a583857b8cb485",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 294,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "6a79d3fa81107a3a",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 295,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "98366a9627448338",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 296,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, press)",
+        "state_hash": "8d0df3c7938a3b42",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 297,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, oven)",
+        "state_hash": "7f9dd5803784ba14",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 298,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "direct_haul(w1, bench, dock)",
+        "state_hash": "bcefa2d2584b6ce4",
+        "state": [
+          "at(w1, dock)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 299,
+        "depth": 2,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "a8fece4551d3d73f",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 300,
+        "depth": 2,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "f4eb6f0d264ca9a1",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 301,
+        "depth": 4,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "e8dc1f2ad60fb152",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 302,
+        "depth": 4,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "9262c900eeb09502",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 303,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "e4f85c28427bc50c",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 304,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "1280c3f6b9d3412a",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 305,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "e38ac8d0095057cd",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 306,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "49f8f7498c6a0eab",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 307,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "124069735ee9bd90",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 308,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "6692e9b021ae46b7",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 309,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "0ff359ca68bf860c",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 310,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "e603304fe7c4e48a",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 311,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "a8af0e1fe7f32cbb",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 312,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "press(w1)",
+        "state_hash": "25766b2497aeaed1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 313,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "9afc7c558bc71577",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 314,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "eff69ebe8d0ee008",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 315,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "0d070b0f21427066",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 316,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "6397b6dbdf362055",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 317,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "fa2beb0f6a341647",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 318,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "288ffc36689cdf6c",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 319,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "5721b393f897b249",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 320,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "c173e1f4e35a1769",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 321,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "eeacd545773ee73a",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 322,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "heat(w1)",
+        "state_hash": "05a11b7892ff7f08",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 323,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, oven)",
+        "state_hash": "4d3a89bd09cfa76e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)"
+        ]
+      },
+      {
+        "seq": 324,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, dock)",
+        "state_hash": "d729e4f9d848a9ff",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 325,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "cc78c6c5b6eea7a2",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 326,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, press)",
+        "state_hash": "e496e29c6ed65cae",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)"
+        ]
+      },
+      {
+        "seq": 327,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, dock)",
+        "state_hash": "c46ea625a342c306",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 328,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "fec92dc070187737",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 329,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, press)",
+        "state_hash": "39889d771e46304f",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)"
+        ]
+      },
+      {
+        "seq": 330,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, bench, oven)",
+        "state_hash": "d8d28a31ac15277c",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 331,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "bdf5b3defca2536a",
+        "state": [
+          "at(w1, bench)",
+          "clear(oven)",
+          "clear(press)"
+        ]
+      },
+      {
+        "seq": 332,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "9a95695c7a5589e5",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 333,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "c8b424ab141b3be5",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 334,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "4403d89fdcdf02a6",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 335,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "02ddc61419e35d8a",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 336,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "9a9d1a24b3cf7b66",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 337,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "20506ae17d56ccf0",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)"
+        ]
+      },
+      {
+        "seq": 338,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "dfac75b209fda47f",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 339,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "91502cbb9a41d8cc",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 340,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "ac44a7687b1158ab",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 341,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "6f89926c3d5a9875",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 342,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "cc1b4dc48e7ab2f2",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 343,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "8844f48122cf814b",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 344,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "4a17a4ab6a32794b",
+        "state": [
+          "at(w1, oven)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 345,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "438a0b4d64a26866",
+        "state": [
+          "at(w1, dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 346,
+        "depth": 3,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "230306666f239d0f",
+        "state": [
+          "at(w1, press)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 347,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "a792a378afc54434",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 348,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "b25fc6fc7d29bb3f",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 349,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "832dd385e979a0de",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 350,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "5cd683b7800161b1",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 351,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "afca04055a0c0c34",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 352,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "ff7a1cb5b2e7671f",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 353,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "a749a7682167a433",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 354,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "03ba925859369412",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 355,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "5c2eec90acc6e506",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 356,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "67a8d28e0d5a9024",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 357,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "dc44aa2b224ce6dc",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 358,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "14201469de191567",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 359,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "6de37008296b05ec",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 360,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "a66edf6fd41b1cae",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 361,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "bb2397da0bd8c47b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 362,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "81df2776da235237",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 363,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "3425a89406c355fe",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 364,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "9dfd39da83236131",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 365,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "191241fcbf43c25e",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 366,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "2c7d7f2d539d6e9c",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 367,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "254a82e6e69a583c",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 368,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "80571394fd1c4a45",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 369,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "349eaf263b89d479",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 370,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "d07643d5aec708fe",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 371,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "a96607bf89a6eead",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 372,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "88dba5cdaf6627af",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 373,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "44572a8b0265e728",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 374,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, bench)",
+        "state_hash": "6d44285a92e97f24",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 375,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, oven)",
+        "state_hash": "d2f04fa079e0b9a1",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 376,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, press, dock)",
+        "state_hash": "826ecbeafa592d27",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 377,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "d69fee583fce0f17",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 378,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "235693d689e32da3",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 379,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "f0708f888babaf35",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 380,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "f61c44eff513255b",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 381,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "e5a95f401c4ae3cf",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 382,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "7787d6aaa395eba0",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 383,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "d1b3c907ee58b048",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 384,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "90088374f78fb4f0",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 385,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "e7b3003bd75e2555",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 386,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "12a6413090e2ea9f",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 387,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "ae00f2313159deac",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 388,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "ec97b93033f6c0df",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 389,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "db5f3439321caf77",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 390,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "49f6fcfedcf02183",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 391,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "6c2936429ac2e444",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 392,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "21cfabc82f9d70a6",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 393,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "c066752b90db03eb",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 394,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "876973d2bb97fa73",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 395,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "2afc37a72e24ba86",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 396,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "dcce6d29fed15524",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 397,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "42f0b9c7314c99cb",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 398,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "04eb908235b9e796",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 399,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "a5f530d75ca3c67b",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 400,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "ce05d9f33012a233",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 401,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "66b171ff47f0e394",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 402,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "e2b11fb479b6e885",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 403,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "4a8ecf265d7f4f2e",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 404,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, bench)",
+        "state_hash": "ef7402caeebd214a",
+        "state": [
+          "at(w1, bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 405,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, press)",
+        "state_hash": "94cbbf73b4ae8bbc",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 406,
+        "depth": 5,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "move(w1, oven, dock)",
+        "state_hash": "708165bd07d79e85",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "heated(w1)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 407,
+        "depth": 6,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "toggle_power(dock)",
+        "state_hash": "9de7ed2da23fb4cc",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 408,
+        "depth": 6,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "toggle_power(dock)",
+        "state_hash": "2146e612c32fd1ae",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 409,
+        "depth": 6,
+        "g": 6,
+        "h": null,
+        "f": 6,
+        "action": "toggle_power(dock)",
+        "state_hash": "7c719c273a439d5b",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)",
+          "powered(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 410,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "424f2d564287535d",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 411,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "2e53e37a7ed926eb",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 412,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "b439a3a35289be48",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "pressed(w1)"
+        ]
+      },
+      {
+        "seq": 413,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "2e441ae8003e09ad",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 414,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "08822e19f52aed70",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 415,
+        "depth": 3,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "6178c3571ac510c7",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "heated(w1)"
+        ]
+      },
+      {
+        "seq": 416,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "c66294c5ac6e345c",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 417,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "226b9b7e078ad730",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 418,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "ea502821959511d3",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 419,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "74a5df0a036a249e",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 420,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "cf4d695c328ab1cb",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 421,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "48196c98592e6788",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 422,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "3bbac892e4329844",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 423,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "8637f28e0ea501ee",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 424,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "f3bdc62bb5940c56",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 425,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "4ed26d74f7b84b74",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 426,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "9acb67317a29bc93",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 427,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "a72babf704cfc275",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 428,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "2c6579de84c831bd",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 429,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "1cce0e7b06b3dc51",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 430,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "a79767e6cba2c1ba",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 431,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "9414681098e90006",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 432,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "2a37830bfd6f938e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 433,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "24203e6ac2926c8c",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 434,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "c3d20c35df3d6363",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 435,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "63340883d764598a",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 436,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "985e7532098a0936",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 437,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "2738fc67a7dacb55",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 438,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "b877025714c2ac25",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 439,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "5393b45ee27ba8ba",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 440,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "662eaab1fab261f1",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 441,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "15da26651e889b12",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 442,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "ad3d0a273cfefbb8",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 443,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, bench)",
+        "state_hash": "2d6d8cf1093eb4ad",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 444,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, oven)",
+        "state_hash": "36c8936303ecb4da",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 445,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, press, dock)",
+        "state_hash": "1aeb371678361d67",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(oven)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 446,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "a499d27c8385b3ac",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 447,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "0118cb9a02ceedbd",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 448,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "beeb177f7b5f00c6",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 449,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "977dcbc1ad5694c1",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 450,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "2da2a130bf1427ad",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 451,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "fc582edeb74e9166",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 452,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "76a13174c08fccb0",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 453,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "48d92e1b88c81eff",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 454,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "f8416e2c82b52e20",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 455,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "32eda7e7ca08439b",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 456,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "4ff89f5a5ca73da5",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 457,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "88fd6c113e4b3a77",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 458,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "e540e408a45e985b",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 459,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "0cdf91dcaf624c88",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 460,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "0b4dc26edadd4cbc",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 461,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "82729dcf8b60e2d9",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 462,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "307a276f02aafbbb",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 463,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "97fd7ed3866690ee",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 464,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "47ff62a38826da1f",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 465,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "ac06107c49788e7b",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 466,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "14eb85f30db1fd32",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 467,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "518d51158f1f9838",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 468,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "b931199e405c7741",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 469,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "75f5b47214ce6871",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 470,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "1ed870f0d54ff556",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 471,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "a1924e9ad806868f",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 472,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "9b1082df778d3486",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 473,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, bench)",
+        "state_hash": "7c3b3abeaab03940",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 474,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, press)",
+        "state_hash": "7dfc068f9823d7f4",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 475,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, oven, dock)",
+        "state_hash": "7060199a9a8fffb4",
+        "state": [
+          "at(w1, dock)",
+          "clear(bench)",
+          "clear(dock)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 476,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "f602017c7cac3c22",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 477,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "c61dc6a67af1fb20",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 478,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "926ea8154b6d558e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 479,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "eb56d96a0af916d2",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 480,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "0017ad46af319973",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 481,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "daf88a79a59a0ff6",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(press)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 482,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "6fdaf9ef3a679df6",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 483,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "f73e33f3b5477037",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 484,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "ec61310ff92783bf",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 485,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "93d0beab555be851",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 486,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "e910dcf292c0d113",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 487,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "18fc1965df14be64",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(w1)"
+        ]
+      },
+      {
+        "seq": 488,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "e4946d4e24fd94f2",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 489,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "32a18f088dfa2f6e",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 490,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "98495dfe8db98399",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 491,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "198aebc12044cd08",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 492,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "9011ff71b67028e1",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 493,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "d6321b3ab696d1af",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(oven)"
+        ]
+      },
+      {
+        "seq": 494,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "6221452236c109f5",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 495,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "87f186a216d14abf",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 496,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "8378c5f97660ae4e",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(bench)",
+          "powered(dock)"
+        ]
+      },
+      {
+        "seq": 497,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "c5c67c6878c6a01c",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 498,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, press)",
+        "state_hash": "729d8d040b741147",
+        "state": [
+          "at(w1, press)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 499,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, oven)",
+        "state_hash": "0e33e92c1bc409f9",
+        "state": [
+          "at(w1, oven)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(oven)",
+          "powered(press)"
+        ]
+      },
+      {
+        "seq": 500,
+        "depth": 4,
+        "g": 7,
+        "h": null,
+        "f": 7,
+        "action": "direct_haul(w1, dock, bench)",
+        "state_hash": "85088bca0f13543b",
+        "state": [
+          "at(w1, bench)",
+          "clear(bench)",
+          "clear(oven)",
+          "clear(press)",
+          "powered(dock)",
+          "powered(press)"
+        ]
+      }
+    ],
+    "states": {
+      "initial_hash": "efd91d3de59c4683",
+      "initial": [
+        "at(w1, bench)",
+        "clear(dock)",
+        "clear(oven)",
+        "clear(press)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "http_status": 200,
+  "response": {
+    "run_id": "run-20260928T010749-b4b6ede0",
+    "verdict": "solved",
+    "reason": null,
+    "optimal_guarantee": true,
+    "plan": [
+      {
+        "name": "walk",
+        "args": [
+          "a",
+          "b"
+        ],
+        "cost": 1
+      },
+      {
+        "name": "walk",
+        "args": [
+          "b",
+          "c"
+        ],
+        "cost": 1
+      },
+      {
+        "name": "walk",
+        "args": [
+          "c",
+          "d"
+        ],
+        "cost": 1
+      }
+    ],
+    "cost": 3,
+    "path_length": 3,
+    "verification": {
+      "valid": true,
+      "goal_reached": true,
+      "total_cost": 3,
+      "steps": [
+        {
+          "index": 0,
+          "action": "walk(a, b)",
+          "cost": 1,
+          "state_before": [
+            "at(a)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ],
+          "state_after": [
+            "at(b)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ]
+        },
+        {
+          "index": 1,
+          "action": "walk(b, c)",
+          "cost": 1,
+          "state_before": [
+            "at(b)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ],
+          "state_after": [
+            "at(c)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ]
+        },
+        {
+          "index": 2,
+          "action": "walk(c, d)",
+          "cost": 1,
+          "state_before": [
+            "at(c)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ],
+          "state_after": [
+            "at(d)",
+            "edge(a, b)",
+            "edge(b, c)",
+            "edge(c, d)",
+            "fastlink(a, d)"
+          ]
+        }
+      ],
+      "failure": null
+    },
+    "search": {
+      "status": "solved",
+      "cost": 3,
+      "path_length": 3,
+      "expanded": 4,
+      "generated": 4,
+      "reopened": 1,
+      "pruned_dead_end": 0,
+      "frontier_peak": 2,
+      "optimal_guarantee": true,
+      "reason": null,
+      "bounds": {
+        "max_expansions": 100000,
+        "max_frontier": 100000,
+        "max_depth": null,
+        "time_limit_seconds": 30.0
+      },
+      "elapsed_seconds": 0.000127
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "depth": 0,
+        "g": 0,
+        "h": 0,
+        "f": 0,
+        "action": null,
+        "state_hash": "978b33d7132b1d77",
+        "state": [
+          "at(a)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      },
+      {
+        "seq": 2,
+        "depth": 1,
+        "g": 1,
+        "h": 0,
+        "f": 1,
+        "action": "walk(a, b)",
+        "state_hash": "6ad4dfa49e90eddc",
+        "state": [
+          "at(b)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      },
+      {
+        "seq": 3,
+        "depth": 2,
+        "g": 2,
+        "h": 0,
+        "f": 2,
+        "action": "walk(b, c)",
+        "state_hash": "9645b1e6f75eec81",
+        "state": [
+          "at(c)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      },
+      {
+        "seq": 4,
+        "depth": 3,
+        "g": 3,
+        "h": 0,
+        "f": 3,
+        "action": "walk(c, d)",
+        "state_hash": "10ec396616d11008",
+        "state": [
+          "at(d)",
+          "edge(a, b)",
+          "edge(b, c)",
+          "edge(c, d)",
+          "fastlink(a, d)"
+        ]
+      }
+    ],
+    "states": {
+      "initial_hash": "978b33d7132b1d77",
+      "initial": [
+        "at(a)",
+        "edge(a, b)",
+        "edge(b, c)",
+        "edge(c, d)",
+        "fastlink(a, d)"
+      ]
+    }
+  }
+}

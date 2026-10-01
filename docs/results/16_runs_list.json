@@ -1,0 +1,79 @@
+{
+  "runs": [
+    {
+      "run_id": "run-20260928T010749-5777c94c",
+      "created_at": 1790528870.2839565,
+      "domain_name": "resource-ops",
+      "problem_name": "solvable-build-and-ship",
+      "algorithm": "ucs",
+      "heuristic": "zero",
+      "status": "ok",
+      "result_status": "solved",
+      "reason": null,
+      "cost": 8,
+      "path_length": 6,
+      "expanded": 5316,
+      "elapsed_seconds": 0.5770116640014749
+    },
+    {
+      "run_id": "run-20260928T010749-e382cdf5",
+      "created_at": 1790528869.655401,
+      "domain_name": null,
+      "problem_name": null,
+      "algorithm": null,
+      "heuristic": null,
+      "status": "input_error",
+      "result_status": null,
+      "reason": null,
+      "cost": null,
+      "path_length": null,
+      "expanded": null,
+      "elapsed_seconds": 0.0
+    },
+    {
+      "run_id": "run-20260928T010749-366460fa",
+      "created_at": 1790528869.6492958,
+      "domain_name": "route-graph",
+      "problem_name": "cheap-long-vs-expensive-short",
+      "algorithm": null,
+      "heuristic": null,
+      "status": "resource_exhausted",
+      "result_status": null,
+      "reason": null,
+      "cost": null,
+      "path_length": null,
+      "expanded": null,
+      "elapsed_seconds": 0.00023922200125525706
+    },
+    {
+      "run_id": "run-20260928T010749-cca94162",
+      "created_at": 1790528869.6442509,
+      "domain_name": "d",
+      "problem_name": "p",
+      "algorithm": null,
+      "heuristic": null,
+      "status": "input_error",
+      "result_status": null,
+      "reason": null,
+      "cost": null,
+      "path_length": null,
+      "expanded": null,
+      "elapsed_seconds": 0.00010751899753813632
+    },
+    {
+      "run_id": "run-20260928T010749-068e1cb4",
+      "created_at": 1790528869.6394362,
+      "domain_name": "resource-ops",
+      "problem_name": "solvable-build-and-ship",
+      "algorithm": null,
+      "heuristic": null,
+      "status": "input_error",
+      "result_status": null,
+      "reason": null,
+      "cost": null,
+      "path_length": null,
+      "expanded": null,
+      "elapsed_seconds": 0.00031878599838819355
+    }
+  ]
+}

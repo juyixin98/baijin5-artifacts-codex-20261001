@@ -1,0 +1,18 @@
+{
+  "http_status": 422,
+  "response": {
+    "run_id": "run-20260928T010749-cca94162",
+    "error": {
+      "category": "input_error",
+      "code": "EFFECT_ADD_DELETE_CONFLICT",
+      "message": "validation failed with 1 issue(s): EFFECT_ADD_DELETE_CONFLICT",
+      "details": [
+        {
+          "code": "EFFECT_ADD_DELETE_CONFLICT",
+          "source": "action a",
+          "message": "action both adds and deletes q(?x); fixed rule forbids it"
+        }
+      ]
+    }
+  }
+}
