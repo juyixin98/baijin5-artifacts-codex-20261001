@@ -1,0 +1,22 @@
+fixture           : fixture_hierarchy.json
+engine            : miniowl-kernel/1.0.0
+rules / base facts: 11 / 2
+reasoning time    : 0.306 ms
+----------------------------------------------------------------
+ontology inconsistent : False
+unsatisfiable classes : []
+equivalence groups    : [['HomoSapiens', 'Human', 'Person']]
+entailed super-classes:
+    Animal           -> ['Organism']
+    Cat              -> ['Animal', 'Mammal', 'Organism']
+    Dog              -> ['Animal', 'Mammal', 'Organism']
+    HomoSapiens      -> ['Animal', 'Human', 'Mammal', 'Organism', 'Person']
+    Human            -> ['Animal', 'HomoSapiens', 'Mammal', 'Organism', 'Person']
+    Mammal           -> ['Animal', 'Organism']
+    Organism         -> []
+    Person           -> ['Animal', 'HomoSapiens', 'Human', 'Mammal', 'Organism']
+individuals:
+    alice      types=['Animal', 'HomoSapiens', 'Human', 'Mammal', 'Organism', 'Person']
+    rex        types=['Animal', 'Dog', 'Mammal', 'Organism']
+----------------------------------------------------------------
+independent oracle: labels_explored=256 agrees=True

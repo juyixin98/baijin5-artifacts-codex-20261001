@@ -1,0 +1,21 @@
+fixture           : fixture_intersection_disjoint.json
+engine            : miniowl-kernel/1.0.0
+rules / base facts: 12 / 4
+reasoning time    : 0.254 ms
+----------------------------------------------------------------
+ontology inconsistent : False
+unsatisfiable classes : ['Hermaphrodite']
+equivalence groups    : []
+entailed super-classes:
+    Father           -> ['Male', 'Parent']
+    Female           -> []
+    Hermaphrodite    -> ['Female', 'Male']
+    Male             -> []
+    Mother           -> ['Female', 'Parent']
+    Parent           -> []
+individuals:
+    bob        types=['Father', 'Male', 'Parent']
+    carol      types=['Female', 'Mother', 'Parent']
+    dave       types=['Male']
+----------------------------------------------------------------
+independent oracle: labels_explored=64 agrees=True

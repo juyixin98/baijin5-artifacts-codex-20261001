@@ -1,0 +1,53 @@
+INFO:     Started server process [145525]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8011 (Press CTRL+C to quit)
+2026-09-28 03:12:46,138 INFO miniowl [request_id=req-75d3e93cf53c48a8] request received GET /health
+2026-09-28 03:12:46,142 INFO miniowl [request_id=req-75d3e93cf53c48a8] request completed status=200 elapsed_ms=4.38
+INFO:     127.0.0.1:32862 - "GET /health HTTP/1.1" 200 OK
+2026-09-28 03:12:46,153 INFO miniowl [request_id=req-fd1955cd998f4878] request received GET /health
+2026-09-28 03:12:46,156 INFO miniowl [request_id=req-fd1955cd998f4878] request completed status=200 elapsed_ms=2.87
+INFO:     127.0.0.1:32874 - "GET /health HTTP/1.1" 200 OK
+2026-09-28 03:12:46,167 INFO miniowl [request_id=repro-hierarchy] request received POST /ontologies
+2026-09-28 03:12:46,174 INFO miniowl [request_id=repro-hierarchy] stored ontology fixture-hierarchy with 8 axioms
+2026-09-28 03:12:46,178 INFO miniowl [request_id=repro-hierarchy] request completed status=201 elapsed_ms=9.80
+INFO:     127.0.0.1:32886 - "POST /ontologies HTTP/1.1" 201 Created
+2026-09-28 03:12:46,190 INFO miniowl [request_id=repro-hierarchy] request received POST /ontologies/fixture-hierarchy/reason
+2026-09-28 03:12:46,205 INFO miniowl [request_id=repro-hierarchy] request completed status=200 elapsed_ms=15.26
+INFO:     127.0.0.1:32896 - "POST /ontologies/fixture-hierarchy/reason HTTP/1.1" 200 OK
+2026-09-28 03:12:46,220 INFO miniowl [request_id=repro-unsat] request received POST /ontologies
+2026-09-28 03:12:46,228 INFO miniowl [request_id=repro-unsat] stored ontology fixture-unsat-but-consistent with 11 axioms
+2026-09-28 03:12:46,232 INFO miniowl [request_id=repro-unsat] request completed status=201 elapsed_ms=13.08
+INFO:     127.0.0.1:32902 - "POST /ontologies HTTP/1.1" 201 Created
+2026-09-28 03:12:46,244 INFO miniowl [request_id=repro-unsat] request received POST /ontologies/fixture-unsat-but-consistent/reason
+2026-09-28 03:12:46,258 INFO miniowl [request_id=repro-unsat] request completed status=200 elapsed_ms=14.54
+INFO:     127.0.0.1:32908 - "POST /ontologies/fixture-unsat-but-consistent/reason HTTP/1.1" 200 OK
+2026-09-28 03:12:46,271 INFO miniowl [request_id=repro-mutex] request received POST /ontologies
+2026-09-28 03:12:46,278 INFO miniowl [request_id=repro-mutex] stored ontology fixture-mutex-instance with 8 axioms
+2026-09-28 03:12:46,280 INFO miniowl [request_id=repro-mutex] request completed status=201 elapsed_ms=11.21
+INFO:     127.0.0.1:32912 - "POST /ontologies HTTP/1.1" 201 Created
+2026-09-28 03:12:46,293 INFO miniowl [request_id=repro-mutex] request received POST /ontologies/fixture-mutex-instance/reason
+2026-09-28 03:12:46,313 INFO miniowl [request_id=repro-mutex] request completed status=200 elapsed_ms=16.88
+INFO:     127.0.0.1:32920 - "POST /ontologies/fixture-mutex-instance/reason HTTP/1.1" 200 OK
+2026-09-28 03:12:46,332 INFO miniowl [request_id=req-59a034351e8542fb] request received POST /ontologies/fixture-mutex-instance/query
+2026-09-28 03:12:46,340 INFO miniowl [request_id=req-59a034351e8542fb] request completed status=200 elapsed_ms=7.19
+INFO:     127.0.0.1:32930 - "POST /ontologies/fixture-mutex-instance/query?individual=mallory HTTP/1.1" 200 OK
+2026-09-28 03:12:46,355 INFO miniowl [request_id=req-a6edbe27f0244f2f] request received POST /ontologies
+2026-09-28 03:12:46,362 INFO miniowl [request_id=req-a6edbe27f0244f2f] request completed status=422 elapsed_ms=7.11
+INFO:     127.0.0.1:32940 - "POST /ontologies HTTP/1.1" 422 Unprocessable Entity
+2026-09-28 03:12:46,375 INFO miniowl [request_id=req-1f39a63e4cc54abb] request received POST /ontologies/does-not-exist/reason
+2026-09-28 03:12:46,379 INFO miniowl [request_id=req-1f39a63e4cc54abb] request completed status=404 elapsed_ms=3.92
+INFO:     127.0.0.1:32950 - "POST /ontologies/does-not-exist/reason HTTP/1.1" 404 Not Found
+2026-09-28 03:12:46,391 INFO miniowl [request_id=req-71d36f3652ac4178] request received POST /ontologies/fixture-hierarchy/query
+2026-09-28 03:12:46,395 INFO miniowl [request_id=req-71d36f3652ac4178] request completed status=404 elapsed_ms=5.16
+INFO:     127.0.0.1:32956 - "POST /ontologies/fixture-hierarchy/query?individual=ghost HTTP/1.1" 404 Not Found
+2026-09-28 03:12:46,410 INFO miniowl [request_id=req-b343e7beebec44bd] request received POST /ontologies
+2026-09-28 03:12:46,415 INFO miniowl [request_id=req-b343e7beebec44bd] request completed status=409 elapsed_ms=5.32
+INFO:     127.0.0.1:32972 - "POST /ontologies HTTP/1.1" 409 Conflict
+2026-09-28 03:12:46,427 INFO miniowl [request_id=req-350ad9f8344d4f34] request received GET /requests/repro-mutex
+2026-09-28 03:12:46,430 INFO miniowl [request_id=req-350ad9f8344d4f34] request completed status=200 elapsed_ms=3.69
+INFO:     127.0.0.1:32984 - "GET /requests/repro-mutex HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [145525]

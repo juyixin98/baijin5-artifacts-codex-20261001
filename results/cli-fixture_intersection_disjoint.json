@@ -1,0 +1,269 @@
+{
+  "ontology_id": "fixture_intersection_disjoint",
+  "engine_version": "miniowl-kernel/1.0.0",
+  "reasoning_ms": 0.326,
+  "state": {
+    "ontology_inconsistent": false,
+    "unsatisfiable_classes": [
+      "Hermaphrodite"
+    ],
+    "note": "class unsatisfiability is independent of ontology inconsistency"
+  },
+  "steps": [
+    {
+      "step": "compile",
+      "status": "ok",
+      "detail": "12 rules, 4 base facts"
+    },
+    {
+      "step": "saturate",
+      "status": "ok",
+      "detail": "3 individuals saturated"
+    },
+    {
+      "step": "equivalence_partition",
+      "status": "ok",
+      "detail": "0 non-trivial group(s)"
+    },
+    {
+      "step": "oracle_cross_check",
+      "status": "ok",
+      "detail": "independent finite-model enumeration agreed"
+    }
+  ],
+  "results": {
+    "class_hierarchy": {
+      "Father": [
+        "Male",
+        "Parent"
+      ],
+      "Female": [],
+      "Hermaphrodite": [
+        "Female",
+        "Male"
+      ],
+      "Male": [],
+      "Mother": [
+        "Female",
+        "Parent"
+      ],
+      "Parent": []
+    },
+    "equivalence_classes": [],
+    "individuals": [
+      {
+        "individual": "bob",
+        "types": [
+          "Father",
+          "Male",
+          "Parent"
+        ],
+        "proofs": {
+          "Father": {
+            "node": "derived",
+            "predicate": "Father",
+            "rule_id": "r0001",
+            "rule_kind": "sub",
+            "source_axiom": "a001",
+            "sources": [
+              "a009",
+              "a001"
+            ],
+            "children": [
+              {
+                "node": "fact",
+                "predicate": "Parent",
+                "source_axiom": "a009"
+              },
+              {
+                "node": "fact",
+                "predicate": "Male",
+                "source_axiom": "a009"
+              }
+            ]
+          },
+          "Male": {
+            "node": "fact",
+            "predicate": "Male",
+            "source_axiom": "a009"
+          },
+          "Parent": {
+            "node": "fact",
+            "predicate": "Parent",
+            "source_axiom": "a009"
+          }
+        }
+      },
+      {
+        "individual": "carol",
+        "types": [
+          "Female",
+          "Mother",
+          "Parent"
+        ],
+        "proofs": {
+          "Female": {
+            "node": "derived",
+            "predicate": "Female",
+            "rule_id": "r0009",
+            "rule_kind": "sub",
+            "source_axiom": "a005",
+            "sources": [
+              "a010",
+              "a005"
+            ],
+            "children": [
+              {
+                "node": "fact",
+                "predicate": "Mother",
+                "source_axiom": "a010"
+              }
+            ]
+          },
+          "Mother": {
+            "node": "fact",
+            "predicate": "Mother",
+            "source_axiom": "a010"
+          },
+          "Parent": {
+            "node": "derived",
+            "predicate": "Parent",
+            "rule_id": "r0008",
+            "rule_kind": "sub",
+            "source_axiom": "a005",
+            "sources": [
+              "a010",
+              "a005"
+            ],
+            "children": [
+              {
+                "node": "fact",
+                "predicate": "Mother",
+                "source_axiom": "a010"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "individual": "dave",
+        "types": [
+          "Male"
+        ],
+        "proofs": {
+          "Male": {
+            "node": "fact",
+            "predicate": "Male",
+            "source_axiom": "a011"
+          }
+        }
+      }
+    ]
+  },
+  "failures": [
+    {
+      "code": "UNSATISFIABLE_CLASS",
+      "severity": "CLASS_LEVEL",
+      "class": "Hermaphrodite",
+      "message": "class 'Hermaphrodite' is unsatisfiable (no instance can exist)",
+      "conflict": {
+        "code": "MUTEX_INSTANCE_CONFLICT",
+        "disjoint_axiom": "a004",
+        "disjoint_pair": [
+          "Male",
+          "Female"
+        ],
+        "firing_rule": "r0007",
+        "sources": [
+          "a007",
+          "a008",
+          "a004"
+        ],
+        "conflict_path": [
+          {
+            "node": "derived",
+            "predicate": "Male",
+            "rule_id": "r0011",
+            "rule_kind": "sub",
+            "source_axiom": "a007",
+            "sources": [
+              "a007"
+            ],
+            "children": [
+              {
+                "node": "hypothesis",
+                "predicate": "Hermaphrodite",
+                "source_axiom": "__hypothesis__"
+              }
+            ]
+          },
+          {
+            "node": "derived",
+            "predicate": "Female",
+            "rule_id": "r0012",
+            "rule_kind": "sub",
+            "source_axiom": "a008",
+            "sources": [
+              "a008"
+            ],
+            "children": [
+              {
+                "node": "hypothesis",
+                "predicate": "Hermaphrodite",
+                "source_axiom": "__hypothesis__"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "uncertain": [],
+  "cross_check": {
+    "agrees": true,
+    "labels_explored": 64,
+    "kernel": {
+      "unsatisfiable_classes": [
+        "Hermaphrodite"
+      ],
+      "ontology_inconsistent": false,
+      "individual_types": {
+        "bob": [
+          "Father",
+          "Male",
+          "Parent"
+        ],
+        "carol": [
+          "Female",
+          "Mother",
+          "Parent"
+        ],
+        "dave": [
+          "Male"
+        ]
+      }
+    },
+    "oracle": {
+      "unsatisfiable_classes": [
+        "Hermaphrodite"
+      ],
+      "ontology_inconsistent": false,
+      "individual_entailed_types": {
+        "bob": [
+          "Father",
+          "Male",
+          "Parent"
+        ],
+        "carol": [
+          "Female",
+          "Mother",
+          "Parent"
+        ],
+        "dave": [
+          "Male"
+        ]
+      }
+    },
+    "mismatches": []
+  }
+}

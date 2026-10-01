@@ -1,0 +1,21 @@
+fixture           : fixture_mutex_instance.json
+engine            : miniowl-kernel/1.0.0
+rules / base facts: 7 / 3
+reasoning time    : 0.161 ms
+----------------------------------------------------------------
+ontology inconsistent : True
+unsatisfiable classes : []
+equivalence groups    : []
+entailed super-classes:
+    Father           -> ['Male', 'Parent']
+    Female           -> []
+    Male             -> []
+    Mother           -> ['Female', 'Parent']
+    Parent           -> []
+individuals:
+    mallory    types=['Father', 'Female', 'Male', 'Mother', 'Parent']  *** MUTEX CONFLICT ***
+        disjoint pair : ['Male', 'Female']
+        axiom sources : ['a007', 'a003', 'a006', 'a001', 'a005']
+    nina       types=['Female']
+----------------------------------------------------------------
+independent oracle: labels_explored=32 agrees=True
