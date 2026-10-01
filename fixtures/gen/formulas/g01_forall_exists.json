@@ -1,0 +1,24 @@
+{
+  "inner": {
+    "inner": {
+      "args": [
+        {
+          "name": "d",
+          "t": "var"
+        },
+        {
+          "name": "s",
+          "t": "var"
+        }
+      ],
+      "name": "edge",
+      "op": "pred"
+    },
+    "op": "exists",
+    "sort": "S",
+    "var": "s"
+  },
+  "op": "forall",
+  "sort": "D",
+  "var": "d"
+}

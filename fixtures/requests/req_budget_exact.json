@@ -1,0 +1,8 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f10_budget_mid.json",
+  "run_id": "budget-exact",
+  "budget": 9,
+  "allow_empty_domain": false,
+  "node_cap": 5000
+}

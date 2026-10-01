@@ -1,0 +1,719 @@
+{
+  "run_id": "success-shadow",
+  "verdict": "true",
+  "reason": "fully expanded with 12 instantiations; ground evaluation is true",
+  "instantiations_used": 12,
+  "instantiation_budget": 18446744073709551615,
+  "residual_quantifiers": 0,
+  "expanded_formula": {
+    "op": "and",
+    "children": [
+      {
+        "op": "or",
+        "children": [
+          {
+            "op": "pred",
+            "name": "p",
+            "args": [
+              {
+                "t": "elem",
+                "value": "x1",
+                "sort": "X"
+              }
+            ]
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x1",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x2",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          }
+        ]
+      },
+      {
+        "op": "or",
+        "children": [
+          {
+            "op": "pred",
+            "name": "p",
+            "args": [
+              {
+                "t": "elem",
+                "value": "x2",
+                "sort": "X"
+              }
+            ]
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x1",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x2",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          }
+        ]
+      },
+      {
+        "op": "or",
+        "children": [
+          {
+            "op": "pred",
+            "name": "p",
+            "args": [
+              {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            ]
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x1",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x2",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          },
+          {
+            "op": "eq",
+            "left": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            },
+            "right": {
+              "t": "elem",
+              "value": "x3",
+              "sort": "X"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "proof": {
+    "run_id": "success-shadow",
+    "created_unix_nanos": 1790841810070055482,
+    "model_name": "inline-model",
+    "original_formula": {
+      "op": "forall",
+      "var": "x",
+      "sort": "X",
+      "inner": {
+        "op": "or",
+        "children": [
+          {
+            "op": "pred",
+            "name": "p",
+            "args": [
+              {
+                "t": "var",
+                "name": "x"
+              }
+            ]
+          },
+          {
+            "op": "exists",
+            "var": "x",
+            "sort": "X",
+            "inner": {
+              "op": "eq",
+              "left": {
+                "t": "var",
+                "name": "x"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "allow_empty_domain": false,
+    "instantiation_budget": 18446744073709551615,
+    "instantiations_used": 12,
+    "node_cap": 5000,
+    "expanded_formula": {
+      "op": "and",
+      "children": [
+        {
+          "op": "or",
+          "children": [
+            {
+              "op": "pred",
+              "name": "p",
+              "args": [
+                {
+                  "t": "elem",
+                  "value": "x1",
+                  "sort": "X"
+                }
+              ]
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x1",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x2",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "children": [
+            {
+              "op": "pred",
+              "name": "p",
+              "args": [
+                {
+                  "t": "elem",
+                  "value": "x2",
+                  "sort": "X"
+                }
+              ]
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x1",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x2",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            }
+          ]
+        },
+        {
+          "op": "or",
+          "children": [
+            {
+              "op": "pred",
+              "name": "p",
+              "args": [
+                {
+                  "t": "elem",
+                  "value": "x3",
+                  "sort": "X"
+                }
+              ]
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x1",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x2",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            },
+            {
+              "op": "eq",
+              "left": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              },
+              "right": {
+                "t": "elem",
+                "value": "x3",
+                "sort": "X"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "residual_quantifiers": 0,
+    "verdict": "true",
+    "reason": "fully expanded with 12 instantiations; ground evaluation is true",
+    "steps": [
+      {
+        "event": "note",
+        "seq": 1,
+        "text": "start success-shadow allow_empty_domain=false budget=18446744073709551615 node_cap=5000"
+      },
+      {
+        "event": "expand_start",
+        "seq": 2,
+        "quantifier": "forall",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "instantiate",
+        "seq": 3,
+        "quantifier": "forall",
+        "var": "x",
+        "value": "x1",
+        "used": 1,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_start",
+        "seq": 4,
+        "quantifier": "exists",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "instantiate",
+        "seq": 5,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x1",
+        "used": 2,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 6,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x2",
+        "used": 3,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 7,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x3",
+        "used": 4,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_done",
+        "seq": 8,
+        "quantifier": "exists",
+        "instances": 3,
+        "remaining_budget": 18446744073709551611
+      },
+      {
+        "event": "instantiate",
+        "seq": 9,
+        "quantifier": "forall",
+        "var": "x",
+        "value": "x2",
+        "used": 5,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_start",
+        "seq": 10,
+        "quantifier": "exists",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "instantiate",
+        "seq": 11,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x1",
+        "used": 6,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 12,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x2",
+        "used": 7,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 13,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x3",
+        "used": 8,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_done",
+        "seq": 14,
+        "quantifier": "exists",
+        "instances": 3,
+        "remaining_budget": 18446744073709551607
+      },
+      {
+        "event": "instantiate",
+        "seq": 15,
+        "quantifier": "forall",
+        "var": "x",
+        "value": "x3",
+        "used": 9,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_start",
+        "seq": 16,
+        "quantifier": "exists",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "instantiate",
+        "seq": 17,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x1",
+        "used": 10,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 18,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x2",
+        "used": 11,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "instantiate",
+        "seq": 19,
+        "quantifier": "exists",
+        "var": "x",
+        "value": "x3",
+        "used": 12,
+        "limit": 18446744073709551615
+      },
+      {
+        "event": "expand_done",
+        "seq": 20,
+        "quantifier": "exists",
+        "instances": 3,
+        "remaining_budget": 18446744073709551603
+      },
+      {
+        "event": "expand_done",
+        "seq": 21,
+        "quantifier": "forall",
+        "instances": 3,
+        "remaining_budget": 18446744073709551603
+      },
+      {
+        "event": "eval_term",
+        "seq": 22,
+        "term": "x1",
+        "value": "x1"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 23,
+        "atom": "p(x1)",
+        "value": true
+      },
+      {
+        "event": "eval_term",
+        "seq": 24,
+        "term": "x2",
+        "value": "x2"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 25,
+        "atom": "p(x2)",
+        "value": true
+      },
+      {
+        "event": "eval_term",
+        "seq": 26,
+        "term": "x3",
+        "value": "x3"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 27,
+        "atom": "p(x3)",
+        "value": false
+      },
+      {
+        "event": "eval_term",
+        "seq": 28,
+        "term": "x1",
+        "value": "x1"
+      },
+      {
+        "event": "eval_term",
+        "seq": 29,
+        "term": "x3",
+        "value": "x3"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 30,
+        "atom": "x1 = x3",
+        "value": false
+      },
+      {
+        "event": "eval_term",
+        "seq": 31,
+        "term": "x2",
+        "value": "x2"
+      },
+      {
+        "event": "eval_term",
+        "seq": 32,
+        "term": "x3",
+        "value": "x3"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 33,
+        "atom": "x2 = x3",
+        "value": false
+      },
+      {
+        "event": "eval_term",
+        "seq": 34,
+        "term": "x3",
+        "value": "x3"
+      },
+      {
+        "event": "eval_term",
+        "seq": 35,
+        "term": "x3",
+        "value": "x3"
+      },
+      {
+        "event": "eval_atom",
+        "seq": 36,
+        "atom": "x3 = x3",
+        "value": true
+      },
+      {
+        "event": "eval_formula",
+        "seq": 37,
+        "verdict": "true",
+        "reason": "expanded formula is quantifier free"
+      }
+    ]
+  },
+  "check_report": {
+    "run_id": "success-shadow",
+    "ok": true,
+    "reference_truth": true,
+    "claimed_verdict": "true",
+    "replayed_instantiations": 12,
+    "recorded_instantiations": 12,
+    "residual_quantifiers": 0,
+    "checks": [
+      {
+        "name": "model_valid",
+        "passed": true,
+        "detail": "sorts, constants, functions and predicates are internally consistent"
+      },
+      {
+        "name": "formula_well_formed",
+        "passed": true,
+        "detail": "original formula type checks against the model"
+      },
+      {
+        "name": "instantiation_accounting",
+        "passed": true,
+        "detail": "replayed 12 instantiations; record claims 12; monotonic=true"
+      },
+      {
+        "name": "residual_count",
+        "passed": true,
+        "detail": "expanded formula contains 0 quantifiers; record claims 0"
+      },
+      {
+        "name": "verdict_matches_reference",
+        "passed": true,
+        "detail": "independent recursion says true; record claims true"
+      },
+      {
+        "name": "definite_means_quantifier_free",
+        "passed": true,
+        "detail": "definite verdict backed by quantifier free expansion"
+      },
+      {
+        "name": "unknown_keeps_quantifier",
+        "passed": true,
+        "detail": "unknown records retain at least one quantifier"
+      },
+      {
+        "name": "exhaustion_consistent",
+        "passed": true,
+        "detail": "budget exhaustion only accompanies unknown verdicts"
+      }
+    ]
+  }
+}

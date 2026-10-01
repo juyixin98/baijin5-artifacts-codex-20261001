@@ -1,0 +1,8 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "run_id": "bad-free",
+  "allow_empty_domain": false,
+  "formula": { "op": "forall", "var": "x", "sort": "X",
+    "inner": { "op": "pred", "name": "q",
+      "args": [ { "t": "var", "name": "x" }, { "t": "var", "name": "w" } ] } }
+}

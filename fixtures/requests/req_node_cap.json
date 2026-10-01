@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f12_budget_stress.json",
+  "run_id": "node-cap",
+  "node_cap": 5,
+  "allow_empty_domain": false
+}

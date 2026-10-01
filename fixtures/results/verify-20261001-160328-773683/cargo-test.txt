@@ -1,0 +1,54 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running unittests src/lib.rs (target/debug/deps/fologic-6b5b4b445decbbbf)
+
+running 11 tests
+test expand::tests::connective_splices_completed_sibling ... ok
+test expand::tests::empty_domain_collapses_without_budget_spend ... ok
+test expand::tests::full_expansion_is_quantifier_free ... ok
+test expand::tests::insufficient_budget_retains_quantifier ... ok
+test expand::tests::nested_abort_rolls_back_parent_and_keeps_root ... ok
+test expand::tests::node_cap_guards_expanded_size ... ok
+test subst::tests::alpha_renames_to_avoid_capture ... ok
+test subst::tests::fresh_name_avoids_used_set ... ok
+test subst::tests::nested_shadow_renames_only_offending_binder ... ok
+test subst::tests::shadowing_binding_blocks_substitution ... ok
+test subst::tests::substitutes_free_occurrences_only ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/fologic-685a5ae0b521b1f5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/generated.rs (target/debug/deps/generated-d38d752b102de985)
+
+running 2 tests
+test generated_empty_formula_denied_by_policy ... ok
+test generated_fixtures_have_expected_truth_and_expansion_agrees ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/golden.rs (target/debug/deps/golden-031745a117497194)
+
+running 10 tests
+test model_validation_rejects_bad_fixture ... ok
+test empty_domain_policy_is_explicit_and_distinguished ... ok
+test partial_function_undefined_tuple_is_computation_failure ... ok
+test checker_detects_tampered_instantiation_count ... ok
+test budget_shortage_keeps_quantifier_and_marks_unknown ... ok
+test checker_detects_tampered_verdict_as_state_conflict ... ok
+test error_classes_are_distinct_and_specific ... ok
+test alternating_quantifiers_match_hand_truth_tables ... ok
+test run_ids_are_unique_and_replayable ... ok
+test all_golden_scenarios_have_concrete_results ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests fologic
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

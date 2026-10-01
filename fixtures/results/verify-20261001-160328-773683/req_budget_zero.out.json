@@ -1,0 +1,146 @@
+{
+  "run_id": "budget-zero",
+  "verdict": "unknown",
+  "reason": "budget 0 exhausted after 0 instantiations; 1 quantifier(s) retained",
+  "instantiations_used": 0,
+  "instantiation_budget": 0,
+  "residual_quantifiers": 1,
+  "expanded_formula": {
+    "op": "exists",
+    "var": "x",
+    "sort": "X",
+    "inner": {
+      "op": "pred",
+      "name": "p",
+      "args": [
+        {
+          "t": "var",
+          "name": "x"
+        }
+      ]
+    }
+  },
+  "proof": {
+    "run_id": "budget-zero",
+    "created_unix_nanos": 1790841810229959326,
+    "model_name": "inline-model",
+    "original_formula": {
+      "op": "exists",
+      "var": "x",
+      "sort": "X",
+      "inner": {
+        "op": "pred",
+        "name": "p",
+        "args": [
+          {
+            "t": "var",
+            "name": "x"
+          }
+        ]
+      }
+    },
+    "allow_empty_domain": false,
+    "instantiation_budget": 0,
+    "instantiations_used": 0,
+    "node_cap": 5000,
+    "expanded_formula": {
+      "op": "exists",
+      "var": "x",
+      "sort": "X",
+      "inner": {
+        "op": "pred",
+        "name": "p",
+        "args": [
+          {
+            "t": "var",
+            "name": "x"
+          }
+        ]
+      }
+    },
+    "residual_quantifiers": 1,
+    "verdict": "unknown",
+    "reason": "budget 0 exhausted after 0 instantiations; 1 quantifier(s) retained",
+    "steps": [
+      {
+        "event": "note",
+        "seq": 1,
+        "text": "start budget-zero allow_empty_domain=false budget=0 node_cap=5000"
+      },
+      {
+        "event": "expand_start",
+        "seq": 2,
+        "quantifier": "exists",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "budget_exhausted",
+        "seq": 3,
+        "quantifier": "exists",
+        "var": "x",
+        "sort": "X",
+        "used": 0,
+        "limit": 0
+      },
+      {
+        "event": "eval_formula",
+        "seq": 4,
+        "verdict": "unknown",
+        "reason": "1 quantifier node(s) remain after expansion; truth value is unknown"
+      }
+    ]
+  },
+  "check_report": {
+    "run_id": "budget-zero",
+    "ok": true,
+    "reference_truth": true,
+    "claimed_verdict": "unknown",
+    "replayed_instantiations": 0,
+    "recorded_instantiations": 0,
+    "residual_quantifiers": 1,
+    "checks": [
+      {
+        "name": "model_valid",
+        "passed": true,
+        "detail": "sorts, constants, functions and predicates are internally consistent"
+      },
+      {
+        "name": "formula_well_formed",
+        "passed": true,
+        "detail": "original formula type checks against the model"
+      },
+      {
+        "name": "instantiation_accounting",
+        "passed": true,
+        "detail": "replayed 0 instantiations; record claims 0; monotonic=true"
+      },
+      {
+        "name": "residual_count",
+        "passed": true,
+        "detail": "expanded formula contains 1 quantifiers; record claims 1"
+      },
+      {
+        "name": "verdict_matches_reference",
+        "passed": true,
+        "detail": "independent recursion says true; record claims unknown (allowed: budget retained quantifiers)"
+      },
+      {
+        "name": "definite_means_quantifier_free",
+        "passed": true,
+        "detail": "definite verdict backed by quantifier free expansion"
+      },
+      {
+        "name": "unknown_keeps_quantifier",
+        "passed": true,
+        "detail": "unknown records retain at least one quantifier"
+      },
+      {
+        "name": "exhaustion_consistent",
+        "passed": true,
+        "detail": "budget exhaustion only accompanies unknown verdicts"
+      }
+    ]
+  }
+}

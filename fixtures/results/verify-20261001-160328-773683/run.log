@@ -1,0 +1,40 @@
+[16:03:28] run_id=verify-20261001-160328-773683 out=fixtures/results/verify-20261001-160328-773683
+[16:03:28] toolchain: cargo 1.98.1 (797e8a9bc 2026-08-05)
+[16:03:28] cargo fmt --check
+[16:03:28] fmt ok
+[16:03:28] cargo build
+   Compiling fologic v0.1.0 (/home/admin/Downloads/xinbiaozhul/opp814/a)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.92s
+[16:03:29] regenerate synthetic fixtures
+generated 4 formulas and 1 model under /home/admin/Downloads/xinbiaozhul/opp814/a/fixtures/gen
+[16:03:29] cargo test
+[16:03:29] cli req_success_f03
+[16:03:29]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_success_f03.(out|err).json
+[16:03:29] cli req_success_f04
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_success_f04.(out|err).json
+[16:03:30] cli req_success_shadow
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_success_shadow.(out|err).json
+[16:03:30] cli req_empty_allowed
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_empty_allowed.(out|err).json
+[16:03:30] cli req_empty_exists_allowed
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_empty_exists_allowed.(out|err).json
+[16:03:30] cli req_budget_mid
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_budget_mid.(out|err).json
+[16:03:30] cli req_budget_zero
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_budget_zero.(out|err).json
+[16:03:30] cli req_budget_exact
+[16:03:30]   exit=0 -> fixtures/results/verify-20261001-160328-773683/req_budget_exact.(out|err).json
+[16:03:30] cli req_empty_denied
+[16:03:30]   exit=5 -> fixtures/results/verify-20261001-160328-773683/req_empty_denied.(out|err).json
+[16:03:30] cli req_node_cap
+[16:03:30]   exit=4 -> fixtures/results/verify-20261001-160328-773683/req_node_cap.(out|err).json
+[16:03:30] cli req_unknown_symbol
+[16:03:30]   exit=2 -> fixtures/results/verify-20261001-160328-773683/req_unknown_symbol.(out|err).json
+[16:03:30] cli req_arity
+[16:03:30]   exit=2 -> fixtures/results/verify-20261001-160328-773683/req_arity.(out|err).json
+[16:03:30] cli req_unbound
+[16:03:30]   exit=2 -> fixtures/results/verify-20261001-160328-773683/req_unbound.(out|err).json
+[16:03:30] cli req_free_var
+[16:03:30]   exit=2 -> fixtures/results/verify-20261001-160328-773683/req_free_var.(out|err).json
+[16:03:30] artifacts stored at fixtures/results/verify-20261001-160328-773683
+[16:03:30] DONE

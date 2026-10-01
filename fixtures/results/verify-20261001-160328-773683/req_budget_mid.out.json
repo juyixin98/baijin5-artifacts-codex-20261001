@@ -1,0 +1,239 @@
+{
+  "run_id": "budget-mid",
+  "verdict": "unknown",
+  "reason": "budget 4 exhausted after 0 instantiations; 1 quantifier(s) retained",
+  "instantiations_used": 0,
+  "instantiation_budget": 4,
+  "residual_quantifiers": 1,
+  "expanded_formula": {
+    "op": "forall",
+    "var": "x",
+    "sort": "X",
+    "inner": {
+      "op": "exists",
+      "var": "y",
+      "sort": "Y",
+      "inner": {
+        "op": "pred",
+        "name": "q",
+        "args": [
+          {
+            "t": "var",
+            "name": "x"
+          },
+          {
+            "t": "var",
+            "name": "y"
+          }
+        ]
+      }
+    }
+  },
+  "proof": {
+    "run_id": "budget-mid",
+    "created_unix_nanos": 1790841810190514377,
+    "model_name": "inline-model",
+    "original_formula": {
+      "op": "forall",
+      "var": "x",
+      "sort": "X",
+      "inner": {
+        "op": "exists",
+        "var": "y",
+        "sort": "Y",
+        "inner": {
+          "op": "pred",
+          "name": "q",
+          "args": [
+            {
+              "t": "var",
+              "name": "x"
+            },
+            {
+              "t": "var",
+              "name": "y"
+            }
+          ]
+        }
+      }
+    },
+    "allow_empty_domain": false,
+    "instantiation_budget": 4,
+    "instantiations_used": 0,
+    "node_cap": 5000,
+    "expanded_formula": {
+      "op": "forall",
+      "var": "x",
+      "sort": "X",
+      "inner": {
+        "op": "exists",
+        "var": "y",
+        "sort": "Y",
+        "inner": {
+          "op": "pred",
+          "name": "q",
+          "args": [
+            {
+              "t": "var",
+              "name": "x"
+            },
+            {
+              "t": "var",
+              "name": "y"
+            }
+          ]
+        }
+      }
+    },
+    "residual_quantifiers": 1,
+    "verdict": "unknown",
+    "reason": "budget 4 exhausted after 0 instantiations; 1 quantifier(s) retained",
+    "steps": [
+      {
+        "event": "note",
+        "seq": 1,
+        "text": "start budget-mid allow_empty_domain=false budget=4 node_cap=5000"
+      },
+      {
+        "event": "expand_start",
+        "seq": 2,
+        "quantifier": "forall",
+        "var": "x",
+        "sort": "X",
+        "size": 3
+      },
+      {
+        "event": "instantiate",
+        "seq": 3,
+        "quantifier": "forall",
+        "var": "x",
+        "value": "x1",
+        "used": 1,
+        "limit": 4
+      },
+      {
+        "event": "expand_start",
+        "seq": 4,
+        "quantifier": "exists",
+        "var": "y",
+        "sort": "Y",
+        "size": 2
+      },
+      {
+        "event": "instantiate",
+        "seq": 5,
+        "quantifier": "exists",
+        "var": "y",
+        "value": "y1",
+        "used": 2,
+        "limit": 4
+      },
+      {
+        "event": "instantiate",
+        "seq": 6,
+        "quantifier": "exists",
+        "var": "y",
+        "value": "y2",
+        "used": 3,
+        "limit": 4
+      },
+      {
+        "event": "expand_done",
+        "seq": 7,
+        "quantifier": "exists",
+        "instances": 2,
+        "remaining_budget": 1
+      },
+      {
+        "event": "instantiate",
+        "seq": 8,
+        "quantifier": "forall",
+        "var": "x",
+        "value": "x2",
+        "used": 4,
+        "limit": 4
+      },
+      {
+        "event": "expand_start",
+        "seq": 9,
+        "quantifier": "exists",
+        "var": "y",
+        "sort": "Y",
+        "size": 2
+      },
+      {
+        "event": "budget_exhausted",
+        "seq": 10,
+        "quantifier": "exists",
+        "var": "y",
+        "sort": "Y",
+        "used": 4,
+        "limit": 4
+      },
+      {
+        "event": "rollback_instances",
+        "seq": 11,
+        "quantifier": "forall",
+        "rolled_back": 4,
+        "used_after": 0
+      },
+      {
+        "event": "eval_formula",
+        "seq": 12,
+        "verdict": "unknown",
+        "reason": "1 quantifier node(s) remain after expansion; truth value is unknown"
+      }
+    ]
+  },
+  "check_report": {
+    "run_id": "budget-mid",
+    "ok": true,
+    "reference_truth": false,
+    "claimed_verdict": "unknown",
+    "replayed_instantiations": 0,
+    "recorded_instantiations": 0,
+    "residual_quantifiers": 1,
+    "checks": [
+      {
+        "name": "model_valid",
+        "passed": true,
+        "detail": "sorts, constants, functions and predicates are internally consistent"
+      },
+      {
+        "name": "formula_well_formed",
+        "passed": true,
+        "detail": "original formula type checks against the model"
+      },
+      {
+        "name": "instantiation_accounting",
+        "passed": true,
+        "detail": "replayed 0 instantiations; record claims 0; monotonic=true"
+      },
+      {
+        "name": "residual_count",
+        "passed": true,
+        "detail": "expanded formula contains 1 quantifiers; record claims 1"
+      },
+      {
+        "name": "verdict_matches_reference",
+        "passed": true,
+        "detail": "independent recursion says false; record claims unknown (allowed: budget retained quantifiers)"
+      },
+      {
+        "name": "definite_means_quantifier_free",
+        "passed": true,
+        "detail": "definite verdict backed by quantifier free expansion"
+      },
+      {
+        "name": "unknown_keeps_quantifier",
+        "passed": true,
+        "detail": "unknown records retain at least one quantifier"
+      },
+      {
+        "name": "exhaustion_consistent",
+        "passed": true,
+        "detail": "budget exhaustion only accompanies unknown verdicts"
+      }
+    ]
+  }
+}

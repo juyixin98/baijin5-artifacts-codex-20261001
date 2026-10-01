@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "unbound_variable",
+    "kind": "input",
+    "message": "variable w is not bound by any enclosing quantifier"
+  }
+}

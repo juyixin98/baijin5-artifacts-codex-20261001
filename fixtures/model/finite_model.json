@@ -1,0 +1,48 @@
+{
+  "sorts": [
+    { "name": "X", "elements": ["x1", "x2", "x3"] },
+    { "name": "Y", "elements": ["y1", "y2"] },
+    { "name": "Z", "elements": [] }
+  ],
+  "constants": [
+    { "name": "a", "sort": "X", "value": "x1" },
+    { "name": "b", "sort": "X", "value": "x2" }
+  ],
+  "functions": [
+    {
+      "name": "next",
+      "param_sorts": ["X"],
+      "result_sort": "X",
+      "table": { "x1": "x2", "x2": "x3", "x3": "x1" }
+    },
+    {
+      "name": "pair",
+      "param_sorts": ["X", "Y"],
+      "result_sort": "X",
+      "table": {
+        "x1,y1": "x2",
+        "x2,y1": "x2",
+        "x3,y1": "x3",
+        "x1,y2": "x1",
+        "x2,y2": "x3"
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "name": "p",
+      "param_sorts": ["X"],
+      "facts": [["x1"], ["x2"]]
+    },
+    {
+      "name": "q",
+      "param_sorts": ["X", "Y"],
+      "facts": [["x1", "y1"], ["x2", "y2"]]
+    },
+    {
+      "name": "r",
+      "param_sorts": ["Z"],
+      "facts": []
+    }
+  ]
+}

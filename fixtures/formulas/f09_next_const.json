@@ -1,0 +1,3 @@
+{ "op": "eq",
+  "left": { "t": "app", "name": "next", "args": [ { "t": "const", "name": "a" } ] },
+  "right": { "t": "const", "name": "b" } }

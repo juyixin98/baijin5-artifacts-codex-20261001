@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f05_shadow.json",
+  "run_id": "success-shadow",
+  "allow_empty_domain": false,
+  "node_cap": 5000
+}

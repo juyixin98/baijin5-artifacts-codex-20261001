@@ -1,0 +1,8 @@
+{ "op": "forall", "var": "x", "sort": "X",
+  "inner": { "op": "or", "children": [
+    { "op": "pred", "name": "p", "args": [ { "t": "var", "name": "x" } ] },
+    { "op": "exists", "var": "x", "sort": "X",
+      "inner": { "op": "eq",
+        "left": { "t": "var", "name": "x" },
+        "right": { "t": "elem", "value": "x3" } } }
+  ] } }

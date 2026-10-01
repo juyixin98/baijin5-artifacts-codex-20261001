@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "run_id": "bad-unbound",
+  "allow_empty_domain": false,
+  "formula": { "op": "pred", "name": "p",
+    "args": [ { "t": "var", "name": "u" } ] }
+}

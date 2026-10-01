@@ -1,0 +1,40 @@
+{
+  "inner": {
+    "children": [
+      {
+        "args": [
+          {
+            "name": "d",
+            "t": "var"
+          },
+          {
+            "t": "elem",
+            "value": "s0"
+          }
+        ],
+        "name": "edge",
+        "op": "pred"
+      },
+      {
+        "inner": {
+          "left": {
+            "name": "d",
+            "t": "var"
+          },
+          "op": "eq",
+          "right": {
+            "t": "elem",
+            "value": "d0"
+          }
+        },
+        "op": "exists",
+        "sort": "D",
+        "var": "d"
+      }
+    ],
+    "op": "or"
+  },
+  "op": "forall",
+  "sort": "D",
+  "var": "d"
+}

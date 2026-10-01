@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "arity_mismatch",
+    "kind": "input",
+    "message": "predicate p expects 1 arguments but got 2"
+  }
+}

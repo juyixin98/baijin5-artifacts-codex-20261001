@@ -1,0 +1,2 @@
+{ "op": "exists", "var": "x", "sort": "X",
+  "inner": { "op": "pred", "name": "p", "args": [ { "t": "var", "name": "x" } ] } }

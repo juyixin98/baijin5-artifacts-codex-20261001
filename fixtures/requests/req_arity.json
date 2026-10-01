@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "run_id": "bad-arity",
+  "allow_empty_domain": false,
+  "formula": { "op": "pred", "name": "p",
+    "args": [ { "t": "elem", "value": "x1" }, { "t": "elem", "value": "y1" } ] }
+}

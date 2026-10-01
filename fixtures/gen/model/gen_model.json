@@ -1,0 +1,81 @@
+{
+  "constants": [
+    {
+      "name": "zero",
+      "sort": "D",
+      "value": "d0"
+    },
+    {
+      "name": "one",
+      "sort": "D",
+      "value": "d1"
+    }
+  ],
+  "functions": [
+    {
+      "name": "succ",
+      "param_sorts": [
+        "D"
+      ],
+      "result_sort": "D",
+      "table": {
+        "d0": "d1",
+        "d1": "d2",
+        "d2": "d3",
+        "d3": "d0"
+      }
+    }
+  ],
+  "predicates": [
+    {
+      "facts": [
+        [
+          "d0",
+          "s0"
+        ],
+        [
+          "d2",
+          "s1"
+        ],
+        [
+          "d3",
+          "s0"
+        ]
+      ],
+      "name": "edge",
+      "param_sorts": [
+        "D",
+        "S"
+      ]
+    },
+    {
+      "facts": [],
+      "name": "onEmpty",
+      "param_sorts": [
+        "Empty"
+      ]
+    }
+  ],
+  "sorts": [
+    {
+      "elements": [
+        "d0",
+        "d1",
+        "d2",
+        "d3"
+      ],
+      "name": "D"
+    },
+    {
+      "elements": [
+        "s0",
+        "s1"
+      ],
+      "name": "S"
+    },
+    {
+      "elements": [],
+      "name": "Empty"
+    }
+  ]
+}

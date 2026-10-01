@@ -1,0 +1,40 @@
+{
+  "inner": {
+    "left": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "name": "d",
+                      "t": "var"
+                    }
+                  ],
+                  "name": "succ",
+                  "t": "app"
+                }
+              ],
+              "name": "succ",
+              "t": "app"
+            }
+          ],
+          "name": "succ",
+          "t": "app"
+        }
+      ],
+      "name": "succ",
+      "t": "app"
+    },
+    "op": "eq",
+    "right": {
+      "name": "d",
+      "t": "var"
+    }
+  },
+  "op": "forall",
+  "sort": "D",
+  "var": "d"
+}

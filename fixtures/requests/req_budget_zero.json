@@ -1,0 +1,8 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f11_budget_zero.json",
+  "run_id": "budget-zero",
+  "budget": 0,
+  "allow_empty_domain": false,
+  "node_cap": 5000
+}

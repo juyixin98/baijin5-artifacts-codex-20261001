@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f06_empty_forall.json",
+  "run_id": "empty-denied",
+  "allow_empty_domain": false,
+  "node_cap": 5000
+}

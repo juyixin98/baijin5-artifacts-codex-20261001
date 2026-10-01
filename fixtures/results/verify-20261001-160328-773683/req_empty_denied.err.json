@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "empty_domain",
+    "kind": "computation_failed",
+    "message": "quantifier binds empty sort Z; empty domains are disallowed"
+  }
+}

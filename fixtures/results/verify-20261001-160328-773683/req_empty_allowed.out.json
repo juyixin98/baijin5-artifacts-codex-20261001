@@ -1,0 +1,122 @@
+{
+  "run_id": "empty-allowed",
+  "verdict": "true",
+  "reason": "fully expanded with 0 instantiations; ground evaluation is true",
+  "instantiations_used": 0,
+  "instantiation_budget": 18446744073709551615,
+  "residual_quantifiers": 0,
+  "expanded_formula": {
+    "op": "bool",
+    "value": true
+  },
+  "proof": {
+    "run_id": "empty-allowed",
+    "created_unix_nanos": 1790841810110358423,
+    "model_name": "inline-model",
+    "original_formula": {
+      "op": "forall",
+      "var": "z",
+      "sort": "Z",
+      "inner": {
+        "op": "pred",
+        "name": "r",
+        "args": [
+          {
+            "t": "var",
+            "name": "z"
+          }
+        ]
+      }
+    },
+    "allow_empty_domain": true,
+    "instantiation_budget": 18446744073709551615,
+    "instantiations_used": 0,
+    "node_cap": 5000,
+    "expanded_formula": {
+      "op": "bool",
+      "value": true
+    },
+    "residual_quantifiers": 0,
+    "verdict": "true",
+    "reason": "fully expanded with 0 instantiations; ground evaluation is true",
+    "steps": [
+      {
+        "event": "note",
+        "seq": 1,
+        "text": "start empty-allowed allow_empty_domain=true budget=18446744073709551615 node_cap=5000"
+      },
+      {
+        "event": "expand_start",
+        "seq": 2,
+        "quantifier": "forall",
+        "var": "z",
+        "sort": "Z",
+        "size": 0
+      },
+      {
+        "event": "expand_done",
+        "seq": 3,
+        "quantifier": "forall",
+        "instances": 0,
+        "remaining_budget": 18446744073709551615
+      },
+      {
+        "event": "eval_formula",
+        "seq": 4,
+        "verdict": "true",
+        "reason": "expanded formula is quantifier free"
+      }
+    ]
+  },
+  "check_report": {
+    "run_id": "empty-allowed",
+    "ok": true,
+    "reference_truth": true,
+    "claimed_verdict": "true",
+    "replayed_instantiations": 0,
+    "recorded_instantiations": 0,
+    "residual_quantifiers": 0,
+    "checks": [
+      {
+        "name": "model_valid",
+        "passed": true,
+        "detail": "sorts, constants, functions and predicates are internally consistent"
+      },
+      {
+        "name": "formula_well_formed",
+        "passed": true,
+        "detail": "original formula type checks against the model"
+      },
+      {
+        "name": "instantiation_accounting",
+        "passed": true,
+        "detail": "replayed 0 instantiations; record claims 0; monotonic=true"
+      },
+      {
+        "name": "residual_count",
+        "passed": true,
+        "detail": "expanded formula contains 0 quantifiers; record claims 0"
+      },
+      {
+        "name": "verdict_matches_reference",
+        "passed": true,
+        "detail": "independent recursion says true; record claims true"
+      },
+      {
+        "name": "definite_means_quantifier_free",
+        "passed": true,
+        "detail": "definite verdict backed by quantifier free expansion"
+      },
+      {
+        "name": "unknown_keeps_quantifier",
+        "passed": true,
+        "detail": "unknown records retain at least one quantifier"
+      },
+      {
+        "name": "exhaustion_consistent",
+        "passed": true,
+        "detail": "budget exhaustion only accompanies unknown verdicts"
+      }
+    ]
+  }
+}

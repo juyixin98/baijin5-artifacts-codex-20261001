@@ -1,0 +1,4 @@
+{ "op": "forall", "var": "x", "sort": "X",
+  "inner": { "op": "forall", "var": "y", "sort": "Y",
+    "inner": { "op": "pred", "name": "q", "args": [
+      { "t": "var", "name": "x" }, { "t": "var", "name": "y" } ] } } }

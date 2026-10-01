@@ -1,0 +1,5 @@
+{
+  "op": "exists", "var": "y", "sort": "X",
+  "inner": { "op": "eq",
+    "left": { "t": "var", "name": "x" },
+    "right": { "t": "var", "name": "y" } } }

@@ -1,0 +1,7 @@
+{
+  "model_path": "fixtures/model/finite_model.json",
+  "formula_path": "fixtures/formulas/f04_alt_false.json",
+  "run_id": "success-f04",
+  "allow_empty_domain": false,
+  "node_cap": 5000
+}

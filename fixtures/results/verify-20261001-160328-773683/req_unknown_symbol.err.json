@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "unknown_symbol",
+    "kind": "input",
+    "message": "unknown predicate ghost"
+  }
+}

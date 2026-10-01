@@ -1,0 +1,7 @@
+{ "op": "forall", "var": "x", "sort": "X",
+  "inner": { "op": "eq",
+    "left": { "t": "app", "name": "next",
+      "args": [ { "t": "app", "name": "next",
+        "args": [ { "t": "app", "name": "next",
+          "args": [ { "t": "var", "name": "x" } ] } ] } ] },
+    "right": { "t": "var", "name": "x" } } }

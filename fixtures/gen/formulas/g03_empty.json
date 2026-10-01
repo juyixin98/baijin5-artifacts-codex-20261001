@@ -1,0 +1,15 @@
+{
+  "inner": {
+    "args": [
+      {
+        "name": "e",
+        "t": "var"
+      }
+    ],
+    "name": "onEmpty",
+    "op": "pred"
+  },
+  "op": "forall",
+  "sort": "Empty",
+  "var": "e"
+}

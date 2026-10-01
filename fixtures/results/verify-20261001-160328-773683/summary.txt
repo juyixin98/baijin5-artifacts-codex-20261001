@@ -1,0 +1,15 @@
+case                      exit  result
+req_arity                    2  ERROR/input/arity_mismatch
+req_budget_exact             0  false used=9 resid=0
+req_budget_mid               0  unknown used=0 resid=1
+req_budget_zero              0  unknown used=0 resid=1
+req_empty_allowed            0  true used=0 resid=0
+req_empty_denied             5  ERROR/computation_failed/empty_domain
+req_empty_exists_allowed     0  false used=0 resid=0
+req_free_var                 2  ERROR/input/unbound_variable
+req_node_cap                 4  ERROR/resource_exhausted/node_cap
+req_success_f03              0  false used=9 resid=0
+req_success_f04              0  false used=8 resid=0
+req_success_shadow           0  true used=12 resid=0
+req_unbound                  2  ERROR/input/unbound_variable
+req_unknown_symbol           2  ERROR/input/unknown_symbol

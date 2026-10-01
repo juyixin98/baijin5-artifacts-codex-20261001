@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "node_cap",
+    "kind": "resource_exhausted",
+    "message": "expanded formula has 19 nodes which exceeds the node cap 5"
+  }
+}
