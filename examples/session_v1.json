@@ -1,0 +1,9 @@
+{
+  "request_id": "example-session-v1",
+  "rule_version": 1,
+  "session_id": "demo-session",
+  "rows": [
+    { "record_id": "s1", "value": "Café" },
+    { "record_id": "s2", "value": "CAFE" }
+  ]
+}

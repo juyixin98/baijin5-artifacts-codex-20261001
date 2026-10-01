@@ -1,0 +1,31 @@
+{
+  "request_id": "example-accent",
+  "rule_version": 1,
+  "rows": [
+    {
+      "record_id": "r1",
+      "value": "Café"
+    },
+    {
+      "record_id": "r2",
+      "value": "café"
+    },
+    {
+      "record_id": "r3",
+      "value": "CAFE"
+    },
+    {
+      "record_id": "r4",
+      "value": "naïve"
+    },
+    {
+      "record_id": "r5",
+      "value": "NAIVE"
+    }
+  ],
+  "expect_group_count": 2,
+  "expect_distinct": [
+    "Café",
+    "naïve"
+  ]
+}

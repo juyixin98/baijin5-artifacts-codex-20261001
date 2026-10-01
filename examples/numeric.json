@@ -1,0 +1,13 @@
+{
+  "request_id": "example-numeric",
+  "rule_version": 1,
+  "rows": [
+    { "record_id": "n1", "value": "file10" },
+    { "record_id": "n2", "value": "file2" },
+    { "record_id": "n3", "value": "file2" },
+    { "record_id": "n4", "value": "item1" },
+    { "record_id": "n5", "value": "item01" }
+  ],
+  "expect_group_count": 3,
+  "expect_distinct": ["file2", "file10", "item1"]
+}
