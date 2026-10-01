@@ -1,0 +1,84 @@
+{
+    "request_id": "demo-two_assertions_conflict",
+    "engine_version": "owl-restricted-1.0.0",
+    "received_at": "2026-09-27T19:31:25.786679+00:00",
+    "status": "ok",
+    "consistent": false,
+    "failure_categories": [
+        "ONTOLOGY_INCONSISTENT"
+    ],
+    "uncertainties": [],
+    "result": {
+        "classes": [
+            "Cat",
+            "Dog",
+            "Mammal"
+        ],
+        "equivalences": [],
+        "unsatisfiable": [],
+        "instances": [
+            {
+                "instance": "carol-3",
+                "asserted_types": [
+                    "Cat",
+                    "Dog"
+                ],
+                "entailed_types": [
+                    "Cat",
+                    "Dog",
+                    "Mammal"
+                ],
+                "status": "in_conflict",
+                "conflict_path": {
+                    "subject": "carol-3",
+                    "category": "ONTOLOGY_INCONSISTENT",
+                    "disjoint_classes": [
+                        "Cat",
+                        "Dog"
+                    ],
+                    "disjoint_axiom_source": "fixture:cat-dog-disjoint",
+                    "left_chain": [],
+                    "right_chain": []
+                }
+            }
+        ]
+    },
+    "cross_check": {
+        "agreement": true,
+        "oracle_model_count": 4,
+        "oracle_variable_count": 3,
+        "discrepancies": []
+    },
+    "processing_steps": [
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "validating restricted syntax"
+        },
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "accepted 5 axioms"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "forward-chaining closure"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "consistent=False; unsatisfiable_classes=0; instances=1"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "enumerating finite models (independent implementation)"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "agreement=True models=4"
+        }
+    ]
+}

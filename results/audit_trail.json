@@ -1,0 +1,173 @@
+{
+    "request_id": "demo-equivalence_ring",
+    "received_at": "2026-09-27T19:31:25.693803+00:00",
+    "engine_version": "owl-restricted-1.0.0",
+    "endpoint": "POST /reason",
+    "status": "ok",
+    "consistent": 1,
+    "failure_categories": [
+        "CLASS_UNSATISFIABLE"
+    ],
+    "payload_json": {
+        "axioms": [
+            {
+                "equivalent": [
+                    "Admin",
+                    "SuperUser"
+                ],
+                "source": "fixture:eq-admin-superuser"
+            },
+            {
+                "equivalent": [
+                    "SuperUser",
+                    "RootUser"
+                ],
+                "source": "fixture:eq-superuser-root"
+            },
+            {
+                "sub": "RootUser",
+                "super": "LockedAccount",
+                "source": "fixture:root-locked"
+            },
+            {
+                "disjoint": [
+                    "Admin",
+                    "LockedAccount"
+                ],
+                "source": "fixture:admin-not-locked"
+            },
+            {
+                "sub": "Guest",
+                "super": "User",
+                "source": "fixture:guest-user"
+            },
+            {
+                "instance": "visitor-42",
+                "class": "Guest",
+                "source": "fixture:visitor-assertion"
+            }
+        ]
+    },
+    "result_json": {
+        "classes": [
+            "Admin",
+            "Guest",
+            "LockedAccount",
+            "RootUser",
+            "SuperUser",
+            "User"
+        ],
+        "equivalences": [
+            {
+                "canonical": "Admin",
+                "members": [
+                    "Admin",
+                    "RootUser",
+                    "SuperUser"
+                ],
+                "declaration_sources": [
+                    "fixture:eq-admin-superuser",
+                    "fixture:eq-superuser-root"
+                ],
+                "merge_chain": [
+                    {
+                        "a": "Admin",
+                        "b": "SuperUser",
+                        "source": "fixture:eq-admin-superuser"
+                    },
+                    {
+                        "a": "SuperUser",
+                        "b": "RootUser",
+                        "source": "fixture:eq-superuser-root"
+                    }
+                ]
+            }
+        ],
+        "unsatisfiable": [
+            {
+                "class": "Admin",
+                "equivalence_members": [
+                    "Admin",
+                    "RootUser",
+                    "SuperUser"
+                ],
+                "category": "CLASS_UNSATISFIABLE",
+                "conflict_path": {
+                    "subject": "Admin",
+                    "category": "CLASS_UNSATISFIABLE",
+                    "disjoint_classes": [
+                        "Admin",
+                        "LockedAccount"
+                    ],
+                    "disjoint_axiom_source": "fixture:admin-not-locked",
+                    "left_chain": [],
+                    "right_chain": [
+                        {
+                            "frm": "Admin",
+                            "to": "LockedAccount",
+                            "kind": "subsumption",
+                            "source": "fixture:root-locked",
+                            "detail": "declared subclass"
+                        }
+                    ]
+                }
+            }
+        ],
+        "instances": [
+            {
+                "instance": "visitor-42",
+                "asserted_types": [
+                    "Guest"
+                ],
+                "entailed_types": [
+                    "Guest",
+                    "User"
+                ],
+                "status": "satisfiable",
+                "conflict_path": null
+            }
+        ]
+    },
+    "error_code": null,
+    "error_path": null,
+    "error_message": null,
+    "duration_ms": 0.9715249980217777,
+    "processing_steps": [
+        {
+            "step_index": 0,
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "validating restricted syntax"
+        },
+        {
+            "step_index": 1,
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "accepted 6 axioms"
+        },
+        {
+            "step_index": 2,
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "forward-chaining closure"
+        },
+        {
+            "step_index": 3,
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "consistent=True; unsatisfiable_classes=1; instances=1"
+        },
+        {
+            "step_index": 4,
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "enumerating finite models (independent implementation)"
+        },
+        {
+            "step_index": 5,
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "agreement=True models=6"
+        }
+    ]
+}

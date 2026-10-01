@@ -1,0 +1,98 @@
+{
+    "request_id": "demo-multi_inheritance",
+    "engine_version": "owl-restricted-1.0.0",
+    "received_at": "2026-09-27T19:31:25.648041+00:00",
+    "status": "ok",
+    "consistent": true,
+    "failure_categories": [
+        "CLASS_UNSATISFIABLE"
+    ],
+    "uncertainties": [],
+    "result": {
+        "classes": [
+            "Bird",
+            "Dodo",
+            "EmperorPenguin",
+            "FlightedBird",
+            "FlightlessBird",
+            "Penguin",
+            "Swimmer"
+        ],
+        "equivalences": [],
+        "unsatisfiable": [
+            {
+                "class": "Dodo",
+                "equivalence_members": [
+                    "Dodo"
+                ],
+                "category": "CLASS_UNSATISFIABLE",
+                "conflict_path": {
+                    "subject": "Dodo",
+                    "category": "CLASS_UNSATISFIABLE",
+                    "disjoint_classes": [
+                        "FlightedBird",
+                        "FlightlessBird"
+                    ],
+                    "disjoint_axiom_source": "fixture:flighted-flightless",
+                    "left_chain": [
+                        {
+                            "frm": "Dodo",
+                            "to": "FlightedBird",
+                            "kind": "subsumption",
+                            "source": "fixture:dodo-flighted",
+                            "detail": "declared subclass"
+                        }
+                    ],
+                    "right_chain": [
+                        {
+                            "frm": "Dodo",
+                            "to": "FlightlessBird",
+                            "kind": "subsumption",
+                            "source": "fixture:dodo-flightless",
+                            "detail": "declared subclass"
+                        }
+                    ]
+                }
+            }
+        ],
+        "instances": []
+    },
+    "cross_check": {
+        "agreement": true,
+        "oracle_model_count": 16,
+        "oracle_variable_count": 7,
+        "discrepancies": []
+    },
+    "processing_steps": [
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "validating restricted syntax"
+        },
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "accepted 8 axioms"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "forward-chaining closure"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "consistent=True; unsatisfiable_classes=1; instances=0"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "enumerating finite models (independent implementation)"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "agreement=True models=16"
+        }
+    ]
+}

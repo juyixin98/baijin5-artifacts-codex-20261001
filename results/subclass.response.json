@@ -1,0 +1,22 @@
+{
+    "request_id": "req_1420d0e274de4e56",
+    "engine_version": "owl-restricted-1.0.0",
+    "received_at": "2026-09-27T19:31:25.885098+00:00",
+    "status": "ok",
+    "consistent": true,
+    "failure_categories": [],
+    "uncertainties": [],
+    "query": {
+        "sub": "EmperorPenguin",
+        "super": "Swimmer"
+    },
+    "entailed": true,
+    "explanation": "entailed by closure",
+    "processing_steps": [
+        {
+            "stage": "subsumption",
+            "location": "app.kernel.ReasoningResult.is_subclass",
+            "detail": "EmperorPenguin <= Swimmer entailed=True"
+        }
+    ]
+}

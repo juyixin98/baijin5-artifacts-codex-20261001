@@ -1,0 +1,27 @@
+{
+    "request_id": "demo-unsupported_union",
+    "engine_version": "owl-restricted-1.0.0",
+    "received_at": "2026-09-27T19:31:25.833413+00:00",
+    "status": "rejected",
+    "failure_categories": [
+        "UNSUPPORTED_CONSTRUCT"
+    ],
+    "uncertainties": [],
+    "error": {
+        "code": "UNSUPPORTED_CONSTRUCTOR",
+        "path": "$.axioms[0].super.union",
+        "message": "unsupported OWL constructor(s): ['union']. This service supports only ['intersection']; it does not implement full OWL."
+    },
+    "processing_steps": [
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "validating restricted syntax"
+        },
+        {
+            "stage": "reject",
+            "location": "app.language",
+            "detail": "UNSUPPORTED_CONSTRUCTOR at $.axioms[0].super.union: unsupported OWL constructor(s): ['union']. This service supports only ['intersection']; it does not implement full OWL."
+        }
+    ]
+}

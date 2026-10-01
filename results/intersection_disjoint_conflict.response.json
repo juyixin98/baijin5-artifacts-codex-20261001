@@ -1,0 +1,211 @@
+{
+    "request_id": "demo-intersection_disjoint_conflict",
+    "engine_version": "owl-restricted-1.0.0",
+    "received_at": "2026-09-27T19:31:25.744402+00:00",
+    "status": "ok",
+    "consistent": false,
+    "failure_categories": [
+        "CLASS_UNSATISFIABLE",
+        "ONTOLOGY_INCONSISTENT"
+    ],
+    "uncertainties": [],
+    "result": {
+        "classes": [
+            "Employee",
+            "Person",
+            "Student",
+            "TA"
+        ],
+        "equivalences": [],
+        "unsatisfiable": [
+            {
+                "class": "(Employee \u2293 Student)",
+                "equivalence_members": [
+                    "(Employee \u2293 Student)"
+                ],
+                "category": "CLASS_UNSATISFIABLE",
+                "conflict_path": {
+                    "subject": "(Employee \u2293 Student)",
+                    "category": "CLASS_UNSATISFIABLE",
+                    "disjoint_classes": [
+                        "Employee",
+                        "Student"
+                    ],
+                    "disjoint_axiom_source": "fixture:employee-student-disjoint",
+                    "left_chain": [
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Employee",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ],
+                    "right_chain": [
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Student",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ]
+                }
+            },
+            {
+                "class": "TA",
+                "equivalence_members": [
+                    "TA"
+                ],
+                "category": "CLASS_UNSATISFIABLE",
+                "conflict_path": {
+                    "subject": "TA",
+                    "category": "CLASS_UNSATISFIABLE",
+                    "disjoint_classes": [
+                        "Employee",
+                        "Student"
+                    ],
+                    "disjoint_axiom_source": "fixture:employee-student-disjoint",
+                    "left_chain": [
+                        {
+                            "frm": "TA",
+                            "to": "(Employee \u2293 Student)",
+                            "kind": "subsumption",
+                            "source": "fixture:ta-is-employee-and-student",
+                            "detail": "declared subclass"
+                        },
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Employee",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ],
+                    "right_chain": [
+                        {
+                            "frm": "TA",
+                            "to": "(Employee \u2293 Student)",
+                            "kind": "subsumption",
+                            "source": "fixture:ta-is-employee-and-student",
+                            "detail": "declared subclass"
+                        },
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Student",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ]
+                }
+            }
+        ],
+        "instances": [
+            {
+                "instance": "alice-7",
+                "asserted_types": [
+                    "TA"
+                ],
+                "entailed_types": [
+                    "Employee",
+                    "Person",
+                    "Student",
+                    "TA"
+                ],
+                "status": "in_conflict",
+                "conflict_path": {
+                    "subject": "alice-7",
+                    "category": "ONTOLOGY_INCONSISTENT",
+                    "disjoint_classes": [
+                        "Employee",
+                        "Student"
+                    ],
+                    "disjoint_axiom_source": "fixture:employee-student-disjoint",
+                    "left_chain": [
+                        {
+                            "frm": "TA",
+                            "to": "(Employee \u2293 Student)",
+                            "kind": "subsumption",
+                            "source": "fixture:ta-is-employee-and-student",
+                            "detail": "declared subclass"
+                        },
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Employee",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ],
+                    "right_chain": [
+                        {
+                            "frm": "TA",
+                            "to": "(Employee \u2293 Student)",
+                            "kind": "subsumption",
+                            "source": "fixture:ta-is-employee-and-student",
+                            "detail": "declared subclass"
+                        },
+                        {
+                            "frm": "(Employee \u2293 Student)",
+                            "to": "Student",
+                            "kind": "subsumption",
+                            "source": "<structural>",
+                            "detail": "intersection elimination: (Employee \u2293 Student)"
+                        }
+                    ]
+                }
+            },
+            {
+                "instance": "bob-9",
+                "asserted_types": [
+                    "Employee"
+                ],
+                "entailed_types": [
+                    "Employee",
+                    "Person"
+                ],
+                "status": "satisfiable",
+                "conflict_path": null
+            }
+        ]
+    },
+    "cross_check": {
+        "agreement": true,
+        "oracle_model_count": 4,
+        "oracle_variable_count": 5,
+        "discrepancies": []
+    },
+    "processing_steps": [
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "validating restricted syntax"
+        },
+        {
+            "stage": "parse",
+            "location": "app.language.parse_ontology",
+            "detail": "accepted 6 axioms"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "forward-chaining closure"
+        },
+        {
+            "stage": "classify",
+            "location": "app.kernel.reason",
+            "detail": "consistent=False; unsatisfiable_classes=2; instances=2"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "enumerating finite models (independent implementation)"
+        },
+        {
+            "stage": "cross_check",
+            "location": "app.oracle.evaluate",
+            "detail": "agreement=True models=4"
+        }
+    ]
+}
