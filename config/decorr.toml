@@ -1,0 +1,17 @@
+# decorr-server configuration.
+# Every key is optional; built-in defaults are shown here.
+# Environment overrides: DECORR_HOST, DECORR_PORT, DECORR_LOG_LEVEL,
+# DECORR_JSON_LOGS, DECORR_CONFIG.
+
+[server]
+host = "127.0.0.1"
+port = 8080
+json_logs = true
+log_level = "info"
+
+[execution]
+# Run the independent row-by-row interpreter on every query and attach an
+# equivalence verdict. Individual requests may set `"cross_check": false`.
+cross_check_by_default = true
+# Safety bound for synthetic fixture loading.
+max_rows_per_relation = 100000

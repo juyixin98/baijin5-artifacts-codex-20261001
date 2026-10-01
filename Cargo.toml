@@ -1,0 +1,33 @@
+[package]
+name = "subquery-decorrelation"
+version = "0.1.0"
+edition = "2021"
+description = "Decorrelation compilation and execution service for correlated EXISTS / NOT EXISTS and scalar aggregate subqueries (Rust + Axum + Arrow2)"
+license = "MIT"
+
+[lib]
+name = "decorr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "decorr-server"
+path = "src/bin/server.rs"
+
+[dependencies]
+# Key dependencies are pinned exactly; the committed Cargo.lock locks the full tree.
+arrow2 = { version = "=0.18.0", default-features = false }
+axum = { version = "=0.8.9", features = ["json", "http1", "tokio", "matched-path"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+uuid = { version = "1.26.1", features = ["v4"] }
+thiserror = "2.0.21"
+toml = "0.8"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+
+[profile.release]
+codegen-units = 1

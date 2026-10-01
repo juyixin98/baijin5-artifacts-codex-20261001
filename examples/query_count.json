@@ -1,0 +1,10 @@
+{
+  "outer": { "relation": "orders", "select": ["o_id", "cust"] },
+  "subquery": {
+    "op": "scalar_aggregate",
+    "aggregate": "count_star",
+    "inner_relation": "payments",
+    "correlation": [ { "outer": "cust", "inner": "cust" } ],
+    "output_column": "payment_count"
+  }
+}

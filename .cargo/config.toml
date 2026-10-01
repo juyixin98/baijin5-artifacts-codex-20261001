@@ -1,0 +1,17 @@
+# Project-local cargo configuration.
+#
+# All third-party crate SOURCES are vendored under ./vendor and pinned by the
+# committed Cargo.lock, so a build is reproducible fully offline:
+#
+#     CARGO_NET_OFFLINE=true cargo build --release
+#
+# Override/remove [source.*] only when regenerating the vendor directory.
+
+[registries.crates-io]
+protocol = "sparse"
+
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"

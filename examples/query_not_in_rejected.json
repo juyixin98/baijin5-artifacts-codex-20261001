@@ -1,0 +1,9 @@
+{
+  "outer": { "relation": "orders", "select": ["o_id"] },
+  "subquery": {
+    "op": "not_in",
+    "inner_relation": "payments",
+    "correlation": [ { "outer": "cust", "inner": "cust" } ],
+    "output_column": "x"
+  }
+}

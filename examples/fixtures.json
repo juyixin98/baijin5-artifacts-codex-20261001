@@ -1,0 +1,50 @@
+{
+  "replace": true,
+  "relations": {
+    "orders": {
+      "columns": [
+        { "name": "o_id", "type": "INTEGER" },
+        { "name": "cust", "type": "INTEGER" }
+      ],
+      "rows": [
+        { "o_id": 1, "cust": 10 },
+        { "o_id": 2, "cust": 10 },
+        { "o_id": 3, "cust": null },
+        { "o_id": 4, "cust": 20 },
+        { "o_id": 5, "cust": 20 },
+        { "o_id": 6, "cust": 99 }
+      ]
+    },
+    "payments": {
+      "columns": [
+        { "name": "p_id", "type": "INTEGER" },
+        { "name": "cust", "type": "INTEGER" },
+        { "name": "amount", "type": "INTEGER" }
+      ],
+      "rows": [
+        { "p_id": 1, "cust": 10, "amount": 100 },
+        { "p_id": 2, "cust": 10, "amount": 50 },
+        { "p_id": 3, "cust": 20, "amount": null },
+        { "p_id": 4, "cust": null, "amount": 7 }
+      ]
+    },
+    "payments_empty": {
+      "columns": [
+        { "name": "p_id", "type": "INTEGER" },
+        { "name": "cust", "type": "INTEGER" },
+        { "name": "amount", "type": "INTEGER" }
+      ],
+      "rows": []
+    },
+    "labels": {
+      "columns": [
+        { "name": "cust", "type": "INTEGER" },
+        { "name": "label", "type": "TEXT" }
+      ],
+      "rows": [
+        { "cust": 10, "label": "a" },
+        { "cust": 20, "label": "b" }
+      ]
+    }
+  }
+}

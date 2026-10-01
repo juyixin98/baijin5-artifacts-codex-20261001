@@ -1,0 +1,10 @@
+{
+  "outer": { "relation": "orders", "select": ["o_id", "cust"] },
+  "subquery": {
+    "op": "scalar",
+    "value_column": "label",
+    "inner_relation": "labels",
+    "correlation": [ { "outer": "cust", "inner": "cust" } ],
+    "output_column": "one_label"
+  }
+}

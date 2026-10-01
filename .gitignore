@@ -1,0 +1,9 @@
+# Build output
+/target
+
+# Local cargo/editor scratch (the active cargo config is ./.cargo/config.toml)
+/.cargo-home
+
+# Editor/OS files
+*.swp
+.DS_Store
