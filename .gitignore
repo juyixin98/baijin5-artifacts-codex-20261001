@@ -1,0 +1,14 @@
+# local data & databases
+/var/
+*.db
+*.db-wal
+*.db-shm
+smtpsink.db
+
+# test/coverage artifacts
+*.out
+coverage.txt
+
+# editor/OS
+.DS_Store
+*.swp
