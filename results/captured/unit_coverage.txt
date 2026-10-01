@@ -1,0 +1,7 @@
+ok  	localstun/internal/audit	0.005s	coverage: 100.0% of statements
+ok  	localstun/internal/client	0.810s	coverage: 85.1% of statements
+ok  	localstun/internal/server	0.305s	coverage: 87.9% of statements
+ok  	localstun/internal/store	0.032s	coverage: 87.2% of statements
+ok  	localstun/internal/stun	0.006s	coverage: 94.0% of statements
+ok  	localstun/internal/stunerror	0.004s	coverage: 95.8% of statements
+ok  	localstun/test/compat	0.113s	coverage: [no statements]

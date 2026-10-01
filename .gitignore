@@ -1,0 +1,24 @@
+# Build artifacts
+results/stund
+results/stunc
+results/stuninject
+
+# Generated runtime artifacts (logs and audit.db are produced by
+# scripts/run_e2e.sh; a captured copy is retained separately under
+# results/captured/ when desired for review)
+results/audit.db
+results/*.log
+results/*.jsonl
+results/*.txt
+
+# Go test/coverage artifacts
+*.out
+coverage.txt
+
+# OS/editor cruft
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,57 @@
+== build ==
+== start server (run=run-20261001T082303Z) ==
+server at 127.0.0.1:56394
+== normal client traffic (IPv4, integrity + fingerprint) ==
+request 1: tx=7634325fb4c4292498acba9d xor-mapped=127.0.0.1:41995 rtt=269µs verified=true
+request 2: tx=d1ff1095952e06edfadb3d20 xor-mapped=127.0.0.1:41995 rtt=170µs verified=true
+request 3: tx=21c9c943e999acd2039a8408 xor-mapped=127.0.0.1:41995 rtt=102µs verified=true
+== anomaly injection ==
+--- mode=valid expect=success
+inject mode=valid tx=e54abed0489109c2fe358bda bytes=52 -> 127.0.0.1:56394
+result bytes=120 outcome=success xor-mapped=127.0.0.1:40061 integrity=true
+JUDGMENT MATCH got=success want=success
+--- mode=unsigned expect=error401
+inject mode=unsigned tx=d6ade4488d8ee1a6add29b87 bytes=20 -> 127.0.0.1:56394
+result bytes=148 outcome=error401 code=401 reason="Unauthorized" integrity=true
+JUDGMENT MATCH got=error401 want=error401
+--- mode=unknown-required expect=error420
+inject mode=unknown-required tx=bbe4877aa92550973ef20f2e bytes=28 -> 127.0.0.1:56394
+result bytes=88 outcome=error420 code=420 reason="Unknown Attribute" integrity=true
+JUDGMENT MATCH got=error420 want=error420
+--- mode=unknown-optional expect=success
+inject mode=unknown-optional tx=8aa79ff4e1c568a1d9e58cf1 bytes=60 -> 127.0.0.1:56394
+result bytes=120 outcome=success xor-mapped=127.0.0.1:38120 integrity=true
+JUDGMENT MATCH got=success want=success
+--- mode=junk expect=dropped
+inject mode=junk tx=c85a7b25ae04cf29accd5ffb bytes=8 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped
+--- mode=bad-cookie expect=dropped
+inject mode=bad-cookie tx=bb5f3a45be7e4d2c2d3f1522 bytes=20 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped
+--- mode=tampered expect=dropped
+inject mode=tampered tx=b83abe93489873c4a3c8a835 bytes=52 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped
+== IPv6 (skipped automatically if ::1 is unavailable) ==
+request 1: tx=0691d64abdfabf2340faa74c xor-mapped=::1:50365 rtt=220µs verified=true
+== audit trail (SQLite) ==
+run: run-20261001T082303Z
+events by (event, kind):
+    5  binding_success                kind=-
+    2  decode_failed                  kind=input
+    1  decode_failed                  kind=integrity
+    1  unauthorized_request           kind=integrity
+    1  unknown_required_attribute     kind=integrity
+
+first 8 replayable rows (seq, kind, txid, src, detail):
+  #01 [ok       ] tx=7634325fb4c4.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #02 [ok       ] tx=d1ff1095952e.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #03 [ok       ] tx=21c9c943e999.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #04 [ok       ] tx=e54abed04891.. src=127.0.0.1:40061        mapped 127.0.0.1:40061
+  #05 [integrity] tx=d6ade4488d8e.. src=127.0.0.1:60315        request lacked valid MESSAGE-INTEGRITY
+  #06 [integrity] tx=bbe4877aa925.. src=127.0.0.1:48577        rejected with 420
+  #07 [ok       ] tx=8aa79ff4e1c5.. src=127.0.0.1:38120        mapped 127.0.0.1:38120
+  #08 [input    ] tx=.. src=127.0.0.1:57416        stun.decode: input: message shorter than 20-byte header: mes
+
+total audited datagrams for run: 10
+
+REPRODUCTION RESULT: ALL JUDGMENTS MATCH

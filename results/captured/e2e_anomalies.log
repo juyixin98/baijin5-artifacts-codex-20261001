@@ -1,0 +1,25 @@
+--- mode=valid expect=success
+inject mode=valid tx=e54abed0489109c2fe358bda bytes=52 -> 127.0.0.1:56394
+result bytes=120 outcome=success xor-mapped=127.0.0.1:40061 integrity=true
+JUDGMENT MATCH got=success want=success
+--- mode=unsigned expect=error401
+inject mode=unsigned tx=d6ade4488d8ee1a6add29b87 bytes=20 -> 127.0.0.1:56394
+result bytes=148 outcome=error401 code=401 reason="Unauthorized" integrity=true
+JUDGMENT MATCH got=error401 want=error401
+--- mode=unknown-required expect=error420
+inject mode=unknown-required tx=bbe4877aa92550973ef20f2e bytes=28 -> 127.0.0.1:56394
+result bytes=88 outcome=error420 code=420 reason="Unknown Attribute" integrity=true
+JUDGMENT MATCH got=error420 want=error420
+--- mode=unknown-optional expect=success
+inject mode=unknown-optional tx=8aa79ff4e1c568a1d9e58cf1 bytes=60 -> 127.0.0.1:56394
+result bytes=120 outcome=success xor-mapped=127.0.0.1:38120 integrity=true
+JUDGMENT MATCH got=success want=success
+--- mode=junk expect=dropped
+inject mode=junk tx=c85a7b25ae04cf29accd5ffb bytes=8 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped
+--- mode=bad-cookie expect=dropped
+inject mode=bad-cookie tx=bb5f3a45be7e4d2c2d3f1522 bytes=20 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped
+--- mode=tampered expect=dropped
+inject mode=tampered tx=b83abe93489873c4a3c8a835 bytes=52 -> 127.0.0.1:56394
+JUDGMENT MATCH got=dropped want=dropped

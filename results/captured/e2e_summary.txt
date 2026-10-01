@@ -1,0 +1,19 @@
+run: run-20261001T082303Z
+events by (event, kind):
+    5  binding_success                kind=-
+    2  decode_failed                  kind=input
+    1  decode_failed                  kind=integrity
+    1  unauthorized_request           kind=integrity
+    1  unknown_required_attribute     kind=integrity
+
+first 8 replayable rows (seq, kind, txid, src, detail):
+  #01 [ok       ] tx=7634325fb4c4.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #02 [ok       ] tx=d1ff1095952e.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #03 [ok       ] tx=21c9c943e999.. src=127.0.0.1:41995        mapped 127.0.0.1:41995
+  #04 [ok       ] tx=e54abed04891.. src=127.0.0.1:40061        mapped 127.0.0.1:40061
+  #05 [integrity] tx=d6ade4488d8e.. src=127.0.0.1:60315        request lacked valid MESSAGE-INTEGRITY
+  #06 [integrity] tx=bbe4877aa925.. src=127.0.0.1:48577        rejected with 420
+  #07 [ok       ] tx=8aa79ff4e1c5.. src=127.0.0.1:38120        mapped 127.0.0.1:38120
+  #08 [input    ] tx=.. src=127.0.0.1:57416        stun.decode: input: message shorter than 20-byte header: mes
+
+total audited datagrams for run: 10
