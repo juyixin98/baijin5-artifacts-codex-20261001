@@ -1,0 +1,18 @@
+# Local SQLite databases and generated reports (synthetic, but machine-local)
+data/*.db
+data/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Environment / editor
+.env
+*.swp
+.DS_Store

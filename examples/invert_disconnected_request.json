@@ -1,0 +1,6 @@
+{
+  "treated": [0, -3, 3, -3, 0],
+  "control": [1, 1, 1, 1, 1],
+  "method": "two_sided_prob",
+  "alpha": 0.1
+}
