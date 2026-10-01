@@ -1,0 +1,11 @@
+# Pinned to the versions used during development / verification (see VERIFICATION.md).
+# The code also works with nearby versions; these are the recorded ones.
+numpy==2.4.6
+scipy==1.15.3
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn==0.54.0
+# Test / client dependencies
+httpx==0.28.1
+pytest==9.1.1
+pytest-cov==7.1.0

@@ -1,0 +1,6 @@
+{
+  "fixture": "large_for_monte_carlo",
+  "kind": "pvalue",
+  "n_draws": 2000,
+  "seed": 20260928
+}
