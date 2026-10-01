@@ -1,0 +1,77 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.24s
+     Running unittests src/lib.rs (target/debug/deps/recursive_cte-0c74379e857cdb47)
+
+running 6 tests
+test config::tests::defaults_are_stable ... ok
+test config::tests::overrides_apply ... ok
+test config::tests::rejects_bad_values ... ok
+test state::accumulated::tests::all_mode_keeps_every_copy ... ok
+test state::accumulated::tests::cycle_arrival_has_its_own_identity ... ok
+test state::accumulated::tests::distinct_rejects_repeat_business_row ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/recursive_cte-f6649b43b352537f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/http_api.rs (target/debug/deps/http_api-a1c9baf3fd28a606)
+
+running 5 tests
+test health_reports_version_and_ok ... ok
+test malformed_body_is_a_named_validation_error_not_success ... ok
+test invalid_plan_returns_400_with_run_id_null ... ok
+test execute_tree_request_returns_explicit_success_envelope ... ok
+test incomplete_run_is_still_http_200_but_explicitly_flagged ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/recursive_semantics.rs (target/debug/deps/recursive_semantics-08f59f464ab02712)
+
+running 13 tests
+test output_is_a_typed_arrow2_batch_with_aux_columns ... ok
+test max_rows_returns_explicit_incomplete ... ok
+test max_depth_returns_explicit_incomplete_with_limit_basis ... ok
+test cycle_detection_uses_declared_key_not_whole_row ... ok
+test diamond_distinct_reports_converging_node_once ... ok
+test diamond_all_keeps_one_row_per_walk ... ok
+test limits_and_run_metadata_are_reported ... ok
+test duplicate_edges_yield_bag_multiplicity_under_all ... ok
+test tree_dfs_preorder_matches_explicit_recursion ... ok
+test tree_distinct_bfs_matches_handwritten_rows_and_oracle ... ok
+test self_loop_is_flagged_and_does_not_inflate_under_union_all ... ok
+test two_cycle_closes_back_onto_root ... ok
+test traversal_order_is_configurable_and_deterministic ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/validation.rs (target/debug/deps/validation-2b2140c33029b515)
+
+running 16 tests
+test rejects_duplicate_key_column_listing ... ok
+test rejects_empty_key_columns ... ok
+test rejects_float_into_int64 ... ok
+test rejects_auxiliary_column_name_collision ... ok
+test rejects_key_column_not_in_schema ... ok
+test rejects_literal_for_parent_key_column ... ok
+test rejects_limit_above_process_ceiling ... ok
+test rejects_join_key_type_mismatch ... ok
+test rejects_projection_arity_mismatch ... ok
+test rejects_row_arity_mismatch ... ok
+test rejects_unknown_edge_column_in_projection ... ok
+test rejects_unknown_traversal_order ... ok
+test rejects_unknown_json_fields ... ok
+test rejects_unknown_union_keyword ... ok
+test rejects_wrongly_typed_seed_value ... ok
+test rejects_zero_limits ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests recursive_cte
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

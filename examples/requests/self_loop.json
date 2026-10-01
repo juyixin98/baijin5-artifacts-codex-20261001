@@ -1,0 +1,21 @@
+{
+  "cte_name": "self_loop",
+  "union": "ALL",
+  "order": "bfs",
+  "schema": [{ "name": "id", "type": "int64" }],
+  "key_columns": ["id"],
+  "seed": [[1]],
+  "edges": {
+    "schema": [
+      { "name": "from_id", "type": "int64" },
+      { "name": "to_id", "type": "int64" }
+    ],
+    "rows": [[1, 1], [1, 2]]
+  },
+  "recursive": {
+    "parent_key": "id",
+    "edge_from": "from_id",
+    "projection": [{ "edge_column": "to_id" }]
+  },
+  "limits": { "max_depth": 8, "max_rows": 1000 }
+}
