@@ -1,0 +1,9 @@
+IPW-ATE reproduction report
+true ATE (by construction) = 2.0
+========================================================================
+good_overlap                 accept       tau=+1.923 SE=0.116 balz=1.93 CI=[+1.697,+2.150] verdict_ok=True
+support_void                 RAISED overlap_violation_error      verdict_ok=True
+extreme_interior_weights     inconclusive tau=+2.592 SE=0.162 balz=3.18 CI=[+2.275,+2.909] verdict_ok=True
+misspecified_outcome         accept       tau=+2.291 SE=0.185 balz=1.60 CI=[+1.929,+2.652] verdict_ok=True
+misspecified_propensity      RAISED overlap_violation_error      verdict_ok=True
+deterministic_separation     RAISED model_separation_error       verdict_ok=True
