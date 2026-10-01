@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lord3-online-fdr"
+version = "1.0.0"
+description = "Teaching service for online FDR control with the frozen LORD 3 rule"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi==0.141.1",
+  "uvicorn==0.54.0",
+  "numpy==2.4.6",
+  "scipy==1.15.3",
+  "pydantic==2.13.5",
+]
+
+[tool.setuptools]
+packages = ["app", "experiments"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --cov=app --cov-report=term-missing --cov-fail-under=80"
+pythonpath = ["."]
+
+[tool.coverage.run]
+branch = true
+source = ["app"]
