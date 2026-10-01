@@ -1,0 +1,8 @@
+id,age,name,active,note
+0,30,Ada,true,
+1,17,,false,
+2,,Bo,true,
+3,40,Cy,,
+4,,,true,
+5,35,Di,false,
+6,,Jo,false,

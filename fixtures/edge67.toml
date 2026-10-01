@@ -1,0 +1,21 @@
+# Non-machine-word-sized boundary fixture: 67 rows.
+# Two u64 words, the second carrying 3 real bits and 61 padding positions.
+# `a` is NULL when id % 3 == 0; `b` is NULL when id % 4 == 0, so NULL-crossing
+# happens on both words and on the tail bits.
+table = "edge67"
+csv = "edge67.csv"
+content_version = 1
+
+columns = [
+    { name = "id",  type = "int"  },
+    { name = "a",   type = "int"  },
+    { name = "b",   type = "int"  },
+    { name = "grp", type = "text" },
+]
+
+# The final logical row lives on a tail bit. It is deleted at v2, exercising
+# "versioned delete removes a row in the last partial word" while content
+# generation (and therefore combined-index compatibility) stays at v1.
+[[deletes]]
+row = 66
+version = 2

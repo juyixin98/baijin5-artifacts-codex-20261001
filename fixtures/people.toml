@@ -1,0 +1,20 @@
+# Small mixed-NULL fixture for tvindex.
+# 7 rows. Column `note` is NULL on every row (all-unknown coverage).
+table = "people"
+csv = "people.csv"
+content_version = 1
+
+columns = [
+    { name = "id",     type = "int"  },
+    { name = "age",    type = "int"  },
+    { name = "name",   type = "text" },
+    { name = "active", type = "bool" },
+    { name = "note",   type = "text" },
+]
+
+# Row 6 (Jo, NULL age) is deleted at v2: visible in an as_of=1 snapshot,
+# excluded at the read head. The content generation stays v1, proving that
+# deletes exclude rows without invalidating combined bitmap indexes.
+[[deletes]]
+row = 6
+version = 2

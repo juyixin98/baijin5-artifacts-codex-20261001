@@ -1,0 +1,19 @@
+# tvindex configuration.
+# Environment overrides use TVINDEX__<SECTION>__<KEY>, e.g.
+#   TVINDEX__SERVER__PORT=9090
+
+[server]
+host = "127.0.0.1"
+port = 8080
+max_body_bytes = 1048576
+
+[data]
+fixture_dir = "fixtures"
+# Default table served by the HTTP API. The standalone verifier runs all
+# manifests (people + edge67) regardless of this setting.
+manifest = "fixtures/people.toml"
+
+[log]
+# error | warn | info | debug | trace (debug shows per-node 3VL bitmaps)
+level = "info"
+include_trace = true

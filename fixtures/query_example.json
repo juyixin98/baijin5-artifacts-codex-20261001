@@ -1,0 +1,17 @@
+{
+  "as_of": 2,
+  "where": {
+    "op": "and",
+    "args": [
+      { "op": "cmp", "column": "age", "cmp": ">=", "value": 18 },
+      { "op": "cmp", "column": "active", "cmp": "=", "value": true },
+      {
+        "op": "or",
+        "args": [
+          { "op": "is_not_null", "column": "name" },
+          { "op": "not", "arg": { "op": "is_null", "column": "note" } }
+        ]
+      }
+    ]
+  }
+}

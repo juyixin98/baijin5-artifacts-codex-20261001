@@ -1,0 +1,41 @@
+[package]
+name = "tvindex"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Column-value bitmap indexes with SQL three-valued-logic filtering (AND/OR/NOT/IS NULL), versioned deletes and an Axum query API"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "tvindex"
+path = "src/lib.rs"
+
+[[bin]]
+name = "tvindex"
+path = "src/main.rs"
+
+[dependencies]
+# Exact pins aligned to the local, vendored cargo mirror so the project builds
+# fully offline (see README "Offline build"). Arrow2 is used for the typed
+# physical arrays/chunk; CSV decoding is our own parser (no io_csv feature).
+arrow2 = { version = "=0.18.0", default-features = false }
+axum = "=0.7.5"
+serde = { version = "=1.0.203", features = ["derive"] }
+serde_json = "=1.0.117"
+tokio = { version = "=1.38.1", features = ["rt-multi-thread", "macros", "net", "sync"] }
+# display feature off: its serializer wrapper does not compile against the
+# mirror's toml_edit 0.22.27; parse already pulls toml_edit with serde support.
+toml = { version = "=0.8.14", default-features = false, features = ["parse"] }
+tracing = "=0.1.40"
+# Minimal features: env-filter (and its regex dependency) are intentionally off
+# so the binary works with the offline mirror's regex build; main.rs maps the
+# configured level with tracing_subscriber::filter::LevelFilter directly.
+tracing-subscriber = { version = "=0.3.3", default-features = false, features = ["std", "fmt", "ansi"] }
+
+[dev-dependencies]
+# The differential test oracle uses only std + serde (already a normal dep);
+# no reference answers come from a third-party crate.
+tokio = { version = "=1.38.1", features = ["rt-multi-thread", "macros", "net", "sync"] }
+
+[profile.release]
+lto = "thin"
