@@ -1,0 +1,17 @@
+# Example configuration for tribool-index.
+# Loaded automatically from config/default.toml, or pass a path explicitly:
+#   cargo run --bin server -- config/default.toml
+# Environment variables (TRIBOOL_HOST, TRIBOOL_PORT, TRIBOOL_LOG_LEVEL,
+# TRIBOOL_INCLUDE_TRACE, TRIBOOL_MAX_EXPR_NODES) override these values.
+
+[server]
+host = "127.0.0.1"
+port = 8080
+
+[log]
+level = "info"          # error | warn | info | debug | trace
+include_trace = true    # include per-step 3VL trace in query responses
+
+[query]
+max_expr_nodes = 10000
+max_append_rows = 1000000
