@@ -1,0 +1,24 @@
+{
+  "listen": "127.0.0.1:1080",
+  "handshake_timeout": "10s",
+  "dial_timeout": "5s",
+  "idle_timeout": "0s",
+  "shutdown_timeout": "5s",
+  "max_connections": 64,
+  "byte_budget_per_connection": 4194304,
+  "database": {
+    "path": "data/socks5d.db"
+  },
+  "resolver": {
+    "hosts": {
+      "echo.local": ["127.0.0.1", "::1"],
+      "svc.internal": ["127.0.0.1"]
+    }
+  },
+  "rules": [
+    {"kind": "cidr", "value": "127.0.0.0/8", "note": "IPv4 loopback"},
+    {"kind": "cidr", "value": "::1/128", "note": "IPv6 loopback"},
+    {"kind": "domain", "value": "echo.local", "mode": "exact", "note": "local echo service"},
+    {"kind": "domain", "value": "internal", "mode": "suffix", "note": "local *.internal names"}
+  ]
+}

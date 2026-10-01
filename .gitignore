@@ -1,0 +1,18 @@
+# Compiled binaries
+/socks5d
+/bin/
+
+# Local SQLite databases and WAL sidecars
+/data/
+*.db
+*.db-wal
+*.db-shm
+
+# Runtime / coverage artifacts
+*.out
+*.log
+coverage.txt
+
+# OS/editor cruft
+.DS_Store
+*.swp
