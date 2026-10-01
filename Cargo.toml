@@ -1,0 +1,37 @@
+[package]
+name = "leapfrog_triejoin"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.98"
+description = "Leapfrog Triejoin backend for 3-table and restricted multi-table natural joins"
+license = "MIT OR Apache-2.0"
+
+[[bin]]
+name = "lfj-server"
+path = "src/main.rs"
+
+[lib]
+name = "leapfrog_triejoin"
+path = "src/lib.rs"
+
+[dependencies]
+axum = { version = "0.7.5", features = ["macros"] }
+tokio = { version = "1.36", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
+tower-http = { version = "0.5", features = ["trace", "limit"] }
+arrow2 = { version = "0.18", default-features = false, features = ["io_ipc"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+uuid = { version = "1", features = ["v4"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+serde_json = { version = "1", features = ["preserve_order"] }
+tower = { version = "0.5", features = ["util"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+# Deterministic dependency audit: refresh with `cargo update -p <crate>`.

@@ -1,0 +1,61 @@
+{
+  "_comment": "dup_l repeats (1,10) x3; dup_r repeats (1,100) x2. Joined multiplicity = 6.",
+  "limit": 100,
+  "null_policy": "reject",
+  "relations": [
+    {
+      "name": "dup_l",
+      "schema": [
+        {
+          "name": "x",
+          "type": "int64"
+        },
+        {
+          "name": "y",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ]
+      ]
+    },
+    {
+      "name": "dup_r",
+      "schema": [
+        {
+          "name": "x",
+          "type": "int64"
+        },
+        {
+          "name": "z",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          1,
+          100
+        ],
+        [
+          1,
+          100
+        ]
+      ]
+    }
+  ]
+}

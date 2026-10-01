@@ -1,0 +1,124 @@
+{
+  "_comment": "Three-table triangle E(a,b) F(b,c) G(c,a) over directed K3. Expected 6 oriented tuples.",
+  "limit": 1000,
+  "null_policy": "reject",
+  "relations": [
+    {
+      "name": "E",
+      "schema": [
+        {
+          "name": "a",
+          "type": "int64"
+        },
+        {
+          "name": "b",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "F",
+      "schema": [
+        {
+          "name": "b",
+          "type": "int64"
+        },
+        {
+          "name": "c",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "G",
+      "schema": [
+        {
+          "name": "c",
+          "type": "int64"
+        },
+        {
+          "name": "a",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  ]
+}

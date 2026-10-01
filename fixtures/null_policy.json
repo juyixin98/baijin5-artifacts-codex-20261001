@@ -1,0 +1,49 @@
+{
+  "_comment": "NULL on join key k. Rejected under null_policy=reject; row excluded under drop_join_rows.",
+  "limit": 100,
+  "null_policy": "drop_join_rows",
+  "relations": [
+    {
+      "name": "l",
+      "schema": [
+        {
+          "name": "k",
+          "type": "int64"
+        },
+        {
+          "name": "y",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          null,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "r",
+      "schema": [
+        {
+          "name": "k",
+          "type": "int64"
+        },
+        {
+          "name": "z",
+          "type": "int64"
+        }
+      ],
+      "rows": [
+        [
+          5,
+          2
+        ]
+      ]
+    }
+  ]
+}
