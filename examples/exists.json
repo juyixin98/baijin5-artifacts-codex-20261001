@@ -1,0 +1,58 @@
+{
+  "options": { "mode": "crosscheck" },
+  "query": {
+    "select": [ { "column": "o_id" } ],
+    "from": { "relation": "orders", "alias": "o" },
+    "where_terms": [
+      {
+        "kind": "exists",
+        "negated": false,
+        "sub": {
+          "from": { "relation": "lines", "alias": "l" },
+          "where_terms": [
+            {
+              "kind": "correlated",
+              "left":  { "table": "o", "column": "cust" },
+              "right": { "table": "l", "column": "cust" }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "fixtures": {
+    "relations": [
+      {
+        "name": "orders",
+        "columns": [
+          { "name": "o_id", "type": "int" },
+          { "name": "cust", "type": "int" },
+          { "name": "want", "type": "int" }
+        ],
+        "rows": [
+          [1, 10, 1],
+          [2, 20, 2],
+          [3, 10, 1],
+          [4, null, 1],
+          [5, 30, 5]
+        ]
+      },
+      {
+        "name": "lines",
+        "columns": [
+          { "name": "l_id", "type": "int" },
+          { "name": "cust", "type": "int" },
+          { "name": "amt", "type": "int" },
+          { "name": "code", "type": "int" },
+          { "name": "tag", "type": "str" }
+        ],
+        "rows": [
+          [101, 10, 5, 1, "a"],
+          [102, 10, 7, null, "b"],
+          [103, 20, null, 2, "c"],
+          [104, null, 9, 1, "d"]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+[package]
+name = "decorrelate-svc"
+version = "0.1.0"
+edition = "2021"
+description = "Decorrelation compilation and execution service for restricted EXISTS / NOT EXISTS / scalar aggregate subqueries"
+license = "MIT"
+
+[lib]
+name = "decorrelate_svc"
+path = "src/lib.rs"
+
+[[bin]]
+name = "decorrelate-svc"
+path = "src/main.rs"
+
+[dependencies]
+axum = "=0.7.9"
+tokio = { version = "=1.40.0", features = ["rt-multi-thread", "macros", "net", "signal", "io-util"] }
+tower-http = { version = "=0.6.1", default-features = false, features = ["limit"] }
+serde = { version = "=1.0.210", features = ["derive"] }
+serde_json = "=1.0.128"
+arrow2 = { version = "=0.18.0", default-features = false }
+uuid = { version = "=1.10.0", features = ["v4"] }
+tracing = "=0.1.40"
+tracing-subscriber = { version = "=0.3.18", features = ["env-filter", "fmt"] }
+thiserror = "=1.0.63"
+
+[dev-dependencies]
+rand = "=0.8.5"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

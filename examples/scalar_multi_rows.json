@@ -1,0 +1,46 @@
+{
+  "options": { "mode": "crosscheck" },
+  "query": {
+    "select": [ { "column": "o_id" } ],
+    "from": { "relation": "orders", "alias": "o" },
+    "where_terms": [
+      {
+        "kind": "scalar_sub",
+        "outer": { "kind": "column", "column": "want" },
+        "op": "eq",
+        "sub": {
+          "from": { "relation": "scalar_src", "alias": "s" },
+          "where_terms": [
+            {
+              "kind": "correlated",
+              "left":  { "table": "o", "column": "cust" },
+              "right": { "table": "s", "column": "cust" }
+            }
+          ],
+          "project": { "table": "s", "column": "code" }
+        }
+      }
+    ]
+  },
+  "fixtures": {
+    "relations": [
+      {
+        "name": "orders",
+        "columns": [
+          { "name": "o_id", "type": "int" },
+          { "name": "cust", "type": "int" },
+          { "name": "want", "type": "int" }
+        ],
+        "rows": [ [1, 40, 5] ]
+      },
+      {
+        "name": "scalar_src",
+        "columns": [
+          { "name": "cust", "type": "int" },
+          { "name": "code", "type": "int" }
+        ],
+        "rows": [ [40, 5], [40, 6] ]
+      }
+    ]
+  }
+}
