@@ -1,0 +1,21 @@
+{
+  "listen": { "host": "127.0.0.1", "port": 2525 },
+  "hostname": "smtpsink.local",
+  "storage": {
+    "path": "./var/smtpsink.db",
+    "max_total_bytes": 67108864
+  },
+  "local_domains": ["localhost", "sink.local"],
+  "limits": {
+    "command_line_bytes": 512,
+    "data_line_bytes": 1000,
+    "message_bytes": 1048576,
+    "recipients_per_message": 20,
+    "messages_per_connection": 10,
+    "commands_per_connection": 200
+  },
+  "timeouts": {
+    "idle_ms": 60000,
+    "session_ms": 600000
+  }
+}
