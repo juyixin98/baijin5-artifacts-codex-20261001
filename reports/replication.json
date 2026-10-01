@@ -1,0 +1,165 @@
+{
+  "config": {
+    "reps": 400,
+    "beta0": 0.75,
+    "nominal_coverage": 0.95
+  },
+  "e1_consistency": [
+    {
+      "name": "strong_iv_n1000",
+      "reps": 400,
+      "metrics": {
+        "beta0": 0.75,
+        "iv_mean": 0.7502465892045336,
+        "iv_bias": 0.000246589204533576,
+        "iv_rmse": 0.03754000793411013,
+        "ols_mean": 1.0998779493635424,
+        "ols_bias": 0.34987794936354244,
+        "fraction_flagged_weak": 0.0
+      }
+    },
+    {
+      "name": "strong_iv_n4000",
+      "reps": 400,
+      "metrics": {
+        "beta0": 0.75,
+        "iv_mean": 0.7516193565993197,
+        "iv_bias": 0.0016193565993196657,
+        "iv_rmse": 0.019445276270397202,
+        "ols_mean": 1.0995466088045793,
+        "ols_bias": 0.34954660880457933,
+        "fraction_flagged_weak": 0.0
+      }
+    },
+    {
+      "name": "weak_iv_n4000",
+      "reps": 400,
+      "metrics": {
+        "beta0": 0.75,
+        "iv_mean": 0.7528981348337402,
+        "iv_bias": 0.00289813483374024,
+        "iv_rmse": 0.4100252226104188,
+        "ols_mean": 1.3481016568666695,
+        "ols_bias": 0.5981016568666695,
+        "fraction_flagged_weak": 0.925
+      }
+    }
+  ],
+  "e2_coverage": [
+    {
+      "name": "coverage_homoskedastic_homoskedastic",
+      "reps": 400,
+      "metrics": {
+        "coverage95": 0.95,
+        "mean_se": 0.04377965394089598,
+        "empirical_sd_of_estimate": 0.04540278811759258
+      }
+    },
+    {
+      "name": "coverage_homoskedastic_robust",
+      "reps": 400,
+      "metrics": {
+        "coverage95": 0.9475,
+        "mean_se": 0.04381118262449542,
+        "empirical_sd_of_estimate": 0.04540278811759258
+      }
+    },
+    {
+      "name": "coverage_heteroskedastic_homoskedastic",
+      "reps": 400,
+      "metrics": {
+        "coverage95": 0.8625,
+        "mean_se": 0.06259124929719509,
+        "empirical_sd_of_estimate": 0.08370981069401548
+      }
+    },
+    {
+      "name": "coverage_heteroskedastic_robust",
+      "reps": 400,
+      "metrics": {
+        "coverage95": 0.94,
+        "mean_se": 0.080809907973734,
+        "empirical_sd_of_estimate": 0.08370981069401548
+      }
+    }
+  ],
+  "e3_sargan": [
+    {
+      "name": "sargan_size",
+      "reps": 400,
+      "metrics": {
+        "rejection_rate_5pct": 0.0575
+      }
+    },
+    {
+      "name": "sargan_power",
+      "reps": 400,
+      "metrics": {
+        "rejection_rate_5pct": 1.0
+      }
+    }
+  ],
+  "e4_endogeneity": [
+    {
+      "name": "dwh_power_endogenous",
+      "reps": 400,
+      "metrics": {
+        "rejection_rate_5pct": 1.0
+      }
+    },
+    {
+      "name": "dwh_size_exogenous",
+      "reps": 400,
+      "metrics": {
+        "rejection_rate_5pct": 0.0425
+      }
+    }
+  ],
+  "e5_failure_categories": [
+    {
+      "name": "category_rank_failure",
+      "reps": 1,
+      "metrics": {
+        "expected": "unidentified",
+        "observed": "unidentified",
+        "correct": true
+      }
+    },
+    {
+      "name": "category_duplicate_instrument",
+      "reps": 1,
+      "metrics": {
+        "expected": "unidentified",
+        "observed": "unidentified",
+        "correct": true
+      }
+    },
+    {
+      "name": "category_population_zero_pi",
+      "reps": 1,
+      "metrics": {
+        "expected": "weak",
+        "observed": "weak",
+        "correct": true
+      }
+    },
+    {
+      "name": "category_weak",
+      "reps": 1,
+      "metrics": {
+        "expected": "weak",
+        "observed": "weak",
+        "correct": true
+      }
+    },
+    {
+      "name": "category_collinear",
+      "reps": 1,
+      "metrics": {
+        "expected": "ok",
+        "observed": "ok",
+        "correct": true
+      }
+    }
+  ]
+}
