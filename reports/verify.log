@@ -1,0 +1,97 @@
+2026-09-28 05:42:04,434 INFO    [run=verify-a2bfc3943e8d] verification_start run=verify-a2bfc3943e8d time=2026-09-28T05:42:04+0800 seed=20260927
+2026-09-28 05:42:04,436 INFO    [run=verify-a2bfc3943e8d] run=verify-a2bfc3943e8d versions={"python": "3.12.3", "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39", "numpy": "2.4.6", "scipy": "1.15.3", "package": "1.0.0"}
+2026-09-28 05:42:04,436 INFO    [run=verify-a2bfc3943e8d] run=verify-a2bfc3943e8d cases_total=6 progress=0/6
+2026-09-28 05:42:04,436 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 progress=1/6 input n=1 batch=2 desc='n=1 scalar multiplication, explainable path'
+2026-09-28 05:42:04,437 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=1 batch=2 path=tiny_explicit mode=real precision=double
+2026-09-28 05:42:04,437 INFO    [run=verify-a2bfc3943e8d] compute step=tiny_explicit_done elements=2
+2026-09-28 05:42:04,437 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=kernel_path passed=True expected=tiny_explicit actual=tiny_explicit
+2026-09-28 05:42:04,438 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=concrete_expected_result passed=True
+2026-09-28 05:42:04,438 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=mpmath_oracle_start n=1 batch=2 dps=80
+2026-09-28 05:42:04,439 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=mpmath_compare passed=True max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08
+2026-09-28 05:42:04,440 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,440 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=oracles passed=True fft_max_abs_err=0.000e+00 fft_max_rel_err=0.000e+00
+2026-09-28 05:42:04,440 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=no_aliasing passed=True m=1 2n-1=1
+2026-09-28 05:42:04,441 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=1 batch=2 path=tiny_explicit mode=real precision=double
+2026-09-28 05:42:04,441 INFO    [run=verify-a2bfc3943e8d] compute step=tiny_explicit_done elements=2
+2026-09-28 05:42:04,441 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 repeat_call path=tiny_explicit cache_hit=False same_result=True
+2026-09-28 05:42:04,441 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 verdict=PASS progress=1/6 cache_info={"entries": 0, "capacity": 128, "hits": 0, "misses": 0}
+2026-09-28 05:42:04,441 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 progress=2/6 input n=13 batch=4 desc='asymmetric real Toeplitz, non-power-of-two n; first_row shifted by +5 so T != T.T'
+2026-09-28 05:42:04,442 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=13 batch=4 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,442 INFO    [run=verify-a2bfc3943e8d] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:42:04,442 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=25 batch=4 cache_hit=False last_errors_checked_later
+2026-09-28 05:42:04,442 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 check=kernel_path passed=True expected=embedding_fft actual=embedding_fft
+2026-09-28 05:42:04,443 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n13 step=mpmath_oracle_start n=13 batch=4 dps=80
+2026-09-28 05:42:04,446 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n13 step=mpmath_compare passed=True max_abs=7.105e-15 <= tol_abs + tol_rel*scale=2.988e-08
+2026-09-28 05:42:04,447 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n13 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 check=oracles passed=True fft_max_abs_err=7.105e-15 fft_max_rel_err=1.466e-14
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 check=no_aliasing passed=True m=25 2n-1=25
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=13 batch=4 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] compute step=reuse_embedding_spectrum m=25 cache=hit
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=25 batch=4 cache_hit=True last_errors_checked_later
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 repeat_call path=embedding_fft cache_hit=True same_result=True
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n13 verdict=PASS progress=2/6 cache_info={"entries": 1, "capacity": 128, "hits": 1, "misses": 1}
+2026-09-28 05:42:04,448 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 progress=3/6 input n=17 batch=2 desc='complex non-Hermitian Toeplitz, non-power-of-two n'
+2026-09-28 05:42:04,449 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=17 batch=2 path=embedding_fft mode=complex precision=double
+2026-09-28 05:42:04,449 INFO    [run=verify-a2bfc3943e8d] compute step=build_embedding m=33 (minimum=33) cache=miss
+2026-09-28 05:42:04,449 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=33 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:42:04,449 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 check=kernel_path passed=True expected=embedding_fft actual=embedding_fft
+2026-09-28 05:42:04,449 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:complex_nonhermitian_n17 step=mpmath_oracle_start n=17 batch=2 dps=80
+2026-09-28 05:42:04,457 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:complex_nonhermitian_n17 step=mpmath_compare passed=True max_abs=5.421e-15 <= tol_abs + tol_rel*scale=2.034e-08
+2026-09-28 05:42:04,458 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:complex_nonhermitian_n17 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,458 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 check=oracles passed=True fft_max_abs_err=5.421e-15 fft_max_rel_err=3.078e-15
+2026-09-28 05:42:04,458 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 check=no_aliasing passed=True m=33 2n-1=33
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=17 batch=2 path=embedding_fft mode=complex precision=double
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] compute step=reuse_embedding_spectrum m=33 cache=hit
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=33 batch=2 cache_hit=True last_errors_checked_later
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 repeat_call path=embedding_fft cache_hit=True same_result=True
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:complex_nonhermitian_n17 verdict=PASS progress=3/6 cache_info={"entries": 2, "capacity": 128, "hits": 2, "misses": 2}
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 progress=4/6 input n=15 batch=3 desc='impulse vectors e_k at k=(0, 7, 14); outputs are T columns'
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=15 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,459 INFO    [run=verify-a2bfc3943e8d] compute step=build_embedding m=30 (minimum=29) cache=miss
+2026-09-28 05:42:04,460 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=30 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:42:04,460 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 check=kernel_path passed=True expected=embedding_fft actual=embedding_fft
+2026-09-28 05:42:04,460 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 check=impulse_is_column_of_T passed=True
+2026-09-28 05:42:04,460 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:impulse_real_n15 step=mpmath_oracle_start n=15 batch=3 dps=80
+2026-09-28 05:42:04,462 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:impulse_real_n15 step=mpmath_compare passed=True max_abs=4.441e-16 <= tol_abs + tol_rel*scale=3.836e-09
+2026-09-28 05:42:04,463 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:impulse_real_n15 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,463 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 check=oracles passed=True fft_max_abs_err=4.441e-16 fft_max_rel_err=1.201e-14
+2026-09-28 05:42:04,463 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 check=no_aliasing passed=True m=30 2n-1=29
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=15 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] compute step=reuse_embedding_spectrum m=30 cache=hit
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=30 batch=3 cache_hit=True last_errors_checked_later
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 repeat_call path=embedding_fft cache_hit=True same_result=True
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:impulse_real_n15 verdict=PASS progress=4/6 cache_info={"entries": 3, "capacity": 128, "hits": 3, "misses": 3}
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 progress=5/6 input n=31 batch=2 desc='asymmetric real Toeplitz, non-power-of-two n; first_row shifted by +5 so T != T.T'
+2026-09-28 05:42:04,464 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=31 batch=2 path=embedding_fft mode=real precision=single
+2026-09-28 05:42:04,465 INFO    [run=verify-a2bfc3943e8d] compute step=build_embedding m=63 (minimum=61) cache=miss
+2026-09-28 05:42:04,465 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=63 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:42:04,465 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 check=kernel_path passed=True expected=embedding_fft actual=embedding_fft
+2026-09-28 05:42:04,465 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n31 step=mpmath_oracle_start n=31 batch=2 dps=80
+2026-09-28 05:42:04,473 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n31 step=mpmath_compare passed=True max_abs=6.716e-06 <= tol_abs + tol_rel*scale=3.854e-04
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:asym_real_n31 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 check=oracles passed=True fft_max_abs_err=6.716e-06 fft_max_rel_err=1.387e-04
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 check=no_aliasing passed=True m=63 2n-1=61
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=31 batch=2 path=embedding_fft mode=real precision=single
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] compute step=reuse_embedding_spectrum m=63 cache=hit
+2026-09-28 05:42:04,475 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=63 batch=2 cache_hit=True last_errors_checked_later
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 repeat_call path=embedding_fft cache_hit=True same_result=True
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:asym_real_n31 verdict=PASS progress=5/6 cache_info={"entries": 4, "capacity": 128, "hits": 4, "misses": 4}
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 progress=6/6 input n=1 batch=2 desc='n=1 scalar multiplication, explainable path'
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=1 batch=2 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] compute step=build_embedding m=1 (minimum=1) cache=miss
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=1 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:42:04,476 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=kernel_path passed=True expected=embedding_fft actual=embedding_fft
+2026-09-28 05:42:04,477 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=concrete_expected_result passed=True
+2026-09-28 05:42:04,477 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=mpmath_oracle_start n=1 batch=2 dps=80
+2026-09-28 05:42:04,477 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=mpmath_compare passed=True max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08
+2026-09-28 05:42:04,478 INFO    [run=verify-a2bfc3943e8d] verify case=verify-a2bfc3943e8d:tiny_n1 step=scipy_dense_compare passed=True
+2026-09-28 05:42:04,478 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=oracles passed=True fft_max_abs_err=0.000e+00 fft_max_rel_err=0.000e+00
+2026-09-28 05:42:04,478 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 check=no_aliasing passed=True m=1 2n-1=1
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] plan step=select_path n=1 batch=2 path=embedding_fft mode=real precision=double
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] compute step=reuse_embedding_spectrum m=1 cache=hit
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] compute step=fft_done m=1 batch=2 cache_hit=True last_errors_checked_later
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 repeat_call path=embedding_fft cache_hit=True same_result=True
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] case=verify-a2bfc3943e8d:tiny_n1 verdict=PASS progress=6/6 cache_info={"entries": 5, "capacity": 128, "hits": 5, "misses": 5}
+2026-09-28 05:42:04,479 INFO    [run=verify-a2bfc3943e8d] run=verify-a2bfc3943e8d memory_scale_sample={"n": 4096, "batch": 2, "embedding_m": 8192, "dtype": "float64", "embedding_elements": 8192, "embedding_bytes": 65536, "spectrum_elements": 4097, "spectrum_bytes": 65552, "padded_batch_bytes": 131072, "estimated_working_bytes": 327696, "dense_reference_bytes": 134217728, "memory_saving_vs_dense_ratio": 682.611}
+2026-09-28 05:42:04,480 INFO    [run=verify-a2bfc3943e8d] report_written path=reports/evidence.json overall_passed=True
+2026-09-28 05:42:04,480 INFO    [run=verify-a2bfc3943e8d] verification_end run=verify-a2bfc3943e8d overall_passed=True passed=6 failed=0

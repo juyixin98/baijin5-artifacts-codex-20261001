@@ -1,0 +1,85 @@
+2026-09-28 05:44:57,940 INFO    [run=test-test_tiny_problem_uses_explainable_path] plan step=select_path n=1 batch=2 path=tiny_explicit mode=real precision=double
+2026-09-28 05:44:57,941 INFO    [run=test-test_tiny_problem_uses_explainable_path] compute step=tiny_explicit_done elements=2
+2026-09-28 05:44:57,943 INFO    [run=test-test_repeated_call_is_cache_hit] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,943 INFO    [run=test-test_repeated_call_is_cache_hit] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,944 INFO    [run=test-test_repeated_call_is_cache_hit] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,944 INFO    [run=test-test_repeated_call_is_cache_hit] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,944 INFO    [run=test-test_repeated_call_is_cache_hit] compute step=reuse_embedding_spectrum m=25 cache=hit
+2026-09-28 05:44:57,944 INFO    [run=test-test_repeated_call_is_cache_hit] compute step=fft_done m=25 batch=3 cache_hit=True last_errors_checked_later
+2026-09-28 05:44:57,946 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,946 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,947 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,947 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,947 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,947 INFO    [run=test-test_different_coefficients_same_shape_do_not_sh] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,949 INFO    [run=test-test_cache_key_includes_full_size] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,950 INFO    [run=test-test_cache_key_includes_full_size] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,950 INFO    [run=test-test_cache_key_includes_full_size] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,951 INFO    [run=test-test_cache_key_includes_full_size] plan step=select_path n=17 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,951 INFO    [run=test-test_cache_key_includes_full_size] compute step=build_embedding m=33 (minimum=33) cache=miss
+2026-09-28 05:44:57,951 INFO    [run=test-test_cache_key_includes_full_size] compute step=fft_done m=33 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,953 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,953 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,953 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,953 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,954 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,954 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,954 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,954 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,954 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,955 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,955 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,955 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,956 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,956 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,956 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,956 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,957 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:57,957 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,957 INFO    [run=test-test_cache_eviction_respects_capacity] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,957 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=reuse_embedding_spectrum m=25 cache=hit
+2026-09-28 05:44:57,958 INFO    [run=test-test_cache_eviction_respects_capacity] compute step=fft_done m=25 batch=3 cache_hit=True last_errors_checked_later
+2026-09-28 05:44:57,960 INFO    [run=test-test_force_embedding_path_on_tiny_problem] plan step=select_path n=1 batch=2 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:57,960 INFO    [run=test-test_force_embedding_path_on_tiny_problem] compute step=build_embedding m=1 (minimum=1) cache=miss
+2026-09-28 05:44:57,960 INFO    [run=test-test_force_embedding_path_on_tiny_problem] compute step=fft_done m=1 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:57,972 INFO    [run=test-test_correct_result_passes_evidence] verify case=unit-correct step=mpmath_oracle_start n=3 batch=1 dps=80
+2026-09-28 05:44:57,973 INFO    [run=test-test_correct_result_passes_evidence] verify case=unit-correct step=mpmath_compare passed=True max_abs=0.000e+00 <= tol_abs + tol_rel*scale=4.100e-09
+2026-09-28 05:44:57,974 INFO    [run=test-test_correct_result_passes_evidence] verify case=unit-correct step=scipy_dense_compare passed=True
+2026-09-28 05:44:57,975 INFO    [run=test-test_corrupted_result_gets_numeric_accuracy_cate] verify case=unit-corrupt step=mpmath_oracle_start n=3 batch=1 dps=80
+2026-09-28 05:44:57,976 INFO    [run=test-test_corrupted_result_gets_numeric_accuracy_cate] verify case=unit-corrupt step=mpmath_compare passed=False max_abs=1.000e+00 <= tol_abs + tol_rel*scale=4.100e-09
+2026-09-28 05:44:57,979 INFO    [run=test-test_corrupted_result_gets_numeric_accuracy_cate] verify case=unit-corrupt step=scipy_dense_compare passed=False
+2026-09-28 05:44:57,983 INFO    [run=test-test_single_precision_looser_gate_still_catches_] verify case=unit-sp-corrupt step=mpmath_oracle_start n=3 batch=1 dps=80
+2026-09-28 05:44:57,984 INFO    [run=test-test_single_precision_looser_gate_still_catches_] verify case=unit-sp-corrupt step=mpmath_compare passed=False max_abs=1.000e-01 <= tol_abs + tol_rel*scale=4.100e-05
+2026-09-28 05:44:57,985 INFO    [run=test-test_single_precision_looser_gate_still_catches_] verify case=unit-sp-corrupt step=scipy_dense_compare passed=False
+2026-09-28 05:44:58,000 INFO    [run=test-test_verify_sampled_mode_flags_sampling_and_pass] verify case=unit-sampled step=mpmath_sampled_start n=48 probes=10
+2026-09-28 05:44:58,009 INFO    [run=test-test_verify_sampled_mode_flags_sampling_and_pass] verify case=unit-sampled step=mpmath_sampled_compare passed=True max_abs=3.553e-15 <= tol_abs + tol_rel*scale=1.662e-08
+2026-09-28 05:44:58,070 INFO    [run=req-9c8d88d6c1a7] http endpoint=/compute run_id=req-9c8d88d6c1a7
+2026-09-28 05:44:58,070 INFO    [run=req-9c8d88d6c1a7] plan step=select_path n=13 batch=2 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:58,070 INFO    [run=req-9c8d88d6c1a7] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:58,071 INFO    [run=req-9c8d88d6c1a7] compute step=fft_done m=25 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:58,078 INFO    [run=req-2f5a93fdb6e4] http endpoint=/compute run_id=req-2f5a93fdb6e4
+2026-09-28 05:44:58,079 INFO    [run=req-2f5a93fdb6e4] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:58,079 INFO    [run=req-2f5a93fdb6e4] compute step=build_embedding m=25 (minimum=25) cache=miss
+2026-09-28 05:44:58,079 INFO    [run=req-2f5a93fdb6e4] compute step=fft_done m=25 batch=3 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:58,080 INFO    [run=req-dda3ff03d6ed] http endpoint=/compute run_id=req-dda3ff03d6ed
+2026-09-28 05:44:58,081 INFO    [run=req-dda3ff03d6ed] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:58,081 INFO    [run=req-dda3ff03d6ed] compute step=reuse_embedding_spectrum m=25 cache=hit
+2026-09-28 05:44:58,081 INFO    [run=req-dda3ff03d6ed] compute step=fft_done m=25 batch=3 cache_hit=True last_errors_checked_later
+2026-09-28 05:44:58,089 INFO    [run=req-52ee76873e7a] http endpoint=/compute run_id=req-52ee76873e7a
+2026-09-28 05:44:58,090 INFO    [run=req-52ee76873e7a] plan step=select_path n=17 batch=2 path=embedding_fft mode=complex precision=double
+2026-09-28 05:44:58,090 INFO    [run=req-52ee76873e7a] compute step=build_embedding m=33 (minimum=33) cache=miss
+2026-09-28 05:44:58,091 INFO    [run=req-52ee76873e7a] compute step=fft_done m=33 batch=2 cache_hit=False last_errors_checked_later
+2026-09-28 05:44:58,099 INFO    [run=verify-20f6e3c73327] http endpoint=/verify run_id=verify-20f6e3c73327
+2026-09-28 05:44:58,099 INFO    [run=verify-20f6e3c73327] plan step=select_path n=13 batch=3 path=embedding_fft mode=real precision=double
+2026-09-28 05:44:58,099 INFO    [run=verify-20f6e3c73327] compute step=reuse_embedding_spectrum m=25 cache=hit
+2026-09-28 05:44:58,100 INFO    [run=verify-20f6e3c73327] compute step=fft_done m=25 batch=3 cache_hit=True last_errors_checked_later
+2026-09-28 05:44:58,100 INFO    [run=verify-20f6e3c73327] verify case=verify-20f6e3c73327 step=mpmath_oracle_start n=13 batch=3 dps=80
+2026-09-28 05:44:58,104 INFO    [run=verify-20f6e3c73327] verify case=verify-20f6e3c73327 step=mpmath_compare passed=True max_abs=7.105e-15 <= tol_abs + tol_rel*scale=2.988e-08
+2026-09-28 05:44:58,105 INFO    [run=verify-20f6e3c73327] verify case=verify-20f6e3c73327 step=scipy_dense_compare passed=True
+2026-09-28 05:44:58,113 INFO    [run=req-f42cf69842af] http endpoint=/compute run_id=req-f42cf69842af
+2026-09-28 05:44:58,114 WARNING [run=req-f42cf69842af] http categorized_error run_id=req-f42cf69842af code=first_element_mismatch
+2026-09-28 05:44:58,122 INFO    [run=req-d11dc9950700] http endpoint=/compute run_id=req-d11dc9950700
+2026-09-28 05:44:58,123 WARNING [run=req-d11dc9950700] http bad_json run_id=req-d11dc9950700 err=Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2026-09-28 05:44:58,129 INFO    [run=req-b302fd71e3ed] http endpoint=/compute run_id=req-b302fd71e3ed
+2026-09-28 05:44:58,129 INFO    [run=req-b302fd71e3ed] plan step=select_path n=1 batch=2 path=tiny_explicit mode=real precision=double
+2026-09-28 05:44:58,130 INFO    [run=req-b302fd71e3ed] compute step=tiny_explicit_done elements=2

@@ -1,0 +1,629 @@
+{
+  "run_id": "verify-a2bfc3943e8d",
+  "started": "2026-09-28T05:42:04+0800",
+  "versions": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "package": "1.0.0"
+  },
+  "seed": 20260927,
+  "cases": 6,
+  "passed": 6,
+  "failed": 0,
+  "overall_passed": true,
+  "reports": [
+    {
+      "case_id": "verify-a2bfc3943e8d:tiny_n1",
+      "fixture": "tiny_n1",
+      "n": 1,
+      "batch": 2,
+      "description": "n=1 scalar multiplication, explainable path",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=tiny_explicit m=1 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "tiny_explicit",
+        "m": 1,
+        "coefficient_digest": "fe5f115f250463fd",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "tiny_explicit",
+          "actual": "tiny_explicit",
+          "passed": true
+        },
+        {
+          "name": "concrete_expected_result",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 0.0,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 1",
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:tiny_n1",
+        "passed": true,
+        "failure_category": null,
+        "n": 1,
+        "batch": 2,
+        "mode": "real",
+        "precision": "double",
+        "kernel_path": "tiny_explicit",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "memory": {},
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": false,
+      "repeat_result_identical": true
+    },
+    {
+      "case_id": "verify-a2bfc3943e8d:asym_real_n13",
+      "fixture": "asym_real_n13",
+      "n": 13,
+      "batch": 4,
+      "description": "asymmetric real Toeplitz, non-power-of-two n; first_row shifted by +5 so T != T.T",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=embedding_fft m=25 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "embedding_fft",
+        "m": 25,
+        "coefficient_digest": "05890eac94161b40",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "embedding_fft",
+          "actual": "embedding_fft",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 7.105427357601002e-15,
+          "basis": "max_abs=7.105e-15 <= tol_abs + tol_rel*scale=2.988e-08"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 25",
+          "actual": 25,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:asym_real_n13",
+        "passed": true,
+        "failure_category": null,
+        "n": 13,
+        "batch": 4,
+        "mode": "real",
+        "precision": "double",
+        "kernel_path": "embedding_fft",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 7.105427357601002e-15,
+          "max_rel_error": 1.4664246341799616e-14,
+          "rms_abs_error": 2.6091036029875423e-15,
+          "scale": 29.77558818908597,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=7.105e-15 <= tol_abs + tol_rel*scale=2.988e-08"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 7.993605777301127e-15,
+          "max_rel_error": 1.2831215549074642e-14,
+          "rms_abs_error": 2.5660372312224535e-15,
+          "scale": 29.775588189085965,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=7.994e-15 <= tol_abs + tol_rel*scale=2.988e-08"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 7.105427357601002e-15,
+          "max_rel_error": 3.7499366515832124e-15,
+          "rms_abs_error": 1.5596597093069487e-15,
+          "scale": 29.775588189085965,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=7.105e-15 <= tol_abs + tol_rel*scale=2.988e-08"
+        },
+        "memory": {
+          "n": 13,
+          "batch": 4,
+          "embedding_m": 25,
+          "dtype": "float64",
+          "embedding_elements": 25,
+          "embedding_bytes": 200,
+          "spectrum_elements": 13,
+          "spectrum_bytes": 208,
+          "padded_batch_bytes": 800,
+          "estimated_working_bytes": 1808,
+          "dense_reference_bytes": 1352,
+          "memory_saving_vs_dense_ratio": 1.341
+        },
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": true,
+      "repeat_result_identical": true
+    },
+    {
+      "case_id": "verify-a2bfc3943e8d:complex_nonhermitian_n17",
+      "fixture": "complex_nonhermitian_n17",
+      "n": 17,
+      "batch": 2,
+      "description": "complex non-Hermitian Toeplitz, non-power-of-two n",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=embedding_fft m=33 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "embedding_fft",
+        "m": 33,
+        "coefficient_digest": "fb6c763a47474ec1",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "embedding_fft",
+          "actual": "embedding_fft",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 5.420799638382024e-15,
+          "basis": "max_abs=5.421e-15 <= tol_abs + tol_rel*scale=2.034e-08"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 33",
+          "actual": 33,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:complex_nonhermitian_n17",
+        "passed": true,
+        "failure_category": null,
+        "n": 17,
+        "batch": 2,
+        "mode": "complex",
+        "precision": "double",
+        "kernel_path": "embedding_fft",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 5.420799638382024e-15,
+          "max_rel_error": 3.0781649096286037e-15,
+          "rms_abs_error": 2.3367685401691103e-15,
+          "scale": 20.23935082937145,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=5.421e-15 <= tol_abs + tol_rel*scale=2.034e-08"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 5.9580819677934555e-15,
+          "max_rel_error": 7.439887058438272e-15,
+          "rms_abs_error": 2.98092116308664e-15,
+          "scale": 20.23935082937145,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=5.958e-15 <= tol_abs + tol_rel*scale=2.034e-08"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 2.8435583831733384e-15,
+          "max_rel_error": 4.9170097799341954e-15,
+          "rms_abs_error": 1.530089273709791e-15,
+          "scale": 20.23935082937145,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=2.844e-15 <= tol_abs + tol_rel*scale=2.034e-08"
+        },
+        "memory": {
+          "n": 17,
+          "batch": 2,
+          "embedding_m": 33,
+          "dtype": "complex128",
+          "embedding_elements": 33,
+          "embedding_bytes": 528,
+          "spectrum_elements": 33,
+          "spectrum_bytes": 528,
+          "padded_batch_bytes": 1056,
+          "estimated_working_bytes": 2640,
+          "dense_reference_bytes": 4624,
+          "memory_saving_vs_dense_ratio": 2.919
+        },
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": true,
+      "repeat_result_identical": true
+    },
+    {
+      "case_id": "verify-a2bfc3943e8d:impulse_real_n15",
+      "fixture": "impulse_real_n15",
+      "n": 15,
+      "batch": 3,
+      "description": "impulse vectors e_k at k=(0, 7, 14); outputs are T columns",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=embedding_fft m=30 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "embedding_fft",
+        "m": 30,
+        "coefficient_digest": "dfadfae8c4019405",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "embedding_fft",
+          "actual": "embedding_fft",
+          "passed": true
+        },
+        {
+          "name": "impulse_is_column_of_T",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 4.440892098500626e-16,
+          "basis": "max_abs=4.441e-16 <= tol_abs + tol_rel*scale=3.836e-09"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 29",
+          "actual": 30,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:impulse_real_n15",
+        "passed": true,
+        "failure_category": null,
+        "n": 15,
+        "batch": 3,
+        "mode": "real",
+        "precision": "double",
+        "kernel_path": "embedding_fft",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 4.440892098500626e-16,
+          "max_rel_error": 1.2011989770916873e-14,
+          "rms_abs_error": 2.9364917038657754e-16,
+          "scale": 3.736147859337849,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=4.441e-16 <= tol_abs + tol_rel*scale=3.836e-09"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 4.440892098500626e-16,
+          "max_rel_error": 1.2011989770916873e-14,
+          "rms_abs_error": 2.9364917038657754e-16,
+          "scale": 3.736147859337849,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=4.441e-16 <= tol_abs + tol_rel*scale=3.836e-09"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 3.736147859337849,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=3.836e-09"
+        },
+        "memory": {
+          "n": 15,
+          "batch": 3,
+          "embedding_m": 30,
+          "dtype": "float64",
+          "embedding_elements": 30,
+          "embedding_bytes": 240,
+          "spectrum_elements": 16,
+          "spectrum_bytes": 256,
+          "padded_batch_bytes": 720,
+          "estimated_working_bytes": 1696,
+          "dense_reference_bytes": 1800,
+          "memory_saving_vs_dense_ratio": 1.844
+        },
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": true,
+      "repeat_result_identical": true
+    },
+    {
+      "case_id": "verify-a2bfc3943e8d:asym_real_n31",
+      "fixture": "asym_real_n31",
+      "n": 31,
+      "batch": 2,
+      "description": "asymmetric real Toeplitz, non-power-of-two n; first_row shifted by +5 so T != T.T",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=embedding_fft m=63 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "embedding_fft",
+        "m": 63,
+        "coefficient_digest": "e739b4633399f207",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "embedding_fft",
+          "actual": "embedding_fft",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 6.715523221068054e-06,
+          "basis": "max_abs=6.716e-06 <= tol_abs + tol_rel*scale=3.854e-04"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 61",
+          "actual": 63,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:asym_real_n31",
+        "passed": true,
+        "failure_category": null,
+        "n": 31,
+        "batch": 2,
+        "mode": "real",
+        "precision": "single",
+        "kernel_path": "embedding_fft",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 6.715523221068054e-06,
+          "max_rel_error": 0.00013870721476501603,
+          "rms_abs_error": 2.741244866536419e-06,
+          "scale": 38.441260971794264,
+          "tolerance_rel": 1e-05,
+          "tolerance_abs": 1e-06,
+          "passed": true,
+          "basis": "max_abs=6.716e-06 <= tol_abs + tol_rel*scale=3.854e-04"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 6.715523223732589e-06,
+          "max_rel_error": 0.00013870721476641067,
+          "rms_abs_error": 2.7412448669438196e-06,
+          "scale": 38.441260971794264,
+          "tolerance_rel": 1e-05,
+          "tolerance_abs": 1e-06,
+          "passed": true,
+          "basis": "max_abs=6.716e-06 <= tol_abs + tol_rel*scale=3.854e-04"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 7.105427357601002e-15,
+          "max_rel_error": 8.085833409665797e-14,
+          "rms_abs_error": 1.9974446691773048e-15,
+          "scale": 38.441260971794264,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=7.105e-15 <= tol_abs + tol_rel*scale=3.854e-08"
+        },
+        "memory": {
+          "n": 31,
+          "batch": 2,
+          "embedding_m": 63,
+          "dtype": "float32",
+          "embedding_elements": 63,
+          "embedding_bytes": 252,
+          "spectrum_elements": 32,
+          "spectrum_bytes": 256,
+          "padded_batch_bytes": 504,
+          "estimated_working_bytes": 1264,
+          "dense_reference_bytes": 3844,
+          "memory_saving_vs_dense_ratio": 5.058
+        },
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": true,
+      "repeat_result_identical": true
+    },
+    {
+      "case_id": "verify-a2bfc3943e8d:tiny_n1",
+      "fixture": "tiny_n1",
+      "n": 1,
+      "batch": 2,
+      "description": "n=1 scalar multiplication, explainable path",
+      "steps": [
+        "payload parsed and validated",
+        "engine path=embedding_fft m=1 cache_hit=False"
+      ],
+      "passed": true,
+      "failure_category": null,
+      "plan": {
+        "path": "embedding_fft",
+        "m": 1,
+        "coefficient_digest": "fe5f115f250463fd",
+        "kernel_digest": "b7c05946c9d16dfd"
+      },
+      "assertions": [
+        {
+          "name": "kernel_path",
+          "expected": "embedding_fft",
+          "actual": "embedding_fft",
+          "passed": true
+        },
+        {
+          "name": "concrete_expected_result",
+          "passed": true
+        },
+        {
+          "name": "independent_oracles",
+          "passed": true,
+          "against_mpmath_max_abs": 0.0,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        {
+          "name": "embedding_m_ge_2n-1",
+          "expected": ">= 1",
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "evidence": {
+        "case_id": "verify-a2bfc3943e8d:tiny_n1",
+        "passed": true,
+        "failure_category": null,
+        "n": 1,
+        "batch": 2,
+        "mode": "real",
+        "precision": "double",
+        "kernel_path": "embedding_fft",
+        "cache_hit": false,
+        "against_mpmath": {
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "against_scipy_dense": {
+          "used": true,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "oracle_agreement": {
+          "used": true,
+          "max_abs_error": 0.0,
+          "max_rel_error": 0.0,
+          "rms_abs_error": 0.0,
+          "scale": 14.0,
+          "tolerance_rel": 1e-09,
+          "tolerance_abs": 1e-10,
+          "passed": true,
+          "basis": "max_abs=0.000e+00 <= tol_abs + tol_rel*scale=1.410e-08"
+        },
+        "memory": {
+          "n": 1,
+          "batch": 2,
+          "embedding_m": 1,
+          "dtype": "float64",
+          "embedding_elements": 1,
+          "embedding_bytes": 8,
+          "spectrum_elements": 1,
+          "spectrum_bytes": 16,
+          "padded_batch_bytes": 16,
+          "estimated_working_bytes": 48,
+          "dense_reference_bytes": 8,
+          "memory_saving_vs_dense_ratio": 0.25
+        },
+        "steps": [
+          "mpmath high-precision oracle evaluated from definition",
+          "scipy.linalg.toeplitz dense oracle evaluated"
+        ]
+      },
+      "repeat_cache_hit": true,
+      "repeat_result_identical": true
+    }
+  ]
+}
