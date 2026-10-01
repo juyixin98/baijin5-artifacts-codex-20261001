@@ -1,0 +1,153 @@
+========================================================================
+SCENARIO: pipeline composition (correct_then_morph)
+HTTP 200
+{
+  "run_id": "run-3daf1f8b77d1",
+  "status": "ok",
+  "complete": true,
+  "outputs": [
+    {
+      "rank": 1,
+      "output": "kat",
+      "cost": 0.0,
+      "lex_rank": 0
+    },
+    {
+      "rank": 2,
+      "output": "kats",
+      "cost": 0.3,
+      "lex_rank": 0
+    },
+    {
+      "rank": 3,
+      "output": "kati",
+      "cost": 0.4,
+      "lex_rank": 0
+    },
+    {
+      "rank": 4,
+      "output": "katin",
+      "cost": 0.4,
+      "lex_rank": 1
+    },
+    {
+      "rank": 5,
+      "output": "kating",
+      "cost": 0.4,
+      "lex_rank": 2
+    }
+  ],
+  "decision": "accepted: at least one output; ordering = (total cost asc, output lexicographic asc); outputs deduplicated at minimum alignment cost"
+}
+========================================================================
+SCENARIO: lexicon mapping with ambiguity
+HTTP 200
+{
+  "run_id": "run-6c4ba50eb290",
+  "status": "ok",
+  "complete": true,
+  "outputs": [
+    {
+      "rank": 1,
+      "output": "kat",
+      "cost": 0.0,
+      "lex_rank": 0
+    },
+    {
+      "rank": 2,
+      "output": "cat",
+      "cost": 1.0,
+      "lex_rank": 0
+    },
+    {
+      "rank": 3,
+      "output": "ekat",
+      "cost": 1.5,
+      "lex_rank": 0
+    },
+    {
+      "rank": 4,
+      "output": "kaet",
+      "cost": 1.5,
+      "lex_rank": 1
+    }
+  ],
+  "decision": "accepted: at least one output; ordering = (total cost asc, output lexicographic asc); outputs deduplicated at minimum alignment cost"
+}
+========================================================================
+SCENARIO: epsilon deletion (z -> eps, cost 1.0)
+HTTP 200
+{
+  "run_id": "run-3b2da717ad4b",
+  "status": "ok",
+  "complete": true,
+  "outputs": [
+    {
+      "rank": 1,
+      "output": "kat",
+      "cost": 1.0,
+      "lex_rank": 0
+    },
+    {
+      "rank": 2,
+      "output": "cat",
+      "cost": 2.0,
+      "lex_rank": 0
+    },
+    {
+      "rank": 3,
+      "output": "ekat",
+      "cost": 2.5,
+      "lex_rank": 0
+    }
+  ],
+  "decision": "accepted: at least one output; ordering = (total cost asc, output lexicographic asc); outputs deduplicated at minimum alignment cost"
+}
+========================================================================
+SCENARIO: no path (symbol outside alphabet)
+HTTP 200
+{
+  "run_id": "run-98195c237658",
+  "status": "no_path",
+  "complete": true,
+  "outputs": [],
+  "decision": "rejected:no_path: start cannot reach any co-final state for this input on the resolved model"
+}
+========================================================================
+SCENARIO: unknown target -> 404
+HTTP 404
+{
+  "error_code": "not_found",
+  "message": "corpus 'demo' has no transducer or pipeline named 'ghost'",
+  "run_id": "run-b0ec28e50917",
+  "details": null,
+  "version": "1.0.0",
+  "input": "cat",
+  "target": "ghost",
+  "complete": false,
+  "logs": [
+    "search run=run-b0ec28e50917 fst='ghost' input='cat' k=5 budget=100000",
+    "verdict: rejected:not_found",
+    "decision basis: request validation / resolution: corpus 'demo' has no transducer or pipeline named 'ghost'"
+  ]
+}
+========================================================================
+SCENARIO: budget exhausted -> 503 incomplete
+HTTP 503
+{
+  "error_code": "budget_exhausted",
+  "message": "search budget exhausted after 13 expansions while looking for 100 outputs (found 3 distinct); result is incomplete",
+  "run_id": "run-df544de8ca72",
+  "details": null,
+  "version": "1.0.0",
+  "input": "a",
+  "target": "char_correction",
+  "complete": false,
+  "logs": [
+    "search run=run-df544de8ca72 fst='char_correction' input='a' k=100 budget=12",
+    "verdict: incomplete:budget_exhausted after 13 expansions (limit 12)",
+    "decision basis: expansion budget spent before k outputs and tie set could be proven complete; result MUST NOT be treated as a successful answer"
+  ]
+}
+========================================================================
+all scenarios behaved as documented
