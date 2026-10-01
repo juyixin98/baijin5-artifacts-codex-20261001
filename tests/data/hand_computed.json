@@ -1,0 +1,23 @@
+{
+  "_comment": "Even sample for hand-computed percentiles. Group A measure [10,20,30,40]. Group B is entirely NULL. Group C has a mode tie. Group D is a large repeated group.",
+  "group_by": "g",
+  "columns": [
+    { "name": "g", "data_type": "utf8",
+      "values": ["A","A","A","A", "B","B","B", "C","C","C","C", "D","D","D","D","D","D"] },
+    { "name": "v", "data_type": "i64",
+      "values": [10,20,30,40, null,null,null, 5,5,7,7, 9,9,9,9,9,9] },
+    { "name": "w", "data_type": "f64",
+      "values": [10.0,20.0,30.0,40.0, null,null,null, 1.0,2.0,1.0,2.0, 3.5,3.5,3.5,3.5,3.5,3.5] },
+    { "name": "s", "data_type": "utf8",
+      "values": ["banana","apple","cherry","apple", null,null,null,
+                 "x","x","y","y", "z","z","z","z","z","z"] }
+  ],
+  "operators": [
+    { "op": "percentile", "column": "v", "p": 0.5, "method": "continuous" },
+    { "op": "percentile", "column": "v", "p": 0.5, "method": "discrete" },
+    { "op": "percentile", "column": "w", "p": 0.5, "method": "continuous" },
+    { "op": "mode", "column": "v" },
+    { "op": "mode", "column": "s" },
+    { "op": "string_agg", "column": "s", "delimiter": "-", "order": "asc" }
+  ]
+}

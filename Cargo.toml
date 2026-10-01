@@ -1,0 +1,31 @@
+[package]
+name = "pctl"
+version = "0.1.0"
+edition = "2021"
+description = "Backend operators for grouped exact percentiles, mode and ordered string aggregation"
+license = "MIT"
+
+[lib]
+name = "pctl"
+path = "src/lib.rs"
+
+[[bin]]
+name = "pctl-server"
+path = "src/main.rs"
+
+[dependencies]
+arrow2 = "0.18"
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+tower = { version = "0.5", features = ["util"] }
+
+[profile.release]
+lto = "thin"

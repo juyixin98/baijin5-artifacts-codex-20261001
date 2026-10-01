@@ -1,0 +1,11 @@
+/target
+**/*.rs.bk
+Cargo.lock.bak
+
+# Local spill artifacts (default server spill dir).
+/pctl-spill/
+/tmp-pctl/
+
+# Editor / OS noise
+.DS_Store
+*.swp

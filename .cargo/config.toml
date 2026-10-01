@@ -1,0 +1,10 @@
+# Project-local configuration: build fully offline against ./vendor so the
+# build never depends on a network registry or a shared cargo cache lock.
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+
+[registries.crates-io]
+protocol = "sparse"

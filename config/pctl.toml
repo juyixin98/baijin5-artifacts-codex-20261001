@@ -1,0 +1,17 @@
+# pctl-server configuration.
+# Every key is optional; environment variables override these values:
+#   PCTL_BIND_ADDR, PCTL_MEMORY_BUDGET_BYTES, PCTL_SPILL_DIR,
+#   PCTL_SPILL_MAX_BYTES, PCTL_GROUP_TABLE_CAP
+
+[server]
+bind_addr = "127.0.0.1:8080"
+
+[execution]
+# Per-query resident budget, INCLUDING string payload bytes.
+memory_budget_bytes = 67108864   # 64 MiB
+# Local spill directory for external-sort runs and checkpoints.
+spill_dir = "/tmp/pctl-spill"
+# Hard disk quota per query.
+max_spill_bytes = 1073741824     # 1 GiB
+# Maximum distinct groups tracked by one query (skew hard cap).
+group_table_cap = 100000
