@@ -1,0 +1,6 @@
+# three required rects, two cells -> backtracking proves UNSAT
+name all-diff-unsat
+grid 2 1
+rect A 1 1 TRUE
+rect B 1 1 TRUE
+rect C 1 1 TRUE

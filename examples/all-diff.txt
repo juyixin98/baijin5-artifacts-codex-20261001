@@ -1,0 +1,6 @@
+# three rects, two cells: A,B required, C optional -> exactly two packings
+name all-diff
+grid 2 1
+rect A 1 1 TRUE
+rect B 1 1 TRUE
+rect C 1 1 UNKNOWN

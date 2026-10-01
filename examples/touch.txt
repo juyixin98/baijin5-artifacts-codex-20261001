@@ -1,0 +1,6 @@
+# boundary contact is legal: two distinct 1x1 rectangles in a 2x1 row.
+# Two packings exist (AB and BA) because ids matter.
+name touch
+grid 2 1
+rect A 1 1 TRUE
+rect B 1 1 TRUE

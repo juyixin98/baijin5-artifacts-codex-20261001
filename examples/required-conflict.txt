@@ -1,0 +1,5 @@
+# two required 1x1 rectangles in a 1x1 cell -> impossible
+name required-conflict
+grid 1 1
+rect A 1 1 TRUE
+rect B 1 1 TRUE

@@ -1,0 +1,7 @@
+# Zero-area semantics: z is 0x0. It never overlaps anything and may anchor on
+# any boundary vertex (0..W on x, 0..H on y): 4*2=8 anchors here, or be absent.
+# A (1x1 required) has 3 anchors, so total 3*(8+1)=27 solutions.
+name zero-area
+grid 3 1
+rect A 1 1 TRUE
+rect z 0 0 UNKNOWN

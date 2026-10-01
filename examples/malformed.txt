@@ -1,0 +1,3 @@
+name malformed
+grid 1 -2
+rect A 1 1 MAYBE

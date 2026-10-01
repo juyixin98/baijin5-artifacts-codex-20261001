@@ -1,0 +1,5 @@
+# B is UNDECIDED: it must NOT prune A. Only solution: B absent
+name unknown-safe
+grid 1 1
+rect A 1 1 TRUE
+rect B 1 1 UNKNOWN

@@ -1,0 +1,18 @@
+# B has exactly four candidate anchors: left/right/below/above center (2,2).
+# Each anchor is occupied by a fixed 1x1 blocker, so B-present is impossible;
+# B is UNKNOWN so propagation must not prune until existence is decided.
+name four-directions
+grid 5 5
+rect L 1 1 TRUE
+at L 1 2
+rect R 1 1 TRUE
+at R 3 2
+rect D 1 1 TRUE
+at D 2 1
+rect U 1 1 TRUE
+at U 2 3
+rect B 1 1 UNKNOWN
+at B 1 2
+at B 3 2
+at B 2 1
+at B 2 3
