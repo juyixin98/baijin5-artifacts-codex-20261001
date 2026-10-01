@@ -1,0 +1,31 @@
+[package]
+name = "leapfrog-triejoin"
+version = "0.1.0"
+edition = "2021"
+description = "Leapfrog Triejoin backend for 3-table and restricted multi-table natural joins, served over Axum with Arrow2 batches"
+license = "MIT OR Apache-2.0"
+
+[lib]
+name = "leapfrog_triejoin"
+path = "src/lib.rs"
+
+[dependencies]
+axum = { version = "0.7", features = ["macros"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
+tower = { version = "0.5", features = ["util"] }
+arrow2 = { version = "0.18", default-features = false, features = ["io_ipc"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+[dev-dependencies]
+serde_json = "1"
+
+[[bin]]
+name = "lftj-server"
+path = "src/bin/server/main.rs"
+
+[profile.release]
+lto = "thin"
