@@ -1,0 +1,12 @@
+[package]
+name = "sl-resource"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sl-types = { workspace = true }
+arrow2 = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
