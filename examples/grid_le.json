@@ -1,0 +1,21 @@
+{
+  "left": {
+    "columns": [
+      {"name": "x", "values": [1, 2, 3, 4]},
+      {"name": "y", "values": [4, 3, 2, 1]}
+    ],
+    "row_ids": ["l0", "l1", "l2", "l3"]
+  },
+  "right": {
+    "columns": [
+      {"name": "x", "values": [3, 2]},
+      {"name": "y", "values": [4, 1]}
+    ],
+    "row_ids": ["ra", "rb"]
+  },
+  "predicates": [
+    {"left_column": "x", "op": "<=", "right_column": "x"},
+    {"left_column": "y", "op": "<=", "right_column": "y"}
+  ],
+  "include_trace": true
+}

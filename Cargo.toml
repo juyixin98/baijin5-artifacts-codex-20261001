@@ -1,0 +1,29 @@
+[package]
+name = "iejoin"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+description = "IEJoin-style batch inequality join backend (two range predicates) with Axum + arrow2"
+license = "MIT"
+
+[dependencies]
+arrow2 = { version = "=0.18.0", default-features = false }
+axum = "=0.7.9"
+tokio = { version = "=1.43.0", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+serde = { version = "=1.0.219", features = ["derive"] }
+serde_json = "=1.0.140"
+clap = { version = "=4.5.23", features = ["derive"] }
+tracing = "=0.1.41"
+tracing-subscriber = { version = "=0.3.19", features = ["env-filter"] }
+
+[dev-dependencies]
+tower = { version = "=0.5.2", features = ["util"] }
+http-body-util = "=0.1.2"
+
+[profile.release]
+codegen-units = 1
+lto = "thin"
+
+[[bin]]
+name = "iejoin"
+path = "src/main.rs"

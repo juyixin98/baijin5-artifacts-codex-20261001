@@ -1,0 +1,21 @@
+{
+  "left": {
+    "columns": [
+      {"name": "x", "values": [1, 1, 1, 1, 1, 1, 1, 1]},
+      {"name": "y", "values": [1, 1, 1, 1, 1, 1, 1, 1]}
+    ],
+    "row_ids": ["a", "b", "c", "d", "e", "f", "g", "h"]
+  },
+  "right": {
+    "columns": [
+      {"name": "x", "values": [2]},
+      {"name": "y", "values": [2]}
+    ],
+    "row_ids": ["r"]
+  },
+  "predicates": [
+    {"left_column": "x", "op": "<", "right_column": "x"},
+    {"left_column": "y", "op": "<", "right_column": "y"}
+  ],
+  "budget": {"max_output_pairs": 3}
+}
