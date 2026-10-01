@@ -1,0 +1,24 @@
+# Default configuration for the CUPED adjustment service.
+# Every key can be overridden by the CUPED_CONFIG env var pointing at another file.
+
+service:
+  name: cuped-backend
+  host: 127.0.0.1
+  port: 8000
+
+storage:
+  # SQLite database holding registered experiments and uploaded observations.
+  sqlite_path: data/cuped.db
+
+estimation:
+  # HC1 finite-sample sandwich covariance correction for the reference OLS.
+  hc1_correction: true
+  z_alpha: 1.959963984540054  # two-sided 95% normal critical value
+
+synthetic:
+  # Deterministic baseline seed; each generated run appends its run_id salt.
+  seed: 20260927
+
+logging:
+  dir: logs
+  level: INFO

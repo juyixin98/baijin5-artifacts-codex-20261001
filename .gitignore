@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Runtime artifacts (sample data files are kept)
+data/cuped.db
+logs/cuped.log
+logs/server_stdout.txt
+logs/pytest.log
+*.egg-info
+
+# Local config overrides
+config/local.yaml

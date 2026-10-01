@@ -1,0 +1,39 @@
+=== CUPED reproducibility run repro-b89c7c41408d ===
+n=4000 seed=20260927 true_effect=2.0
+numpy=2.4.6
+
+[1/5] balanced + correlated covariate
+  unadjusted: est=2.0073 se=0.0999
+  adjusted:   est=2.0076 se=0.0318
+  theta={'x_pre': 2.9982, 'x_irrelevant': 0.0327} (source=control, n_used=2024)
+  variance_reduction=0.8990 reference OLS beta_T=2.0074 se_hc1=0.0318 R2=0.9084
+  -> PASS
+
+[2/5] uncorrelated covariate
+  se unadjusted=0.0320 adjusted=0.0320 variance_reduction=-0.0001
+  -> PASS
+
+[3/5] covariate imbalance realization
+  realized |SMD|=0.315
+  unadjusted est=1.8808 (error 0.8808)
+  adjusted   est=0.9799 (error 0.0201)
+  -> PASS
+
+[4/5] leakage field rejection
+  rejected with code=LEAKED_COVARIATE
+  -> PASS
+
+[5/5] explicit missing and zero-variance policies
+  imputed=143 dropped_constant=['constant'] status=completed
+  -> PASS
+
+=== summary ===
+  [PASS] [1] variance reduction > 0.80 (got 0.899)
+  [PASS] [1] adjusted effect within 0.15 of truth (err=0.008)
+  [PASS] [1] theta within 0.15 of beta=3 (got 2.998)
+  [PASS] [2] |variance reduction| < 0.10 (got -0.000)
+  [PASS] [3] adjustment reduces error under imbalance (0.881 -> 0.020)
+  [PASS] [4] leakage covariate -> LEAKED_COVARIATE
+  [PASS] [5] mean-impute missing + drop constant column
+
+7/7 checks passed

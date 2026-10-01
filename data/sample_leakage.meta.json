@@ -1,0 +1,32 @@
+{
+  "scenario": "leakage",
+  "n": 1000,
+  "true_effect": 2.0,
+  "true_beta": {
+    "x_pre": 3.0
+  },
+  "seed": 20260928,
+  "declarations": [
+    {
+      "name": "x_pre",
+      "pre_treatment": true
+    },
+    {
+      "name": "x_irrelevant",
+      "pre_treatment": true
+    },
+    {
+      "name": "x_post_leak",
+      "pre_treatment": false
+    }
+  ],
+  "params": {
+    "n": 1000,
+    "true_effect": 2.0,
+    "beta_pre": 3.0,
+    "noise_sigma": 1.0,
+    "scenario": "leakage",
+    "imbalance_smd": 0.25,
+    "missing_fraction": 0.0
+  }
+}
