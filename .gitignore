@@ -1,0 +1,18 @@
+# 环境
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 本地数据与运行产物
+data/
+logs/
+*.db
+*.jsonl
+.env
+
+# 实验产物按需保留（默认追踪 reports/ 作为复现证据）

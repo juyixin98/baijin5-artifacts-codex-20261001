@@ -1,0 +1,36 @@
+==============================================================================
+LOCAL-LINEAR RD BACKEND - REPRODUCTION REPORT
+==============================================================================
+generated_run : report-5f1a8c4430
+reps/bandwidth: 200
+versions      : {"app": "1.0.0", "python": "3.12.3", "numpy": "2.4.6", "scipy": "1.15.3"}
+
+------------------------------------------------------------------------------
+EXPERIMENT: known_jump  (run_id=exp-known_jump-e79038eb)
+  h=0.1   n_ok=200  bias=0.00012201580783539611 rmse=0.2940968769635694 cov95=0.93 ref_gap_max=2.13e-14 effN~(100,99) fail={}
+  h=0.2   n_ok=200  bias=0.014068210658662483 rmse=0.23608594169085262 cov95=0.925 ref_gap_max=1.78e-14 effN~(200,201) fail={}
+  h=0.4   n_ok=200  bias=0.009266009126463493 rmse=0.15635778176991505 cov95=0.94 ref_gap_max=1.60e-14 effN~(401,399) fail={}
+------------------------------------------------------------------------------
+EXPERIMENT: no_jump  (run_id=exp-no_jump-f906dece)
+  h=0.1   n_ok=200  bias=0.00012438239150475594 rmse=0.29408041957258974 cov95=0.93 ref_gap_max=1.28e-15 effN~(100,99) fail={}
+  h=0.2   n_ok=200  bias=0.014076051252168762 rmse=0.23620623771088614 cov95=0.93 ref_gap_max=8.88e-16 effN~(200,201) fail={}
+  h=0.4   n_ok=200  bias=0.00960814256254338 rmse=0.15613648203973524 cov95=0.94 ref_gap_max=8.33e-16 effN~(401,399) fail={}
+------------------------------------------------------------------------------
+EXPERIMENT: no_jump_test_size  (run_id=exp-size-64188e3d)
+  h=0.1   evaluable=200  reject_rate@5%=0.07
+  h=0.2   evaluable=200  reject_rate@5%=0.025
+  h=0.4   evaluable=200  reject_rate@5%=0.02
+------------------------------------------------------------------------------
+EXPERIMENT: density_discontinuity  (run_id=exp-density-6b8c62fb)
+  level_bias = -0.022781573110374844
+  level_rmse = 0.22782701214493004
+  mccrary_reject_rate = 0.98
+  mean_theta_log_density_jump = 1.0748510515979603
+  true_theta = 1.0986122886681098
+------------------------------------------------------------------------------
+EXPERIMENT: sparse_boundary_classification  (run_id=exp-sparse-a4c96fdb)
+  h=0.05  classification={'non_identifiable': 200} max_extrap_factor=None flagged=0
+  h=0.1   classification={'non_identifiable': 200} max_extrap_factor=None flagged=0
+  h=0.2   classification={'non_identifiable': 200} max_extrap_factor=None flagged=0
+  h=0.4   classification={'non_identifiable': 200} max_extrap_factor=None flagged=0
+  h=0.8   classification={'status:warning': 200} max_extrap_factor=0.485745336503997 flagged=200
