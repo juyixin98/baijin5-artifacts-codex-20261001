@@ -1,0 +1,535 @@
+{
+  "run_id": "run-20260928T052055-56274596",
+  "ts": "2026-09-28T05:20:55.740703+00:00",
+  "service_version": "1.0.0",
+  "python": "3.12.3",
+  "models": {
+    "char_morph_demo": {
+      "fingerprint": "00e882e5288b854e",
+      "describe": "CompiledModel(char_morph_demo@1.0.0, level=char, |alphabet|=15, pipeline=FST('((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo)', states=185, arcs=633, finals=[59, 89, 92, 101, 102, 105, 106, 112, 118, 127, 130, 131, 132, 133, 136, 137, 140, 141, 142, 146, 147, 151, 152, 159, 160, 161, 162, 163, 164, 168, 174, 175, 176, 178, 179, 182, 183, 184], start=0))"
+    },
+    "epsilon_ambiguity_demo": {
+      "fingerprint": "24d5f8fe60bae769",
+      "describe": "CompiledModel(epsilon_ambiguity_demo@1.0.0, level=char, |alphabet|=6, pipeline=FST('((edit:epsilon_ambiguity_demo∘rules:epsilon_ambiguity_demo)∘lex:epsilon_ambiguity_demo)', states=18, arcs=40, finals=[3, 6, 8, 10, 13, 14, 15, 17], start=0))"
+    },
+    "word_morph_demo": {
+      "fingerprint": "f21090ce23cc9e02",
+      "describe": "CompiledModel(word_morph_demo@1.0.0, level=word, |alphabet|=6, pipeline=FST('((edit:word_morph_demo∘rules:word_morph_demo)∘lex:word_morph_demo)', states=7, arcs=6, finals=[1, 2, 3, 4, 6], start=0))"
+    }
+  },
+  "normal": [
+    {
+      "run_id": "run-20260928T052055-71078439",
+      "corpus": "char_morph_demo",
+      "input": "kat",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "cat",
+          "cost": 4.117878
+        },
+        {
+          "output": "cats",
+          "cost": 4.901409
+        }
+      ],
+      "steps": [
+        "输入符号序列=['k', 'a', 't']",
+        "与预组合管线 ((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo) 组合（管线 185 状态）",
+        "组合结果：20 状态 / 19 弧",
+        "best-first 弹出 10 次（预算 200000），完备=True，候选 2 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-935d1a0d",
+      "corpus": "char_morph_demo",
+      "input": "kats",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "cats",
+          "cost": 6.074209
+        }
+      ],
+      "steps": [
+        "输入符号序列=['k', 'a', 't', 's']",
+        "与预组合管线 ((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo) 组合（管线 185 状态）",
+        "组合结果：21 状态 / 20 弧",
+        "best-first 弹出 6 次（预算 200000），完备=True，候选 1 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-bc46dc07",
+      "corpus": "char_morph_demo",
+      "input": "citi",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "city",
+          "cost": 8.446894
+        },
+        {
+          "output": "cities",
+          "cost": 9.309117
+        }
+      ],
+      "steps": [
+        "输入符号序列=['c', 'i', 't', 'i']",
+        "与预组合管线 ((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo) 组合（管线 185 状态）",
+        "组合结果：18 状态 / 17 弧",
+        "best-first 弹出 13 次（预算 200000），完备=True，候选 2 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-c046cbe7",
+      "corpus": "char_morph_demo",
+      "input": "doog",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "dog",
+          "cost": 8.563338
+        },
+        {
+          "output": "dogs",
+          "cost": 9.306917
+        }
+      ],
+      "steps": [
+        "输入符号序列=['d', 'o', 'o', 'g']",
+        "与预组合管线 ((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo) 组合（管线 185 状态）",
+        "组合结果：23 状态 / 25 弧",
+        "best-first 弹出 18 次（预算 200000），完备=True，候选 2 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-e56a1f48",
+      "corpus": "char_morph_demo",
+      "input": "stpo",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "stop",
+          "cost": 9.183258
+        },
+        {
+          "output": "stopped",
+          "cost": 10.0812
+        }
+      ],
+      "steps": [
+        "输入符号序列=['s', 't', 'p', 'o']",
+        "与预组合管线 ((edit:char_morph_demo∘rules:char_morph_demo)∘lex:char_morph_demo) 组合（管线 185 状态）",
+        "组合结果：19 状态 / 18 弧",
+        "best-first 弹出 14 次（预算 200000），完备=True，候选 2 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-fd0c6bc2",
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "ab",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "B",
+          "cost": 0.275412
+        },
+        {
+          "output": "AB",
+          "cost": 0.75725
+        },
+        {
+          "output": "ab",
+          "cost": 1.236823
+        }
+      ],
+      "steps": [
+        "输入符号序列=['a', 'b']",
+        "与预组合管线 ((edit:epsilon_ambiguity_demo∘rules:epsilon_ambiguity_demo)∘lex:epsilon_ambiguity_demo) 组合（管线 18 状态）",
+        "组合结果：15 状态 / 18 弧",
+        "best-first 弹出 20 次（预算 200000），完备=True，候选 3 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-dc6fa588",
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "b",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "B",
+          "cost": 0.275412
+        },
+        {
+          "output": "AB",
+          "cost": 1.651068
+        },
+        {
+          "output": "ab",
+          "cost": 2.130641
+        }
+      ],
+      "steps": [
+        "输入符号序列=['b']",
+        "与预组合管线 ((edit:epsilon_ambiguity_demo∘rules:epsilon_ambiguity_demo)∘lex:epsilon_ambiguity_demo) 组合（管线 18 状态）",
+        "组合结果：8 状态 / 7 弧",
+        "best-first 弹出 9 次（预算 200000），完备=True，候选 3 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-205f2ab8",
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "bc",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "bxc",
+          "cost": 2.22554
+        }
+      ],
+      "steps": [
+        "输入符号序列=['b', 'c']",
+        "与预组合管线 ((edit:epsilon_ambiguity_demo∘rules:epsilon_ambiguity_demo)∘lex:epsilon_ambiguity_demo) 组合（管线 18 状态）",
+        "组合结果：9 状态 / 8 弧",
+        "best-first 弹出 5 次（预算 200000），完备=True，候选 1 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-ead35ef4",
+      "corpus": "word_morph_demo",
+      "input": "go",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "go",
+          "cost": 0.343473
+        },
+        {
+          "output": "goes",
+          "cost": 1.235471
+        }
+      ],
+      "steps": [
+        "输入符号序列=['go\\x00']",
+        "与预组合管线 ((edit:word_morph_demo∘rules:word_morph_demo)∘lex:word_morph_demo) 组合（管线 7 状态）",
+        "组合结果：3 状态 / 2 弧",
+        "best-first 弹出 5 次（预算 200000），完备=True，候选 2 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    },
+    {
+      "run_id": "run-20260928T052055-c9ceede1",
+      "corpus": "word_morph_demo",
+      "input": "walk slowly",
+      "status": "complete",
+      "outputs": [
+        {
+          "output": "walked slowly",
+          "cost": 1.386294
+        }
+      ],
+      "steps": [
+        "输入符号序列=['walk\\x00', 'slowly\\x00']",
+        "与预组合管线 ((edit:word_morph_demo∘rules:word_morph_demo)∘lex:word_morph_demo) 组合（管线 7 状态）",
+        "组合结果：5 状态 / 4 弧",
+        "best-first 弹出 4 次（预算 200000），完备=True，候选 1 条；判定依据：代价升序，平手按输出符号字典序"
+      ]
+    }
+  ],
+  "cross_checks": [
+    {
+      "corpus": "char_morph_demo",
+      "input": "kat",
+      "agree": true,
+      "composed": [
+        [
+          "cat",
+          4.117878
+        ],
+        [
+          "cats",
+          4.901409
+        ]
+      ],
+      "stagewise": [
+        [
+          "cat",
+          4.117878
+        ],
+        [
+          "cats",
+          4.901409
+        ]
+      ]
+    },
+    {
+      "corpus": "char_morph_demo",
+      "input": "kats",
+      "agree": true,
+      "composed": [
+        [
+          "cats",
+          6.074209
+        ]
+      ],
+      "stagewise": [
+        [
+          "cats",
+          6.074209
+        ]
+      ]
+    },
+    {
+      "corpus": "char_morph_demo",
+      "input": "citi",
+      "agree": true,
+      "composed": [
+        [
+          "city",
+          8.446894
+        ],
+        [
+          "cities",
+          9.309117
+        ]
+      ],
+      "stagewise": [
+        [
+          "city",
+          8.446894
+        ],
+        [
+          "cities",
+          9.309117
+        ]
+      ]
+    },
+    {
+      "corpus": "char_morph_demo",
+      "input": "doog",
+      "agree": true,
+      "composed": [
+        [
+          "dog",
+          8.563338
+        ],
+        [
+          "dogs",
+          9.306917
+        ]
+      ],
+      "stagewise": [
+        [
+          "dog",
+          8.563338
+        ],
+        [
+          "dogs",
+          9.306917
+        ]
+      ]
+    },
+    {
+      "corpus": "char_morph_demo",
+      "input": "stpo",
+      "agree": true,
+      "composed": [
+        [
+          "stop",
+          9.183258
+        ],
+        [
+          "stopped",
+          10.0812
+        ]
+      ],
+      "stagewise": [
+        [
+          "stop",
+          9.183258
+        ],
+        [
+          "stopped",
+          10.0812
+        ]
+      ]
+    },
+    {
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "ab",
+      "agree": true,
+      "composed": [
+        [
+          "B",
+          0.275412
+        ],
+        [
+          "AB",
+          0.75725
+        ],
+        [
+          "ab",
+          1.236823
+        ]
+      ],
+      "stagewise": [
+        [
+          "B",
+          0.275412
+        ],
+        [
+          "AB",
+          0.75725
+        ],
+        [
+          "ab",
+          1.236823
+        ]
+      ]
+    },
+    {
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "b",
+      "agree": true,
+      "composed": [
+        [
+          "B",
+          0.275412
+        ],
+        [
+          "AB",
+          1.651068
+        ],
+        [
+          "ab",
+          2.130641
+        ]
+      ],
+      "stagewise": [
+        [
+          "B",
+          0.275412
+        ],
+        [
+          "AB",
+          1.651068
+        ],
+        [
+          "ab",
+          2.130641
+        ]
+      ]
+    },
+    {
+      "corpus": "epsilon_ambiguity_demo",
+      "input": "bc",
+      "agree": true,
+      "composed": [
+        [
+          "bxc",
+          2.22554
+        ]
+      ],
+      "stagewise": [
+        [
+          "bxc",
+          2.22554
+        ]
+      ]
+    },
+    {
+      "corpus": "word_morph_demo",
+      "input": "go",
+      "agree": true,
+      "composed": [
+        [
+          "go",
+          0.343473
+        ],
+        [
+          "goes",
+          1.235471
+        ]
+      ],
+      "stagewise": [
+        [
+          "go",
+          0.343473
+        ],
+        [
+          "goes",
+          1.235471
+        ]
+      ]
+    },
+    {
+      "corpus": "word_morph_demo",
+      "input": "walk slowly",
+      "agree": true,
+      "composed": [
+        [
+          "walked slowly",
+          1.386294
+        ]
+      ],
+      "stagewise": [
+        [
+          "walked slowly",
+          1.386294
+        ]
+      ]
+    }
+  ],
+  "abnormal": [
+    {
+      "run_id": "run-20260928T052055-57c2cf92",
+      "corpus": "char_morph_demo",
+      "input": "",
+      "category": "empty_input",
+      "expected": "empty_input",
+      "verdict": "correctly_rejected"
+    },
+    {
+      "run_id": "run-20260928T052055-8fc9dd42",
+      "corpus": "char_morph_demo",
+      "input": "qvx",
+      "category": "unknown_symbol",
+      "expected": "unknown_symbol",
+      "verdict": "correctly_rejected"
+    },
+    {
+      "run_id": "run-20260928T052055-a15f9787",
+      "corpus": "char_morph_demo",
+      "input": "z",
+      "category": "unacceptable_input",
+      "expected": "unacceptable_input",
+      "verdict": "correctly_rejected"
+    },
+    {
+      "input": "ab",
+      "budget": 12,
+      "complete": false,
+      "found": 2,
+      "pops": 12,
+      "verdict": "incomplete"
+    }
+  ],
+  "core_edge_cases": [
+    {
+      "case": "negative_cycle",
+      "verdict": "correctly_raised_negative_cycle",
+      "cycle_states": [
+        2,
+        2
+      ]
+    },
+    {
+      "case": "zero_cost_epsilon_loop",
+      "verdict": "terminated",
+      "outputs": [
+        "a"
+      ]
+    }
+  ],
+  "failures": 0,
+  "verdict": "ALL_OK"
+}

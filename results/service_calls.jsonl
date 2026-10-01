@@ -1,0 +1,8 @@
+{"name": "health", "method": "GET", "path": "/health", "http_status": 200, "success": true, "data_summary": {"status": "ok"}}
+{"name": "models", "method": "GET", "path": "/models", "http_status": 200, "success": true, "data_summary": {}}
+{"name": "query kat", "method": "POST", "path": "/query", "http_status": 200, "success": true, "data_summary": {"status": "complete", "complete": true, "corpus_id": "char_morph_demo", "version": "1.0.0"}, "hypotheses": [{"output": "cat", "cost": 4.117878}, {"output": "cats", "cost": 4.901409}]}
+{"name": "cross-check citi", "method": "POST", "path": "/query/cross-check", "http_status": 200, "success": true, "data_summary": {"agree": true}}
+{"name": "unknown model", "method": "POST", "path": "/query", "http_status": 404, "success": false, "error_category": "model_not_found"}
+{"name": "unknown symbol", "method": "POST", "path": "/query", "http_status": 422, "success": false, "error_category": "unknown_symbol"}
+{"name": "empty input", "method": "POST", "path": "/query", "http_status": 422, "success": false, "error_category": "empty_input"}
+{"name": "budget cut", "method": "POST", "path": "/query", "http_status": 200, "success": true, "data_summary": {"status": "incomplete", "complete": false, "corpus_id": "epsilon_ambiguity_demo", "version": "1.0.0"}, "hypotheses": [{"output": "B", "cost": 0.275412}, {"output": "AB", "cost": 0.75725}]}
