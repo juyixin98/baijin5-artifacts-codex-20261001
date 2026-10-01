@@ -1,0 +1,144 @@
+{
+  "request_id": "repro-good",
+  "verdict": "accept",
+  "estimate": {
+    "point": 2.0080677613097624,
+    "se": 0.044636451638600416,
+    "ci_level": 0.95,
+    "ci_lower": 1.9205819237004418,
+    "ci_upper": 2.095553598919083,
+    "mu1": 2.0292496346654527,
+    "mu0": 0.021181873355690238,
+    "influence_used": true
+  },
+  "weights": {
+    "n": 4000,
+    "treated_ess": 1773.5187981319375,
+    "untreated_ess": 1340.9365949020203,
+    "treated_ess_fraction": 0.8113077759066503,
+    "untreated_ess_fraction": 0.7392153224377179,
+    "overall_ess": 3114.455393033958,
+    "overall_ess_fraction": 0.7786138482584894,
+    "max_weight": 6.454035619687049,
+    "mean_weight_treated": 0.997503405094812,
+    "mean_weight_untreated": 1.0028898276785354,
+    "weight_sum_treated": 2180.542443537259,
+    "weight_sum_untreated": 1819.242147408863,
+    "pscore_summary": {
+      "raw_min": 0.020695922568052874,
+      "raw_max": 0.993269667667124,
+      "used_min": 0.020695922568052874,
+      "used_max": 0.993269667667124
+    }
+  },
+  "overlap": {
+    "pscore_min": 0.020695922568052874,
+    "pscore_max": 0.993269667667124,
+    "treated_q05": 0.2982505786857915,
+    "treated_q95": 0.8859811398513676,
+    "untreated_q05": 0.16271094152367535,
+    "untreated_q95": 0.7801048955426912,
+    "treated_n": 2186,
+    "untreated_n": 1814,
+    "n_clipped": 0,
+    "n_near_boundary": 0
+  },
+  "calibration": {
+    "assessed": true,
+    "n": 4000,
+    "hosmer_lemeshow_chi2": 3.62950251844324,
+    "hosmer_lemeshow_p": 0.8889099004126276,
+    "calibration_slope": 1.0020870531145223,
+    "calibration_intercept": 0.00020200656735059572,
+    "mean_predicted": 0.5463892831193808,
+    "observed_treated_rate": 0.5465,
+    "slope_bounds": [
+      0.5,
+      1.5
+    ],
+    "groups": 10
+  },
+  "findings": [],
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 3199,
+      "n_eval": 801,
+      "n_train_treated": 1748,
+      "n_train_untreated": 1451,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 1,
+      "n_train": 3200,
+      "n_eval": 800,
+      "n_train_treated": 1749,
+      "n_train_untreated": 1451,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 2,
+      "n_train": 3200,
+      "n_eval": 800,
+      "n_train_treated": 1749,
+      "n_train_untreated": 1451,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 3,
+      "n_train": 3200,
+      "n_eval": 800,
+      "n_train_treated": 1749,
+      "n_train_untreated": 1451,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 4,
+      "n_train": 3201,
+      "n_eval": 799,
+      "n_train_treated": 1749,
+      "n_train_untreated": 1452,
+      "converged": true,
+      "n_iter": 5
+    }
+  ],
+  "n_observations": 4000,
+  "n_covariates": 3,
+  "warnings": [],
+  "contract": {
+    "estimand": "ate",
+    "target_population": "ATE targets the FULL observed population E[Y(1)-Y(0)] over the covariate distribution of all units.",
+    "weight_type": "stabilized",
+    "weight_definition": {
+      "formula": "w_i = A_i * e_i/p_hat / e_i + (1-A_i) * (1-e_i)/(1-p_hat)/(1-e_i); numerators are marginal treatment proportions e_i=P(A=1) (and 1-e_i), denominators are out-of-fold p_hat(X_i)=P(A=1|X_i)."
+    },
+    "crossfit_n_splits": 5,
+    "crossfit_stratified": true,
+    "crossfit_seed": 20260927,
+    "model_family": "logistic_ridge",
+    "model_ridge_lambda": 0.001,
+    "model_max_iter": 100,
+    "model_tol": 1e-08,
+    "clipping_enabled": false,
+    "clipping_profile": "none",
+    "clipping_lower": 0.0,
+    "clipping_upper": 1.0,
+    "positivity_eps": 1e-06,
+    "estimand_note": "No clipping: estimand is the untrimmed ATE.",
+    "assumptions": {
+      "consistency": "Observed outcome equals the potential outcome under the observed treatment.",
+      "conditional_exchangeability": "Y(a) independent of A given X (no unmeasured confounding). This is NOT testable from the data and cannot be proven by the estimate.",
+      "positivity": "0 < P(A=1|X) < 1 for every unit in the target population; overlap diagnostics provide supporting but incomplete evidence.",
+      "sutta_note": "SUTVA: no interference between units and a single well-defined treatment version."
+    }
+  },
+  "causal_disclaimer": "This estimate is a conditional association under the declared contract. A causal interpretation requires unconfoundedness (no unmeasured confounding), positivity and consistency, which the data cannot establish. Overlap diagnostics can reject or flag weak support but never prove the assumptions. This number is not causal proof.",
+  "ground_truth": {
+    "ate_true_on_sample": 2.0085270581138968,
+    "known_from_dgp": "tau(X)=2+0.5*X1 with X1~N(0,1); E[tau]=2.0"
+  }
+}

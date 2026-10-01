@@ -1,0 +1,15 @@
+{
+  "ok": false,
+  "scenario": "no_overlap",
+  "error": {
+    "code": "positivity_violation",
+    "message": "Fitted propensity score yields a denominator not greater than positivity_eps for a unit that the estimand needs; denominator replacement is forbidden by the contract.",
+    "details": {
+      "estimand": "ate",
+      "positivity_eps": 1e-06,
+      "treated_p_le_eps": 9,
+      "untreated_one_minus_p_le_eps": 8,
+      "rescue": "Enable the FIXED clipping profile to estimate over a declared trimmed population (the raw-score failure is still recorded)."
+    }
+  }
+}

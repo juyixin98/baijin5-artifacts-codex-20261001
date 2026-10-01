@@ -1,0 +1,152 @@
+{
+  "request_id": "repro-misspec",
+  "verdict": "reject",
+  "estimate": {
+    "point": 2.0139095352582204,
+    "se": 0.033174111878290904,
+    "ci_level": 0.95,
+    "ci_lower": 1.9488894707576678,
+    "ci_upper": 2.078929599758773,
+    "mu1": 2.022752036405561,
+    "mu0": 0.008842501147340342,
+    "influence_used": true
+  },
+  "weights": {
+    "n": 6000,
+    "treated_ess": 4003.0907051988934,
+    "untreated_ess": 1718.5183076293079,
+    "treated_ess_fraction": 0.983560369827738,
+    "untreated_ess_fraction": 0.890423993590315,
+    "overall_ess": 5721.609012828201,
+    "overall_ess_fraction": 0.9536015021380335,
+    "max_weight": 3.0910068360983707,
+    "mean_weight_treated": 0.9965985989807163,
+    "mean_weight_untreated": 1.0195865423031647,
+    "weight_sum_treated": 4056.1562978515153,
+    "weight_sum_untreated": 1967.802026645108,
+    "pscore_summary": {
+      "raw_min": 0.3023445155957967,
+      "raw_max": 0.8971198430375565,
+      "used_min": 0.3023445155957967,
+      "used_max": 0.8971198430375565
+    }
+  },
+  "overlap": {
+    "pscore_min": 0.3023445155957967,
+    "pscore_max": 0.8971198430375565,
+    "treated_q05": 0.550654854081448,
+    "treated_q95": 0.8131640353747904,
+    "untreated_q05": 0.4771258470288014,
+    "untreated_q95": 0.813872781575262,
+    "treated_n": 4070,
+    "untreated_n": 1930,
+    "n_clipped": 0,
+    "n_near_boundary": 0
+  },
+  "calibration": {
+    "assessed": true,
+    "n": 6000,
+    "hosmer_lemeshow_chi2": 123.75992827857667,
+    "hosmer_lemeshow_p": 5.541043058941839e-23,
+    "calibration_slope": 0.9863925307992585,
+    "calibration_intercept": 0.01020105121438701,
+    "mean_predicted": 0.6782411378779146,
+    "observed_treated_rate": 0.6783333333333333,
+    "slope_bounds": [
+      0.5,
+      1.5
+    ],
+    "groups": 10
+  },
+  "findings": [
+    {
+      "code": "calibration_hl_reject",
+      "severity": "reject",
+      "status": "reject",
+      "message": "Hosmer-Lemeshow p=5.541e-23 below 0.01: propensity scores are miscalibrated; IPW weights are unreliable. Consider model misspecification.",
+      "evidence": {
+        "hl_p": 5.541043058941839e-23,
+        "hl_chi2": 123.75992827857667,
+        "threshold": 0.01
+      }
+    }
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 4800,
+      "n_eval": 1200,
+      "n_train_treated": 3256,
+      "n_train_untreated": 1544,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 1,
+      "n_train": 4800,
+      "n_eval": 1200,
+      "n_train_treated": 3256,
+      "n_train_untreated": 1544,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 2,
+      "n_train": 4800,
+      "n_eval": 1200,
+      "n_train_treated": 3256,
+      "n_train_untreated": 1544,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 3,
+      "n_train": 4800,
+      "n_eval": 1200,
+      "n_train_treated": 3256,
+      "n_train_untreated": 1544,
+      "converged": true,
+      "n_iter": 5
+    },
+    {
+      "fold": 4,
+      "n_train": 4800,
+      "n_eval": 1200,
+      "n_train_treated": 3256,
+      "n_train_untreated": 1544,
+      "converged": true,
+      "n_iter": 5
+    }
+  ],
+  "n_observations": 6000,
+  "n_covariates": 3,
+  "warnings": [],
+  "contract": {
+    "estimand": "ate",
+    "target_population": "ATE targets the FULL observed population E[Y(1)-Y(0)] over the covariate distribution of all units.",
+    "weight_type": "stabilized",
+    "weight_definition": {
+      "formula": "w_i = A_i * e_i/p_hat / e_i + (1-A_i) * (1-e_i)/(1-p_hat)/(1-e_i); numerators are marginal treatment proportions e_i=P(A=1) (and 1-e_i), denominators are out-of-fold p_hat(X_i)=P(A=1|X_i)."
+    },
+    "crossfit_n_splits": 5,
+    "crossfit_stratified": true,
+    "crossfit_seed": 20260927,
+    "model_family": "logistic_ridge",
+    "model_ridge_lambda": 0.001,
+    "model_max_iter": 100,
+    "model_tol": 1e-08,
+    "clipping_enabled": false,
+    "clipping_profile": "none",
+    "clipping_lower": 0.0,
+    "clipping_upper": 1.0,
+    "positivity_eps": 1e-06,
+    "estimand_note": "No clipping: estimand is the untrimmed ATE.",
+    "assumptions": {
+      "consistency": "Observed outcome equals the potential outcome under the observed treatment.",
+      "conditional_exchangeability": "Y(a) independent of A given X (no unmeasured confounding). This is NOT testable from the data and cannot be proven by the estimate.",
+      "positivity": "0 < P(A=1|X) < 1 for every unit in the target population; overlap diagnostics provide supporting but incomplete evidence.",
+      "sutta_note": "SUTVA: no interference between units and a single well-defined treatment version."
+    }
+  },
+  "causal_disclaimer": "This estimate is a conditional association under the declared contract. A causal interpretation requires unconfoundedness (no unmeasured confounding), positivity and consistency, which the data cannot establish. Overlap diagnostics can reject or flag weak support but never prove the assumptions. This number is not causal proof."
+}
