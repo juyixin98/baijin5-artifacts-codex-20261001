@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {"name": "fast-1", "stratum": 2, "reference_id": 1, "offset": "50ms"},
+    {"name": "fast-2", "stratum": 2, "reference_id": 2, "offset": "52ms"},
+    {"name": "satellite", "stratum": 3, "reference_id": 3, "offset": "48ms"}
+  ],
+  "links": [
+    {"source": "fast-1", "to_server": "15ms", "from_server": "25ms"},
+    {"source": "fast-2", "to_server": "20ms", "from_server": "20ms"},
+    {"source": "satellite", "to_server": "3100ms", "from_server": "3200ms"}
+  ],
+  "policy": {
+    "max_sample_age": "90s",
+    "max_rtt": "5s",
+    "max_clock_jump": "500ms",
+    "rtt_outlier_factor": 3,
+    "min_sources": 1
+  },
+  "run": {
+    "start": "2024-06-01T12:00:00Z",
+    "rounds": 2,
+    "poll_interval": "30s",
+    "reply_timeout": "8s",
+    "epsilon": "100us",
+    "link_seed": 11
+  }
+}

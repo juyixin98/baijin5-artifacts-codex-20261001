@@ -1,0 +1,9 @@
+# local SQLite databases and run artifacts
+/data/
+*.db
+*.db-shm
+*.db-wal
+
+# compiled binary
+/ntpsim
+/ntpsim.exe

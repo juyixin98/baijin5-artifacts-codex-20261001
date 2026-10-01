@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "name": "src-a",
+      "stratum": 2,
+      "li": 0,
+      "reference_id": 167772161,
+      "offset": "100ms"
+    },
+    {
+      "name": "src-b",
+      "stratum": 2,
+      "li": 0,
+      "reference_id": 167772162,
+      "offset": "105ms"
+    },
+    {
+      "name": "src-c",
+      "stratum": 3,
+      "li": 0,
+      "reference_id": 167772163,
+      "offset": "97ms"
+    }
+  ],
+  "links": [
+    {"source": "src-a", "to_server": "20ms", "from_server": "30ms"},
+    {"source": "src-b", "to_server": "25ms", "from_server": "25ms"},
+    {"source": "src-c", "to_server": "40ms", "from_server": "20ms"}
+  ],
+  "policy": {
+    "max_sample_age": "90s",
+    "max_rtt": "5s",
+    "max_clock_jump": "500ms",
+    "rtt_outlier_factor": 3,
+    "min_sources": 1
+  },
+  "run": {
+    "start": "2024-06-01T12:00:00Z",
+    "rounds": 4,
+    "poll_interval": "30s",
+    "reply_timeout": "2s",
+    "epsilon": "100us",
+    "link_seed": 7
+  }
+}

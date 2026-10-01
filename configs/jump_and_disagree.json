@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "name": "stable",
+      "stratum": 2,
+      "reference_id": 1,
+      "offset": "100ms"
+    },
+    {
+      "name": "jumpy",
+      "stratum": 2,
+      "reference_id": 2,
+      "offset": "100ms",
+      "step_at": "2024-06-01T12:00:45Z",
+      "step_offset": "800ms"
+    },
+    {
+      "name": "rogue",
+      "stratum": 1,
+      "reference_id": 9,
+      "offset": "-700ms"
+    }
+  ],
+  "links": [
+    {"source": "stable", "to_server": "12ms", "from_server": "18ms"},
+    {"source": "jumpy", "to_server": "10ms", "from_server": "14ms"},
+    {"source": "rogue", "to_server": "8ms", "from_server": "8ms"}
+  ],
+  "policy": {
+    "max_sample_age": "90s",
+    "max_rtt": "5s",
+    "max_clock_jump": "500ms",
+    "rtt_outlier_factor": 3,
+    "min_sources": 2
+  },
+  "run": {
+    "start": "2024-06-01T12:00:00Z",
+    "rounds": 3,
+    "poll_interval": "30s",
+    "reply_timeout": "2s",
+    "epsilon": "100us",
+    "link_seed": 13
+  }
+}
