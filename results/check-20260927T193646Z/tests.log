@@ -1,0 +1,133 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/admin/Downloads/xinbiaozhul/opp414/a
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0, anyio-4.15.1
+collecting ... collected 90 items
+
+tests/test_api.py::test_healthz_ok PASSED                                [  1%]
+tests/test_api.py::test_plan_success_is_verified_and_persisted PASSED    [  2%]
+tests/test_api.py::test_plan_unsolvable_goal_reports_unsolvable PASSED   [  3%]
+tests/test_api.py::test_plan_resource_limit_is_distinct_unknown_category PASSED [  4%]
+tests/test_api.py::test_invalid_problem_returns_422_with_issue_list PASSED [  5%]
+tests/test_api.py::test_malformed_json_is_input_invalid_and_persisted PASSED [  6%]
+tests/test_api.py::test_empty_body_is_rejected_with_run_id PASSED        [  7%]
+tests/test_api.py::test_add_delete_conflict_is_422 PASSED                [  8%]
+tests/test_api.py::test_execute_endpoint_detects_state_conflict PASSED   [ 10%]
+tests/test_api.py::test_execute_endpoint_accepts_independently_valid_plan PASSED [ 11%]
+tests/test_api.py::test_execute_unknown_action_is_state_conflict_category PASSED [ 12%]
+tests/test_api.py::test_unknown_run_id_is_404 PASSED                     [ 13%]
+tests/test_api.py::test_runs_listing_and_filtering PASSED                [ 14%]
+tests/test_api.py::test_reference_prior_run_problem_for_execution PASSED [ 15%]
+tests/test_api.py::test_bad_options_are_input_invalid PASSED             [ 16%]
+tests/test_api.py::test_non_admissible_heuristic_is_computation_failure PASSED [ 17%]
+tests/test_api.py::test_expanded_bound_hits_resource_limit_with_counters PASSED [ 18%]
+tests/test_api.py::test_execute_requires_plan_list PASSED                [ 20%]
+tests/test_api.py::test_execute_requires_problem_or_run_reference PASSED [ 21%]
+tests/test_api.py::test_each_error_category_is_distinguishable PASSED    [ 22%]
+tests/test_api.py::test_application_entrypoint_builds_app PASSED         [ 23%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[bfs-zero-resource_ops.json] PASSED [ 24%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[bfs-zero-door_negative_goal.json] PASSED [ 25%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[ucs-zero-resource_ops.json] PASSED [ 26%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[ucs-zero-door_negative_goal.json] PASSED [ 27%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[astar-hmax-resource_ops.json] PASSED [ 28%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[astar-hmax-door_negative_goal.json] PASSED [ 30%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[greedy-goalcount-resource_ops.json] PASSED [ 31%]
+tests/test_cross_engine.py::test_engine_status_and_execution_agree_with_oracle[greedy-goalcount-door_negative_goal.json] PASSED [ 32%]
+tests/test_cross_engine.py::test_unsolvable_is_reported_by_every_engine[bfs-zero-resource_ops_unsolvable.json] PASSED [ 33%]
+tests/test_cross_engine.py::test_unsolvable_is_reported_by_every_engine[ucs-zero-resource_ops_unsolvable.json] PASSED [ 34%]
+tests/test_cross_engine.py::test_unsolvable_is_reported_by_every_engine[astar-hmax-resource_ops_unsolvable.json] PASSED [ 35%]
+tests/test_cross_engine.py::test_unsolvable_is_reported_by_every_engine[greedy-goalcount-resource_ops_unsolvable.json] PASSED [ 36%]
+tests/test_cross_engine.py::test_search_event_log_captures_replayable_intermediate_states PASSED [ 37%]
+tests/test_executor.py::test_apply_uses_delete_then_add_same_predecessor PASSED [ 38%]
+tests/test_executor.py::test_negative_precondition_blocks_applicability PASSED [ 40%]
+tests/test_executor.py::test_state_encoder_dedupes_equal_states PASSED   [ 41%]
+tests/test_executor.py::test_executor_accepts_valid_step_sequence_but_reports_goal_open PASSED [ 42%]
+tests/test_executor.py::test_executor_rejects_unknown_action PASSED      [ 43%]
+tests/test_executor.py::test_executor_reports_missing_positive_precondition PASSED [ 44%]
+tests/test_executor.py::test_executor_reports_negative_precondition_conflict PASSED [ 45%]
+tests/test_executor.py::test_executor_detects_goal_not_reached PASSED    [ 46%]
+tests/test_executor.py::test_executor_trace_state_evolution_is_complete PASSED [ 47%]
+tests/test_executor.py::test_executor_is_independent_of_search_bookkeeping PASSED [ 48%]
+tests/test_heuristics.py::test_h_zero_is_zero_and_hmax_at_goal_is_zero PASSED [ 50%]
+tests/test_heuristics.py::test_hmax_is_infinite_for_unreachable_goal PASSED [ 51%]
+tests/test_heuristics.py::test_goalcount_counts_unsatisfied_literals PASSED [ 52%]
+tests/test_heuristics.py::test_hmax_is_admissible_at_every_reachable_state PASSED [ 53%]
+tests/test_heuristics.py::test_hmax_matches_hand_computed_relaxed_value PASSED [ 54%]
+tests/test_language.py::test_fixture_problem_grounds_expected_number_of_actions PASSED [ 55%]
+tests/test_language.py::test_parse_json_rejects_malformed_syntax PASSED  [ 56%]
+tests/test_language.py::test_unknown_top_field_is_shape_error PASSED     [ 57%]
+tests/test_language.py::test_empty_body_rejected_as_input_error PASSED   [ 58%]
+tests/test_language.py::test_semantic_issues_are_validation_errors[<lambda>-UNKNOWN_TYPE] PASSED [ 60%]
+tests/test_language.py::test_semantic_issues_are_validation_errors[<lambda>-UNKNOWN_REFERENCE] PASSED [ 61%]
+tests/test_language.py::test_semantic_issues_are_validation_errors[<lambda>-ARITY_MISMATCH] PASSED [ 62%]
+tests/test_language.py::test_semantic_issues_are_validation_errors[<lambda>-TYPE_MISMATCH] PASSED [ 63%]
+tests/test_language.py::test_add_delete_conflict_is_rejected PASSED      [ 64%]
+tests/test_language.py::test_static_predicate_cannot_be_modified PASSED  [ 65%]
+tests/test_language.py::test_positive_and_negative_goal_overlap_rejected PASSED [ 66%]
+tests/test_language.py::test_unknown_type_in_action_parameter_rejected PASSED [ 67%]
+tests/test_language.py::test_unused_parameter_is_warning_not_error PASSED [ 68%]
+tests/test_language.py::test_cost_must_be_positive_number PASSED         [ 70%]
+tests/test_language.py::test_list_atom_notation_accepted PASSED          [ 71%]
+tests/test_language.py::test_fixture_files_parse PASSED                  [ 72%]
+tests/test_negative_goal_loops.py::test_negative_goal_needs_delete_effect PASSED [ 73%]
+tests/test_negative_goal_loops.py::test_unlock_lock_cycle_dedupes_and_terminates PASSED [ 74%]
+tests/test_negative_goal_loops.py::test_empty_effect_action_is_self_loop_and_still_grounded PASSED [ 75%]
+tests/test_negative_goal_loops.py::test_parameter_aliasing_add_delete_overlap_uses_fixed_add_wins PASSED [ 76%]
+tests/test_search.py::test_found_plan_is_independently_executable[bfs-zero] PASSED [ 77%]
+tests/test_search.py::test_found_plan_is_independently_executable[ucs-zero] PASSED [ 78%]
+tests/test_search.py::test_found_plan_is_independently_executable[astar-hmax] PASSED [ 80%]
+tests/test_search.py::test_found_plan_is_independently_executable[greedy-goalcount] PASSED [ 81%]
+tests/test_search.py::test_bfs_returns_minimum_action_count_which_is_expensive PASSED [ 82%]
+tests/test_search.py::test_ucs_and_astar_return_cheapest_plan_with_more_actions PASSED [ 83%]
+tests/test_search.py::test_astar_expands_no_more_states_than_ucs PASSED  [ 84%]
+tests/test_search.py::test_greedy_reports_no_optimality_promise PASSED   [ 85%]
+tests/test_search.py::test_astar_rejects_non_admissible_heuristic PASSED [ 86%]
+tests/test_search.py::test_unsolvable_goal_exhausts_and_reports_unsolvable PASSED [ 87%]
+tests/test_search.py::test_cyclic_actions_dedupe_and_terminate PASSED    [ 88%]
+tests/test_search.py::test_depth_limit_returns_unknown_not_failure PASSED [ 90%]
+tests/test_search.py::test_expanded_limit_returns_bound_and_value PASSED [ 91%]
+tests/test_search.py::test_search_matches_oracle_on_all_engines PASSED   [ 92%]
+tests/test_search.py::test_initial_state_goal_is_empty_plan PASSED       [ 93%]
+tests/test_storage.py::test_run_round_trips_with_full_evidence PASSED    [ 94%]
+tests/test_storage.py::test_unknown_run_is_distinct_not_found_error PASSED [ 95%]
+tests/test_storage.py::test_list_runs_filters_by_status_and_category PASSED [ 96%]
+tests/test_storage.py::test_duplicate_run_id_is_storage_error PASSED     [ 97%]
+tests/test_storage.py::test_jsonl_log_records_replayable_run_timeline PASSED [ 98%]
+tests/test_storage.py::test_jsonl_log_coerces_non_finite_numbers PASSED  [100%]
+
+=============================== warnings summary ===============================
+../../../../.local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/admin/.local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                                       Stmts   Miss  Cover   Missing
+------------------------------------------------------------------------
+src/strips_planner/__init__.py                 1      0   100%
+src/strips_planner/api/__init__.py             0      0   100%
+src/strips_planner/api/app.py                 72      3    96%   81, 116-117
+src/strips_planner/core/__init__.py            0      0   100%
+src/strips_planner/core/executor.py           71      1    99%   94
+src/strips_planner/core/heuristics.py         73      1    99%   102
+src/strips_planner/core/search.py            197      8    96%   116, 122, 188, 204, 212, 262, 268, 324
+src/strips_planner/core/state.py              41      4    90%   37, 86-88
+src/strips_planner/errors.py                  82      0   100%
+src/strips_planner/language/__init__.py        3      0   100%
+src/strips_planner/language/parser.py        182     22    88%   97, 102, 135, 144, 153, 161, 171, 181, 193, 198, 231, 251, 274, 280, 292, 298, 304, 311, 315, 325, 333, 340
+src/strips_planner/language/validator.py     186     23    88%   83, 88, 95, 115, 157-161, 189, 199, 259-261, 263-266, 280-288, 306-307, 310, 312
+src/strips_planner/main.py                     6      0   100%
+src/strips_planner/models.py                  54      1    98%   87
+src/strips_planner/service/__init__.py         0      0   100%
+src/strips_planner/service/planning.py       287     35    88%   124, 173, 255-275, 278-291, 405-408, 419-420, 428-430, 437, 441, 443, 448, 477, 484, 486, 488, 545
+src/strips_planner/storage/__init__.py         0      0   100%
+src/strips_planner/storage/database.py        89     10    89%   61-62, 67-68, 79-80, 85-86, 117-118
+src/strips_planner/storage/run_log.py         49      3    94%   64, 70, 85
+------------------------------------------------------------------------
+TOTAL                                       1393    111    92%
+======================== 90 passed, 1 warning in 3.75s =========================

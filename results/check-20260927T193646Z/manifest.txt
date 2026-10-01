@@ -1,0 +1,5 @@
+RUN_ID=check-20260927T193646Z
+python=Python 3.12.3
+(dependencies already present; continuing)
+live port=51627
+artifacts written to results/check-20260927T193646Z

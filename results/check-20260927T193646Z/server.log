@@ -1,0 +1,19 @@
+INFO:     Started server process [154002]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:51627 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52646 - "GET /healthz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52654 - "GET /healthz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52670 - "POST /api/v1/plans HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52674 - "POST /api/v1/plans HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52686 - "POST /api/v1/plans HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52702 - "POST /api/v1/plans HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52714 - "POST /api/v1/plans HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:52720 - "POST /api/v1/plans HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:52724 - "POST /api/v1/plans/execute HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:52726 - "GET /api/v1/runs/run-20260927T193652344403-ec500d80 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52728 - "GET /api/v1/runs?limit=10 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [154002]
