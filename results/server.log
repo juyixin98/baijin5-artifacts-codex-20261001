@@ -1,0 +1,34 @@
+INFO:     Started server process [157385]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8017 (Press CTRL+C to quit)
+INFO:     127.0.0.1:38312 - "GET /healthz HTTP/1.1" 200 OK
+2026-09-28 03:51:25,460 INFO [request_id=smoke-normal-001] expmv request: t=1.3 tol=1e-09 vector_len=10 nnz=43
+2026-09-28 03:51:25,461 INFO [request_id=smoke-normal-001] budget ok: {'dimension': 10, 'max_krylov_dim': 30, 'basis_vectors_bytes': 2480, 'hessenberg_bytes': 7440, 'total_bytes': 9920, 'limit_bytes': 268435456}
+2026-09-28 03:51:25,499 INFO [request_id=smoke-normal-001] converged: segments=7 cumulative_error_estimate=0.000e+00 matvecs=70 elapsed=0.040s
+INFO:     127.0.0.1:34150 - "POST /v1/expmv HTTP/1.1" 200 OK
+2026-09-28 03:51:25,511 INFO [request_id=smoke-tight-002] expmv request: t=1.3 tol=1e-16 vector_len=10 nnz=43
+2026-09-28 03:51:25,511 INFO [request_id=smoke-tight-002] budget ok: {'dimension': 10, 'max_krylov_dim': 30, 'basis_vectors_bytes': 2480, 'hessenberg_bytes': 7440, 'total_bytes': 9920, 'limit_bytes': 268435456}
+2026-09-28 03:51:25,523 INFO [request_id=smoke-tight-002] converged: segments=7 cumulative_error_estimate=0.000e+00 matvecs=70 elapsed=0.012s
+INFO:     127.0.0.1:34150 - "POST /v1/expmv HTTP/1.1" 200 OK
+2026-09-28 03:51:25,533 INFO [request_id=smoke-bad-003] expmv request: t=1.3 tol=1e-09 vector_len=2 nnz=43
+2026-09-28 03:51:25,533 WARNING [request_id=smoke-bad-003] failed [VALIDATION_ERROR]: vector length 2 != matrix dimension 10
+INFO:     127.0.0.1:34150 - "POST /v1/expmv HTTP/1.1" 422 Unprocessable Entity
+2026-09-28 03:51:25,537 INFO [request_id=smoke-t0-004] expmv request: t=0.0 tol=1e-09 vector_len=10 nnz=43
+2026-09-28 03:51:25,538 INFO [request_id=smoke-t0-004] budget ok: {'dimension': 10, 'max_krylov_dim': 30, 'basis_vectors_bytes': 2480, 'hessenberg_bytes': 7440, 'total_bytes': 9920, 'limit_bytes': 268435456}
+2026-09-28 03:51:25,538 INFO [request_id=smoke-t0-004] trivial case: zero_time
+2026-09-28 03:51:25,538 INFO [request_id=smoke-t0-004] converged: segments=0 cumulative_error_estimate=0.000e+00 matvecs=0 elapsed=0.001s
+INFO:     127.0.0.1:34150 - "POST /v1/expmv HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [157385]
+n http://127.0.0.1:8018 (Press CTRL+C to quit)
+2026-09-28 03:52:00,802 INFO [request_id=smoke-notconv-005] expmv request: t=3.0 tol=1e-14 vector_len=10 nnz=43
+2026-09-28 03:52:00,803 INFO [request_id=smoke-notconv-005] budget ok: {'dimension': 10, 'max_krylov_dim': 2, 'basis_vectors_bytes': 240, 'hessenberg_bytes': 48, 'total_bytes': 288, 'limit_bytes': 268435456}
+2026-09-28 03:52:00,805 WARNING [request_id=smoke-notconv-005] failed [NOT_CONVERGED]: error estimate 4.742e-02 exceeds tolerance 1.0e-14 after 1 restart splits (krylov_dim=2)
+INFO:     127.0.0.1:51462 - "POST /v1/expmv HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [157663]
