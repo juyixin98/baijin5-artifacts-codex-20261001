@@ -1,0 +1,270 @@
+{
+  "checkpoint": {
+    "global_step": 4,
+    "persisted_touched_rows": 4,
+    "run_id": "run-20260928T113158-b510e846",
+    "state_dir": "/home/admin/Downloads/xinbiaozhul/opp448/a/results/demo_state",
+    "verdict": "committed"
+  },
+  "cold_row_99_untouched": {
+    "index": 99,
+    "momentum": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "row_steps": 0,
+    "touched": false,
+    "weight": [
+      -0.01401825856883758,
+      0.018154295650719604,
+      -0.0554317919023426,
+      0.08532296827838967
+    ]
+  },
+  "health": {
+    "dim": 4,
+    "global_step": 0,
+    "n_dirty": 0,
+    "n_seen": 0,
+    "n_touched": 0,
+    "num_rows": 1000,
+    "status": "ok"
+  },
+  "hot_row_5_before_restart": {
+    "index": 5,
+    "momentum": [
+      2.9,
+      2.9,
+      2.9,
+      2.9
+    ],
+    "row_steps": 2,
+    "touched": true,
+    "weight": [
+      -0.27024340998728047,
+      -0.2514823852807184,
+      -0.14019831043202818,
+      -0.15652208855784067
+    ]
+  },
+  "requests": [
+    {
+      "body": {
+        "active_indices": [
+          0,
+          2
+        ],
+        "batch_id": "dup",
+        "clip": {
+          "applied": false,
+          "mode": "none",
+          "scale": 1.0
+        },
+        "global_step_after": 1,
+        "global_step_before": 0,
+        "max_abs_delta": 0.2,
+        "n_active": 2,
+        "n_unique": 2,
+        "n_zero_skipped": 0,
+        "raw_row_count": 5,
+        "run_id": "demo-dup-001",
+        "unique_indices": [
+          0,
+          2
+        ],
+        "verdict": "applied",
+        "zero_skipped_indices": []
+      },
+      "http_status": 200,
+      "label": "duplicate_ids",
+      "run_id": "demo-dup-001"
+    },
+    {
+      "body": {
+        "active_indices": [
+          0,
+          5
+        ],
+        "batch_id": "hcA",
+        "clip": {
+          "applied": false,
+          "mode": "none",
+          "scale": 1.0
+        },
+        "global_step_after": 2,
+        "global_step_before": 1,
+        "max_abs_delta": 0.28,
+        "n_active": 2,
+        "n_unique": 2,
+        "n_zero_skipped": 0,
+        "raw_row_count": 2,
+        "run_id": "demo-hc-002",
+        "unique_indices": [
+          0,
+          5
+        ],
+        "verdict": "applied",
+        "zero_skipped_indices": []
+      },
+      "http_status": 200,
+      "label": "hot_cold_alternate_A",
+      "run_id": "demo-hc-002"
+    },
+    {
+      "body": {
+        "active_indices": [
+          2,
+          5
+        ],
+        "batch_id": "hcB",
+        "clip": {
+          "applied": false,
+          "mode": "none",
+          "scale": 1.0
+        },
+        "global_step_after": 3,
+        "global_step_before": 2,
+        "max_abs_delta": 0.14500000000000002,
+        "n_active": 2,
+        "n_unique": 2,
+        "n_zero_skipped": 0,
+        "raw_row_count": 2,
+        "run_id": "demo-hc-003",
+        "unique_indices": [
+          2,
+          5
+        ],
+        "verdict": "applied",
+        "zero_skipped_indices": []
+      },
+      "http_status": 200,
+      "label": "hot_cold_alternate_B",
+      "run_id": "demo-hc-003"
+    },
+    {
+      "body": {
+        "active_indices": [],
+        "batch_id": null,
+        "clip": {
+          "mode": "none"
+        },
+        "error_code": "empty_batch",
+        "global_step_after": 3,
+        "global_step_before": 3,
+        "max_abs_delta": 0.0,
+        "n_active": 0,
+        "n_unique": 0,
+        "n_zero_skipped": 0,
+        "raw_row_count": 0,
+        "run_id": "demo-empty-004",
+        "unique_indices": [],
+        "verdict": "empty",
+        "zero_skipped_indices": []
+      },
+      "http_status": 200,
+      "label": "empty_batch",
+      "run_id": "demo-empty-004"
+    },
+    {
+      "body": {
+        "active_indices": [
+          7
+        ],
+        "batch_id": "large",
+        "clip": {
+          "applied": false,
+          "mode": "none",
+          "scale": 1.0
+        },
+        "global_step_after": 4,
+        "global_step_before": 3,
+        "max_abs_delta": 100000.0,
+        "n_active": 1,
+        "n_unique": 1,
+        "n_zero_skipped": 0,
+        "raw_row_count": 2,
+        "run_id": "demo-large-005",
+        "unique_indices": [
+          7
+        ],
+        "verdict": "applied",
+        "zero_skipped_indices": []
+      },
+      "http_status": 200,
+      "label": "large_gradient",
+      "run_id": "demo-large-005"
+    },
+    {
+      "body": {
+        "details": {
+          "bad_index": 1000,
+          "n_bad": 1,
+          "num_rows": 1000
+        },
+        "error_code": "batch_rejected",
+        "message": "index out of range: the entire batch is rejected",
+        "run_id": "demo-oor-006"
+      },
+      "http_status": 400,
+      "label": "out_of_range_high",
+      "run_id": "demo-oor-006"
+    },
+    {
+      "body": {
+        "details": {
+          "bad_index": -1,
+          "n_bad": 1,
+          "num_rows": 1000
+        },
+        "error_code": "batch_rejected",
+        "message": "index out of range: the entire batch is rejected",
+        "run_id": "demo-oor-007"
+      },
+      "http_status": 400,
+      "label": "out_of_range_negative",
+      "run_id": "demo-oor-007"
+    },
+    {
+      "body": {
+        "details": {
+          "expected_dim": 4,
+          "got_dim": 3
+        },
+        "error_code": "batch_rejected",
+        "message": "gradient width does not match table dim",
+        "run_id": "demo-width-008"
+      },
+      "http_status": 400,
+      "label": "width_mismatch",
+      "run_id": "demo-width-008"
+    }
+  ],
+  "restart": {
+    "checkpoint_found": true,
+    "global_step": 4,
+    "row_5_momentum": [
+      2.9,
+      2.9,
+      2.9,
+      2.9
+    ],
+    "row_5_steps": 2,
+    "row_5_weight": [
+      -0.27024340998728047,
+      -0.2514823852807184,
+      -0.14019831043202818,
+      -0.15652208855784067
+    ],
+    "row_99_steps": 0
+  },
+  "summary_after": {
+    "dim": 4,
+    "global_step": 4,
+    "n_dirty": 0,
+    "n_seen": 4,
+    "n_touched": 4,
+    "num_rows": 1000
+  }
+}

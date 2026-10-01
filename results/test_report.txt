@@ -1,0 +1,102 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/admin/Downloads/xinbiaozhul/opp448/a
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0, anyio-4.15.1
+collecting ... collected 66 items
+
+tests/test_config.py::test_table_spec_rejects_non_positive_dims PASSED   [  1%]
+tests/test_config.py::test_clip_requires_positive_max_norm_when_enabled PASSED [  3%]
+tests/test_config.py::test_clip_modes_are_closed_and_distinct PASSED     [  4%]
+tests/test_config.py::test_optimizer_validates_hyperparameters PASSED    [  6%]
+tests/test_config.py::test_plain_sgd_forbids_momentum PASSED             [  7%]
+tests/test_config.py::test_step_zero_rows_cannot_be_enabled PASSED       [  9%]
+tests/test_config.py::test_config_round_trips_through_json PASSED        [ 10%]
+tests/test_config.py::test_config_rejects_wrong_optimizer_enum_string PASSED [ 12%]
+tests/test_graph.py::test_duplicate_indices_sum_not_overwrite PASSED     [ 13%]
+tests/test_graph.py::test_aggregation_matches_hand_authored_fixture PASSED [ 15%]
+tests/test_graph.py::test_zero_aggregated_row_is_present_after_aggregation PASSED [ 16%]
+tests/test_graph.py::test_aggregate_empty_batch_is_explicit_error PASSED [ 18%]
+tests/test_graph.py::test_no_clip_is_identity_and_reports_mode PASSED    [ 19%]
+tests/test_graph.py::test_global_clipping_uses_one_shared_scale PASSED   [ 21%]
+tests/test_graph.py::test_global_clipping_noop_when_under_threshold PASSED [ 22%]
+tests/test_graph.py::test_row_clipping_uses_independent_per_row_scales PASSED [ 24%]
+tests/test_graph.py::test_row_clipping_leaves_small_rows_untouched PASSED [ 25%]
+tests/test_graph.py::test_global_and_row_modes_cannot_be_mixed PASSED    [ 27%]
+tests/test_graph.py::test_clipping_does_not_mutate_input PASSED          [ 28%]
+tests/test_graph.py::test_zero_norm_row_under_row_clipping_is_safe PASSED [ 30%]
+tests/test_optimizer.py::test_sgd_momentum_first_step_matches_hand_formula PASSED [ 31%]
+tests/test_optimizer.py::test_sgd_momentum_second_step_accumulates_history PASSED [ 33%]
+tests/test_optimizer.py::test_plain_sgd_ignores_momentum_and_keeps_zero_buffer PASSED [ 34%]
+tests/test_optimizer.py::test_weight_decay_is_coupled_into_gradient PASSED [ 36%]
+tests/test_optimizer.py::test_inputs_are_not_mutated PASSED              [ 37%]
+tests/test_optimizer.py::test_shape_mismatch_is_rejected PASSED          [ 39%]
+tests/test_persistence.py::test_checkpoint_persists_only_touched_rows PASSED [ 40%]
+tests/test_persistence.py::test_round_trip_restores_touched_and_frozen_untouched_rows PASSED [ 42%]
+tests/test_persistence.py::test_loading_then_more_updates_keeps_momentum_history PASSED [ 43%]
+tests/test_persistence.py::test_save_is_atomic_no_tmp_left_behind PASSED [ 45%]
+tests/test_persistence.py::test_save_failure_rolls_back_and_keeps_previous_checkpoint PASSED [ 46%]
+tests/test_persistence.py::test_load_rejects_incompatible_table_shape PASSED [ 48%]
+tests/test_persistence.py::test_load_rejects_incompatible_dim PASSED     [ 50%]
+tests/test_persistence.py::test_load_missing_checkpoint_is_persistence_error PASSED [ 51%]
+tests/test_service_api.py::test_service_apply_repeated_ids_and_counters PASSED [ 53%]
+tests/test_service_api.py::test_service_empty_batch_is_explicit_category PASSED [ 54%]
+tests/test_service_api.py::test_service_out_of_range_raises_and_is_rejected PASSED [ 56%]
+tests/test_service_api.py::test_http_apply_success PASSED                [ 57%]
+tests/test_service_api.py::test_http_out_of_range_returns_400_with_error_code PASSED [ 59%]
+tests/test_service_api.py::test_http_width_mismatch_returns_400 PASSED   [ 60%]
+tests/test_service_api.py::test_http_empty_batch_reports_empty_verdict_not_applied PASSED [ 62%]
+tests/test_service_api.py::test_http_malformed_json_shape_is_422 PASSED  [ 63%]
+tests/test_service_api.py::test_http_row_and_summary_views PASSED        [ 65%]
+tests/test_service_api.py::test_http_checkpoint_round_trip_across_app_instances PASSED [ 66%]
+tests/test_service_api.py::test_journal_correlates_run_id_versions_and_verdict PASSED [ 68%]
+tests/test_service_api.py::test_unknown_exception_is_not_reported_as_success PASSED [ 69%]
+tests/test_state_oracle.py::test_repeated_ids_aggregate_then_match_oracle PASSED [ 71%]
+tests/test_state_oracle.py::test_hot_cold_rows_alternate_and_cold_untouched_rows_are_frozen PASSED [ 72%]
+tests/test_state_oracle.py::test_empty_batch_is_noop_and_does_not_advance_step PASSED [ 74%]
+tests/test_state_oracle.py::test_zero_aggregated_gradient_takes_no_step_but_batch_round_advances PASSED [ 75%]
+tests/test_state_oracle.py::test_large_gradient_matches_oracle_and_stays_finite PASSED [ 77%]
+tests/test_state_oracle.py::test_momentum_state_persists_across_batches_and_matches_oracle PASSED [ 78%]
+tests/test_state_oracle.py::test_global_clipping_path_matches_oracle PASSED [ 80%]
+tests/test_state_oracle.py::test_row_clipping_path_matches_oracle PASSED [ 81%]
+tests/test_state_oracle.py::test_plain_sgd_path_matches_oracle PASSED    [ 83%]
+tests/test_state_oracle.py::test_out_of_range_batch_leaves_state_untouched PASSED [ 84%]
+tests/test_tensors.py::test_accepts_well_formed_batch_and_normalises_dtype PASSED [ 86%]
+tests/test_tensors.py::test_duplicate_indices_are_structurally_allowed PASSED [ 87%]
+tests/test_tensors.py::test_rejects_out_of_range_high_index_entire_batch PASSED [ 89%]
+tests/test_tensors.py::test_rejects_negative_index_entire_batch PASSED   [ 90%]
+tests/test_tensors.py::test_single_bad_index_rejects_all_even_if_others_valid PASSED [ 92%]
+tests/test_tensors.py::test_rejects_length_mismatch PASSED               [ 93%]
+tests/test_tensors.py::test_rejects_width_mismatch PASSED                [ 95%]
+tests/test_tensors.py::test_rejects_non_integer_indices PASSED           [ 96%]
+tests/test_tensors.py::test_rejects_non_finite_gradients PASSED          [ 98%]
+tests/test_tensors.py::test_empty_batch_is_constructible_but_flagged_explicitly PASSED [100%]
+
+=============================== warnings summary ===============================
+../../../../.local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/admin/.local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                                  Stmts   Miss  Cover   Missing
+-------------------------------------------------------------------
+src/sparse_embedding/__init__.py          6      0   100%
+src/sparse_embedding/app.py              52      5    90%   54, 108-109, 141-142
+src/sparse_embedding/config.py           94      6    94%   66, 99, 120, 122, 124, 170
+src/sparse_embedding/errors.py           15      0   100%
+src/sparse_embedding/graph.py            34      1    97%   114
+src/sparse_embedding/journal.py          49      9    82%   100-108
+src/sparse_embedding/optimizer.py        19      1    95%   76
+src/sparse_embedding/persistence.py     130     13    90%   74-75, 153, 185-186, 211-212, 223-224, 227, 232, 271, 275
+src/sparse_embedding/schemas.py          47      0   100%
+src/sparse_embedding/service.py          82      8    90%   101, 115, 130-136, 163, 183-184
+src/sparse_embedding/state.py           122      7    94%   126, 156-157, 231, 241, 278, 292
+src/sparse_embedding/tensors.py          78      7    91%   32, 37, 47, 170, 172, 174, 176
+-------------------------------------------------------------------
+TOTAL                                   728     57    92%
+======================== 66 passed, 1 warning in 1.67s =========================
