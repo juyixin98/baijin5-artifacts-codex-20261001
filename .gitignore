@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+data/
+.pytest_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# results/ is deliberately tracked: latest.md, the timestamped report and
+# test_run.log are the auditable evidence of the actually-executed validation.
