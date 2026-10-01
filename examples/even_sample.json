@@ -1,0 +1,24 @@
+{
+  "_comment": "Hand-computed even sample: group 'even' has scores 10,20,30,40 shuffled across batches. PERCENTILE_CONT(0.5) = 25; PERCENTILE_DISC(0.5) on levels = 2 (int preserved); string_agg tag asc = a|b|c|d.",
+  "query_id": "demo-even",
+  "schema": [
+    {"name": "g", "data_type": "utf8"},
+    {"name": "score", "data_type": "float64"},
+    {"name": "level", "data_type": "int64"},
+    {"name": "tag", "data_type": "utf8"}
+  ],
+  "batches": [
+    {"g": ["even", "even"], "score": [30.0, 10.0], "level": [3, 1], "tag": ["c", "a"]},
+    {"g": ["even", "even"], "score": [40.0, 20.0], "level": [4, 2], "tag": ["d", "b"]}
+  ],
+  "plan": {
+    "group_by": ["g"],
+    "aggregations": [
+      {"alias": "median_cont", "column": "score", "op": "percentile_cont", "quantile": 0.5},
+      {"alias": "p25_cont", "column": "score", "op": "percentile_cont", "quantile": 0.25},
+      {"alias": "median_disc", "column": "level", "op": "percentile_disc", "quantile": 0.5},
+      {"alias": "tag_mode", "column": "tag", "op": "mode"},
+      {"alias": "tag_list", "column": "tag", "op": "string_agg", "delimiter": "|", "order": "asc"}
+    ]
+  }
+}

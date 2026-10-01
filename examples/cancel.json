@@ -1,0 +1,14 @@
+{
+  "_comment": "Deterministically cancels during the merge (after 1 cancel check), then resume with examples/resume.json. Demonstrates external-sort cancel/resume without a race.",
+  "query_id": "demo-cancel",
+  "fixture": "skewed_groups",
+  "cancel_after_merge_checks": 1,
+  "plan": {
+    "group_by": ["g"],
+    "aggregations": [
+      {"alias": "med", "column": "score", "op": "percentile_cont", "quantile": 0.5},
+      {"alias": "m", "column": "tag", "op": "mode"},
+      {"alias": "tags", "column": "tag", "op": "string_agg", "delimiter": "|"}
+    ]
+  }
+}

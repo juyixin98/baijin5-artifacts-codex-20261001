@@ -1,0 +1,32 @@
+[package]
+name = "groupagg"
+version = "0.1.0"
+edition = "2021"
+description = "Exact grouped percentile / mode / ordered string aggregation backend (Axum + Arrow2)"
+license = "MIT"
+
+[lib]
+name = "groupagg"
+path = "src/lib.rs"
+
+[[bin]]
+name = "groupagg-server"
+path = "src/main.rs"
+
+[dependencies]
+arrow2 = { version = "0.18", default-features = false }
+axum = "0.7"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["smallvec", "fmt", "ansi", "env-filter"] }
+thiserror = "1"
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+tempfile = "3"
+
+[profile.release]
+lto = "thin"

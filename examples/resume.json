@@ -1,0 +1,12 @@
+{
+  "_comment": "Resume demo-cancel after cancellation. Must use the SAME plan; a different plan is rejected with INVALID_RESUME (HTTP 409).",
+  "query_id": "demo-cancel",
+  "plan": {
+    "group_by": ["g"],
+    "aggregations": [
+      {"alias": "med", "column": "score", "op": "percentile_cont", "quantile": 0.5},
+      {"alias": "m", "column": "tag", "op": "mode"},
+      {"alias": "tags", "column": "tag", "op": "string_agg", "delimiter": "|"}
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+# groupagg-server startup configuration.
+# Every value here can be overridden with GROUPAGG_* environment variables:
+# GROUPAGG_HOST, GROUPAGG_PORT, GROUPAGG_MEMORY_BUDGET,
+# GROUPAGG_SPILL_DIR, GROUPAGG_CANCEL_CHECK_ROWS.
+
+[server]
+host = "127.0.0.1"
+port = 8080
+
+[engine]
+# Per-query live-record budget. Small on purpose so the external-sort path is
+# easy to exercise locally with the bundled fixtures.
+memory_budget = "4MiB"
+spill_dir = "/tmp/groupagg-spill"
+# How often (merged records) a running query polls for cancellation.
+cancel_check_rows = 64

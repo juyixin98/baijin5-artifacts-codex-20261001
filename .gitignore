@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+/tmp
+/groupagg-spill
+*.spill
+.env
