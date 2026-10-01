@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/fft_cli.dir/src/main.cc.o -o fft_cli  libfft_core.a

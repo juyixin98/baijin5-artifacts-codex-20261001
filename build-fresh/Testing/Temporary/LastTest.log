@@ -1,0 +1,52 @@
+Start testing: Oct 01 20:45 CST
+----------------------------------------------------------
+1/1 Testing: fft_tests
+1/1 Test: fft_tests
+Command: "/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/fft_tests"
+Directory: /home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh
+"fft_tests" start time: Oct 01 20:45 CST
+Output:
+----------------------------------------------------------
+[ RUN  ] small_length_matches_independent_dft
+[  OK  ] small_length_matches_independent_dft
+[ RUN  ] padding_satisfies_linear_convolution
+[  OK  ] padding_satisfies_linear_convolution
+[ RUN  ] forward_unscaled_inverse_one_over_n
+[  OK  ] forward_unscaled_inverse_one_over_n
+[ RUN  ] trace_carries_request_id_and_version
+[  OK  ] trace_carries_request_id_and_version
+[ RUN  ] empty_length_is_empty_length
+[  OK  ] empty_length_is_empty_length
+[ RUN  ] size_mismatch_is_unsupported_length
+[  OK  ] size_mismatch_is_unsupported_length
+[ RUN  ] nan_input_is_nan_or_inf
+[  OK  ] nan_input_is_nan_or_inf
+[ RUN  ] radix2_rejects_non_pow2
+[  OK  ] radix2_rejects_non_pow2
+[ RUN  ] uncertainty_distinguished_from_failure
+[  OK  ] uncertainty_distinguished_from_failure
+[ RUN  ] forward_inverse_roundtrip_many_lengths
+[  OK  ] forward_inverse_roundtrip_many_lengths
+[ RUN  ] prime_lengths_match_reference
+[  OK  ] prime_lengths_match_reference
+[ RUN  ] shifted_impulse_at_large_index_is_pure_exponential
+[  OK  ] shifted_impulse_at_large_index_is_pure_exponential
+[ RUN  ] unity_impulse_dc_is_constant
+[  OK  ] unity_impulse_dc_is_constant
+[ RUN  ] large_dynamic_range_matches_reference
+[  OK  ] large_dynamic_range_matches_reference
+[ RUN  ] bluestein_matches_eigen_for_awkward_lengths
+[  OK  ] bluestein_matches_eigen_for_awkward_lengths
+[ RUN  ] inverse_matches_eigen_inverse
+[  OK  ] inverse_matches_eigen_inverse
+
+12740 assertions, 0 failed assertions across 0 case(s).
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"fft_tests" end time: Oct 01 20:45 CST
+"fft_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 01 20:45 CST

@@ -1,0 +1,7 @@
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/fft_core.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/fft_cli.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/fft_bench.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/fft_tests.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/test.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/edit_cache.dir
+/home/admin/Downloads/xinbiaozhul/opp831/b/build-fresh/CMakeFiles/rebuild_cache.dir

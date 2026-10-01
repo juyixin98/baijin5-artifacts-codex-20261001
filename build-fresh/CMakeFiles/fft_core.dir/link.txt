@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfft_core.a CMakeFiles/fft_core.dir/src/types.cc.o CMakeFiles/fft_core.dir/src/kernel.cc.o CMakeFiles/fft_core.dir/src/errors.cc.o CMakeFiles/fft_core.dir/src/benchmark.cc.o
+/usr/bin/ranlib libfft_core.a

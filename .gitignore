@@ -1,0 +1,6 @@
+/build/
+/build-cmake/
+/cmake/cmake-*/
+/cmake/*.tar.gz
+*.o
+*.a
