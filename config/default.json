@@ -1,0 +1,24 @@
+{
+  "database": {
+    "path": "data/experiments.db"
+  },
+  "logging": {
+    "dir": "logs",
+    "level": "INFO"
+  },
+  "api": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "defaults": {
+    "theta_source": "control_pre",
+    "se_type": "welch",
+    "regression_interactions": true,
+    "missing_policy": "fail",
+    "zero_variance_policy": "drop",
+    "leakage_policy": "flag",
+    "smd_threshold": 0.20,
+    "alpha": 0.01,
+    "ci_level": 0.95
+  }
+}
