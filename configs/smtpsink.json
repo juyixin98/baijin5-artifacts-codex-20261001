@@ -1,0 +1,10 @@
+{
+  "listen": "127.0.0.1:2525",
+  "hostname": "smtpsink.local",
+  "local_domains": ["example.test", "mail.test"],
+  "max_line_bytes": 1000,
+  "max_message_bytes": 1048576,
+  "max_recipients": 100,
+  "max_sessions": 32,
+  "storage_dir": "./data"
+}

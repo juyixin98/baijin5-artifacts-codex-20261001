@@ -1,0 +1,12 @@
+220 smtpsink.local Service ready
+250-smtpsink.local greets client.test
+250-SIZE 1048576
+250 8BITMIME
+250 2.1.0 Sender OK
+250 2.1.5 Recipient OK
+550 5.7.1 Relay denied: not a local domain
+250 2.1.5 Recipient OK
+354 End data with <CR><LF>.<CR><LF>
+250 2.0.0 Queued as <MSGID>
+250 2.0.0 Reset state
+221 2.0.0 smtpsink.local closing connection
