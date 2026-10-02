@@ -1,0 +1,22 @@
+{
+  "server": {
+    "listen": "127.0.0.1:8443",
+    "cert_file": "",
+    "key_file": "",
+    "max_concurrent_streams": 100
+  },
+  "hpack": {
+    "table_size": 4096,
+    "max_string_len": 65536,
+    "max_header_block_emitted": 1048576,
+    "max_header_fields": 256,
+    "huffman": true
+  },
+  "storage": {
+    "sqlite_path": "./data/hpackd.db"
+  },
+  "logging": {
+    "level": "debug",
+    "echo_headers": true
+  }
+}

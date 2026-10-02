@@ -1,0 +1,9 @@
+go 1.22
+
+use (
+	./modules/codec
+	./modules/hpack
+	./modules/service
+	./modules/compat
+	./modules/itest
+)

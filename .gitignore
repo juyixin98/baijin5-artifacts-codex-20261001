@@ -1,0 +1,16 @@
+# local artifacts
+*.db
+data/
+*.pem
+cert.pem
+key.pem
+hpackd
+/hpackd
+
+# go test/build
+*.test
+*.out
+coverage.txt
+
+# editor/OS
+.DS_Store
