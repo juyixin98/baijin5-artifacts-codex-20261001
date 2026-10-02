@@ -1,0 +1,10 @@
+{
+  "listen_addr": "127.0.0.1:18099",
+  "data_dir": "data",
+  "fixture_dir": "fixtures",
+  "deadline": {
+    "read_expire_ms": 500,
+    "write_expire_ms": 5000,
+    "writes_starved": 2
+  }
+}

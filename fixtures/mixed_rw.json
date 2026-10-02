@@ -1,0 +1,9 @@
+{
+  "requests": [
+    { "id": "mix-r1", "lba": 100, "sectors": 8, "direction": "read",  "arrival_ms": 0 },
+    { "id": "mix-r2", "lba": 200, "sectors": 8, "direction": "read",  "arrival_ms": 0 },
+    { "id": "mix-r3", "lba": 300, "sectors": 8, "direction": "read",  "arrival_ms": 0 },
+    { "id": "mix-w1", "lba": 400, "sectors": 8, "direction": "write", "arrival_ms": 0 }
+  ],
+  "cancels": []
+}

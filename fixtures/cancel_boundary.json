@@ -1,0 +1,14 @@
+{
+  "requests": [
+    { "id": "cx-a", "lba": 0,    "sectors": 256, "direction": "read", "arrival_ms": 0 },
+    { "id": "cx-b", "lba": 1000, "sectors": 8,   "direction": "read", "arrival_ms": 0 },
+    { "id": "cx-c", "lba": 2000, "sectors": 8,   "direction": "read", "arrival_ms": 10 },
+    { "id": "cx-d", "lba": 3000, "sectors": 8,   "direction": "read", "arrival_ms": 0 }
+  ],
+  "cancels": [
+    { "request_id": "cx-a", "at_ms": 1 },
+    { "request_id": "cx-b", "at_ms": 1 },
+    { "request_id": "cx-c", "at_ms": 1 },
+    { "request_id": "cx-d", "at_ms": 100 }
+  ]
+}

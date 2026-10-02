@@ -1,0 +1,9 @@
+{
+  "requests": [
+    { "id": "seq-r1", "lba": 0,  "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "seq-r2", "lba": 8,  "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "seq-r3", "lba": 16, "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "seq-r4", "lba": 24, "sectors": 8, "direction": "read", "arrival_ms": 0 }
+  ],
+  "cancels": []
+}

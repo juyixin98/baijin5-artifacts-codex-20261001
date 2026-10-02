@@ -1,0 +1,9 @@
+{
+  "requests": [
+    { "id": "rnd-a", "lba": 1000, "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "rnd-b", "lba": 200,  "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "rnd-c", "lba": 5000, "sectors": 8, "direction": "read", "arrival_ms": 0 },
+    { "id": "rnd-d", "lba": 300,  "sectors": 8, "direction": "read", "arrival_ms": 0 }
+  ],
+  "cancels": []
+}
