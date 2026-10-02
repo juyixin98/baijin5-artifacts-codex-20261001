@@ -1,0 +1,69 @@
+{
+  "description": "Hand-authored expected outcomes for the minimal fixture set. Expectations are derived independently from the definition of Craig interpolation and truth tables; they are NOT produced by the proving core.",
+  "cases": [
+    {
+      "file": "01_classic_shared.json",
+      "expected_status": "proved",
+      "expected_interpolant": "d",
+      "expected_common_variables": ["d"],
+      "rationale": "A = a & (!a | d) entails d; B = !d, and d is the only shared variable."
+    },
+    {
+      "file": "02_single_shared.json",
+      "expected_status": "proved",
+      "expected_interpolant": "p",
+      "expected_common_variables": ["p"],
+      "rationale": "A = p and B = !p conflict directly on the only shared variable."
+    },
+    {
+      "file": "03_no_common_A_unsat.json",
+      "expected_status": "proved",
+      "expected_interpolant": "false",
+      "expected_common_variables": [],
+      "rationale": "A = p & !p is contradictory and alphabets are disjoint, so the empty-language interpolant false is forced."
+    },
+    {
+      "file": "04_no_common_sat.json",
+      "expected_status": "rejected",
+      "expected_category": "jointly_satisfiable",
+      "rationale": "A = p and B = q have disjoint alphabets and are jointly satisfiable (p=q=true); no interpolant exists."
+    },
+    {
+      "file": "05_jointly_satisfiable.json",
+      "expected_status": "rejected",
+      "expected_category": "jointly_satisfiable",
+      "rationale": "(p & q) is consistent with (p | q), witnessed by p=q=true."
+    },
+    {
+      "file": "06_budget_zero.json",
+      "expected_status": "unknown",
+      "expected_reason": "budget_exhausted",
+      "rationale": "With zero resolutions allowed the engine cannot decide, so it must not emit a proven interpolant."
+    },
+    {
+      "file": "07_budget_tight_unknown.json",
+      "expected_status": "unknown",
+      "expected_reason": "budget_exhausted",
+      "rationale": "The pigeonhole-style contradiction needs more than one resolution; a cap of one leaves the result undecided."
+    },
+    {
+      "file": "08_non_cnf_imp.json",
+      "expected_status": "proved",
+      "expected_interpolant": "b",
+      "expected_common_variables": ["a", "b"],
+      "rationale": "Modus ponens: (a -> b) & a entails b, which excludes B = !b."
+    },
+    {
+      "file": "09_malformed.json",
+      "expected_status": "invalid_input",
+      "rationale": "The antecedent 'a &' is syntactically invalid."
+    },
+    {
+      "file": "10_constants.json",
+      "expected_status": "proved",
+      "expected_interpolant": "true",
+      "expected_common_variables": [],
+      "rationale": "B = false alone is contradictory; the Pudlak leaf annotation yields the empty-language interpolant true, which excludes B."
+    }
+  ]
+}

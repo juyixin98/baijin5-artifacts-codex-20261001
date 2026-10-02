@@ -1,0 +1,7 @@
+{
+  "request_id": "case-06",
+  "antecedent": "p",
+  "consequent": "!p",
+  "budget": 0,
+  "include_proof": true
+}

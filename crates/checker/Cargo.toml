@@ -1,0 +1,15 @@
+[package]
+name = "ipc-checker"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Independent truth-table and proof verification for interpolants"
+
+[dependencies]
+ipc-syntax = { workspace = true }
+ipc-proof = { workspace = true }
+serde = { workspace = true }
+
+[dev-dependencies]
+ipc-core = { workspace = true }

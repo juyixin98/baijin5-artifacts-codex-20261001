@@ -1,0 +1,8 @@
+{
+  "site": "local-fixture-site",
+  "default_budget": 5000,
+  "include_proof": true,
+  "http_host": "127.0.0.1",
+  "http_port": 8190,
+  "log_to_stderr": true
+}

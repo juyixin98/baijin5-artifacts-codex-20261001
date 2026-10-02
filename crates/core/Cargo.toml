@@ -1,0 +1,12 @@
+[package]
+name = "ipc-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Tseitin CNF conversion, budgeted DP resolution engine, interpolants"
+
+[dependencies]
+ipc-syntax = { workspace = true }
+ipc-proof = { workspace = true }
+serde = { workspace = true }

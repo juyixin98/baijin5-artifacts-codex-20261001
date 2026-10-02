@@ -1,0 +1,10 @@
+[package]
+name = "ipc-syntax"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Propositional logic syntax: AST, parser, evaluation"
+
+[dependencies]
+serde = { workspace = true }
