@@ -1,0 +1,475 @@
+[
+  {
+    "id": "int-zero",
+    "description": "INTEGER 0 minimal",
+    "source": "hand",
+    "input_hex": "020100",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "0",
+      "value_hex": "00"
+    }
+  },
+  {
+    "id": "int-127",
+    "description": "INTEGER 127",
+    "source": "hand",
+    "input_hex": "02017f",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "127",
+      "value_hex": "7f"
+    }
+  },
+  {
+    "id": "int-128",
+    "description": "INTEGER 128 needs leading 0x00",
+    "source": "hand",
+    "input_hex": "02020080",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "128",
+      "value_hex": "0080"
+    }
+  },
+  {
+    "id": "int-neg1",
+    "description": "INTEGER -1 -\u003e FF",
+    "source": "hand",
+    "input_hex": "0201ff",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "-1",
+      "value_hex": "ff"
+    }
+  },
+  {
+    "id": "int-neg128",
+    "description": "INTEGER -128 -\u003e 80",
+    "source": "hand",
+    "input_hex": "020180",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "-128",
+      "value_hex": "80"
+    }
+  },
+  {
+    "id": "int-nonminimal-der",
+    "description": "non-minimal INTEGER (02 02 0000): valid BER, invalid DER",
+    "source": "hand",
+    "input_hex": "02020000",
+    "expect_ok": false,
+    "expect_kind": "INVALID_ENCODING",
+    "expect_offset": 2,
+    "expect_mode": "DER",
+    "notes": [
+      "offset 2 = first content octet (header end), where redundancy starts"
+    ]
+  },
+  {
+    "id": "int-empty",
+    "description": "empty INTEGER content",
+    "source": "hand",
+    "input_hex": "0200",
+    "expect_ok": false,
+    "expect_kind": "INVALID_INTEGER",
+    "expect_offset": 2
+  },
+  {
+    "id": "bits-ok",
+    "description": "BIT STRING 0 unused bits, A1",
+    "source": "hand",
+    "input_hex": "030200a1",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 3,
+      "constructed": false,
+      "value_hex": "00a1"
+    }
+  },
+  {
+    "id": "bits-unused-ok",
+    "description": "BIT STRING 3 unused bits, low bits zero (80)",
+    "source": "hand",
+    "input_hex": "03020380",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 3,
+      "constructed": false,
+      "value_hex": "0380"
+    }
+  },
+  {
+    "id": "bits-trailing-one",
+    "description": "BIT STRING 3 unused bits but a low bit set (81)",
+    "source": "hand",
+    "input_hex": "03020381",
+    "expect_ok": false,
+    "expect_kind": "INVALID_BIT_STRING",
+    "expect_offset": 3,
+    "notes": [
+      "offset 3 = offending final content octet"
+    ]
+  },
+  {
+    "id": "bits-unused-8",
+    "description": "BIT STRING unused-bits octet = 8",
+    "source": "hand",
+    "input_hex": "03020800",
+    "expect_ok": false,
+    "expect_kind": "INVALID_BIT_STRING",
+    "expect_offset": 2
+  },
+  {
+    "id": "bits-empty-nonzero-unused",
+    "description": "empty BIT STRING with unused bits = 1",
+    "source": "hand",
+    "input_hex": "030101",
+    "expect_ok": false,
+    "expect_kind": "INVALID_BIT_STRING",
+    "expect_offset": 2
+  },
+  {
+    "id": "bits-missing-unused",
+    "description": "BIT STRING without unused-bits octet",
+    "source": "hand",
+    "input_hex": "0300",
+    "expect_ok": false,
+    "expect_kind": "INVALID_BIT_STRING",
+    "expect_offset": 2
+  },
+  {
+    "id": "seq-two-ints",
+    "description": "SEQUENCE { 1, 2 }",
+    "source": "hand",
+    "input_hex": "3006020101020102",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 16,
+      "constructed": true,
+      "children": [
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "1",
+          "value_hex": "01"
+        },
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "2",
+          "value_hex": "02"
+        }
+      ]
+    }
+  },
+  {
+    "id": "nested-indefinite",
+    "description": "nested indefinite [0]{ SEQUENCE { INTEGER 5 } }",
+    "source": "hand",
+    "input_hex": "a080308002010500000000",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "context",
+      "tag": 0,
+      "constructed": true,
+      "children": [
+        {
+          "class": "universal",
+          "tag": 16,
+          "constructed": true,
+          "children": [
+            {
+              "class": "universal",
+              "tag": 2,
+              "constructed": false,
+              "integer_decimal": "5",
+              "value_hex": "05"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "primitive-indefinite",
+    "description": "indefinite length on primitive INTEGER",
+    "source": "hand",
+    "input_hex": "02800100",
+    "expect_ok": false,
+    "expect_kind": "INVALID_LENGTH",
+    "expect_offset": 1
+  },
+  {
+    "id": "bad-eoc-in-definite",
+    "description": "EOC inside a definite-length SEQUENCE terminates nothing",
+    "source": "hand",
+    "input_hex": "300400000200",
+    "expect_ok": false,
+    "expect_kind": "MALFORMED_EOC",
+    "expect_offset": 2,
+    "notes": [
+      "EOC must not be swallowed as a zero-length value"
+    ]
+  },
+  {
+    "id": "toplevel-eoc",
+    "description": "EOC as the top-level value",
+    "source": "hand",
+    "input_hex": "0000",
+    "expect_ok": false,
+    "expect_kind": "MALFORMED_EOC"
+  },
+  {
+    "id": "extra-eoc",
+    "description": "extra EOC after the construction closed",
+    "source": "hand",
+    "input_hex": "a08002010100000000",
+    "expect_ok": false,
+    "expect_kind": "MALFORMED_EOC",
+    "expect_offset": 7,
+    "notes": [
+      "a bare 00 00 after a closed value is an EOC with no construction, not trailing data"
+    ]
+  },
+  {
+    "id": "missing-eoc",
+    "description": "indefinite value with no terminator",
+    "source": "hand",
+    "input_hex": "a080020101",
+    "expect_ok": false,
+    "expect_kind": "TRUNCATED",
+    "expect_offset": 5
+  },
+  {
+    "id": "truncated-content",
+    "description": "definite length exceeds available bytes",
+    "source": "hand",
+    "input_hex": "020301",
+    "expect_ok": false,
+    "expect_kind": "TRUNCATED",
+    "expect_offset": 3
+  },
+  {
+    "id": "truncated-tag",
+    "description": "only identifier octet present",
+    "source": "hand",
+    "input_hex": "02",
+    "expect_ok": false,
+    "expect_kind": "TRUNCATED",
+    "expect_offset": 1
+  },
+  {
+    "id": "truncated-long-length",
+    "description": "long-form length declares 2 octets, none follow",
+    "source": "hand",
+    "input_hex": "0282",
+    "expect_ok": false,
+    "expect_kind": "TRUNCATED",
+    "expect_offset": 2
+  },
+  {
+    "id": "trailing-bytes",
+    "description": "extra bytes after a complete top-level value",
+    "source": "hand",
+    "input_hex": "02010142",
+    "expect_ok": false,
+    "expect_kind": "TRAILING_DATA",
+    "expect_offset": 3
+  },
+  {
+    "id": "reserved-length",
+    "description": "length octet 0xFF reserved",
+    "source": "hand",
+    "input_hex": "02ff00",
+    "expect_ok": false,
+    "expect_kind": "INVALID_LENGTH",
+    "expect_offset": 1
+  },
+  {
+    "id": "der-nonminimal-length",
+    "description": "long-form length for a 1-byte content",
+    "source": "hand",
+    "input_hex": "02810105",
+    "expect_ok": false,
+    "expect_kind": "INVALID_ENCODING",
+    "expect_offset": 1,
+    "expect_mode": "DER"
+  },
+  {
+    "id": "der-indefinite",
+    "description": "indefinite SEQUENCE is valid BER but not DER",
+    "source": "hand",
+    "input_hex": "30800000",
+    "expect_ok": false,
+    "expect_kind": "INVALID_ENCODING",
+    "expect_offset": 1,
+    "expect_mode": "DER"
+  },
+  {
+    "id": "context2-int",
+    "description": "constructed context tag [2] containing INTEGER 7",
+    "source": "hand",
+    "input_hex": "a203020107",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "context",
+      "tag": 2,
+      "constructed": true,
+      "children": [
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "7",
+          "value_hex": "07"
+        }
+      ]
+    }
+  },
+  {
+    "id": "context5-primitive",
+    "description": "primitive context tag [5] opaque value",
+    "source": "hand",
+    "input_hex": "8502cafe",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "context",
+      "tag": 5,
+      "constructed": false,
+      "value_hex": "cafe"
+    }
+  },
+  {
+    "id": "oracle-int-256",
+    "description": "INTEGER 256",
+    "source": "go-asn1-ber",
+    "input_hex": "02020100",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "256"
+    }
+  },
+  {
+    "id": "oracle-int-neg256",
+    "description": "INTEGER -256",
+    "source": "go-asn1-ber",
+    "input_hex": "0202ff00",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "-256"
+    }
+  },
+  {
+    "id": "oracle-int-huge",
+    "description": "301-byte positive integer 2^2400-7",
+    "source": "go-asn1-ber",
+    "input_hex": "0282012d00fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "296476034789978134120813694105889196637143099477633324816082314536891061330578960717457630202115461307371403034595170935724489293025075877350504677578646496935046858594479715738345467364856518143562563193206102470734007555612914096207105269178488890947743301293297650838442152727760046517446830295902003198032258606113584103529903220339673080606794891142197240305184142245671365903090895689843737237511812085698333701706561779824300625327604726460130427583460035274205809575857633345902990376717064770455839258773171510507099132110028077728160266796559445408422233980009645488034469133404238749146357925975400309760081625787339024177663736163185805751165416483569137375444258463220131699965267987276097342929294919389413369"
+    }
+  },
+  {
+    "id": "oracle-int-huge-neg",
+    "description": "301-byte negative integer -(2^2400-7)",
+    "source": "go-asn1-ber",
+    "input_hex": "0282012dff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 2,
+      "constructed": false,
+      "integer_decimal": "-296476034789978134120813694105889196637143099477633324816082314536891061330578960717457630202115461307371403034595170935724489293025075877350504677578646496935046858594479715738345467364856518143562563193206102470734007555612914096207105269178488890947743301293297650838442152727760046517446830295902003198032258606113584103529903220339673080606794891142197240305184142245671365903090895689843737237511812085698333701706561779824300625327604726460130427583460035274205809575857633345902990376717064770455839258773171510507099132110028077728160266796559445408422233980009645488034469133404238749146357925975400309760081625787339024177663736163185805751165416483569137375444258463220131699965267987276097342929294919389413369"
+    }
+  },
+  {
+    "id": "oracle-seq-context",
+    "description": "SEQUENCE { INTEGER 1, [0]{ INTEGER 2 } }",
+    "source": "go-asn1-ber",
+    "input_hex": "3008020101a003020102",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 16,
+      "constructed": true,
+      "children": [
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "1"
+        },
+        {
+          "class": "context",
+          "tag": 0,
+          "constructed": true,
+          "children": [
+            {
+              "class": "universal",
+              "tag": 2,
+              "constructed": false,
+              "integer_decimal": "2"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "oracle-indef-seq",
+    "description": "indefinite SEQUENCE { 10, 20 } (child TLVs from oracle)",
+    "source": "go-asn1-ber",
+    "input_hex": "308002010a0201140000",
+    "expect_ok": true,
+    "expect_value": {
+      "class": "universal",
+      "tag": 16,
+      "constructed": true,
+      "children": [
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "10"
+        },
+        {
+          "class": "universal",
+          "tag": 2,
+          "constructed": false,
+          "integer_decimal": "20"
+        }
+      ]
+    }
+  }
+]

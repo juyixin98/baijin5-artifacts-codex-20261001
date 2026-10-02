@@ -1,0 +1,11 @@
+# build/runtime artifacts
+/bin/
+/data/
+*.db
+*.db-shm
+*.db-wal
+coverage.out
+
+# os/editor
+.DS_Store
+*.swp

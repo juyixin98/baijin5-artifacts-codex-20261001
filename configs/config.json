@@ -1,0 +1,34 @@
+{
+  "service": {
+    "name": "ber-restricted-codec",
+    "environment": "local",
+    "version": "1.0.0"
+  },
+  "http": {
+    "listen_addr": "127.0.0.1:8480",
+    "read_timeout_ms": 5000,
+    "write_timeout_ms": 5000,
+    "max_body_bytes": 1048576,
+    "shutdown_timeout_ms": 5000
+  },
+  "storage": {
+    "driver": "modernc-sqlite",
+    "dsn": "file:data/berserv.db?cache=shared",
+    "max_open_conns": 2,
+    "request_log_table": "request_log"
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "output_path": "stdout"
+  },
+  "limits": {
+    "max_depth": 32,
+    "max_tag_bytes": 4,
+    "max_tag_number": 2097151,
+    "max_length_bytes": 5,
+    "max_content_bytes": 65536,
+    "max_children": 4096,
+    "max_integer_bytes": 4096
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "service": {
+    "name": "ber-restricted-codec",
+    "environment": "test",
+    "version": "1.0.0"
+  },
+  "http": {
+    "listen_addr": "127.0.0.1:0",
+    "read_timeout_ms": 3000,
+    "write_timeout_ms": 3000,
+    "max_body_bytes": 65536,
+    "shutdown_timeout_ms": 2000
+  },
+  "storage": {
+    "driver": "modernc-sqlite",
+    "dsn": "file::memory:?cache=shared",
+    "max_open_conns": 1,
+    "request_log_table": "request_log"
+  },
+  "logging": {
+    "level": "error",
+    "format": "json",
+    "output_path": "stderr"
+  },
+  "limits": {
+    "max_depth": 8,
+    "max_tag_bytes": 4,
+    "max_tag_number": 2097151,
+    "max_length_bytes": 5,
+    "max_content_bytes": 8192,
+    "max_children": 256,
+    "max_integer_bytes": 256
+  }
+}

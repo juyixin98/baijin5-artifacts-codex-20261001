@@ -1,0 +1,1 @@
+{"encoding":"BER_INDEFINITE","node":{"class":"universal","tag":16,"constructed":true,"children":[{"class":"universal","tag":2,"constructed":false,"value_hex":"05"}]}}
