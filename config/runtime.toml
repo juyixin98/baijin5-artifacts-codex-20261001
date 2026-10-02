@@ -1,0 +1,8 @@
+bind = "127.0.0.1:7878"
+queue_capacity = 64
+buffer_capacity = 64
+timeout_ms = 5000
+pump_interval_ms = 5
+journal_path = "var/journal.jsonl"
+snapshot_every = 16
+default_io_delay_ms = 20
