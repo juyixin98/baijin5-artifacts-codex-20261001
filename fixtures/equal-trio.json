@@ -1,0 +1,40 @@
+{
+  "name": "equal-trio",
+  "description": "three equal-weight always-on tasks",
+  "duration_ms": 3000,
+  "config": {
+    "tick_ms": 1,
+    "target_latency_ms": 8,
+    "min_granularity_ms": 2,
+    "wakeup_granularity_ms": 2
+  },
+  "checks": {
+    "shares": true,
+    "wait_bound": true,
+    "expect_all_finished": false,
+    "share_tolerance": 0.02
+  },
+  "tasks": [
+    {
+      "name": "a",
+      "weight": 1024,
+      "arrival_ms": 0,
+      "script": [{ "type": "run", "ms": 3000 }],
+      "repeats": 1
+    },
+    {
+      "name": "b",
+      "weight": 1024,
+      "arrival_ms": 0,
+      "script": [{ "type": "run", "ms": 3000 }],
+      "repeats": 1
+    },
+    {
+      "name": "c",
+      "weight": 1024,
+      "arrival_ms": 0,
+      "script": [{ "type": "run", "ms": 3000 }],
+      "repeats": 1
+    }
+  ]
+}

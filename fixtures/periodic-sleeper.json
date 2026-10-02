@@ -1,0 +1,29 @@
+{
+  "name": "periodic-sleeper",
+  "description": "one task cycling run 3ms / sleep 5ms, 100 periods",
+  "duration_ms": 800,
+  "config": {
+    "tick_ms": 1,
+    "target_latency_ms": 8,
+    "min_granularity_ms": 2,
+    "wakeup_granularity_ms": 2
+  },
+  "checks": {
+    "shares": false,
+    "wait_bound": false,
+    "expect_all_finished": true,
+    "share_tolerance": 0.02
+  },
+  "tasks": [
+    {
+      "name": "sleeper",
+      "weight": 1024,
+      "arrival_ms": 0,
+      "script": [
+        { "type": "run", "ms": 3 },
+        { "type": "sleep", "ms": 5 }
+      ],
+      "repeats": 100
+    }
+  ]
+}

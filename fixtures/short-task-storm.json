@@ -1,0 +1,271 @@
+{
+  "name": "short-task-storm",
+  "description": "always-on background task plus 20 short tasks, one every 50ms",
+  "duration_ms": 1200,
+  "config": {
+    "tick_ms": 1,
+    "target_latency_ms": 8,
+    "min_granularity_ms": 2,
+    "wakeup_granularity_ms": 2
+  },
+  "checks": {
+    "shares": false,
+    "wait_bound": false,
+    "expect_all_finished": false,
+    "share_tolerance": 0.02
+  },
+  "tasks": [
+    {
+      "name": "background",
+      "weight": 1024,
+      "arrival_ms": 0,
+      "script": [
+        {
+          "type": "run",
+          "ms": 1200
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-00",
+      "weight": 1024,
+      "arrival_ms": 100,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-01",
+      "weight": 1024,
+      "arrival_ms": 150,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-02",
+      "weight": 1024,
+      "arrival_ms": 200,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-03",
+      "weight": 1024,
+      "arrival_ms": 250,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-04",
+      "weight": 1024,
+      "arrival_ms": 300,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-05",
+      "weight": 1024,
+      "arrival_ms": 350,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-06",
+      "weight": 1024,
+      "arrival_ms": 400,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-07",
+      "weight": 1024,
+      "arrival_ms": 450,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-08",
+      "weight": 1024,
+      "arrival_ms": 500,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-09",
+      "weight": 1024,
+      "arrival_ms": 550,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-10",
+      "weight": 1024,
+      "arrival_ms": 600,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-11",
+      "weight": 1024,
+      "arrival_ms": 650,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-12",
+      "weight": 1024,
+      "arrival_ms": 700,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-13",
+      "weight": 1024,
+      "arrival_ms": 750,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-14",
+      "weight": 1024,
+      "arrival_ms": 800,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-15",
+      "weight": 1024,
+      "arrival_ms": 850,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-16",
+      "weight": 1024,
+      "arrival_ms": 900,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-17",
+      "weight": 1024,
+      "arrival_ms": 950,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-18",
+      "weight": 1024,
+      "arrival_ms": 1000,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    },
+    {
+      "name": "short-19",
+      "weight": 1024,
+      "arrival_ms": 1050,
+      "script": [
+        {
+          "type": "run",
+          "ms": 2
+        }
+      ],
+      "repeats": 1
+    }
+  ]
+}
