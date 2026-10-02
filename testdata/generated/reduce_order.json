@@ -1,0 +1,39 @@
+{
+  "name": "reduce_order",
+  "request": {
+    "request_id": "fx-reduce-003",
+    "source": "input a[5]int64\noutput sum int64, prod int64, digits int64, touched[5]int64\nfor i := 0 .. len(a) {\n  touched[i] = a[i]\n}\nfor j := 0 .. len(a) { reduce sum += a[j] }\nfor k := 0 .. len(a) { reduce prod *= a[k] }\nfor m := 0 .. len(a) { reduce digits concat= a[m] }\n",
+    "simd_width": 3,
+    "scalars": {},
+    "arrays": {
+      "a": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "expected": {
+    "verdict": "ACCEPT",
+    "halted": false,
+    "out_order": [
+      "touched"
+    ],
+    "out_arrays": {
+      "touched": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "out_scalars": {
+      "digits": 12345,
+      "prod": 120,
+      "sum": 15
+    }
+  }
+}

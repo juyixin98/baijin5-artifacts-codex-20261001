@@ -1,0 +1,51 @@
+{
+  "name": "masked_div_tail",
+  "request": {
+    "request_id": "fx-div-001",
+    "source": "input a[5]int64, d[5]int64, t[5]int64\noutput out[5]int64\nfor i := 0 .. len(a) {\n  if (t[i] != 0) {\n    out[i] = a[i] / d[i]\n  }\n}\n",
+    "simd_width": 4,
+    "scalars": {},
+    "arrays": {
+      "a": [
+        20,
+        7,
+        9,
+        16,
+        10
+      ],
+      "d": [
+        2,
+        0,
+        3,
+        4,
+        5
+      ],
+      "t": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "expected": {
+    "verdict": "ACCEPT",
+    "halted": false,
+    "fault_index": -1,
+    "fault_stage": "BODY",
+    "out_order": [
+      "out"
+    ],
+    "out_arrays": {
+      "out": [
+        10,
+        0,
+        3,
+        4,
+        2
+      ]
+    },
+    "out_scalars": null
+  }
+}
