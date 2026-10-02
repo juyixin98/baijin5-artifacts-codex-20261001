@@ -1,0 +1,13 @@
+# merge-checkd configuration. All values have these defaults; environment
+# variables MERGE_CHECK_BIND, MERGE_CHECK_STATE_DIR, MERGE_CHECK_LAYER_ROOTS
+# (colon-separated) and MERGE_CHECK_MAX_ENTRIES override them.
+
+bind = "127.0.0.1:8080"
+state_dir = "./state"
+
+# Allowlist: layer paths in merge requests must resolve under one of these.
+layer_roots = ["./fixtures"]
+
+# Safety caps.
+max_entries = 100000
+max_symlink_depth = 8

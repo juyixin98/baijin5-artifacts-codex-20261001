@@ -1,0 +1,62 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.14s
+     Running unittests src/lib.rs (target/debug/deps/merge_check-27c7ddf3c0253dde)
+
+running 18 tests
+test config::tests::defaults_apply_when_file_missing ... ok
+test merge::tests::missing_layer_aborts_with_category ... ok
+test config::tests::layer_path_allowlist ... ok
+test merge::tests::dangling_link_is_uncertain_not_failure ... ok
+test merge::tests::escaping_and_absolute_links_are_failures ... ok
+test merge::tests::link_loop_is_a_failure ... ok
+test paths::tests::classify_whiteout_and_opaque ... ok
+test paths::tests::normalize_absolute_target_is_rejected_here ... ok
+test paths::tests::normalize_parent_escaping_root_is_rejected ... ok
+test paths::tests::normalize_parent_within_root ... ok
+test paths::tests::report_path_is_slash_separated ... ok
+test store::tests::run_id_validation_rejects_traversal ... ok
+test merge::tests::file_dir_swap_both_directions ... ok
+test merge::tests::opaque_dir_hides_lower_children_only ... ok
+test paths::tests::normalize_plain_and_dot_components ... ok
+test merge::tests::whiteout_then_recreate_same_layer ... ok
+test store::tests::save_load_roundtrip ... ok
+test store::tests::list_summarizes_stored_runs ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/merge_checkd-206a7998da68cb31)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/api_tests.rs (target/debug/deps/api_tests-4be1119187ef2da9)
+
+running 7 tests
+test layer_outside_roots_is_forbidden ... ok
+test empty_layer_list_is_rejected ... ok
+test missing_layer_is_a_client_error ... ok
+test health_and_version ... ok
+test unknown_and_invalid_run_ids_are_distinct_errors ... ok
+test merge_malicious_fixture_reports_failures_and_uncertainties ... ok
+test merge_happy_path_correlates_request_id_and_provenance ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/merge_semantics.rs (target/debug/deps/merge_semantics-185a98600d11d729)
+
+running 6 tests
+test scenario_file_dir_swap ... ok
+test scenario_malicious ... ok
+test scenario_delete_recreate ... ok
+test unsupported_node_type_is_a_failure ... ok
+test scenario_opaque_dir ... ok
+test merge_does_not_modify_layers_or_outside_dirs ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests merge_check
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

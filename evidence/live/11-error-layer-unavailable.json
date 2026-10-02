@@ -1,0 +1,2 @@
+{"error":{"code":"layer_unavailable","message":"layer 0 (layer-0) is not a readable directory: /definitely/not/a/layer"}}
+HTTP 400

@@ -1,0 +1,24 @@
+{
+  "scenario": "file-dir-swap",
+  "description": "x changes dir->file (subtree dropped), y changes file->dir (file dropped), both across layers",
+  "layers": ["layer1", "layer2"],
+  "entries": [
+    {
+      "path": "x",
+      "kind": "file",
+      "source_layer": 1,
+      "size": 11,
+      "sha256": "b4c92da4f54680e2fbdf4d366c108df9656f8f5e4f92faa2af9ba9ce327385be"
+    },
+    { "path": "y", "kind": "dir", "source_layer": 1 },
+    {
+      "path": "y/z.txt",
+      "kind": "file",
+      "source_layer": 1,
+      "size": 2,
+      "sha256": "c865f6c5ab8d1b0bcd383a5e1e3879d22681c96bf462c269b7581d523fbe70ab"
+    }
+  ],
+  "failures": [],
+  "uncertainties": []
+}

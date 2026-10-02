@@ -1,0 +1,17 @@
+{
+  "scenario": "delete-recreate",
+  "description": "layer2 deletes app/config.txt and app/cache.bin via whiteouts, then recreates config.txt with new content in the same layer",
+  "layers": ["layer1", "layer2"],
+  "entries": [
+    { "path": "app", "kind": "dir", "source_layer": 0 },
+    {
+      "path": "app/config.txt",
+      "kind": "file",
+      "source_layer": 1,
+      "size": 10,
+      "sha256": "ba38d1fa1f713cc6f8ee9e7bead514c246aaff315ab6e97f6b0caeada8849665"
+    }
+  ],
+  "failures": [],
+  "uncertainties": []
+}

@@ -1,0 +1,2 @@
+{"error":{"code":"layer_outside_roots","message":"layer 0 (layer-0) resolves outside the configured layer roots: /etc","request_id":"demo-req-900"}}
+HTTP 403

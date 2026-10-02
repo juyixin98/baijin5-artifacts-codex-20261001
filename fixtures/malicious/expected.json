@@ -1,0 +1,45 @@
+{
+  "scenario": "malicious",
+  "description": "escaping/absolute/looping symlinks are failures and excluded; internal and dangling relative links are kept (dangling = uncertainty)",
+  "layers": ["layer1"],
+  "entries": [
+    { "path": "docs", "kind": "dir", "source_layer": 0 },
+    {
+      "path": "docs/readme-link",
+      "kind": "symlink",
+      "source_layer": 0,
+      "link_target": "readme.txt",
+      "link_status": "internal"
+    },
+    {
+      "path": "docs/readme.txt",
+      "kind": "file",
+      "source_layer": 0,
+      "size": 12,
+      "sha256": "4bb2376cbe0e98b1da5fa58fefb2142c47b0cb7b1f0762c6974ffef69bad24f0"
+    },
+    {
+      "path": "dangling-link",
+      "kind": "symlink",
+      "source_layer": 0,
+      "link_target": "no/such/file",
+      "link_status": "dangling"
+    },
+    {
+      "path": "safe.txt",
+      "kind": "file",
+      "source_layer": 0,
+      "size": 5,
+      "sha256": "93d868f3b59590f611d7646894ce8def1cea5ad63a9af0d9ccc56e9bc6968c11"
+    }
+  ],
+  "failures": [
+    { "category": "absolute_target", "path": "abs-link" },
+    { "category": "escapes_root", "path": "escape-link" },
+    { "category": "link_loop", "path": "loop-a" },
+    { "category": "link_loop", "path": "loop-b" }
+  ],
+  "uncertainties": [
+    { "category": "dangling_link", "path": "dangling-link" }
+  ]
+}
