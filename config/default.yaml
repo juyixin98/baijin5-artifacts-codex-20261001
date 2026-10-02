@@ -1,0 +1,4 @@
+default_connectivity: 8
+max_pixels: 4000000
+progress_chunk_pixels: 4096
+log_level: INFO

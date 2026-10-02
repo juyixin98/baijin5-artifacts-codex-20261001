@@ -1,0 +1,10 @@
+# Pinned to the versions the suite was verified against (see README).
+numpy==2.4.6
+scipy==1.15.3
+pillow==10.2.0
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn
+pyyaml
+pytest
+httpx

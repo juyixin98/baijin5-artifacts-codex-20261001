@@ -1,0 +1,21 @@
+[project]
+name = "watershed-backend"
+version = "0.1.0"
+description = "Deterministic marker-based watershed segmentation backend"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "numpy",
+    "scipy",
+    "pillow",
+    "pydantic",
+    "pyyaml",
+    "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
