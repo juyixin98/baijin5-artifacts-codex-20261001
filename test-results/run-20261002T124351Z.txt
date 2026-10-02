@@ -1,0 +1,62 @@
+# test run 20261002T124351Z
+# rustc: rustc 1.98.1 (48a229cea 2026-09-01)
+# cmd: cargo test -- --nocapture
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running unittests src/lib.rs (target/debug/deps/cow_snapshot_service-d5166c00a17368db)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/cow_snapshot_service-dafe135a68f63ab5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cow_contract.rs (target/debug/deps/cow_contract-220dff9568c72a16)
+
+running 9 tests
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826613872] input case page out of range: Input/page_out_of_range: page 9 out of range (page_count=4)
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826613872] input case offset+len overflow: Input/write_out_of_bounds: page 0: offset 30 + len 4 exceeds page_size 32
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826613872] input case empty data: Input/empty_write: page 0: empty data
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826835668] init: objects_used=1
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826467150] second write: copied=0 in_place=1 objects=2
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826835668] batch1: copied=3 in_place=0 objects=4
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826534981] capacity error: ResourceExhausted/capacity_exhausted: batch needs 4 new page objects, only 3 available (used=3 capacity=6); batch rejected atomically
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826782748] pre-restart: objects=4
+test exclusive_page_write_is_in_place ... ok
+test input_validation_and_state_conflicts ... ok
+test capacity_exhaustion_is_atomic ... ok
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826835668] batch2: copied=3 in_place=0 objects=7
+test fork_then_write_copies_only_touched_pages ... ok
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826710533] after delete s1: objects=6
+test overlapping_writes_across_snapshots ... ok
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n826600197] after delete child: objects=5
+test persistence_restart ... ok
+test delete_parent_snapshot_reclaims_only_unreferenced ... ok
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n829453029] injected corruption: obj 1 refcount 1 -> 5
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n829453029] write after corruption: Integrity/refcount_anomaly: refcount invariant violated: sum(refcounts)=8, expected 4 (page_count=4 snapshots=0)
+test refcount_anomaly_quarantines_writes ... ok
+[TEST cow_contract][run=run-20261002T124351Z-p1942900-n827544956] final: objects=33 snapshots=4 batches=121 copied_total=143 in_place_total=139
+test randomized_cross_check_against_full_copy ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/http_api.rs (target/debug/deps/http_api-92cd961bbbe55e15)
+
+running 2 tests
+test http_error_categories ... ok
+test http_end_to_end ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests cow_snapshot_service
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+# exit_code=0
