@@ -1,0 +1,17 @@
+{
+  "run": {
+    "dropped_samples": 0,
+    "drop_reason": null,
+    "symbols": [
+      {"module": "app", "name": "main",  "start": 4096, "end": 4097},
+      {"module": "app", "name": "rec",   "start": 4097, "end": 4098},
+      {"module": "app", "name": "leaf",  "start": 4098, "end": 4099},
+      {"module": "app", "name": "other", "start": 4099, "end": 4100}
+    ]
+  },
+  "samples": [
+    {"sample_id": "s1", "weight": 2.0, "frames": [{"addr": 4096}, {"addr": 4097}, {"addr": 4097}, {"addr": 4098}]},
+    {"sample_id": "s2", "weight": 1.0, "frames": [{"addr": 4096}, {"addr": 4097}, {"addr": 4098}]},
+    {"sample_id": "s3", "weight": 4.0, "frames": [{"addr": 4096}, {"addr": 4099}, {"addr": 4098}]}
+  ]
+}

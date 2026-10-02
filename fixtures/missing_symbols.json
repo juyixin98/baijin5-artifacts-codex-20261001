@@ -1,0 +1,16 @@
+{
+  "run": {
+    "dropped_samples": 0,
+    "drop_reason": null,
+    "symbols": [
+      {"module": "app", "name": "main",   "start": 4096,  "end": 4097},
+      {"module": "app", "name": "helper", "start": 16384, "end": 16385},
+      {"module": "lib", "name": "helper", "start": 20480, "end": 20481}
+    ]
+  },
+  "samples": [
+    {"sample_id": "m1", "weight": 1.0, "frames": [{"addr": 4096}, {"addr": 16384}]},
+    {"sample_id": "m2", "weight": 1.0, "frames": [{"addr": 4096}, {"addr": 20480}]},
+    {"sample_id": "m3", "weight": 1.0, "frames": [{"addr": 4096}, {"addr": 57005}]}
+  ]
+}

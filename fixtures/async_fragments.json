@@ -1,0 +1,24 @@
+{
+  "run": {
+    "dropped_samples": 0,
+    "drop_reason": null,
+    "symbols": [
+      {"module": "app", "name": "main",        "start": 4096, "end": 4097},
+      {"module": "app", "name": "spawn",       "start": 4112, "end": 4113},
+      {"module": "rt",  "name": "poll_worker", "start": 8192, "end": 8193},
+      {"module": "rt",  "name": "leaf",        "start": 8193, "end": 8194},
+      {"module": "app", "name": "orphan",      "start": 12288, "end": 12289}
+    ]
+  },
+  "samples": [
+    {"sample_id": "a1", "weight": 1.0,
+     "frames": [{"addr": 4096}, {"addr": 4112}],
+     "async_link": {"task_id": 7, "token": "tokA"}},
+    {"sample_id": "a2", "weight": 1.0,
+     "frames": [{"addr": 8192}, {"addr": 8193}],
+     "async_link": {"task_id": 7, "parent_token": "tokA"}},
+    {"sample_id": "a3", "weight": 3.0,
+     "frames": [{"addr": 12288}],
+     "async_link": {"task_id": 9, "parent_token": "tokMissing"}}
+  ]
+}

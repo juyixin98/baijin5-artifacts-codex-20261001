@@ -1,0 +1,9 @@
+# stackstats startup configuration
+bind = "127.0.0.1:7878"
+data_dir = "data"
+
+[limits]
+max_runs = 64
+max_samples_per_run = 100000
+max_stack_depth = 256
+max_samples_per_request = 10000

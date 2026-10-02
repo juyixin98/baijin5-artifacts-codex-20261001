@@ -1,0 +1,16 @@
+{
+  "run": {
+    "dropped_samples": 5,
+    "drop_reason": "collector ring buffer overflow",
+    "symbols": [
+      {"module": "app", "name": "main",  "start": 4096, "end": 4097},
+      {"module": "app", "name": "parse", "start": 4352, "end": 4353},
+      {"module": "app", "name": "emit",  "start": 4608, "end": 4609}
+    ]
+  },
+  "samples": [
+    {"sample_id": "w1", "weight": 1.5, "frames": [{"addr": 4096}, {"addr": 4352}]},
+    {"sample_id": "w2", "weight": 3.5, "frames": [{"addr": 4096}, {"addr": 4608}]},
+    {"sample_id": "w3", "weight": 1.0, "frames": [{"addr": 4096}, {"addr": 4352}]}
+  ]
+}
