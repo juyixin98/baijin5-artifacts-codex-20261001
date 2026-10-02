@@ -1,0 +1,15 @@
+# procdiff configuration
+# Address of the diagnostic HTTP API.
+listen = "127.0.0.1:9485"
+# Directory where sampling state (state.json) is persisted.
+data_dir = "./data"
+# Kernel clock tick rate (jiffies per second) of the sampled system.
+hz = 100
+# Counter modulus used to recognise wraparound (2^32 for 32-bit counters).
+counter_modulus = 4294967296
+# Max plausible CPU jiffies per process per sampling interval. A same-generation
+# counter regression whose wrap-adjusted delta stays within
+# elapsed_intervals * max_jiffies_per_interval is a wraparound; larger is an anomaly.
+max_jiffies_per_interval = 200
+# Diagnostic ring buffer capacity.
+max_diag_records = 256
