@@ -1,0 +1,74 @@
+{
+  "generator": "fixtures/generate_fixtures.py",
+  "size": 128,
+  "encoding": "16-bit grayscale PNG, value = round(0-255 float * 256)",
+  "fixtures": {
+    "integer_shift": {
+      "reference": "integer_shift_ref.png",
+      "moving": "integer_shift_mov.png",
+      "ground_truth_shift": [
+        5.0,
+        -3.0
+      ],
+      "expected_category": "ok",
+      "description": "exact integer translation (5, -3)"
+    },
+    "subpixel_shift": {
+      "reference": "subpixel_shift_ref.png",
+      "moving": "subpixel_shift_mov.png",
+      "ground_truth_shift": [
+        2.4,
+        -1.7
+      ],
+      "expected_category": "ok",
+      "description": "sub-pixel translation (2.4, -1.7)"
+    },
+    "brightness_change": {
+      "reference": "brightness_change_ref.png",
+      "moving": "brightness_change_mov.png",
+      "ground_truth_shift": [
+        3.25,
+        4.5
+      ],
+      "expected_category": "ok",
+      "applied_gain": 1.25,
+      "applied_offset": 18.0,
+      "description": "shift (3.25, 4.5) plus linear brightness change"
+    },
+    "periodic_texture": {
+      "reference": "periodic_texture_ref.png",
+      "moving": "periodic_texture_mov.png",
+      "ground_truth_shift": [
+        4.0,
+        2.0
+      ],
+      "period_px": 16.0,
+      "expected_category": "ambiguous_peaks",
+      "description": "pure sinusoid, period 16 px: shift ambiguous modulo period"
+    },
+    "constant_image": {
+      "reference": "constant_image_ref.png",
+      "moving": "constant_image_mov.png",
+      "ground_truth_shift": null,
+      "expected_category": "flat_response",
+      "description": "constant images: correlation surface is uniform"
+    },
+    "low_overlap": {
+      "reference": "low_overlap_ref.png",
+      "moving": "low_overlap_mov.png",
+      "ground_truth_shift": [
+        90.0,
+        0.0
+      ],
+      "expected_category": "low_overlap",
+      "description": "shift 90 px on 128 px image: overlap fraction ~0.30"
+    },
+    "no_overlap": {
+      "reference": "no_overlap_ref.png",
+      "moving": "no_overlap_mov.png",
+      "ground_truth_shift": null,
+      "expected_category": "no_common_content",
+      "description": "independent textures: any peak is spurious"
+    }
+  }
+}
