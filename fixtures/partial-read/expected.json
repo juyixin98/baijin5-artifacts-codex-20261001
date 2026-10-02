@@ -1,0 +1,17 @@
+{
+  "deltas": [
+    {"identity": {"pid": 1, "start_generation": 1}, "from_seq": null, "to_seq": 1, "at_ms": 1000, "delta": null, "category": "first_observation"},
+    {"identity": {"pid": 600, "start_generation": 1}, "from_seq": null, "to_seq": 1, "at_ms": 1000, "delta": null, "category": "first_observation"},
+    {"identity": {"pid": 700, "start_generation": 1}, "from_seq": null, "to_seq": 1, "at_ms": 1000, "delta": null, "category": "first_observation"},
+    {"identity": {"pid": 1, "start_generation": 1}, "from_seq": 1, "to_seq": 2, "at_ms": 2000, "delta": 1, "category": "ok"},
+    {"identity": {"pid": 1, "start_generation": 1}, "from_seq": 2, "to_seq": 3, "at_ms": 3000, "delta": 1, "category": "ok"},
+    {"identity": {"pid": 600, "start_generation": 1}, "from_seq": 1, "to_seq": 3, "at_ms": 3000, "delta": 60, "category": "ok"}
+  ],
+  "exits": [
+    {"identity": {"pid": 700, "start_generation": 1}, "seq": 2, "at_ms": 2000, "reason": "exited"}
+  ],
+  "reparents": [],
+  "undetermined": [
+    {"identity": {"pid": 600, "start_generation": 1}, "from_seq": 1, "to_seq": 2, "category": "read_failure", "delta_known": false}
+  ]
+}

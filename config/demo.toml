@@ -1,0 +1,5 @@
+# Demo config matching fixtures/counter-regression (small counter so wrap is observable)
+bind_addr = "127.0.0.1:9485"
+data_dir = "./data"
+counter_max = 1000
+wrap_max_plausible_delta = 200

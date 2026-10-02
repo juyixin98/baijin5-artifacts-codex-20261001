@@ -1,0 +1,13 @@
+{
+  "deltas": [
+    {"identity": {"pid": 1, "start_generation": 1}, "from_seq": null, "to_seq": 1, "at_ms": 1000, "delta": null, "category": "first_observation"},
+    {"identity": {"pid": 100, "start_generation": 5}, "from_seq": null, "to_seq": 1, "at_ms": 1000, "delta": null, "category": "first_observation"},
+    {"identity": {"pid": 1, "start_generation": 1}, "from_seq": 1, "to_seq": 2, "at_ms": 2000, "delta": 10, "category": "ok"},
+    {"identity": {"pid": 100, "start_generation": 9}, "from_seq": null, "to_seq": 2, "at_ms": 2000, "delta": null, "category": "identity_reset"}
+  ],
+  "exits": [
+    {"identity": {"pid": 100, "start_generation": 5}, "seq": 2, "at_ms": 2000, "reason": "pid_reused"}
+  ],
+  "reparents": [],
+  "undetermined": []
+}

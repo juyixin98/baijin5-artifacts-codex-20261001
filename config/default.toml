@@ -1,0 +1,7 @@
+# proc-diff service configuration
+bind_addr = "127.0.0.1:9485"
+data_dir = "./data"
+# jiffies-style counter (TOML integers are signed 64-bit)
+counter_max = 9223372036854775807
+# largest backwards jump (in counter ticks) still explainable as wraparound
+wrap_max_plausible_delta = 360000
