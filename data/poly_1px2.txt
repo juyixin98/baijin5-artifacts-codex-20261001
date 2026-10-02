@@ -1,0 +1,11 @@
+# Synthetic power series f(x) = 1 + x^2, coefficients c_0..c_7 (long double).
+# Hand-authored fixture: c0=1, c1=0, c2=1, c3..c7=0.
+# Used to trigger the infeasible q0=1 normalization at the [1/1] box.
+1
+0
+1
+0
+0
+0
+0
+0

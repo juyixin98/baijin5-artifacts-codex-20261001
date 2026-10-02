@@ -1,0 +1,14 @@
+# synthetic Pade series coefficients (long double, one per line)
+# count=12
+0x8p-3
+0x8p-3
+0x8p-4
+0xa.aaaaaaaaaaaaaabp-6
+0xa.aaaaaaaaaaaaaabp-8
+0x8.888888888888889p-10
+0xb.60b60b60b60b60bp-13
+0xd.00d00d00d00d00dp-16
+0xd.00d00d00d00d00dp-19
+0xb.8ef1d2ab6399c7dp-22
+0x9.3f27dbbc4fae397p-25
+0xd.7322b3faa271c7fp-29

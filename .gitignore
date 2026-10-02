@@ -1,0 +1,8 @@
+/build/
+/third_party/cmake/
+/third_party/*.tar.gz
+/third_party/cmake-3.30.5-linux-x86_64/
+/third_party/eigen-3.4.0/
+*.o
+*.a
+compile_commands.json

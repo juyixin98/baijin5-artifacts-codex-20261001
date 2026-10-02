@@ -1,0 +1,5 @@
+add_executable(pade_cli main.cpp)
+target_link_libraries(pade_cli PRIVATE pade_core)
+if(NOT WIN32)
+  target_compile_definitions(pade_cli PRIVATE PADE_POSIX=1)
+endif()
