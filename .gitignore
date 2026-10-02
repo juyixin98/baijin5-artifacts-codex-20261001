@@ -1,0 +1,17 @@
+# binaries / databases
+/coaplab.db
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+/coapd
+/coapget
+/genfixtures
+
+# test/coverage artifacts
+/cov.out
+/cov.html
+
+# os/editor
+.DS_Store
+*.swp
