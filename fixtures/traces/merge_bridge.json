@@ -1,0 +1,6 @@
+[
+  {"type": "arrive", "at_ns": 0, "id": "m1", "start": 100, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "m2", "start": 110, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "m3", "start": 130, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "m4", "start": 120, "len": 10, "direction": "read"}
+]

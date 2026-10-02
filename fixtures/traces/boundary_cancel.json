@@ -1,0 +1,9 @@
+[
+  {"type": "arrive", "at_ns": 0, "id": "c1", "start": 10, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "c2", "start": 100, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "c3", "start": 200, "len": 10, "direction": "read"},
+  {"type": "cancel", "at_ns": 0, "id": "c2"},
+  {"type": "cancel", "at_ns": 15, "id": "c1"},
+  {"type": "cancel", "at_ns": 1000, "id": "c3"},
+  {"type": "cancel", "at_ns": 1000, "id": "ghost"}
+]

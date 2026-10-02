@@ -1,0 +1,6 @@
+[
+  {"type": "arrive", "at_ns": 0, "id": "r1", "start": 100, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "r2", "start": 50, "len": 10, "direction": "read"},
+  {"type": "arrive", "at_ns": 0, "id": "r3", "start": 200, "len": 10, "direction": "read", "deadline_ns": 50},
+  {"type": "arrive", "at_ns": 0, "id": "r4", "start": 10, "len": 5, "direction": "read"}
+]

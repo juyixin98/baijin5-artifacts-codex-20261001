@@ -1,0 +1,206 @@
+[
+  {
+    "type": "arrive",
+    "at_ns": 0,
+    "id": "x0",
+    "start": 0,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 5000,
+    "id": "x1",
+    "start": 592,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 10000,
+    "id": "x2",
+    "start": 1184,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 15000,
+    "id": "x3",
+    "start": 1776,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 20000,
+    "id": "x4",
+    "start": 2368,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 25000,
+    "id": "x5",
+    "start": 2960,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 30000,
+    "id": "x6",
+    "start": 3552,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 35000,
+    "id": "x7",
+    "start": 48,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 40000,
+    "id": "x8",
+    "start": 640,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 45000,
+    "id": "x9",
+    "start": 1232,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 50000,
+    "id": "x10",
+    "start": 1824,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 55000,
+    "id": "x11",
+    "start": 2416,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 60000,
+    "id": "x12",
+    "start": 3008,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 65000,
+    "id": "x13",
+    "start": 3600,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 70000,
+    "id": "x14",
+    "start": 96,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 75000,
+    "id": "x15",
+    "start": 688,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 80000,
+    "id": "x16",
+    "start": 1280,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 85000,
+    "id": "x17",
+    "start": 1872,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 90000,
+    "id": "x18",
+    "start": 2464,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 95000,
+    "id": "x19",
+    "start": 3056,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 100000,
+    "id": "x20",
+    "start": 3648,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 105000,
+    "id": "x21",
+    "start": 144,
+    "len": 16,
+    "direction": "write"
+  },
+  {
+    "type": "arrive",
+    "at_ns": 110000,
+    "id": "x22",
+    "start": 736,
+    "len": 16,
+    "direction": "read",
+    "deadline_ns": 400000
+  },
+  {
+    "type": "arrive",
+    "at_ns": 115000,
+    "id": "x23",
+    "start": 1328,
+    "len": 16,
+    "direction": "write"
+  }
+]

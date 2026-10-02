@@ -1,0 +1,21 @@
+{
+  "hdd": {
+    "seek_base_ns": 2000,
+    "seek_ns_per_sector": 4,
+    "transfer_ns_per_sector": 8
+  },
+  "ssd_like": {
+    "fixed_latency_ns": 5000,
+    "transfer_ns_per_sector": 2
+  },
+  "deadline": {
+    "read_expire_ns": 500000,
+    "write_expire_ns": 5000000,
+    "writes_starved": 2
+  },
+  "scan_initial_up": true,
+  "head_start_sector": 0,
+  "fixtures_dir": "fixtures/traces",
+  "data_dir": "data",
+  "bind_addr": "127.0.0.1:8080"
+}
