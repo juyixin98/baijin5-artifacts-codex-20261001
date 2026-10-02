@@ -1,0 +1,12 @@
+# 容量为零的合法配置：缓存层关闭。
+# 预期行为：每次访问都穿透到后端，/stats 中 rejected_zero_capacity 递增，
+# 诊断结论为 rejected / zero_capacity_passthrough，resident 恒为 0。
+
+[cache]
+capacity = 0
+page_size = 4096
+writeback_retries = 0
+
+[server]
+bind = "127.0.0.1:8081"
+data_dir = "./var/arc-cache-zero"

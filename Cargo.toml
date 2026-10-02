@@ -1,0 +1,26 @@
+[package]
+name = "arc-page-cache"
+version = "0.1.0"
+edition = "2021"
+description = "Local page-access replay engine with an ARC cache backend (real + ghost lists, dirty write-back)"
+license = "MIT"
+
+[dependencies]
+# 关键依赖版本锁定见 Cargo.lock
+axum = "0.8.9"
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "net", "signal"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+toml = "0.8.23"
+indexmap = "2.14"
+base64 = "0.22.1"
+
+[dev-dependencies]
+tempfile = "3.27"
+
+[[example]]
+name = "gen-fixtures"
+path = "examples/gen_fixtures.rs"
+
+[profile.release]
+lto = "thin"

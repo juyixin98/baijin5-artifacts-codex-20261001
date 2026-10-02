@@ -1,0 +1,14 @@
+# ARC 页替换引擎示例配置（标准容量）
+# 用法: arc-page-cache --config config/arc.toml
+
+[cache]
+# 缓存容量（按页计）。0 为合法值：缓存关闭，所有访问穿透后端。
+capacity = 8
+# 页大小（字节），仅影响合成页文件布局与诊断展示。
+page_size = 4096
+# 脏页回写瞬时失败的额外重试次数（0 = 不重试）。
+writeback_retries = 1
+
+[server]
+bind = "127.0.0.1:8080"
+data_dir = "./var/arc-cache"
