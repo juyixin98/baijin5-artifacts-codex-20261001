@@ -1,0 +1,12 @@
+REQUEST demo-multi
+# Multiple jobs in one request; INTEGER and FIELD may coexist across jobs,
+# never within a single job. Output keeps request/job identity on every line.
+JOB int-cubic
+DOMAIN INTEGER
+COEFF 1 0 -2 3
+POINTS -2 -2 0 4
+JOB mod-linear
+DOMAIN FIELD
+MOD 97
+COEFF 2 1
+POINTS 0 1 48 48

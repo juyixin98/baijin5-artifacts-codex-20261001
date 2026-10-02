@@ -1,0 +1,7 @@
+REQUEST smoke-field
+# same polynomial over F_1000003; negatives authored explicitly
+JOB f1
+DOMAIN FIELD
+MOD 1000003
+COEFF 1 -6 11 -6
+POINTS 1 2 3 2 1000004 100

@@ -1,0 +1,7 @@
+REQUEST demo-zero
+# The zero polynomial is 0 at every point, duplicate points included.
+JOB z
+DOMAIN FIELD
+MOD 101
+COEFF 0 0 0 0
+POINTS 7 7 100 101 -5

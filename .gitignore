@@ -1,0 +1,8 @@
+/build/
+/deps/
+/downloads/
+*.o
+*.a
+compile_commands.json
+bench/bench.csv
+bench/complexity.md

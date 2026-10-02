@@ -1,0 +1,6 @@
+REQUEST smoke-int
+# f(x) = (x-1)(x-2)(x-3) = x^3 - 6x^2 + 11x - 6 ; roots incl. duplicates
+JOB j1
+DOMAIN INTEGER
+COEFF 1 -6 11 -6
+POINTS 1 2 3 2 1 0 5

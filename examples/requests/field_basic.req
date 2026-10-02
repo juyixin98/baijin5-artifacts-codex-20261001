@@ -1,0 +1,8 @@
+REQUEST demo-field
+# Prime field F_1000003. f(x) = 3x^2 + 5x + 7 evaluated at several points,
+# including duplicates and a point authored larger than the modulus.
+JOB quadratic
+DOMAIN FIELD
+MOD 1000003
+COEFF 3 5 7
+POINTS 0 1 2 2 1000003 1000004 -1

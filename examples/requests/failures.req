@@ -1,0 +1,26 @@
+REQUEST demo-failures
+# Exercises several distinct, independently classified failure categories.
+JOB good
+DOMAIN FIELD
+MOD 17
+COEFF 1 1
+POINTS 3
+JOB mixed-domain
+DOMAIN INTEGER
+MOD 17
+COEFF 1
+POINTS 1
+JOB composite-mod
+DOMAIN FIELD
+MOD 100
+COEFF 1
+POINTS 1
+JOB bad-coeff
+DOMAIN INTEGER
+COEFF 1 two 3
+POINTS 1
+good
+DOMAIN FIELD
+MOD 17
+COEFF 1 1
+POINTS 3
