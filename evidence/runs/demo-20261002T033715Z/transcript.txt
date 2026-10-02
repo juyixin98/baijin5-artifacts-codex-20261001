@@ -1,0 +1,56 @@
+
+==== run id: demo-20261002T033715Z ====
+go: go version go1.22.2 linux/amd64
+python: Python 3.12.3
+
+==== 1. build binaries (offline, vendored deps) ====
+built: stunc
+stund
+
+==== 2. start integrity-protected stund on IPv4 and IPv6 ====
+
+==== 3. NORMAL: Go client -> Go server over IPv4 (expect exit 0, endpoint echoed) ====
+run_id=stunc-20261002T033717.190508646-e98620e6bcf6 txn=64c142452c8eacdffc4cdbb3 server=127.0.0.1:34478 endpoint=127.0.0.1:46072 family=ipv4 attempts=1
+exit=0
+
+==== 4. NORMAL: Go client -> Go server over IPv6 ====
+run_id=stunc-20261002T033717.211090305-73e518d74b86 txn=3bf1d06a5c9521f934502b2e server=[::1]:34479 endpoint=::1:58317 family=ipv6 attempts=1
+exit=0
+
+==== 5. ABNORMAL: Go client with WRONG KEY (server silently discards -> timeout, exit 3) ====
+stunc: TIMEOUT after 600ms: timeout at client.Bind: no response after 3 attempts
+exit=3 (expected 3)
+
+==== 6. ABNORMAL: Go client to a SILENT port (retransmit then timeout, exit 3) ====
+stunc: TIMEOUT after 600ms: timeout at client.Bind: no response after 3 attempts
+exit=3 (expected 3)
+
+==== 7. INTEROP: independent Python client -> Go server (IPv4 + IPv6) ====
+{"ok": true, "txn_hex": "638f4766c7e205013f37b1ca", "local": ["0.0.0.0", 41467], "endpoint": ["127.0.0.1", 41467], "server_software": "stunlab-test/1.0"}
+exit=0 (expected 0)
+{"ok": true, "txn_hex": "782ac4770759238dc88d6c41", "local": ["::", 52706], "endpoint": ["::1", 52706], "server_software": "stunlab-test/1.0"}
+exit=0 (expected 0)
+
+==== 8. INTEROP: Python client sends UNKNOWN REQUIRED attr -> Go 420 ====
+{"ok": true, "txn_hex": "2b5803953df6eef3222e7244", "local": ["0.0.0.0", 43746], "error_code": 420, "reason": "Unknown Attribute", "unknown_attributes": ["0x0099"]}
+exit=0 (expected 0)
+
+==== 9. start an UNSIGNED stund; Python client expecting integrity must reject it ====
+{"ok": false, "kind": "integrity_failure", "detail": "MI absent"}
+exit=2 (expected 2, integrity_failure)
+
+==== 10. SQLite evidence: exchanges recorded by the IPv4 stund ====
+{'txn_id': '64c142452c8eacdffc4cdbb3', 'remote_addr': '127.0.0.1:46072', 'family': 'ipv4', 'outcome': 'success', 'mapped_ip': '127.0.0.1', 'mapped_port': 46072, 'error_code': 0, 'detail': ''}
+{'txn_id': '28e27dcd79e4ed6e4f6d8a36', 'remote_addr': '127.0.0.1:41261', 'family': 'ipv4', 'outcome': 'integrity_failure', 'mapped_ip': '', 'mapped_port': 0, 'error_code': 0, 'detail': 'integrity_failure at VerifyMessageIntegrity attr=0x0008: HMA'}
+{'txn_id': '28e27dcd79e4ed6e4f6d8a36', 'remote_addr': '127.0.0.1:41261', 'family': 'ipv4', 'outcome': 'integrity_failure', 'mapped_ip': '', 'mapped_port': 0, 'error_code': 0, 'detail': 'integrity_failure at VerifyMessageIntegrity attr=0x0008: HMA'}
+{'txn_id': '28e27dcd79e4ed6e4f6d8a36', 'remote_addr': '127.0.0.1:41261', 'family': 'ipv4', 'outcome': 'integrity_failure', 'mapped_ip': '', 'mapped_port': 0, 'error_code': 0, 'detail': 'integrity_failure at VerifyMessageIntegrity attr=0x0008: HMA'}
+{'txn_id': '638f4766c7e205013f37b1ca', 'remote_addr': '127.0.0.1:41467', 'family': 'ipv4', 'outcome': 'success', 'mapped_ip': '127.0.0.1', 'mapped_port': 41467, 'error_code': 0, 'detail': ''}
+{'txn_id': '2b5803953df6eef3222e7244', 'remote_addr': '127.0.0.1:43746', 'family': 'ipv4', 'outcome': 'error_response', 'mapped_ip': '', 'mapped_port': 0, 'error_code': 420, 'detail': 'unknown comprehension-required attributes'}
+total exchanges: 6
+observed categories: ['error_response', 'integrity_failure', 'success']
+ASSERTIONS PASSED
+
+==== 11. JSONL evidence: distinct error_kind values seen by clients ====
+{'timeout': 2}
+
+artifacts written to evidence/runs/demo-20261002T033715Z

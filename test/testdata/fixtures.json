@@ -1,0 +1,154 @@
+{
+  "generated_at_utc": "2026-10-02T02:23:24Z",
+  "rfc5769_xor_vectors": [
+    {
+      "name": "rfc5769_ipv4",
+      "family": "ipv4",
+      "ip": "192.0.2.1",
+      "port": 32853,
+      "value_hex": "0001a147e112a643",
+      "oracle_encodes_correctly": true
+    },
+    {
+      "name": "rfc5769_ipv6",
+      "family": "ipv6",
+      "ip": "2001:db8:1234:5678:11:2233:4455:6677",
+      "port": 32853,
+      "value_hex": "0002a1470113a9faa5d3f179bc25f4b5bed2b9d9",
+      "oracle_encodes_correctly": true
+    }
+  ],
+  "messages": [
+    {
+      "name": "success_ipv4_plain",
+      "txn_hex": "b7e7a701bc34d686fa87dfae",
+      "ip": "198.51.100.7",
+      "port": 40960,
+      "integrity": false,
+      "key": "",
+      "hex": "010100302112a442b7e7a701bc34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000",
+      "declared_length": 48,
+      "actual_body": 48
+    },
+    {
+      "name": "success_ipv4_mi",
+      "txn_hex": "b7e7a701bc34d686fa87dfae",
+      "ip": "198.51.100.7",
+      "port": 40960,
+      "integrity": true,
+      "key": "lab-shared-secret",
+      "hex": "010100482112a442b7e7a701bc34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000000800141dd997b69f33dfec4d059df22343f30ad8beb0f3",
+      "declared_length": 72,
+      "actual_body": 72
+    },
+    {
+      "name": "success_ipv6_plain",
+      "txn_hex": "b7e7a701bc34d686fa87dfae",
+      "ip": "2001:db8::abcd",
+      "port": 53,
+      "integrity": false,
+      "key": "",
+      "hex": "010100482112a442b7e7a701bc34d686fa87dfae00200014000221270113a9fab7e7a701bc34d686fa877463000100140002003520010db800000000000000000000abcd802200127374756e6c61622d6f7261636c652f312e300000",
+      "declared_length": 72,
+      "actual_body": 72
+    },
+    {
+      "name": "success_ipv6_mi",
+      "txn_hex": "b7e7a701bc34d686fa87dfae",
+      "ip": "2001:db8::abcd",
+      "port": 53,
+      "integrity": true,
+      "key": "lab-shared-secret",
+      "hex": "010100602112a442b7e7a701bc34d686fa87dfae00200014000221270113a9fab7e7a701bc34d686fa877463000100140002003520010db800000000000000000000abcd802200127374756e6c61622d6f7261636c652f312e300000000800143d42fbe46d23805bd220b81cb81c8ba0a5ec88b2",
+      "declared_length": 96,
+      "actual_body": 96
+    }
+  ],
+  "padding_vectors": [
+    {
+      "value_len": 1,
+      "wire_len": 8,
+      "total_wire": 28,
+      "hex": "8022000101000000"
+    },
+    {
+      "value_len": 2,
+      "wire_len": 8,
+      "total_wire": 28,
+      "hex": "8022000201020000"
+    },
+    {
+      "value_len": 3,
+      "wire_len": 8,
+      "total_wire": 28,
+      "hex": "8022000301020300"
+    },
+    {
+      "value_len": 4,
+      "wire_len": 8,
+      "total_wire": 28,
+      "hex": "8022000401020304"
+    },
+    {
+      "value_len": 5,
+      "wire_len": 12,
+      "total_wire": 32,
+      "hex": "802200050102030405000000"
+    },
+    {
+      "value_len": 6,
+      "wire_len": 12,
+      "total_wire": 32,
+      "hex": "802200060102030405060000"
+    },
+    {
+      "value_len": 7,
+      "wire_len": 12,
+      "total_wire": 32,
+      "hex": "802200070102030405060700"
+    },
+    {
+      "value_len": 8,
+      "wire_len": 12,
+      "total_wire": 32,
+      "hex": "802200080102030405060708"
+    }
+  ],
+  "error_messages": [
+    {
+      "name": "error_400",
+      "code": 400,
+      "reason": "Bad Request",
+      "hex": "011100142112a442b7e7a701bc34d686fa87dfae0009000f00000400426164205265717565737400"
+    },
+    {
+      "name": "error_420",
+      "code": 420,
+      "reason": "Unknown Attribute",
+      "hex": "011100242112a442b7e7a701bc34d686fa87dfae0009001500000414556e6b6e6f776e204174747269627574650000008005000400997777"
+    }
+  ],
+  "integrity_negative": [
+    {
+      "name": "tag_bitflip",
+      "hex": "010100482112a442b7e7a701bc34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000000800141dd997b69f33dfec4d059df22343f30ad8beb073",
+      "expect_kind": "integrity_failure"
+    },
+    {
+      "name": "txn_bitflip",
+      "hex": "010100482112a442b7e7a701bd34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000000800141dd997b69f33dfec4d059df22343f30ad8beb0f3",
+      "expect_kind": "integrity_failure"
+    },
+    {
+      "name": "wrong_key",
+      "hex": "010100482112a442b7e7a701bc34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000000800141dd997b69f33dfec4d059df22343f30ad8beb0f3",
+      "key": "definitely-the-wrong-key",
+      "expect_kind": "integrity_failure"
+    },
+    {
+      "name": "declared_length_mismatch",
+      "hex": "0101004c2112a442b7e7a701bc34d686fa87dfae0020000800018112e721c045000100080001a000c6336407802200127374756e6c61622d6f7261636c652f312e300000000800141dd997b69f33dfec4d059df22343f30ad8beb0f3",
+      "expect_kind": "input_error"
+    }
+  ]
+}

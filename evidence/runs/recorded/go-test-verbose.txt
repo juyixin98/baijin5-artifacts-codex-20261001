@@ -1,0 +1,242 @@
+	stunlab/cmd/stunc		coverage: 0.0% of statements
+	stunlab/cmd/stund		coverage: 0.0% of statements
+=== RUN   TestTransactionDeliverMatchedOnce
+--- PASS: TestTransactionDeliverMatchedOnce (0.00s)
+=== RUN   TestTransactionSourceMismatchDoesNotComplete
+--- PASS: TestTransactionSourceMismatchDoesNotComplete (0.00s)
+=== RUN   TestTransactionStaleUnknownID
+--- PASS: TestTransactionStaleUnknownID (0.00s)
+=== RUN   TestTransactionAddDuplicateAndCapacity
+--- PASS: TestTransactionAddDuplicateAndCapacity (0.00s)
+=== RUN   TestTransactionMalformedPacket
+--- PASS: TestTransactionMalformedPacket (0.00s)
+=== RUN   TestBindSuccessIPv4AndIPv6
+=== RUN   TestBindSuccessIPv4AndIPv6/udp4
+=== RUN   TestBindSuccessIPv4AndIPv6/udp6
+--- PASS: TestBindSuccessIPv4AndIPv6 (0.00s)
+    --- PASS: TestBindSuccessIPv4AndIPv6/udp4 (0.00s)
+    --- PASS: TestBindSuccessIPv4AndIPv6/udp6 (0.00s)
+=== RUN   TestBindIntegrityProtectedRoundTrip
+--- PASS: TestBindIntegrityProtectedRoundTrip (0.00s)
+=== RUN   TestBindTimeoutAgainstSilentSocket
+--- PASS: TestBindTimeoutAgainstSilentSocket (0.24s)
+=== RUN   TestLateResponseForOldTxnCannotCompleteNewRequest
+--- PASS: TestLateResponseForOldTxnCannotCompleteNewRequest (0.23s)
+=== RUN   TestResponseSourceMismatchEndToEnd
+--- PASS: TestResponseSourceMismatchEndToEnd (0.20s)
+=== RUN   TestErrorResponse420Surfaced
+--- PASS: TestErrorResponse420Surfaced (0.00s)
+=== RUN   TestResponseIntegrityFailureIsDistinct
+--- PASS: TestResponseIntegrityFailureIsDistinct (0.00s)
+=== RUN   TestClientHandlesErrorResponse400
+--- PASS: TestClientHandlesErrorResponse400 (0.00s)
+=== RUN   TestClientRejectsUnexpectedMessageClass
+--- PASS: TestClientRejectsUnexpectedMessageClass (0.00s)
+=== RUN   TestClientRejectsSuccessWithoutXORAttr
+--- PASS: TestClientRejectsSuccessWithoutXORAttr (0.00s)
+=== RUN   TestClientRejectsMalformedResponse
+--- PASS: TestClientRejectsMalformedResponse (0.00s)
+=== RUN   TestClientErrorResponseWithoutErrorCodeAttr
+--- PASS: TestClientErrorResponseWithoutErrorCodeAttr (0.00s)
+=== RUN   TestClientDialRejectsBadNetwork
+--- PASS: TestClientDialRejectsBadNetwork (0.00s)
+=== RUN   TestClientBindRejectsUnresolvableServer
+--- PASS: TestClientBindRejectsUnresolvableServer (0.00s)
+PASS
+coverage: 90.8% of statements
+ok  	stunlab/internal/client	1.711s	coverage: 90.8% of statements
+=== RUN   TestLoggerEmitsOrderedJSONLinesAndPersists
+--- PASS: TestLoggerEmitsOrderedJSONLinesAndPersists (0.00s)
+=== RUN   TestRunIDIsUniqueAndSortable
+--- PASS: TestRunIDIsUniqueAndSortable (0.00s)
+PASS
+coverage: 83.9% of statements
+ok  	stunlab/internal/evidence	1.019s	coverage: 83.9% of statements
+=== RUN   TestBindingSuccessReflectsIPv4
+--- PASS: TestBindingSuccessReflectsIPv4 (0.00s)
+=== RUN   TestBindingSuccessReflectsIPv6
+--- PASS: TestBindingSuccessReflectsIPv6 (0.00s)
+=== RUN   TestPaddedAttributeAccepted
+--- PASS: TestPaddedAttributeAccepted (0.00s)
+=== RUN   TestUnknownRequiredAttributeYields420
+--- PASS: TestUnknownRequiredAttributeYields420 (0.00s)
+=== RUN   TestMalformedRequestYields400OrDrop
+--- PASS: TestMalformedRequestYields400OrDrop (0.30s)
+=== RUN   TestIntegrityEnforced
+--- PASS: TestIntegrityEnforced (0.60s)
+=== RUN   TestPaddingOverrunRejectedWith400
+--- PASS: TestPaddingOverrunRejectedWith400 (0.00s)
+=== RUN   TestUnsupportedMethodYields400
+--- PASS: TestUnsupportedMethodYields400 (0.00s)
+=== RUN   TestServerRunsWithoutLoggerOrStore
+--- PASS: TestServerRunsWithoutLoggerOrStore (0.00s)
+=== RUN   TestListenRejectsBadAddressAndNetwork
+--- PASS: TestListenRejectsBadAddressAndNetwork (0.00s)
+PASS
+coverage: 84.6% of statements
+ok  	stunlab/internal/server	1.932s	coverage: 84.6% of statements
+=== RUN   TestOpenInMemoryAndPersistExchange
+--- PASS: TestOpenInMemoryAndPersistExchange (0.00s)
+=== RUN   TestOpenFileSurvivesReopen
+--- PASS: TestOpenFileSurvivesReopen (0.05s)
+=== RUN   TestOpenRejectsUnwritablePath
+--- PASS: TestOpenRejectsUnwritablePath (0.00s)
+=== RUN   TestOperationsAfterCloseReturnErrors
+--- PASS: TestOperationsAfterCloseReturnErrors (0.00s)
+PASS
+coverage: 89.2% of statements
+ok  	stunlab/internal/store	1.071s	coverage: 89.2% of statements
+=== RUN   TestRFC5769XORMappedVectors
+=== RUN   TestRFC5769XORMappedVectors/ipv4_192.0.2.1:32853
+=== RUN   TestRFC5769XORMappedVectors/ipv6_2001:db8:1234:5678:11:2233:4455:6677:32853
+--- PASS: TestRFC5769XORMappedVectors (0.00s)
+    --- PASS: TestRFC5769XORMappedVectors/ipv4_192.0.2.1:32853 (0.00s)
+    --- PASS: TestRFC5769XORMappedVectors/ipv6_2001:db8:1234:5678:11:2233:4455:6677:32853 (0.00s)
+=== RUN   TestAttributePaddingRoundTrip
+--- PASS: TestAttributePaddingRoundTrip (0.00s)
+=== RUN   TestDecodeAttributesRejectsMalformed
+=== RUN   TestDecodeAttributesRejectsMalformed/truncated_header
+=== RUN   TestDecodeAttributesRejectsMalformed/length_overruns_body
+=== RUN   TestDecodeAttributesRejectsMalformed/padding_overruns_body
+=== RUN   TestDecodeAttributesRejectsMalformed/trailing_half_word
+--- PASS: TestDecodeAttributesRejectsMalformed (0.00s)
+    --- PASS: TestDecodeAttributesRejectsMalformed/truncated_header (0.00s)
+    --- PASS: TestDecodeAttributesRejectsMalformed/length_overruns_body (0.00s)
+    --- PASS: TestDecodeAttributesRejectsMalformed/padding_overruns_body (0.00s)
+    --- PASS: TestDecodeAttributesRejectsMalformed/trailing_half_word (0.00s)
+=== RUN   TestMappedAddressRoundTrip
+--- PASS: TestMappedAddressRoundTrip (0.00s)
+=== RUN   TestMappedAddressReservedByteAndFamily
+--- PASS: TestMappedAddressReservedByteAndFamily (0.00s)
+=== RUN   TestErrorCodeRoundTrip
+--- PASS: TestErrorCodeRoundTrip (0.00s)
+=== RUN   TestErrorCodeRejectsOutOfRange
+--- PASS: TestErrorCodeRejectsOutOfRange (0.00s)
+=== RUN   TestUnknownAttributesRoundTrip
+--- PASS: TestUnknownAttributesRoundTrip (0.00s)
+=== RUN   TestErrorStringsCarryAttrAndKind
+--- PASS: TestErrorStringsCarryAttrAndKind (0.00s)
+=== RUN   TestAddAndVerifyIntegrityRoundTrip
+--- PASS: TestAddAndVerifyIntegrityRoundTrip (0.00s)
+=== RUN   TestIntegrityTamperCategories
+=== RUN   TestIntegrityTamperCategories/bit_flip_in_txn_id
+=== RUN   TestIntegrityTamperCategories/bit_flip_in_tag
+=== RUN   TestIntegrityTamperCategories/wrong_key
+=== RUN   TestIntegrityTamperCategories/missing_integrity
+=== RUN   TestIntegrityTamperCategories/integrity_not_last
+=== RUN   TestIntegrityTamperCategories/declared_wrong_mi_length
+--- PASS: TestIntegrityTamperCategories (0.00s)
+    --- PASS: TestIntegrityTamperCategories/bit_flip_in_txn_id (0.00s)
+    --- PASS: TestIntegrityTamperCategories/bit_flip_in_tag (0.00s)
+    --- PASS: TestIntegrityTamperCategories/wrong_key (0.00s)
+    --- PASS: TestIntegrityTamperCategories/missing_integrity (0.00s)
+    --- PASS: TestIntegrityTamperCategories/integrity_not_last (0.00s)
+    --- PASS: TestIntegrityTamperCategories/declared_wrong_mi_length (0.00s)
+=== RUN   TestEmptyIntegrityKeyIsComputeFailure
+--- PASS: TestEmptyIntegrityKeyIsComputeFailure (0.00s)
+=== RUN   TestLengthMismatchCaughtAtStructuralLayer
+--- PASS: TestLengthMismatchCaughtAtStructuralLayer (0.00s)
+=== RUN   TestMarshalUnmarshalRoundTrip
+--- PASS: TestMarshalUnmarshalRoundTrip (0.00s)
+=== RUN   TestUnmarshalRejectsMalformed
+=== RUN   TestUnmarshalRejectsMalformed/too_short
+=== RUN   TestUnmarshalRejectsMalformed/leading_bits_set
+=== RUN   TestUnmarshalRejectsMalformed/bad_magic_cookie
+=== RUN   TestUnmarshalRejectsMalformed/length_smaller_than_body
+=== RUN   TestUnmarshalRejectsMalformed/length_larger_than_body
+--- PASS: TestUnmarshalRejectsMalformed (0.00s)
+    --- PASS: TestUnmarshalRejectsMalformed/too_short (0.00s)
+    --- PASS: TestUnmarshalRejectsMalformed/leading_bits_set (0.00s)
+    --- PASS: TestUnmarshalRejectsMalformed/bad_magic_cookie (0.00s)
+    --- PASS: TestUnmarshalRejectsMalformed/length_smaller_than_body (0.00s)
+    --- PASS: TestUnmarshalRejectsMalformed/length_larger_than_body (0.00s)
+=== RUN   TestUnknownRequiredDetection
+--- PASS: TestUnknownRequiredDetection (0.00s)
+=== RUN   TestNewTransactionIDUnique
+--- PASS: TestNewTransactionIDUnique (0.00s)
+=== RUN   TestUnmarshalEmptyBody
+--- PASS: TestUnmarshalEmptyBody (0.00s)
+=== RUN   TestEncodeDecodeType
+=== RUN   TestEncodeDecodeType/binding_request
+=== RUN   TestEncodeDecodeType/binding_success
+=== RUN   TestEncodeDecodeType/binding_error
+=== RUN   TestEncodeDecodeType/binding_indication
+--- PASS: TestEncodeDecodeType (0.00s)
+    --- PASS: TestEncodeDecodeType/binding_request (0.00s)
+    --- PASS: TestEncodeDecodeType/binding_success (0.00s)
+    --- PASS: TestEncodeDecodeType/binding_error (0.00s)
+    --- PASS: TestEncodeDecodeType/binding_indication (0.00s)
+=== RUN   TestComprehensionRequiredClassification
+--- PASS: TestComprehensionRequiredClassification (0.00s)
+=== RUN   TestGoldenRFC5769XORVectors
+=== RUN   TestGoldenRFC5769XORVectors/rfc5769_ipv4
+=== RUN   TestGoldenRFC5769XORVectors/rfc5769_ipv6
+--- PASS: TestGoldenRFC5769XORVectors (0.00s)
+    --- PASS: TestGoldenRFC5769XORVectors/rfc5769_ipv4 (0.00s)
+    --- PASS: TestGoldenRFC5769XORVectors/rfc5769_ipv6 (0.00s)
+=== RUN   TestGoldenDecodeOracleMessages
+=== RUN   TestGoldenDecodeOracleMessages/success_ipv4_plain
+=== RUN   TestGoldenDecodeOracleMessages/success_ipv4_mi
+=== RUN   TestGoldenDecodeOracleMessages/success_ipv6_plain
+=== RUN   TestGoldenDecodeOracleMessages/success_ipv6_mi
+--- PASS: TestGoldenDecodeOracleMessages (0.00s)
+    --- PASS: TestGoldenDecodeOracleMessages/success_ipv4_plain (0.00s)
+    --- PASS: TestGoldenDecodeOracleMessages/success_ipv4_mi (0.00s)
+    --- PASS: TestGoldenDecodeOracleMessages/success_ipv6_plain (0.00s)
+    --- PASS: TestGoldenDecodeOracleMessages/success_ipv6_mi (0.00s)
+=== RUN   TestGoldenGoMessagesVerifyInOracleCrossover
+=== RUN   TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv4_plain
+=== RUN   TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv4_mi
+=== RUN   TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv6_plain
+=== RUN   TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv6_mi
+--- PASS: TestGoldenGoMessagesVerifyInOracleCrossover (0.00s)
+    --- PASS: TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv4_plain (0.00s)
+    --- PASS: TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv4_mi (0.00s)
+    --- PASS: TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv6_plain (0.00s)
+    --- PASS: TestGoldenGoMessagesVerifyInOracleCrossover/success_ipv6_mi (0.00s)
+=== RUN   TestGoldenNegativeIntegrityVectors
+=== RUN   TestGoldenNegativeIntegrityVectors/tag_bitflip
+=== RUN   TestGoldenNegativeIntegrityVectors/txn_bitflip
+=== RUN   TestGoldenNegativeIntegrityVectors/wrong_key
+=== RUN   TestGoldenNegativeIntegrityVectors/declared_length_mismatch
+--- PASS: TestGoldenNegativeIntegrityVectors (0.00s)
+    --- PASS: TestGoldenNegativeIntegrityVectors/tag_bitflip (0.00s)
+    --- PASS: TestGoldenNegativeIntegrityVectors/txn_bitflip (0.00s)
+    --- PASS: TestGoldenNegativeIntegrityVectors/wrong_key (0.00s)
+    --- PASS: TestGoldenNegativeIntegrityVectors/declared_length_mismatch (0.00s)
+=== RUN   TestGoldenErrorMessages
+=== RUN   TestGoldenErrorMessages/error_400
+=== RUN   TestGoldenErrorMessages/error_420
+--- PASS: TestGoldenErrorMessages (0.00s)
+    --- PASS: TestGoldenErrorMessages/error_400 (0.00s)
+    --- PASS: TestGoldenErrorMessages/error_420 (0.00s)
+=== RUN   TestGoldenPaddingWireLengths
+--- PASS: TestGoldenPaddingWireLengths (0.00s)
+=== RUN   TestGoldenFixturesWellFormed
+--- PASS: TestGoldenFixturesWellFormed (0.00s)
+PASS
+coverage: 91.7% of statements
+ok  	stunlab/internal/stun	1.043s	coverage: 91.7% of statements
+=== RUN   TestGoClientAcceptsPythonOracleSuccess
+--- PASS: TestGoClientAcceptsPythonOracleSuccess (0.05s)
+=== RUN   TestGoClientRejectsPythonOracleWrongTxn
+--- PASS: TestGoClientRejectsPythonOracleWrongTxn (0.35s)
+=== RUN   TestGoClientRejectsPythonOracleBadSource
+--- PASS: TestGoClientRejectsPythonOracleBadSource (0.35s)
+=== RUN   TestGoClientRejectsPythonOracleTamperedTag
+--- PASS: TestGoClientRejectsPythonOracleTamperedTag (0.05s)
+=== RUN   TestGoClientRejectsPythonOracleWhenKeysDisagree
+--- PASS: TestGoClientRejectsPythonOracleWhenKeysDisagree (0.05s)
+=== RUN   TestPythonClientAcceptsGoServerSuccess
+=== RUN   TestPythonClientAcceptsGoServerSuccess/udp4
+=== RUN   TestPythonClientAcceptsGoServerSuccess/udp6
+--- PASS: TestPythonClientAcceptsGoServerSuccess (0.11s)
+    --- PASS: TestPythonClientAcceptsGoServerSuccess/udp4 (0.05s)
+    --- PASS: TestPythonClientAcceptsGoServerSuccess/udp6 (0.05s)
+=== RUN   TestPythonClientGetsGoServer420
+--- PASS: TestPythonClientGetsGoServer420 (0.05s)
+=== RUN   TestPythonClientRejectsUnsignedGoServerWhenExpectingIntegrity
+--- PASS: TestPythonClientRejectsUnsignedGoServerWhenExpectingIntegrity (0.05s)
+PASS
+coverage: [no statements]
+ok  	stunlab/test/cross	2.078s	coverage: [no statements]
