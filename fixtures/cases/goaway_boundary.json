@@ -1,0 +1,97 @@
+{
+  "name": "goaway_boundary",
+  "description": "Streams above the GOAWAY lastStreamID boundary are refused with REFUSED_STREAM while the connection continues serving in-boundary traffic",
+  "rfc": "RFC 7540 \u00a76.8",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "00000e0105000000018204012f86010766697874757265",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 1,
+          "payload_hex": "880f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 9,
+          "payload_hex": "68656c6c6f2068320a"
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 1,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "action": "goaway",
+      "code": 0,
+      "debug": "fixture-triggered shutdown",
+      "expect": [
+        {
+          "type": "GOAWAY",
+          "stream": 0,
+          "error_code": "NO_ERROR",
+          "goaway_last_stream": 1
+        }
+      ]
+    },
+    {
+      "feed_hex": "00000e0105000000038204012f86010766697874757265",
+      "expect": [
+        {
+          "type": "RST_STREAM",
+          "stream": 3,
+          "error_code": "REFUSED_STREAM"
+        }
+      ],
+      "comment": "stream 3 > GOAWAY lastStreamID 1: refused, not processed"
+    },
+    {
+      "feed_hex": "0000080600000000003132333435363738",
+      "expect": [
+        {
+          "type": "PING",
+          "flags": 1,
+          "stream": 0,
+          "length": 8
+        }
+      ],
+      "comment": "streams at/below the boundary and connection frames remain usable"
+    }
+  ]
+}

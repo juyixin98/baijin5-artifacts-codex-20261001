@@ -1,0 +1,49 @@
+{
+  "name": "data_on_idle_stream",
+  "description": "DATA on a stream in the idle state is a connection-level PROTOCOL_ERROR",
+  "rfc": "RFC 7540 \u00a75.1",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "00000100000000000178",
+      "expect": [
+        {
+          "type": "GOAWAY",
+          "stream": 0,
+          "error_code": "PROTOCOL_ERROR"
+        }
+      ],
+      "expect_conn_error": "PROTOCOL_ERROR",
+      "expect_conn_closed": true
+    }
+  ]
+}

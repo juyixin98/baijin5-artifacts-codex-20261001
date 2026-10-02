@@ -1,0 +1,69 @@
+{
+  "name": "echo_roundtrip",
+  "description": "POST /echo returns the request body after END_STREAM",
+  "rfc": "RFC 7540 \u00a78.1",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "0000120104000000018304052f6563686f86010766697874757265",
+      "expect": []
+    },
+    {
+      "feed_hex": "000011000100000001666978747572652d6563686f2d626f6479",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 1,
+          "payload_hex": "880f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 17,
+          "payload_hex": "666978747572652d6563686f2d626f6479"
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 1,
+          "length": 0
+        }
+      ],
+      "expect_stream_state": {
+        "id": 1,
+        "state": "closed"
+      }
+    }
+  ]
+}

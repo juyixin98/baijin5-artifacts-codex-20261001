@@ -1,0 +1,61 @@
+{
+  "name": "not_found",
+  "description": "Unknown predefined route yields 404",
+  "rfc": "RFC 7540 \u00a78.1",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "0000120105000000018204052f6e6f706586010766697874757265",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 1,
+          "payload_hex": "8d0f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 10,
+          "payload_hex": "6e6f7420666f756e640a"
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 1,
+          "length": 0
+        }
+      ]
+    }
+  ]
+}

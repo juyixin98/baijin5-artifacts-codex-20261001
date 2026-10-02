@@ -1,0 +1,82 @@
+{
+  "name": "rst_then_late_data",
+  "description": "Frames arriving after RST_STREAM produce stream-level STREAM_CLOSED errors; the connection stays alive",
+  "rfc": "RFC 7540 \u00a75.1, \u00a75.4.2",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "0000120104000000018304052f6563686f86010766697874757265",
+      "expect": [],
+      "expect_stream_state": {
+        "id": 1,
+        "state": "open"
+      }
+    },
+    {
+      "feed_hex": "00000403000000000100000008",
+      "expect": [],
+      "expect_stream_state": {
+        "id": 1,
+        "state": "closed"
+      }
+    },
+    {
+      "feed_hex": "0000040000000000016c617465",
+      "expect": [
+        {
+          "type": "RST_STREAM",
+          "stream": 1,
+          "error_code": "STREAM_CLOSED"
+        }
+      ],
+      "comment": "late DATA after RST: stream error, connection survives"
+    },
+    {
+      "feed_hex": "00000408000000000100000064",
+      "expect": [],
+      "comment": "late WINDOW_UPDATE on closed stream is ignored (\u00a75.1)"
+    },
+    {
+      "feed_hex": "0000080600000000003132333435363738",
+      "expect": [
+        {
+          "type": "PING",
+          "flags": 1,
+          "stream": 0,
+          "length": 8,
+          "payload_hex": "3132333435363738"
+        }
+      ],
+      "comment": "connection-level liveness proves the stream error did not tear down the connection"
+    }
+  ]
+}

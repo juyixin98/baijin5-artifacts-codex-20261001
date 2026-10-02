@@ -1,0 +1,124 @@
+{
+  "name": "half_close_transitions",
+  "description": "Half-close state migration is legal in both directions; violations raise stream-level STREAM_CLOSED while the connection survives",
+  "rfc": "RFC 7540 \u00a75.1",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "00000e0105000000018204012f86010766697874757265",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 1,
+          "payload_hex": "880f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 9
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 1,
+          "length": 0
+        }
+      ],
+      "expect_stream_state": {
+        "id": 1,
+        "state": "closed"
+      },
+      "comment": "END_STREAM both directions: open -> half-closed(remote) -> closed"
+    },
+    {
+      "feed_hex": "00000100000000000178",
+      "expect": [
+        {
+          "type": "RST_STREAM",
+          "stream": 1,
+          "error_code": "STREAM_CLOSED"
+        }
+      ],
+      "comment": "DATA on a closed stream is a stream error, not a connection error"
+    },
+    {
+      "feed_hex": "00000e0104000000038204012f86010766697874757265",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 3,
+          "payload_hex": "880f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 3,
+          "length": 9
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 3,
+          "length": 0
+        }
+      ],
+      "expect_stream_state": {
+        "id": 3,
+        "state": "half-closed(local)"
+      },
+      "comment": "server may legally finish its response while the client stream stays open"
+    },
+    {
+      "feed_hex": "000003000100000003616263",
+      "expect": [],
+      "expect_stream_state": {
+        "id": 3,
+        "state": "closed"
+      },
+      "comment": "half-closed(local) still accepts client DATA"
+    },
+    {
+      "feed_hex": "0000080600000000003132333435363738",
+      "expect": [
+        {
+          "type": "PING",
+          "flags": 1,
+          "stream": 0,
+          "length": 8
+        }
+      ]
+    }
+  ]
+}

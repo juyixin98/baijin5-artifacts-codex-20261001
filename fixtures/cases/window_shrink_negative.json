@@ -1,0 +1,141 @@
+{
+  "name": "window_shrink_negative",
+  "description": "SETTINGS_INITIAL_WINDOW_SIZE reduction drives the stream send window negative; DATA stalls until WINDOW_UPDATE makes it positive again",
+  "rfc": "RFC 7540 \u00a76.9.2",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "0000130105000000018204062f6c6172676586010766697874757265",
+      "expect": [
+        {
+          "type": "HEADERS",
+          "flags": 4,
+          "stream": 1,
+          "payload_hex": "880f100a746578742f706c61696e"
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 16384
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 16384
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 16384
+        },
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 16383
+        }
+      ],
+      "expect_pending": {
+        "id": 1,
+        "bytes": 4465
+      }
+    },
+    {
+      "feed_hex": "000006040000000000000400000064",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ],
+      "expect_send_window": {
+        "id": 1,
+        "value": -65435
+      },
+      "comment": "window went negative; no DATA may be sent now"
+    },
+    {
+      "feed_hex": "0000040800000000000000ff9b0000040800000000010000ff9b",
+      "expect": [],
+      "expect_send_window": {
+        "id": 1,
+        "value": 0
+      },
+      "comment": "window exactly 0 still stalls DATA (window must be > 0)"
+    },
+    {
+      "feed_hex": "000004080000000001000001f4",
+      "expect": [
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 500
+        }
+      ],
+      "expect_pending": {
+        "id": 1,
+        "bytes": 3965
+      }
+    },
+    {
+      "feed_hex": "0000040800000000010000ffff",
+      "expect": [
+        {
+          "type": "DATA",
+          "flags": 0,
+          "stream": 1,
+          "length": 3965
+        },
+        {
+          "type": "DATA",
+          "flags": 1,
+          "stream": 1,
+          "length": 0
+        }
+      ],
+      "expect_pending": {
+        "id": 1,
+        "bytes": 0
+      },
+      "expect_stream_state": {
+        "id": 1,
+        "state": "closed"
+      }
+    }
+  ]
+}

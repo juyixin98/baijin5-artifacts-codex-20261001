@@ -1,0 +1,11 @@
+{
+  "listen_addr": "127.0.0.1:8080",
+  "max_frame_size": 16384,
+  "initial_recv_window": 65535,
+  "send_queue_capacity": 64,
+  "max_pending_body_bytes": 1048576,
+  "large_body_bytes": 200000,
+  "read_timeout_ms": 30000,
+  "write_timeout_ms": 10000,
+  "journal_path": "h2svc-journal.db"
+}

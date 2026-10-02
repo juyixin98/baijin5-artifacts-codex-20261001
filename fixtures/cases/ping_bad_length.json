@@ -1,0 +1,49 @@
+{
+  "name": "ping_bad_length",
+  "description": "PING with a payload other than 8 octets is a connection-level FRAME_SIZE_ERROR",
+  "rfc": "RFC 7540 \u00a76.7",
+  "config": {
+    "max_frame_size": 16384,
+    "initial_recv_window": 65535,
+    "send_queue_capacity": 256,
+    "max_pending_body_bytes": 1048576,
+    "large_body_bytes": 70000
+  },
+  "steps": [
+    {
+      "action": "send_server_settings",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 0,
+          "stream": 0,
+          "length": 12,
+          "payload_hex": "00040000ffff000500004000"
+        }
+      ]
+    },
+    {
+      "feed_hex": "000000040000000000",
+      "expect": [
+        {
+          "type": "SETTINGS",
+          "flags": 1,
+          "stream": 0,
+          "length": 0
+        }
+      ]
+    },
+    {
+      "feed_hex": "00000706000000000031323334353637",
+      "expect": [
+        {
+          "type": "GOAWAY",
+          "stream": 0,
+          "error_code": "FRAME_SIZE_ERROR"
+        }
+      ],
+      "expect_conn_error": "FRAME_SIZE_ERROR",
+      "expect_conn_closed": true
+    }
+  ]
+}
