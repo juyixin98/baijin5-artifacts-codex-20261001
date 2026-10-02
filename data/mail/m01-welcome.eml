@@ -1,0 +1,13 @@
+Message-ID: <m01@imaplite.local>
+Date: Mon, 01 Sep 2025 08:00:00 +0000
+From: IMAPlite Team <team@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: Welcome to the IMAPlite fixture mailbox
+Content-Type: text/plain; charset=utf-8
+
+Welcome!
+
+This is synthetic local message number one. It is deliberately plain so the
+FETCH RFC822.TEXT path has a stable body to compare byte-for-byte.
+
+-- IMAPlite

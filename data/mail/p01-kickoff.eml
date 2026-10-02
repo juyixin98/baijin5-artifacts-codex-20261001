@@ -1,0 +1,8 @@
+Message-ID: <p01@imaplite.local>
+Date: Wed, 10 Sep 2025 14:00:00 +0000
+From: Project Lead <lead@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: Project X kickoff
+Content-Type: text/plain; charset=utf-8
+
+Project X starts now. Goals: sequence numbers, UIDs, expunge semantics.

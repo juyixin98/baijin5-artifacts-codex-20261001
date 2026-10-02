@@ -1,0 +1,9 @@
+Message-ID: <p02@imaplite.local>
+Date: Thu, 11 Sep 2025 15:20:00 +0000
+From: =?UTF-8?B?RmFiacOp?= <fabien@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: =?UTF-8?Q?R=C3=A9union_=E2=80=94_order?=
+Content-Type: text/plain; charset=utf-8
+
+Encoded-word fixture: subject and display name decode to UTF-8.
+Caf=C3=A9 style content follows: caf=C3=A9 remains raw in BODY sections.

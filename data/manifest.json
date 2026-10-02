@@ -1,0 +1,45 @@
+{
+  "accounts": [
+    {
+      "username": "tester",
+      "password": "Tester#2025!",
+      "mailboxes": ["INBOX", "ProjectX"]
+    },
+    {
+      "username": "watcher",
+      "password": "Watcher#2025!",
+      "mailboxes": ["INBOX"]
+    },
+    {
+      "username": "lit",
+      "password": "litpäss",
+      "mailboxes": ["INBOX"]
+    },
+    {
+      "username": "admin",
+      "password": "Admin#2025!"
+    }
+  ],
+  "mailboxes": [
+    {
+      "name": "INBOX",
+      "uidvalidity": 1001,
+      "messages": [
+        {"file": "m01-welcome.eml", "flags": ["\\Seen"], "internaldate": "2025-09-01T08:00:00Z"},
+        {"file": "m02-report.eml", "flags": ["\\Seen"], "internaldate": "2025-09-02T09:30:00Z"},
+        {"file": "m03-multipart.eml", "flags": [], "internaldate": "2025-09-03T10:15:00Z"},
+        {"file": "m04-read.eml", "flags": ["\\Seen"], "internaldate": "2025-09-04T11:45:00Z"},
+        {"flags": [], "internaldate": "2025-09-05T12:00:00Z", "binary": true}
+      ]
+    },
+    {
+      "name": "ProjectX",
+      "uidvalidity": 2002,
+      "messages": [
+        {"file": "p01-kickoff.eml", "flags": ["\\Seen"], "internaldate": "2025-09-10T14:00:00Z"},
+        {"file": "p02-encoded-word.eml", "flags": [], "internaldate": "2025-09-11T15:20:00Z"},
+        {"file": "p03-attached.eml", "flags": [], "internaldate": "2025-09-12T16:40:00Z"}
+      ]
+    }
+  ]
+}

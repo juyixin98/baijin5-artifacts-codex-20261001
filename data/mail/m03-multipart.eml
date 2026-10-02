@@ -1,0 +1,18 @@
+Message-ID: <m03@imaplite.local>
+Date: Wed, 03 Sep 2025 10:15:00 +0000
+From: Mixed Sender <mixed@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: Multipart sample
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="ALT-123"
+
+--ALT-123
+Content-Type: text/plain; charset=utf-8
+
+This is the plain alternative.
+Two lines.
+--ALT-123
+Content-Type: text/html; charset=utf-8
+
+<p>This is the <b>HTML</b> alternative.</p>
+--ALT-123--

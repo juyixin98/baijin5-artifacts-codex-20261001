@@ -1,0 +1,19 @@
+Message-ID: <p03@imaplite.local>
+Date: Fri, 12 Sep 2025 16:40:00 +0000
+From: Attach Bot <attach@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: Attachment sample
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MIX-9"
+
+--MIX-9
+Content-Type: text/plain; charset=utf-8
+
+See the attached synthetic file.
+--MIX-9
+Content-Type: text/plain; name="notes.txt"
+Content-Disposition: attachment; filename="notes.txt"
+Content-Transfer-Encoding: base64
+
+QXR0YWNobWVudCBsaW5lIDEKQXR0YWNobWVudCBsaW5lIDI=
+--MIX-9--

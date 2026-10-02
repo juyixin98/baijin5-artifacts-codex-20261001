@@ -1,0 +1,9 @@
+Message-ID: <m04@imaplite.local>
+Date: Thu, 04 Sep 2025 11:45:00 +0000
+From: Already Read <read@imaplite.local>
+To: Tester <tester@imaplite.local>
+Subject: This message is pre-marked seen
+Content-Type: text/plain; charset=utf-8
+
+I carry the \Seen flag from the fixture manifest, so I must not appear in the
+SELECT response's first-unseen calculation.

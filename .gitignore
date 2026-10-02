@@ -1,0 +1,12 @@
+# binaries
+/imaplite
+/imaplite-*-bin
+
+# sqlite working files
+*.db
+*.db-wal
+*.db-shm
+
+# test/coverage artifacts
+*.out
+/coverage.txt
