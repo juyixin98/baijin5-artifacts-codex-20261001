@@ -1,0 +1,8 @@
+{
+  "listen": "127.0.0.1:1502",
+  "unit_ids": [1],
+  "register_count": 128,
+  "db_path": ":memory:",
+  "log_path": "-",
+  "request_timeout_ms": 3000
+}
