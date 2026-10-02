@@ -1,0 +1,7 @@
+/local/
+/.local/
+/deps/
+/build/
+*.log
+*.csv
+compile_commands.json

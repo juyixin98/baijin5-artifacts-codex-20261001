@@ -1,0 +1,28 @@
+# 最终验证记录 2026-10-03 07:20:40 CST
+## ctest
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.02 sec
+
+## rlmf_tests
+13 cases, 99 checks, 0 failures
+replay log: build/logs/verify.log
+
+## demo invalid input, expected rc=2
+request: A is 200x150 kind=lowrank | k=0 oversampling p=10 power_iters q=2 seed=0x243f6a8885a308d3 (all fixed inputs)
+rejected: [InvalidArgument rank.non_positive] target_rank must be >= 1
+rc=2
+
+## benchmark summary 3 reps
+200x150 k=10 rep=0  rand=0.00595049s fullsvd=0.0131148s speedup=2.20399  exact/opt=1
+200x150 k=10 rep=1  rand=0.00583998s fullsvd=0.0115052s speedup=1.97008  exact/opt=1
+200x150 k=10 rep=2  rand=0.00518987s fullsvd=0.0122941s speedup=2.36887  exact/opt=1
+500x400 k=20 rep=0  rand=0.0506454s fullsvd=0.164127s speedup=3.2407  exact/opt=1
+500x400 k=20 rep=1  rand=0.0529222s fullsvd=0.148615s speedup=2.80817  exact/opt=1
+500x400 k=20 rep=2  rand=0.0520384s fullsvd=0.148645s speedup=2.85645  exact/opt=1
+1000x800 k=30 rep=0  rand=0.347548s fullsvd=1.01149s speedup=2.91037  exact/opt=1
+1000x800 k=30 rep=1  rand=0.347574s fullsvd=1.00759s speedup=2.89893  exact/opt=1
+1000x800 k=30 rep=2  rand=0.341088s fullsvd=1.00345s speedup=2.9419  exact/opt=1
+1500x1000 k=40 rep=0  rand=0.63701s fullsvd=2.17869s speedup=3.42017  exact/opt=1
+1500x1000 k=40 rep=1  rand=0.662399s fullsvd=2.15799s speedup=3.25784  exact/opt=1
+1500x1000 k=40 rep=2  rand=0.62486s fullsvd=2.16861s speedup=3.47055  exact/opt=1
