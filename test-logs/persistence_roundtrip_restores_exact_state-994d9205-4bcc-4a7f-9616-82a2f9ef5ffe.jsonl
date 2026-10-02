@@ -1,0 +1,2 @@
+{"rationale":"manifest + page files fully reconstruct snapshot contents and refcounts","run_id":"994d9205-4bcc-4a7f-9616-82a2f9ef5ffe","seq":1,"state":{"cow_copies":1,"used_pages":3},"step":"restored","test":"persistence_roundtrip_restores_exact_state"}
+{"rationale":"reopening with a different geometry fails as compute_failure, not a silent reset","run_id":"994d9205-4bcc-4a7f-9616-82a2f9ef5ffe","seq":2,"state":{"category":"compute_failure"},"step":"config_mismatch","test":"persistence_roundtrip_restores_exact_state"}

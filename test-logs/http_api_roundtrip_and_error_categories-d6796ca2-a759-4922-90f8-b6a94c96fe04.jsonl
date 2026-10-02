@@ -1,0 +1,2 @@
+{"rationale":"HTTP write/read roundtrip preserves page content","run_id":"d6796ca2-a759-4922-90f8-b6a94c96fe04","seq":1,"state":{"page":0,"snapshot":1},"step":"roundtrip","test":"http_api_roundtrip_and_error_categories"}
+{"rationale":"HTTP status and error category align for all three failure kinds","run_id":"d6796ca2-a759-4922-90f8-b6a94c96fe04","seq":2,"state":{"input":400,"resource":507,"state":409},"step":"categories_over_http","test":"http_api_roundtrip_and_error_categories"}

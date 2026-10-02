@@ -1,0 +1,2 @@
+{"rationale":"overlapping writes to shared pages copy exactly the affected pages; base untouched","run_id":"e1c46ecd-13de-4ef8-83b3-2463f8b97cfe","seq":1,"state":{"cow_copies":4,"used_pages":8},"step":"overlap_written","test":"overlapping_page_writes_across_siblings"}
+{"rationale":"sibling writes never leak into the base snapshot or each other","run_id":"e1c46ecd-13de-4ef8-83b3-2463f8b97cfe","seq":2,"state":{"base_page2":"B-pattern intact"},"step":"verified","test":"overlapping_page_writes_across_siblings"}

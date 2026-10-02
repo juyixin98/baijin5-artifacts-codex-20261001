@@ -1,0 +1,2 @@
+{"rationale":"inject refcount anomaly: recorded 0 while two snapshots reference the page","run_id":"cf0cbaff-2030-4540-8124-92c0284ce649","seq":1,"state":{"forced_refcount":0,"phys":1},"step":"corrupted","test":"refcount_anomaly_blocks_writes_and_deletes"}
+{"rationale":"writes and deletes reject on refcount anomaly; verify() localizes it","run_id":"cf0cbaff-2030-4540-8124-92c0284ce649","seq":2,"state":{"anomaly":0,"recomputed":2},"step":"blocked","test":"refcount_anomaly_blocks_writes_and_deletes"}

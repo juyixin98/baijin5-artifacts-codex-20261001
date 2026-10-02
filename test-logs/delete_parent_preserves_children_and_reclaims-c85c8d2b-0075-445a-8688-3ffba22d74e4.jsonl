@@ -1,0 +1,3 @@
+{"rationale":"deleting a parent only drops its own references; shared pages survive via refcount","run_id":"c85c8d2b-0075-445a-8688-3ffba22d74e4","seq":1,"state":{"used_pages":3},"step":"middle_deleted","test":"delete_parent_preserves_children_and_reclaims"}
+{"rationale":"grandchild contents identical after both ancestors deleted","run_id":"c85c8d2b-0075-445a-8688-3ffba22d74e4","seq":2,"state":{"survivor":3,"used_pages":3},"step":"base_deleted","test":"delete_parent_preserves_children_and_reclaims"}
+{"rationale":"reclaim is refcount-exact; unknown snapshot delete is a state conflict","run_id":"c85c8d2b-0075-445a-8688-3ffba22d74e4","seq":3,"state":{"pages_freed":3,"used_pages":0},"step":"reclaimed","test":"delete_parent_preserves_children_and_reclaims"}

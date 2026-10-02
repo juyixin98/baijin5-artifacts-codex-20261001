@@ -1,0 +1,1 @@
+{"rationale":"validation covers the whole batch before mutation: no partial visibility","run_id":"c57b59cb-e410-4f28-8f75-c155b8d611e3","seq":1,"state":{"batches_applied":1},"step":"atomic_reject","test":"batch_input_error_is_atomic"}
