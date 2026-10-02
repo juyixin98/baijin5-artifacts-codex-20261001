@@ -1,0 +1,7 @@
+bind = "127.0.0.1:9393"
+storage_dir = "./data"
+
+[model]
+page_size = 4096
+max_file_size = 67108864   # 64 MiB
+max_mappings = 1024
