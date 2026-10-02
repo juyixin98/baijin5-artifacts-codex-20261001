@@ -1,0 +1,20 @@
+[package]
+name = "stlc-fixtures"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+stlc-syntax = { path = "../stlc-syntax" }
+stlc-proof = { path = "../stlc-proof" }
+stlc-core = { path = "../stlc-core" }
+stlc-audit = { path = "../stlc-audit" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+
+[[bin]]
+name = "stlc-fixture-gen"
+path = "src/bin/gen.rs"

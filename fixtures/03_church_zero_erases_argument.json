@@ -1,0 +1,15 @@
+{
+  "id": "F03-church-zero-erases",
+  "description": "Church zero applied to an argument ignores it (demonstrates the argument still type-checks).",
+  "manual_reasoning": "(\\s:Bool->Bool. \\z:Bool. z) (\\x:Bool. x) -> \\z:Bool. z. One contraction; the identity argument disappears under substitution of index 0 which does not occur in body z.",
+  "term_source": "(lam s: Bool -> Bool. lam z: Bool. z) (lam x: Bool. x)",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "lam z: Bool. z",
+    "steps": 1,
+    "free_vars": [],
+    "result_type": "Bool -> Bool"
+  }
+}

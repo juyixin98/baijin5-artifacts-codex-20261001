@@ -1,0 +1,12 @@
+{
+  "id": "F08-if-branch-mismatch",
+  "description": "If-branches must share a type.",
+  "manual_reasoning": "then-branch false : Bool, else-branch \\x:Bool.x : Bool->Bool; if elimination requires equal types: branch_mismatch.",
+  "term_source": "if true then false else (lam x: Bool. x)",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "type_error",
+    "type_error_kind": "branch_mismatch"
+  }
+}

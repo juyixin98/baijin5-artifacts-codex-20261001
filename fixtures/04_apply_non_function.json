@@ -1,0 +1,12 @@
+{
+  "id": "F04-apply-non-function",
+  "description": "Applying a Bool to a Bool is not typable (error application vs hand calc).",
+  "manual_reasoning": "true : Bool is not an arrow type, so application elimination cannot apply. Category expected_function, found Bool. No reduction is attempted.",
+  "term_source": "true false",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "type_error",
+    "type_error_kind": "expected_function"
+  }
+}

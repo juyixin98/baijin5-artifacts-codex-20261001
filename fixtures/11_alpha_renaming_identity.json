@@ -1,0 +1,15 @@
+{
+  "id": "F11-alpha-renaming",
+  "description": "Two surface names for the same identity are alpha-equivalent and normalize alike.",
+  "manual_reasoning": "\\x:Bool.x and \\y:Bool.y both map to the same locally nameless term lam. #0, so alpha equivalence is structural equality.",
+  "term_source": "lam y: Bool. y",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "lam x: Bool. x",
+    "steps": 0,
+    "free_vars": [],
+    "result_type": "Bool -> Bool"
+  }
+}

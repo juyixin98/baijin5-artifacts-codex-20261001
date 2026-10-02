@@ -1,0 +1,12 @@
+{
+  "id": "F06-unknown-free-var",
+  "description": "A free variable without a declared assumption is untypable.",
+  "manual_reasoning": "y appears free but the signature is empty. Var rule cannot discharge it: unknown_free_var.",
+  "term_source": "(lam x: Bool. x) y",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "type_error",
+    "type_error_kind": "unknown_free_var"
+  }
+}

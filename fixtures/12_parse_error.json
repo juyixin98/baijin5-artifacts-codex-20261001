@@ -1,0 +1,11 @@
+{
+  "id": "F12-parse-error",
+  "description": "Malformed input is a distinct failure category.",
+  "manual_reasoning": "lam x: . x has no binder type; the parser rejects before any typing work: parse_error.",
+  "term_source": "lam x: . x",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "parse_error"
+  }
+}

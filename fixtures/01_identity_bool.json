@@ -1,0 +1,15 @@
+{
+  "id": "F01-identity-bool",
+  "description": "Church: identity at Bool applied to true reduces to true.",
+  "manual_reasoning": "(\\x:Bool. x) true ->[beta] true. One contraction; type Bool is preserved; closed term, free vars {}.",
+  "term_source": "(lam x: Bool. x) true",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "true",
+    "steps": 1,
+    "free_vars": [],
+    "result_type": "Bool"
+  }
+}

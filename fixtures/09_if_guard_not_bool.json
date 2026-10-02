@@ -1,0 +1,12 @@
+{
+  "id": "F09-if-guard-not-bool",
+  "description": "If-guard must be Bool.",
+  "manual_reasoning": "guard (\\x:Bool.x) : Bool->Bool, not Bool: if_guard_not_bool.",
+  "term_source": "if (lam x: Bool. x) then true else false",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "type_error",
+    "type_error_kind": "if_guard_not_bool"
+  }
+}

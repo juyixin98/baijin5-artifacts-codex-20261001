@@ -1,0 +1,15 @@
+{
+  "id": "F10-if-true",
+  "description": "Conditional contraction picks the then-branch.",
+  "manual_reasoning": "if true then false else true -> false in one if-reduction; Bool.",
+  "term_source": "if true then false else true",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "false",
+    "steps": 1,
+    "free_vars": [],
+    "result_type": "Bool"
+  }
+}

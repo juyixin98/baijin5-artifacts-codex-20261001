@@ -1,0 +1,17 @@
+[package]
+name = "stlc-service"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "stlc-server"
+path = "src/main.rs"
+
+[dependencies]
+stlc-syntax = { path = "../stlc-syntax" }
+stlc-proof = { path = "../stlc-proof" }
+stlc-core = { path = "../stlc-core" }
+stlc-audit = { path = "../stlc-audit" }
+serde = { workspace = true }
+serde_json = { workspace = true }

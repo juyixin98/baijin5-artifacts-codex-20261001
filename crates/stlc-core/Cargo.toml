@@ -1,0 +1,11 @@
+[package]
+name = "stlc-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+stlc-syntax = { path = "../stlc-syntax" }
+stlc-proof = { path = "../stlc-proof" }
+serde = { workspace = true }
+serde_json = { workspace = true }

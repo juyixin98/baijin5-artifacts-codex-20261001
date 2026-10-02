@@ -1,0 +1,15 @@
+{
+  "id": "F07-free-var-preserved",
+  "description": "Reduction with a declared free variable keeps it free.",
+  "manual_reasoning": "(\\f:Bool. f) g with g:Bool -> g after one beta step. Free set before {g}, after {g}; type Bool.",
+  "term_source": "(lam f: Bool. f) g",
+  "free_signature_source": ["g : Bool"],
+  "budget": 64,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "g",
+    "steps": 1,
+    "free_vars": ["g"],
+    "result_type": "Bool"
+  }
+}

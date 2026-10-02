@@ -1,0 +1,15 @@
+{
+  "id": "F02-church-one-plus-one",
+  "description": "Church numerals: plus 1 1 = 2.",
+  "manual_reasoning": "plus m n = \\s z. m s (n s z). Leftmost-innermost order contracts the two inner '1 s' redexes and the two outer numeral/argument redexes: 6 contractions. Result \\s z. s (s z) = church 2; closed; type (Nat->Nat)->Nat->Nat.",
+  "term_source": "(lam m: (Nat -> Nat) -> Nat -> Nat. lam n: (Nat -> Nat) -> Nat -> Nat. lam s: Nat -> Nat. lam z: Nat. m s (n s z)) (lam s: Nat -> Nat. lam z: Nat. s z) (lam s: Nat -> Nat. lam z: Nat. s z)",
+  "free_signature": [],
+  "budget": 128,
+  "expected": {
+    "verdict": "ok",
+    "normal_form": "lam s: Nat -> Nat. lam z: Nat. s (s z)",
+    "steps": 6,
+    "free_vars": [],
+    "result_type": "(Nat -> Nat) -> Nat -> Nat"
+  }
+}

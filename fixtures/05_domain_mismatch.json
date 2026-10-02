@@ -1,0 +1,12 @@
+{
+  "id": "F05-domain-mismatch",
+  "description": "Feeding a Bool->Bool function where Bool is required.",
+  "manual_reasoning": "operator expects domain Bool; argument (\\b:Bool. b) : Bool->Bool. Category domain_mismatch, expected Bool, found Bool->Bool.",
+  "term_source": "(lam x: Bool. x) (lam b: Bool. b)",
+  "free_signature": [],
+  "budget": 64,
+  "expected": {
+    "verdict": "type_error",
+    "type_error_kind": "domain_mismatch"
+  }
+}
