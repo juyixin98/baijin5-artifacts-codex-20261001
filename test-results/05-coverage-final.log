@@ -1,0 +1,109 @@
+info: cargo-llvm-cov currently setting cfg(coverage); you can opt-out it by passing --no-cfg-coverage
+   Compiling mmu-lab v0.1.0 (/home/admin/Downloads/xinbiaozhul/opp482/a)
+warning: unused variable: `s`
+   --> tests/http_contract.rs:365:10
+    |
+365 |     let (s, v) = common::harness::call(a.clone(), Method::GET, "/maps?asid=1", None).await;
+    |          ^ help: if this is intentional, prefix it with an underscore: `_s`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: `mmu-lab` (test "http_contract") generated 1 warning (run `cargo fix --test "http_contract" -p mmu-lab` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.29s
+     Running unittests src/lib.rs (target/llvm-cov-target/debug/deps/mmu_lab-fe4c1ac1dba51081)
+
+running 33 tests
+test config::tests::fixed_constants_are_contract_values ... ok
+test config::tests::reserved_mask_covers_declared_bits ... ok
+test config::tests::splits_known_addresses ... ok
+test error::tests::domain_error_categories_and_status_codes_are_distinct ... ok
+test error::tests::every_fault_kind_has_stable_code_and_nonempty_explain ... ok
+test events::tests::can_find_by_run_id_for_replay ... ok
+test events::tests::civil_date_matches_known_unix_timestamps ... ok
+test events::tests::run_ids_are_unique_and_sortable ... ok
+test events::tests::ring_drops_oldest_and_keeps_latest ... ok
+test frames::tests::double_free_is_rejected ... ok
+test frames::tests::allocates_and_frees_single_frames ... ok
+test frames::tests::exhaustion_reports_requested_and_available ... ok
+test frames::tests::reserve_range_succeeds_and_blocks_reuse ... ok
+test mmu::tests::l1_branch_with_ps_is_misconfigured ... ok
+test mmu::tests::empty_root_gives_not_present_l1 ... ok
+test frames::tests::restore_rebuilds_free_set_and_used_count ... ok
+test mmu::tests::large_leaf_translates ... ok
+test mmu::tests::l1_leaf_without_ps_is_reserved_encoding ... ok
+test mmu::tests::l2_branch_encoding_is_reserved ... ok
+test mmu::tests::misaligned_large_leaf_is_fault ... ok
+test mmu::tests::reserved_bits_are_detected ... ok
+test mmu::tests::ps_on_l2_is_fault ... ok
+test mmu::tests::small_leaf_translates_two_levels ... ok
+test mmu::tests::l2_not_present_and_reserved_bit ... ok
+test tlb::tests::large_page_lookup_priority ... ok
+test tlb::tests::fifo_eviction_at_capacity ... ok
+test tlb::tests::asid_isolation_blocks_other_address_spaces ... ok
+test tlb::tests::large_invalidation_removes_contained_small_entries ... ok
+test tlb::tests::global_entries_hit_any_asid ... ok
+test tlb::tests::stale_entry_survives_without_invalidation_and_va_invalidate_fixes ... ok
+test persistence::tests::rejects_bad_version_or_garbage ... ok
+test frames::tests::large_allocation_is_4m_aligned ... ok
+test persistence::tests::snapshot_roundtrip_preserves_translation ... ok
+
+test result: ok. 33 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running unittests src/main.rs (target/llvm-cov-target/debug/deps/mmu_lab-189a788de8759d68)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core_contract.rs (target/llvm-cov-target/debug/deps/core_contract-e6c96718f2adf120)
+
+running 13 tests
+test frame_exhaustion_is_reported_as_resource_error_with_counts ... ok
+test duplicate_mapping_is_state_conflict_and_frames_are_not_leaked ... ok
+test cross_page_access_into_unmapped_page_is_not_present_at_boundary ... ok
+test cross_page_write_split_validates_permissions_per_segment ... ok
+test invalid_requests_are_input_errors_and_computation_category_is_distinct ... ok
+test permission_downgrade_without_invalidation_keeps_stale_writable_entry ... ok
+test unmap_returns_frames_and_subsequent_translation_faults ... ok
+test same_va_in_two_processes_translates_to_distinct_frames_and_matches_reference ... ok
+test unmapped_va_in_other_process_is_not_present_not_permission ... ok
+test tlb_capacity_evicts_fifo_and_fill_is_observable ... ok
+test global_mapping_is_visible_in_all_spaces_including_future_ones ... ok
+test large_small_overlap_is_rejected_in_both_directions ... ok
+test large_page_translation_covers_four_mib_and_matches_reference ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/http_contract.rs (target/llvm-cov-target/debug/deps/http_contract-dab9174f3a084bb0)
+
+running 10 tests
+test reset_with_invalid_config_is_rejected ... ok
+test resource_exhaustion_returns_507 ... ok
+test error_categories_map_to_distinct_status_codes ... ok
+test health_and_machine_constants ... ok
+test remaining_endpoints_and_error_paths ... ok
+test run_id_is_recorded_and_replayable ... ok
+test asid_exhaustion_returns_507 ... ok
+test overlap_conflict_and_tlb_staleness_over_http ... ok
+test end_to_end_translation_and_fault_envelope ... ok
+test snapshot_save_and_load_roundtrip ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+Filename                      Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover    Branches   Missed Branches     Cover
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+api/mod.rs                        499                43    91.38%          64                 5    92.19%         299                17    94.31%           0                 0         -
+config.rs                          56                 3    94.64%           7                 0   100.00%          60                 3    95.00%           0                 0         -
+error.rs                          159                14    91.19%           9                 0   100.00%         140                 8    94.29%           0                 0         -
+events.rs                         234                34    85.47%          22                 6    72.73%         153                27    82.35%           0                 0         -
+frames.rs                         299                14    95.32%          22                 1    95.45%         200                13    93.50%           0                 0         -
+main.rs                           104               104     0.00%          11                11     0.00%          70                70     0.00%           0                 0         -
+mmu.rs                            484                68    85.95%          27                 7    74.07%         381                64    83.20%           0                 0         -
+persistence.rs                    165                19    88.48%          15                 7    53.33%         102                10    90.20%           0                 0         -
+store/mapping.rs                  653                84    87.14%          17                 3    82.35%         428                51    88.08%           0                 0         -
+store/mod.rs                      277                16    94.22%          24                 1    95.83%         185                11    94.05%           0                 0         -
+store/translate.rs                328                20    93.90%           8                 1    87.50%         260                22    91.54%           0                 0         -
+tlb.rs                            367                47    87.19%          37                 6    83.78%         228                27    88.16%           0                 0         -
+types.rs                          146                41    71.92%          29                 6    79.31%         131                28    78.63%           0                 0         -
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                            3771               507    86.56%         292                54    81.51%        2637               351    86.69%           0                 0         -

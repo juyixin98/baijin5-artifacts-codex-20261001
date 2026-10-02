@@ -1,0 +1,644 @@
+
+[1;36m== 0. 固定机器参数 ==[0m
+{
+  "data": {
+    "bits_per_level": 10,
+    "entries_per_table": 1024,
+    "large_page_size": 4194304,
+    "levels": 2,
+    "max_access_len": 4194304,
+    "pa_bits": 32,
+    "page_size": 4096,
+    "pte_layout": {
+      "bits": {
+        "D": 4,
+        "G": 5,
+        "PS": 6,
+        "R": 1,
+        "V": 0,
+        "W": 2,
+        "X": 3
+      },
+      "ppn_bits": 20,
+      "reserved": "bits 9:7、39:32、63:40 必须为零"
+    },
+    "split_example": {
+      "l1": 1,
+      "l2": 1,
+      "offset_hex": "0x234",
+      "va_hex": "0x00401234"
+    },
+    "va_bits": 32
+  },
+  "status": "ok"
+}
+
+[1;36m== 1. 创建两个进程（ASID） ==[0m
+{
+  "data": {
+    "asid": 1,
+    "space": {
+      "asid": 1,
+      "l2_tables": {},
+      "name": "proc-a",
+      "root_pa": 0
+    }
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "asid": 2,
+    "space": {
+      "asid": 2,
+      "l2_tables": {},
+      "name": "proc-b",
+      "root_pa": 4096
+    }
+  },
+  "status": "ok"
+}
+
+[1;36m== 2. 同一虚址 0x1000 在两个进程中映射到各自物理帧 ==[0m
+{
+  "data": {
+    "asid": 1,
+    "frames_available": 65532,
+    "frames_consumed": 1,
+    "global": false,
+    "installed_in": [
+      1
+    ],
+    "pa": 8192,
+    "page": "4K",
+    "permissions": {
+      "execute": true,
+      "read": true,
+      "write": true
+    },
+    "run_id": "20261002T040946Z-000003",
+    "tlb_invalidated": 0,
+    "va": 4096
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "asid": 2,
+    "frames_available": 65530,
+    "frames_consumed": 1,
+    "global": false,
+    "installed_in": [
+      2
+    ],
+    "pa": 16384,
+    "page": "4K",
+    "permissions": {
+      "execute": true,
+      "read": true,
+      "write": false
+    },
+    "run_id": "20261002T040946Z-000004",
+    "tlb_invalidated": 0,
+    "va": 4096
+  },
+  "status": "ok"
+}
+
+[1;36m== 3. 两个进程翻译同一虚址（物理地址必须不同） ==[0m
+{
+  "data": {
+    "outcome": "translated",
+    "translation": {
+      "access": "read",
+      "asid": 1,
+      "evictions": [],
+      "executable": true,
+      "len": 1,
+      "pa": 8756,
+      "page": "4K",
+      "readable": true,
+      "run_id": "20261002T040946Z-000005",
+      "segments": [
+        {
+          "bytes": 1,
+          "executable": true,
+          "pa": 8756,
+          "page": "4K",
+          "readable": true,
+          "source": "walk",
+          "stale": false,
+          "va": 4660,
+          "writable": true
+        }
+      ],
+      "stale_segments": 0,
+      "tlb_hit": false,
+      "tlb_segments": 0,
+      "va": 4660,
+      "walk_levels": [
+        "L1",
+        "L2"
+      ],
+      "walk_segments": 1,
+      "writable": true
+    }
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "outcome": "translated",
+    "translation": {
+      "access": "read",
+      "asid": 2,
+      "evictions": [],
+      "executable": true,
+      "len": 1,
+      "pa": 16948,
+      "page": "4K",
+      "readable": true,
+      "run_id": "20261002T040946Z-000006",
+      "segments": [
+        {
+          "bytes": 1,
+          "executable": true,
+          "pa": 16948,
+          "page": "4K",
+          "readable": true,
+          "source": "walk",
+          "stale": false,
+          "va": 4660,
+          "writable": false
+        }
+      ],
+      "stale_segments": 0,
+      "tlb_hit": false,
+      "tlb_segments": 0,
+      "va": 4660,
+      "walk_levels": [
+        "L1",
+        "L2"
+      ],
+      "walk_segments": 1,
+      "writable": false
+    }
+  },
+  "status": "ok"
+}
+
+[1;36m== 4. 跨页写：0x1ff0 起 32 字节，第一页 RW，第二页只读 -> 边界权限故障 ==[0m
+{
+  "data": {
+    "asid": 1,
+    "frames_available": 65529,
+    "frames_consumed": 1,
+    "global": false,
+    "installed_in": [
+      1
+    ],
+    "pa": 24576,
+    "page": "4K",
+    "permissions": {
+      "execute": true,
+      "read": true,
+      "write": false
+    },
+    "run_id": "20261002T040946Z-000007",
+    "tlb_invalidated": 0,
+    "va": 8192
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "fault": {
+      "access": "write",
+      "asid": 1,
+      "completed_segments": [
+        {
+          "bytes": 16,
+          "executable": true,
+          "pa": 12272,
+          "page": "4K",
+          "readable": true,
+          "source": "tlb",
+          "stale": false,
+          "va": 8176,
+          "writable": true
+        }
+      ],
+      "fault_source": "walk",
+      "kind": {
+        "executable": true,
+        "need": "write",
+        "readable": true,
+        "type": "permission_denied",
+        "writable": false
+      },
+      "reason": "叶子权限 在 VA 0x00002000 拒绝 write（此前完成 1 段）",
+      "run_id": "20261002T040946Z-000008",
+      "va": 8192,
+      "walk": [
+        {
+          "index": 0,
+          "level": "L1",
+          "note": "分支命中，L2 页表 @ 0x00003000",
+          "pte_addr": 0,
+          "pte_raw": 12289
+        },
+        {
+          "index": 2,
+          "level": "L2",
+          "note": "基页叶子命中，物理基址 0x00006000",
+          "pte_addr": 12304,
+          "pte_raw": 24587
+        }
+      ]
+    },
+    "outcome": "page_fault"
+  },
+  "status": "ok"
+}
+
+[1;36m== 5. 大页/小页覆盖冲突：在 8 MiB 区先建 4M 大页，再在其中建 4K 小页 -> 409 ==[0m
+{
+  "data": {
+    "asid": 1,
+    "frames_available": 64505,
+    "frames_consumed": 1024,
+    "global": false,
+    "installed_in": [
+      1
+    ],
+    "pa": 4194304,
+    "page": "4M",
+    "permissions": {
+      "execute": true,
+      "read": true,
+      "write": true
+    },
+    "run_id": "20261002T040946Z-000009",
+    "tlb_invalidated": 0,
+    "va": 8388608
+  },
+  "status": "ok"
+}
+{
+  "category": "state_conflict",
+  "code": "LARGE_SMALL_OVERLAP",
+  "message": "4K 映射 VA 0x00801000 与已有 4M 映射 VA 0x00800000 覆盖范围重叠",
+  "status": "error"
+}
+
+[1;36m== 6. 权限降级 + TLB 过期：预热后不失效降级，旧可写条目仍命中且 stale=1 ==[0m
+{
+  "data": {
+    "outcome": "translated",
+    "translation": {
+      "access": "write",
+      "asid": 1,
+      "evictions": [],
+      "executable": true,
+      "len": 1,
+      "pa": 8192,
+      "page": "4K",
+      "readable": true,
+      "run_id": "20261002T040946Z-000010",
+      "segments": [
+        {
+          "bytes": 1,
+          "executable": true,
+          "pa": 8192,
+          "page": "4K",
+          "readable": true,
+          "source": "tlb",
+          "stale": false,
+          "va": 4096,
+          "writable": true
+        }
+      ],
+      "stale_segments": 0,
+      "tlb_hit": true,
+      "tlb_segments": 1,
+      "va": 4096,
+      "walk_levels": [],
+      "walk_segments": 0,
+      "writable": true
+    }
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "detail": "protect 完成",
+    "frames_available": 64505,
+    "run_id": "20261002T040946Z-000011",
+    "tlb_invalidated": 0
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "outcome": "translated",
+    "translation": {
+      "access": "write",
+      "asid": 1,
+      "evictions": [],
+      "executable": true,
+      "len": 1,
+      "pa": 8192,
+      "page": "4K",
+      "readable": true,
+      "run_id": "20261002T040946Z-000012",
+      "segments": [
+        {
+          "bytes": 1,
+          "executable": true,
+          "pa": 8192,
+          "page": "4K",
+          "readable": true,
+          "source": "tlb",
+          "stale": true,
+          "va": 4096,
+          "writable": true
+        }
+      ],
+      "stale_segments": 1,
+      "tlb_hit": true,
+      "tlb_segments": 1,
+      "va": 4096,
+      "walk_levels": [],
+      "walk_segments": 0,
+      "writable": true
+    }
+  },
+  "status": "ok"
+}
+
+[1;36m== 7. 执行显式失效协议后，同样的写被拒绝 ==[0m
+{
+  "data": {
+    "removed": 2
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "fault": {
+      "access": "write",
+      "asid": 1,
+      "completed_segments": [],
+      "fault_source": "walk",
+      "kind": {
+        "executable": true,
+        "need": "write",
+        "readable": true,
+        "type": "permission_denied",
+        "writable": false
+      },
+      "reason": "叶子权限 在 VA 0x00001000 拒绝 write（此前完成 0 段）",
+      "run_id": "20261002T040946Z-000014",
+      "va": 4096,
+      "walk": [
+        {
+          "index": 0,
+          "level": "L1",
+          "note": "分支命中，L2 页表 @ 0x00003000",
+          "pte_addr": 0,
+          "pte_raw": 12289
+        },
+        {
+          "index": 1,
+          "level": "L2",
+          "note": "基页叶子命中，物理基址 0x00002000",
+          "pte_addr": 12296,
+          "pte_raw": 8219
+        }
+      ]
+    },
+    "outcome": "page_fault"
+  },
+  "status": "ok"
+}
+
+[1;36m== 8. 诊断：查看最近事件；用上一步故障的 run_id 可检索完整轨迹 ==[0m
+{
+  "data": {
+    "capacity": 2048,
+    "dropped_oldest": 0,
+    "events": [
+      {
+        "failure": {
+          "class": "page_fault",
+          "code": "PAGE_FAULT_PERMISSION",
+          "detail": "叶子权限不满足 write 访问"
+        },
+        "kind": "translate_fault",
+        "rationale": [
+          "叶子权限不满足 write 访问",
+          "故障以类型化结果返回，不触发 panic"
+        ],
+        "run_id": "20261002T040946Z-000014",
+        "seq": 14,
+        "state": {
+          "access": "write",
+          "asid": 1,
+          "completed_segments": [],
+          "fault_source": "walk",
+          "kind": {
+            "executable": true,
+            "need": "write",
+            "readable": true,
+            "type": "permission_denied",
+            "writable": false
+          },
+          "reason": "叶子权限 在 VA 0x00001000 拒绝 write（此前完成 0 段）",
+          "run_id": "20261002T040946Z-000014",
+          "va": 4096,
+          "walk": [
+            {
+              "index": 0,
+              "level": "L1",
+              "note": "分支命中，L2 页表 @ 0x00003000",
+              "pte_addr": 0,
+              "pte_raw": 12289
+            },
+            {
+              "index": 1,
+              "level": "L2",
+              "note": "基页叶子命中，物理基址 0x00002000",
+              "pte_addr": 12296,
+              "pte_raw": 8219
+            }
+          ]
+        },
+        "summary": "VA 0x00001000 write 页故障：PAGE_FAULT_PERMISSION"
+      },
+      {
+        "failure": null,
+        "kind": "invalidate",
+        "rationale": [
+          "页表修改后由软件负责的显式 shootdown"
+        ],
+        "run_id": "20261002T040946Z-000013",
+        "seq": 13,
+        "state": {
+          "asid": 1,
+          "page": "4K",
+          "removed": 2,
+          "va": 4096
+        },
+        "summary": "显式 TLB 失效，清除 2 条"
+      },
+      {
+        "failure": null,
+        "kind": "translate_ok",
+        "rationale": [
+          "访问区间 [0x1000..0x1001) 拆为 1 段，逐段验证 Write 权限",
+          "TLB：全部段命中缓存",
+          "检测到 stale 段：TLB 快照与当前 PTE 不一致，但未失效前仍按缓存翻译"
+        ],
+        "run_id": "20261002T040946Z-000012",
+        "seq": 12,
+        "state": {
+          "access": "write",
+          "asid": 1,
+          "evictions": [],
+          "executable": true,
+          "len": 1,
+          "pa": 8192,
+          "page": "4K",
+          "readable": true,
+          "run_id": "20261002T040946Z-000012",
+          "segments": [
+            {
+              "bytes": 1,
+              "executable": true,
+              "pa": 8192,
+              "page": "4K",
+              "readable": true,
+              "source": "tlb",
+              "stale": true,
+              "va": 4096,
+              "writable": true
+            }
+          ],
+          "stale_segments": 1,
+          "tlb_hit": true,
+          "tlb_segments": 1,
+          "va": 4096,
+          "walk_levels": [],
+          "walk_segments": 0,
+          "writable": true
+        },
+        "summary": "VA 0x00001000 write 翻译成功 -> PA 0x00002000（tlb_hit=true）"
+      },
+      {
+        "failure": null,
+        "kind": "protect",
+        "rationale": [
+          "失效协议：跳过失效：旧权限条目仍可命中（权限降级过期夹具）"
+        ],
+        "run_id": "20261002T040946Z-000011",
+        "seq": 11,
+        "state": {
+          "asid": 1,
+          "global": false,
+          "new": {
+            "execute": true,
+            "read": true,
+            "write": false
+          },
+          "old": {
+            "execute": true,
+            "read": true,
+            "write": true
+          },
+          "tlb_invalidated": 0,
+          "va": 4096
+        },
+        "summary": "降级 VA 0x00001000 权限 Permissions { read: true, write: true, execute: true } -> Permissions { read: true, write: false, execute: true }"
+      },
+      {
+        "failure": null,
+        "kind": "translate_ok",
+        "rationale": [
+          "访问区间 [0x1000..0x1001) 拆为 1 段，逐段验证 Write 权限",
+          "TLB：全部段命中缓存"
+        ],
+        "run_id": "20261002T040946Z-000010",
+        "seq": 10,
+        "state": {
+          "access": "write",
+          "asid": 1,
+          "evictions": [],
+          "executable": true,
+          "len": 1,
+          "pa": 8192,
+          "page": "4K",
+          "readable": true,
+          "run_id": "20261002T040946Z-000010",
+          "segments": [
+            {
+              "bytes": 1,
+              "executable": true,
+              "pa": 8192,
+              "page": "4K",
+              "readable": true,
+              "source": "tlb",
+              "stale": false,
+              "va": 4096,
+              "writable": true
+            }
+          ],
+          "stale_segments": 0,
+          "tlb_hit": true,
+          "tlb_segments": 1,
+          "va": 4096,
+          "walk_levels": [],
+          "walk_segments": 0,
+          "writable": true
+        },
+        "summary": "VA 0x00001000 write 翻译成功 -> PA 0x00002000（tlb_hit=true）"
+      }
+    ],
+    "stored": 14
+  },
+  "status": "ok"
+}
+
+[1;36m== 9. 资源视角：物理帧与 TLB 现状 ==[0m
+{
+  "data": {
+    "available": 64505,
+    "frame_size": 4096,
+    "large_page_frames": 1024,
+    "peak_used": 1031,
+    "total": 65536,
+    "used": 1031
+  },
+  "status": "ok"
+}
+{
+  "data": {
+    "capacity": 16,
+    "entries": [],
+    "fills": 2,
+    "invalidations": 2,
+    "len": 0
+  },
+  "status": "ok"
+}
+
+[1;36m== 10. 快照保存到本地文件（原子写） ==[0m
+{
+  "data": {
+    "bytes": 875515,
+    "mappings": 4,
+    "path": "./store/demo.json",
+    "run_id": "20261002T040946Z-000015",
+    "spaces": 2
+  },
+  "status": "ok"
+}

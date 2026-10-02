@@ -1,0 +1,77 @@
+# cargo test — 2026-10-02T03:37:42Z UTC — 修复 civil_from_unix 后
+   Compiling mmu-lab v0.1.0 (/home/admin/Downloads/xinbiaozhul/opp482/a)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.53s
+     Running unittests src/lib.rs (target/debug/deps/mmu_lab-fe4c1ac1dba51081)
+
+running 24 tests
+test config::tests::fixed_constants_are_contract_values ... ok
+test config::tests::reserved_mask_covers_declared_bits ... ok
+test config::tests::splits_known_addresses ... ok
+test events::tests::can_find_by_run_id_for_replay ... ok
+test events::tests::civil_date_matches_known_unix_timestamps ... ok
+test events::tests::ring_drops_oldest_and_keeps_latest ... ok
+test events::tests::run_ids_are_unique_and_sortable ... ok
+test frames::tests::allocates_and_frees_single_frames ... ok
+test frames::tests::double_free_is_rejected ... ok
+test frames::tests::exhaustion_reports_requested_and_available ... ok
+test mmu::tests::empty_root_gives_not_present_l1 ... ok
+test mmu::tests::large_leaf_translates ... ok
+test mmu::tests::ps_on_l2_is_fault ... ok
+test mmu::tests::reserved_bits_are_detected ... ok
+test mmu::tests::small_leaf_translates_two_levels ... ok
+test tlb::tests::asid_isolation_blocks_other_address_spaces ... ok
+test tlb::tests::fifo_eviction_at_capacity ... ok
+test tlb::tests::large_invalidation_removes_contained_small_entries ... ok
+test persistence::tests::rejects_bad_version_or_garbage ... ok
+test tlb::tests::large_page_lookup_priority ... ok
+test tlb::tests::stale_entry_survives_without_invalidation_and_va_invalidate_fixes ... ok
+test tlb::tests::global_entries_hit_any_asid ... ok
+test frames::tests::large_allocation_is_4m_aligned ... ok
+test persistence::tests::snapshot_roundtrip_preserves_translation ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running unittests src/main.rs (target/debug/deps/mmu_lab-189a788de8759d68)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core_contract.rs (target/debug/deps/core_contract-e6c96718f2adf120)
+
+running 13 tests
+test frame_exhaustion_is_reported_as_resource_error_with_counts ... ok
+test duplicate_mapping_is_state_conflict_and_frames_are_not_leaked ... ok
+test cross_page_access_into_unmapped_page_is_not_present_at_boundary ... ok
+test cross_page_write_split_validates_permissions_per_segment ... ok
+test invalid_requests_are_input_errors_and_computation_category_is_distinct ... ok
+test permission_downgrade_without_invalidation_keeps_stale_writable_entry ... ok
+test same_va_in_two_processes_translates_to_distinct_frames_and_matches_reference ... ok
+test tlb_capacity_evicts_fifo_and_fill_is_observable ... ok
+test unmap_returns_frames_and_subsequent_translation_faults ... ok
+test unmapped_va_in_other_process_is_not_present_not_permission ... ok
+test global_mapping_is_visible_in_all_spaces_including_future_ones ... ok
+test large_small_overlap_is_rejected_in_both_directions ... ok
+test large_page_translation_covers_four_mib_and_matches_reference ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/http_contract.rs (target/debug/deps/http_contract-dab9174f3a084bb0)
+
+running 7 tests
+test health_and_machine_constants ... ok
+test resource_exhaustion_returns_507 ... ok
+test error_categories_map_to_distinct_status_codes ... ok
+test run_id_is_recorded_and_replayable ... ok
+test end_to_end_translation_and_fault_envelope ... ok
+test overlap_conflict_and_tlb_staleness_over_http ... ok
+test snapshot_save_and_load_roundtrip ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests mmu_lab
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

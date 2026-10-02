@@ -1,0 +1,3 @@
+[mmu-lab] 受限多级页表/TLB 教学服务监听 http://127.0.0.1:18091
+[mmu-lab] 合成环境：不触碰真实内核页表；快照路径 ./store/smoke.json
+[mmu-lab] 收到关闭信号，正在退出

@@ -1,0 +1,31 @@
+[package]
+name = "mmu-lab"
+version = "0.1.0"
+edition = "2021"
+description = "受限多级页表与 TLB 地址翻译教学服务（合成环境，不操作真实内核页表）"
+license = "MIT"
+
+[lib]
+name = "mmu_lab"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mmu-lab"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8.9", default-features = false, features = ["json", "tokio", "form", "query", "http1"] }
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+thiserror = "2.0.21"
+
+[dev-dependencies]
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "net"] }
+tower = { version = "0.5.3", features = ["util"] }
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 2
