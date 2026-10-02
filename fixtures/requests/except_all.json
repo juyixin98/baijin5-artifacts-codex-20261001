@@ -1,0 +1,9 @@
+{
+  "schema": {"fields": [
+    {"name": "id", "data_type": {"kind": "int64"}, "nullable": true},
+    {"name": "tag", "data_type": {"kind": "utf8"}, "nullable": true}
+  ]},
+  "op": "except", "quantifier": "all",
+  "left_batches": [[[1,"a"],[1,"a"],[1,"a"],[2,"b"]]],
+  "right_batches": [[[1,"a"],[2,"b"],[2,"b"]]]
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "demo-union-all",
+  "schema": {"fields": [
+    {"name": "id", "data_type": {"kind": "int64"}, "nullable": true},
+    {"name": "tag", "data_type": {"kind": "utf8"}, "nullable": true}
+  ]},
+  "op": "union", "quantifier": "all",
+  "budget": {"memory_bytes": 1024, "partition_buffer_bytes": 128, "partition_table_bytes": 256, "output_buffer_rows": 4},
+  "left_batches": [[[1,"a"],[1,"a"],[2,"b"],[null,"n"],[3,""]]],
+  "right_batches": [[[1,"a"],[2,"b"],[2,"b"],[4,"d"],[null,"n"]]]
+}

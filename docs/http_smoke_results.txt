@@ -1,0 +1,18 @@
+### health
+{"status":"ok"}
+### UNION ALL
+{"run_id":"demo-union-all","state":"succeeded","stats":{"fanout":4,"key_probes":10,"output_distinct_keys":5,"output_rows":10,"recursive_splits":0,"result_fragments":2,"spill_bytes":4176,"spill_segments":9},"result_fragments":2,"rows":[[4,"d"],[null,"n"],[null,"n"],[1,"a"],[1,"a"],[1,"a"],[2,"b"],[2,"b"],[2,"b"]]}
+### UNION ALL fragment 1
+{"distinct_keys_in_fragment":1,"fragment":1,"fragment_count":2,"rows":[[3,""]],"run_id":"demo-union-all"}
+### INTERSECT DISTINCT
+{"run_id":"run_18da977dd5b617a7_0_1400193","state":"succeeded","stats":{"fanout":32,"key_probes":6,"output_distinct_keys":2,"output_rows":2,"recursive_splits":0,"result_fragments":1,"spill_bytes":3096,"spill_segments":7},"result_fragments":1,"rows":[[2,"b"],[5,"x"]]}
+### EXCEPT ALL
+{"run_id":"run_18da977dd630f7d1_1_1400193","state":"succeeded","stats":{"fanout":32,"key_probes":7,"output_distinct_keys":1,"output_rows":2,"recursive_splits":0,"result_fragments":1,"spill_bytes":2328,"spill_segments":5},"result_fragments":1,"rows":[[1,"a"],[1,"a"]]}
+### 400 type_mismatch
+{"error":{"kind":"input","code":"type_mismatch","message":"row 0: expected int64, got JSON string"}} [HTTP 400]
+### 409 not_finalized
+{"error":{"kind":"state_conflict","code":"not_finalized","message":"run has not executed yet"}} [HTTP 409]
+### 507 spill_byte_limit
+{"error":{"kind":"resource_exhausted","code":"spill_byte_limit","message":"spill byte budget (2) exceeded by a 416-byte segment","run_id":"run_18da977dd7dfaed4_3_1400193"}} [HTTP 507]
+### 404 unknown_run
+{"error":{"code":"unknown_run","kind":"not_found","message":"unknown run_id: nope"}} [HTTP 404]

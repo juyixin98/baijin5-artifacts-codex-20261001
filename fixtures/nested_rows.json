@@ -1,0 +1,21 @@
+{
+  "description": "Nested-NULL and collision-prone fixture. Lists/structs with nulls, empty containers, and values that differ only in null-ness or type. Used with the nested schema defined in tests/common/mod.rs.",
+  "left_batches": [
+    [
+      [["a", null, ""], {"flag": true}],
+      [null, null],
+      [[], {"flag": null}],
+      [[null, null], {"flag": false}],
+      [["a"], {"flag": true}],
+      [["þÿ", ""], {"flag": true}]
+    ]
+  ],
+  "right_batches": [
+    [
+      [["a", null, ""], {"flag": true}],
+      [null, null],
+      [[null], {"flag": false}],
+      [["a"], {"flag": true}]
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+[package]
+name = "setops"
+version = "0.1.0"
+edition = "2024"
+description = "Out-of-core UNION/INTERSECT/EXCEPT (DISTINCT & ALL) over Arrow2 typed batches, served over Axum"
+
+[dependencies]
+arrow2 = { version = "0.18.0", features = ["io_ipc", "compute"] }
+axum = "0.8.9"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+tokio = { version = "1.53.1", features = ["rt-multi-thread", "macros", "net", "fs", "io-util", "time", "signal"] }
+
+[dev-dependencies]
+tempfile = "3.27.0"
+
+[profile.dev]
+# Deterministic-ish, keep symbols for replayable crash reports; test perf still OK.
+opt-level = 1
+
+[profile.release]
+opt-level = 3
+lto = "thin"

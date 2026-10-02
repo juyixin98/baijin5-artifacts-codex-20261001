@@ -1,0 +1,15 @@
+ingested left=150000 right=25000 rows in 117.46ms (never materialized)
+partition segments: left=1565 right=262 spill_files_after_ingest=1827
+executed in 544.08ms
+stats: {
+  "fanout": 4,
+  "spill_segments": 7690,
+  "spill_bytes": 41595064,
+  "recursive_splits": 84,
+  "key_probes": 318472,
+  "result_fragments": 49,
+  "output_rows": 125000,
+  "output_distinct_keys": 50000
+}
+spill counters: 7690 files / 41595064 bytes
+OK: 125000 result rows across 50000 distinct keys match independent oracle; 84 recursive splits

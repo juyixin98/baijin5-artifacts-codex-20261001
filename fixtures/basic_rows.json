@@ -1,0 +1,22 @@
+{
+  "schema": {
+    "fields": [
+      {"name": "id", "data_type": {"kind": "int64"}, "nullable": true},
+      {"name": "tag", "data_type": {"kind": "utf8"}, "nullable": true}
+    ]
+  },
+  "left_batches": [
+    [
+      [1, "a"], [1, "a"], [2, "b"], [null, "nu"], [3, ""],
+      [4, "aþb"], [5, "1"], [6, "xþÿy"], [7, "\u0003\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001"],
+      [8, "col1þcol2"], [1, "a"], [9, null]
+    ]
+  ],
+  "right_batches": [
+    [
+      [1, "a"], [2, "b"], [2, "b"], [null, "nu"], [3, ""],
+      [4, "aþb"], [10, "z"], [9, null],
+      [5, "1"], [11, "dup"], [11, "dup"], [12, "a"]
+    ]
+  ]
+}

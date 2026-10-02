@@ -1,0 +1,5 @@
+/target
+/.setops-data
+/.smoke-data
+/.smoke-server.log
+**/*.rs.bk
