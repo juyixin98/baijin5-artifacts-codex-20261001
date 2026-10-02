@@ -1,0 +1,46 @@
+{
+  "name": "two-cycle-text-keys",
+  "set_quantifier": "union",
+  "traversal_order": "bfs",
+  "view": {
+    "columns": [
+      { "name": "id", "type": "utf8" },
+      { "name": "path", "type": "list<utf8>" },
+      { "name": "cyc", "type": "bool" }
+    ],
+    "rows": [
+      ["a"]
+    ]
+  },
+  "relations": {
+    "edges": {
+      "columns": [
+        { "name": "src", "type": "utf8" },
+        { "name": "dst", "type": "utf8" }
+      ],
+      "rows": [
+        ["a", "b"],
+        ["b", "c"],
+        ["c", "b"]
+      ]
+    }
+  },
+  "recursive_term": {
+    "edges_relation": "edges",
+    "on": [
+      { "recursive": "id", "edge": "src" }
+    ],
+    "project": [
+      { "as": "id", "expr": "edge_column", "name": "dst" }
+    ]
+  },
+  "cycle": {
+    "mode": "mark",
+    "key_column": "id",
+    "path_column": "path",
+    "cycle_column": "cyc"
+  },
+  "limits": { "max_depth": 16, "max_rows": 100 },
+  "include_log": true,
+  "include_arrow_ipc": false
+}

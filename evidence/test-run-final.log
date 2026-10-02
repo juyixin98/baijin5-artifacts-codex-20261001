@@ -1,0 +1,154 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running unittests src/lib.rs (target/debug/deps/recursive_cte_backend-374eeb161493ffb9)
+
+running 13 tests
+test batch::tests_unit::tests::batch_validates_every_cell_and_reports_column_and_row ... ok
+test batch::tests_unit::tests::bool_and_int_never_collide ... ok
+test batch::tests_unit::tests::int_list_round_trips ... ok
+test batch::tests_unit::tests::scalar_parsing_is_type_strict ... ok
+test batch::tests_unit::tests::row_fingerprint_changes_with_value_and_is_column_scoped ... ok
+test config::tests::defaults_are_valid ... ok
+test config::tests::rejects_garbage_port ... ok
+test operator::expr::tests::add_computes_and_null_propagates ... ok
+test operator::expr::tests::checked_overflow_is_an_error_not_a_panic ... ok
+test operator::expr::tests::output_type_check_allows_null_in_any_column ... ok
+test operator::expr::tests::string_operand_to_add_is_a_typed_error ... ok
+test operator::join::tests::duplicate_edges_keep_duplicate_groups_in_insertion_order ... ok
+test operator::join::tests::null_key_never_joins ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/recursive_cte_backend-7982a9f66c352594)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/arrow_test.rs (target/debug/deps/arrow_test-9fd41a3d14b3e601)
+
+running 3 tests
+test ipc_omitted_when_requested_off ... ok
+[case itest-ipc-tree-001] engine_version=0.1.0 input='ipc-tree' quantifier=Union order=Bfs -> status=Complete reason=None rows=3 cycles=0 dups=0 iterations=3 probes=3 | oracle rows=3 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-ipc-utf8-self-000] engine_version=0.1.0 input='ipc-utf8-self' quantifier=Union order=Bfs -> status=Complete reason=None rows=2 cycles=1 dups=0 iterations=1 probes=1 | oracle rows=2 cycles=1 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+test ipc_stream_round_trips_tree_with_declared_physical_types ... ok
+test ipc_stream_encodes_utf8_keys_and_cycle_marker ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/graph_test.rs (target/debug/deps/graph_test-04a6a0c346c357f9)
+
+running 9 tests
+[case itest-self-loop-error-000] engine_version=0.1.0 input='self-loop-error' -> ERROR category=InvalidData msg='cycle detected at depth 2 on declared key 'node'; cycle.mode = error' | oracle cycle_err=true trunc_depth=false trunc_rows=false
+[case itest-diamond-union-all-002] engine_version=0.1.0 input='diamond-union-all' quantifier=UnionAll order=Bfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=3 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-diamond-union-003] engine_version=0.1.0 input='diamond-union' quantifier=Union order=Bfs -> status=Complete reason=None rows=4 cycles=0 dups=1 iterations=3 probes=4 | oracle rows=4 cycles=0 dups=1 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-cyc-bfs-001] engine_version=0.1.0 input='cyc-bfs' quantifier=Union order=Bfs -> status=Complete reason=None rows=7 cycles=2 dups=0 iterations=3 probes=5 | oracle rows=7 cycles=2 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-dup-self-loop-all-006] engine_version=0.1.0 input='dup-self-loop-all' quantifier=UnionAll order=Bfs -> status=Complete reason=None rows=4 cycles=2 dups=0 iterations=2 probes=2 | oracle rows=4 cycles=2 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-dup-edges-all-004] engine_version=0.1.0 input='dup-edges-all' quantifier=UnionAll order=Bfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=3 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-self-loop-007] engine_version=0.1.0 input='self-loop' quantifier=Union order=Bfs -> status=Complete reason=None rows=3 cycles=1 dups=0 iterations=2 probes=2 | oracle rows=3 cycles=1 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-dup-edges-union-005] engine_version=0.1.0 input='dup-edges-union' quantifier=Union order=Bfs -> status=Complete reason=None rows=3 cycles=0 dups=2 iterations=3 probes=3 | oracle rows=3 cycles=0 dups=2 trunc_depth=false trunc_rows=false cycle_err=false
+test cycle_mode_error_fails_with_category_instead_of_marker ... ok
+test diamond_union_all_keeps_both_arrivals_with_distinct_paths ... ok
+test diamond_union_emits_shared_node_once ... ok
+test duplicate_self_loop_edges_union_all_emit_two_markers_then_halt ... ok
+test duplicate_edges_union_all_preserve_multiplicity ... ok
+test self_loop_is_marked_once_and_branch_halts ... ok
+test duplicate_edges_union_collapse_multiplicity ... ok
+[case itest-cyc-dfs-008] engine_version=0.1.0 input='cyc-dfs' quantifier=Union order=Dfs -> status=Complete reason=None rows=7 cycles=2 dups=0 iterations=5 probes=5 | oracle rows=7 cycles=2 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+test dfs_and_bfs_agree_on_cyclic_graph_multiset ... ok
+[case itest-two-cycle-009] engine_version=0.1.0 input='two-cycle' quantifier=Union order=Bfs -> status=Complete reason=None rows=4 cycles=1 dups=0 iterations=3 probes=3 | oracle rows=4 cycles=1 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+test two_cycle_is_detected_on_declared_key_not_whole_row ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/http_test.rs (target/debug/deps/http_test-8b8657fd6f99f1ec)
+
+running 7 tests
+test body_larger_than_configured_limit_is_rejected ... ok
+test malformed_json_is_invalid_data_not_a_server_crash ... ok
+test validate_endpoint_accepts_good_plan_without_running ... ok
+test version_and_health_endpoints_report_engine_version ... ok
+test invalid_plan_returns_400_with_concrete_category_not_success ... ok
+test incomplete_run_is_reported_as_200_with_explicit_status ... ok
+test execute_endpoint_runs_self_loop_with_marker_and_tied_log ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/limits_test.rs (target/debug/deps/limits_test-a558eae05a7cc10e)
+
+running 11 tests
+[case itest-boundary-dup-only-000] engine_version=0.1.0 input='boundary-dup-only' quantifier=Union order=Bfs -> status=Complete reason=None rows=1 cycles=0 dups=1 iterations=1 probes=1 | oracle rows=1 cycles=0 dups=1 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-depth-one-004] engine_version=0.1.0 input='depth-one' quantifier=Union order=Bfs -> status=Incomplete reason=Some(MaxDepth) rows=2 cycles=0 dups=0 iterations=2 probes=2 | oracle rows=2 cycles=0 dups=0 trunc_depth=true trunc_rows=false cycle_err=false
+[case itest-depth-dfs-003] engine_version=0.1.0 input='depth-dfs' quantifier=Union order=Dfs -> status=Incomplete reason=Some(MaxDepth) rows=3 cycles=0 dups=0 iterations=3 probes=3 | oracle rows=3 cycles=0 dups=0 trunc_depth=true trunc_rows=false cycle_err=false
+test boundary_probe_ignores_pure_duplicates_and_stays_complete ... ok[case itest-depth-exact-002] engine_version=0.1.0 input='depth-exact' quantifier=Union order=Bfs -> status=Complete reason=None rows=6 cycles=0 dups=0 iterations=6 probes=6 | oracle rows=6 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+
+[case itest-chain-full-001] engine_version=0.1.0 input='chain-full' quantifier=Union order=Bfs -> status=Complete reason=None rows=6 cycles=0 dups=0 iterations=6 probes=6 | oracle rows=6 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-rows-cap-all-005] engine_version=0.1.0 input='rows-cap-all' quantifier=UnionAll order=Bfs -> status=Incomplete reason=Some(MaxRows) rows=3 cycles=0 dups=0 iterations=2 probes=2 | oracle rows=3 cycles=0 dups=0 trunc_depth=false trunc_rows=true cycle_err=false
+test max_depth_zero_is_a_validation_error_not_incomplete ... ok
+test max_depth_one_keeps_seed_and_depth_one_then_reports_incomplete ... ok
+test max_depth_holds_for_dfs_as_well ... ok
+test exact_depth_bound_when_graph_ends_there_is_complete ... ok
+[case itest-rows-cap-006] engine_version=0.1.0 input='rows-cap' quantifier=Union order=Bfs -> status=Incomplete reason=Some(MaxRows) rows=3 cycles=0 dups=0 iterations=3 probes=3 | oracle rows=3 cycles=0 dups=0 trunc_depth=false trunc_rows=true cycle_err=false
+test complete_chain_agrees_with_oracle_on_round_counts ... ok
+test max_rows_cap_counts_every_union_all_row ... ok
+[case itest-seed-cap-008] engine_version=0.1.0 input='seed-cap' quantifier=Union order=Bfs -> status=Incomplete reason=Some(MaxRows) rows=4 cycles=0 dups=0 iterations=0 probes=0 | oracle rows=2 cycles=0 dups=0 trunc_depth=false trunc_rows=true cycle_err=false
+test max_rows_caps_output_and_reports_incomplete ... ok
+test seed_larger_than_row_cap_is_incomplete_immediately ... ok
+[case itest-depth-shallow-007] engine_version=0.1.0 input='depth-shallow' quantifier=Union order=Bfs -> status=Incomplete reason=Some(MaxDepth) rows=5 cycles=0 dups=0 iterations=5 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=true trunc_rows=false cycle_err=false
+test one_too_shallow_depth_bound_is_incomplete ... ok
+[case itest-set-only-cycle-009] engine_version=0.1.0 input='set-only-cycle' quantifier=Union order=Bfs -> status=Incomplete reason=Some(MaxDepth) rows=65 cycles=0 dups=0 iterations=65 probes=65 | oracle rows=65 cycles=0 dups=0 trunc_depth=true trunc_rows=false cycle_err=false
+test set_dedup_alone_cannot_stop_depth_growing_cycle_but_bound_terminates ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/tree_test.rs (target/debug/deps/tree_test-6a85d80e771530b5)
+
+running 4 tests
+[case itest-tree-dfs-000] engine_version=0.1.0 input='tree-dfs' quantifier=Union order=Dfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=5 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-tree-multi-seed-003] engine_version=0.1.0 input='tree-multi-seed' quantifier=Union order=Bfs -> status=Complete reason=None rows=4 cycles=0 dups=0 iterations=3 probes=4 | oracle rows=4 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-tree-bfs-001] engine_version=0.1.0 input='tree-bfs' quantifier=Union order=Bfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=3 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+[case itest-tree-log-002] engine_version=0.1.0 input='tree-log' quantifier=Union order=Bfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=3 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+test tree_multiple_seeds_keep_independent_paths ... ok
+test tree_bfs_union_emits_every_node_once_with_exact_paths ... ok
+test tree_log_ties_every_step_to_run_and_versions_match ... ok
+[case itest-tree-bfs-cmp-004] engine_version=0.1.0 input='tree-bfs-cmp' quantifier=Union order=Bfs -> status=Complete reason=None rows=5 cycles=0 dups=0 iterations=3 probes=5 | oracle rows=5 cycles=0 dups=0 trunc_depth=false trunc_rows=false cycle_err=false
+test tree_dfs_has_same_rows_but_different_order ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/validation_test.rs (target/debug/deps/validation_test-3b9953499840ee9a)
+
+running 15 tests
+test rejects_duplicate_projection_alias ... ok
+test rejects_empty_join_keys ... ok
+test rejects_empty_seed ... ok
+test rejects_missing_edge_relation ... ok
+test integer_overflow_is_an_explicit_failure ... ok
+test a_valid_request_validates_and_executes ... ok
+test rejects_missing_projection_for_user_column ... ok
+test rejects_non_keyable_cycle_column ... ok
+test rejects_path_column_wrong_list_type ... ok
+test rejects_null_cycle_key_in_seed ... ok
+test rejects_projection_of_managed_path_column ... ok
+test rejects_seed_row_wrong_arity ... ok
+test rejects_typed_data_mismatch_in_edges ... ok
+test rejects_unknown_join_column ... ok
+test rejects_type_mismatched_projection_output ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/wire_test.rs (target/debug/deps/wire_test-04fc29a928c4414f)
+
+running 4 tests
+test column_type_wire_spelling_matches_documentation ... ok
+test enum_wire_spelling_is_stable ... ok
+test unknown_type_variant_is_rejected_not_coerced ... ok
+test example_request_files_parse_with_documented_type_spelling ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests recursive_cte_backend
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

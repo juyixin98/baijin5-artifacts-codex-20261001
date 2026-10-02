@@ -1,0 +1,1 @@
+{"timestamp":"2026-10-02T08:08:02.898920Z","level":"INFO","fields":{"message":"starting server","engine":"recursive-cte-backend","version":"0.1.0","bind":"127.0.0.1:19137"}}

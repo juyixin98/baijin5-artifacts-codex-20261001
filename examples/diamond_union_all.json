@@ -1,0 +1,54 @@
+{
+  "name": "diamond-union-all",
+  "set_quantifier": "union_all",
+  "traversal_order": "bfs",
+  "view": {
+    "columns": [
+      { "name": "node", "type": "int64" },
+      { "name": "depth", "type": "int64" },
+      { "name": "path", "type": "list<int64>" },
+      { "name": "is_cycle", "type": "bool" }
+    ],
+    "rows": [
+      [1, 0]
+    ]
+  },
+  "relations": {
+    "edges": {
+      "columns": [
+        { "name": "src", "type": "int64" },
+        { "name": "dst", "type": "int64" }
+      ],
+      "rows": [
+        [1, 2],
+        [1, 3],
+        [2, 4],
+        [3, 4]
+      ]
+    }
+  },
+  "recursive_term": {
+    "edges_relation": "edges",
+    "on": [
+      { "recursive": "node", "edge": "src" }
+    ],
+    "project": [
+      { "as": "node", "expr": "edge_column", "name": "dst" },
+      {
+        "as": "depth",
+        "expr": "add",
+        "left": { "expr": "recursive_column", "name": "depth" },
+        "right": { "expr": "literal", "value": 1 }
+      }
+    ]
+  },
+  "cycle": {
+    "mode": "mark",
+    "key_column": "node",
+    "path_column": "path",
+    "cycle_column": "is_cycle"
+  },
+  "limits": { "max_depth": 64, "max_rows": 10000 },
+  "include_log": true,
+  "include_arrow_ipc": false
+}
