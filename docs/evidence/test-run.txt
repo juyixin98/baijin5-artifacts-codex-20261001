@@ -1,0 +1,63 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.25s
+     Running unittests src/lib.rs (target/debug/deps/merge_checker-528cc31823365ab6)
+
+running 5 tests
+test paths::tests::containment_check ... ok
+test paths::tests::detects_escaping_and_absolute_targets ... ok
+test paths::tests::normalizes_plain_and_dotted_paths ... ok
+test paths::tests::resolves_relative_link_targets ... ok
+test paths::tests::rejects_escape_and_invalid ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/merge_checker_server-fe59eb522f4ed250)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/api.rs (target/debug/deps/api-acd897f16872c0c3)
+
+running 7 tests
+test health_reports_version ... ok
+test unknown_run_is_404_with_typed_error ... ok
+test layer_outside_workspace_is_rejected_with_category ... ok
+test path_traversal_in_request_is_contained ... ok
+test malicious_merge_via_api_reports_uncertainties ... ok
+test get_merge_returns_record_and_report ... ok
+test post_merge_runs_persists_and_correlates_request_id ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/merge_semantics.rs (target/debug/deps/merge_semantics-1c185450f9148fe2)
+
+running 9 tests
+test missing_layer_is_a_fatal_failure_with_category ... ok
+test nonempty_output_dir_is_rejected ... ok
+test in_root_symlink_is_preserved ... ok
+test delete_then_recreate_yields_upper_layer_content ... ok
+test same_name_file_dir_swap_produces_directory ... ok
+test provenance_covers_untouched_lower_layer_entries ... ok
+test whiteout_markers_never_appear_in_output ... ok
+test opaque_dir_hides_lower_layer_contents ... ok
+test final_tree_matches_hand_authored_reference ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/path_security.rs (target/debug/deps/path_security-06140d6c34107f04)
+
+running 5 tests
+test absolute_symlink_is_an_uncertainty ... ok
+test malformed_whiteout_name_is_a_typed_failure ... ok
+test escaping_symlink_is_an_uncertainty_and_external_dir_is_untouched ... ok
+test hardlink_is_a_typed_failure ... ok
+test combined_malicious_stack_lists_failures_and_uncertainties_separately ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests merge_checker
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

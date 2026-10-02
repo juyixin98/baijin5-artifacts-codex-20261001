@@ -1,0 +1,153 @@
+### 1. GET /v1/health
+{
+  "name": "oci-layer-merge-checker",
+  "version": "0.1.0"
+}
+
+### 2. POST /v1/merges — good stack (x-request-id: req-demo-001)
+x-request-id: req-demo-001
+{
+  "run_id": "run-09fd62f0-54aa-43f5-8e02-2de403b049dc",
+  "request_id": "req-demo-001",
+  "tool_version": "0.1.0",
+  "status": "success",
+  "entries": [
+    {
+      "path": "data",
+      "kind": "dir",
+      "layer": 0
+    },
+    {
+      "path": "data/c.txt",
+      "kind": "file",
+      "layer": 1
+    },
+    {
+      "path": "etc",
+      "kind": "dir",
+      "layer": 0
+    },
+    {
+      "path": "etc/app.conf",
+      "kind": "file",
+      "layer": 2
+    },
+    {
+      "path": "etc/current",
+      "kind": "symlink",
+      "layer": 2
+    },
+    {
+      "path": "keep",
+      "kind": "dir",
+      "layer": 0
+    },
+    {
+      "path": "keep/keep.txt",
+      "kind": "file",
+      "layer": 0
+    },
+    {
+      "path": "swap",
+      "kind": "dir",
+      "layer": 1
+    },
+    {
+      "path": "swap/inner.txt",
+      "kind": "file",
+      "layer": 1
+    }
+  ],
+  "failures": [],
+  "uncertainties": []
+}
+
+### 3. produced tree vs hand-authored reference: diff -r fixtures/expected/final-tree data/outputs/demo-good
+IDENTICAL
+
+### 4. POST /v1/merges — malicious stack (x-request-id: req-demo-002)
+{
+  "run_id": "run-e1627e9c-e4a1-450f-95ab-560c6a5eb308",
+  "request_id": "req-demo-002",
+  "status": "with_failures_and_uncertainties",
+  "failures": [
+    {
+      "category": "unsupported_hardlink",
+      "path": "x/second.txt",
+      "layer": {
+        "index": 0,
+        "path": "/home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/malicious/layer-hardlink"
+      },
+      "message": "hardlinked file: hardlinks are outside the supported link scope"
+    },
+    {
+      "category": "invalid_path",
+      "path": ".wh.",
+      "layer": {
+        "index": 3,
+        "path": "/home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/malicious/layer-badwhiteout"
+      },
+      "message": "malformed whiteout name \".wh.\""
+    }
+  ],
+  "uncertainties": [
+    {
+      "reason": "symlink_target_outside_root",
+      "path": "bad/evil",
+      "layer": {
+        "index": 1,
+        "path": "/home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/malicious/layer-escape"
+      },
+      "message": "symlink target \"../../external/sentinel.txt\" resolves outside the merge root; entry skipped"
+    },
+    {
+      "reason": "absolute_symlink_unsupported",
+      "path": "abs",
+      "layer": {
+        "index": 2,
+        "path": "/home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/malicious/layer-abslink"
+      },
+      "message": "absolute link target unsupported: \"/etc/hostname\"; entry skipped"
+    }
+  ]
+}
+
+### 5. external directory untouched (content + listing)
+do not touch
+sentinel.txt
+
+### 6. GET /v1/merges/run-09fd62f0-54aa-43f5-8e02-2de403b049dc/report — human-readable report
+run=run-09fd62f0-54aa-43f5-8e02-2de403b049dc request=req-demo-001 tool_version=0.1.0 status=Success
+window=2026-10-02T12:10:42.724Z .. 2026-10-02T12:10:42.724Z output=/home/admin/Downloads/xinbiaozhul/opp487/b/data/outputs/demo-good
+  layer[0] /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer1
+  layer[1] /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer2
+  layer[2] /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer3
+steps:
+  #1 scan-layer: layer 0 at /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer1
+  #2 apply-layer: layer 0 applied; tree now holds 8 nodes
+  #3 scan-layer: layer 1 at /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer2
+  #4 apply-layer: layer 1 applied; tree now holds 7 nodes
+  #5 scan-layer: layer 2 at /home/admin/Downloads/xinbiaozhul/opp487/b/fixtures/layers/layer3
+  #6 apply-layer: layer 2 applied; tree now holds 9 nodes
+  #7 materialize: writing final tree to /home/admin/Downloads/xinbiaozhul/opp487/b/data/outputs/demo-good
+  #8 finish: status=Success entries=9 failures=0 uncertainties=0
+entries: 9
+  Dir data (layer 0)
+  File data/c.txt (layer 1) sha256=4006bf068537777bd1ef44b108dd299388aa01debbe0cd0c9c5dfd435ecf07f2 size=14
+  Dir etc (layer 0)
+  File etc/app.conf (layer 2) sha256=174cc6435ad4a8c71495f8a483fd8c38b31599711e29cd0d308a380bd031bc5c size=14
+  Symlink etc/current (layer 2) -> app.conf
+  Dir keep (layer 0)
+  File keep/keep.txt (layer 0) sha256=2b8425c4d20e743705f4787b4dda39344b4242bc8636228a00b7d65378aa7694 size=8
+  Dir swap (layer 1)
+  File swap/inner.txt (layer 1) sha256=6d99d205d187c900d06728077d33a2e28f5f967906995f695f9972e8fab685b1 size=27
+failures: 0
+uncertainties: 0
+
+### 7. POST with layer outside workspace -> 400 typed error
+{"request_id":"req-ecd6dfae-c993-4611-bf64-ce259b2236ea","error":{"category":"outside_workspace","message":"path /etc is outside workspace root /home/admin/Downloads/xinbiaozhul/opp487/b"}}
+HTTP 400
+
+### 8. GET unknown run -> 404 typed error
+{"request_id":"req-3c7c3587-ad25-43bb-ba76-9136912c040b","error":{"category":"run_not_found","message":"run run-nope not found"}}
+HTTP 404

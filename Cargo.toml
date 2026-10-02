@@ -1,0 +1,30 @@
+[package]
+name = "oci-layer-merge-checker"
+version = "0.1.0"
+edition = "2021"
+description = "Local OCI-style layer merge checking backend (regular files, dirs, whiteouts)"
+license = "MIT"
+
+[lib]
+name = "merge_checker"
+path = "src/lib.rs"
+
+[[bin]]
+name = "merge-checker-server"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+sha2 = "0.10"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", default-features = false, features = ["std", "clock"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tower = "0.5"
+tempfile = "3"

@@ -1,0 +1,8 @@
+# Merge checker service configuration.
+# Address the diagnostic API binds to.
+listen = "127.0.0.1:8487"
+# Isolation root: every layer path and output dir in a request must resolve
+# to a location under this directory. "." = repository root.
+workspace_root = "."
+# JSONL file where run records are persisted.
+store_path = "data/runs.jsonl"
