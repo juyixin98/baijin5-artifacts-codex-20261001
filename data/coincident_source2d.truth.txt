@@ -1,0 +1,14 @@
+name=coincident_source2d
+dimension=2
+point_count=3
+mode=similarity
+geometry=coincident source
+seed=7
+noisy=false
+R00=1
+R01=0
+R10=0
+R11=1
+s=0
+t0=0
+t1=0

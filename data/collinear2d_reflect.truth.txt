@@ -1,0 +1,14 @@
+name=collinear2d_reflect
+dimension=2
+point_count=5
+mode=rigid-reflect
+geometry=collinear 2d
+seed=3
+noisy=false
+R00=0
+R01=-1
+R10=1
+R11=0
+s=1
+t0=0
+t1=0

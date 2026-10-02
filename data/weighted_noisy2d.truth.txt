@@ -1,0 +1,14 @@
+name=weighted_noisy2d
+dimension=2
+point_count=4
+mode=rigid
+geometry=weighted noisy square
+seed=6
+noisy=true
+R00=0
+R01=-1
+R10=1
+R11=0
+s=1
+t0=3
+t1=5

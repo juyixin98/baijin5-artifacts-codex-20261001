@@ -1,0 +1,14 @@
+name=rigid2d_exact
+dimension=2
+point_count=4
+mode=rigid
+geometry=full-rank square
+seed=1
+noisy=false
+R00=0
+R01=-1
+R10=1
+R11=0
+s=1
+t0=2
+t1=-3

@@ -1,0 +1,14 @@
+name=reflection2d_exact
+dimension=2
+point_count=4
+mode=rigid-reflect
+geometry=full-rank reflected square
+seed=5
+noisy=false
+R00=1
+R01=0
+R10=0
+R11=-1
+s=1
+t0=-1
+t1=4
