@@ -1,0 +1,72 @@
+# mmu-teach 测试运行记录 (UTC 20261002T062847Z)
+# rustc: rustc 1.98.1 (48a229cea 2026-09-01)
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.14s
+     Running unittests src/lib.rs (target/debug/deps/mmu_teach-465ec3da9ba725e5)
+
+running 17 tests
+test address::tests::indices_of_known_vaddr ... ok
+test address::tests::leaf_sizes_are_1g_2m_4k ... ok
+test address::tests::noncanonical_vaddr_rejected ... ok
+test address::tests::split_handles_cross_page_write ... ok
+test address::tests::split_within_one_page ... ok
+test memory::tests::allocates_lowest_free_and_exhausts ... ok
+test memory::tests::double_release_is_compute_failure ... ok
+test memory::tests::release_makes_frame_reusable_lowest_first ... ok
+test pte::tests::encode_decode_roundtrip ... ok
+test pte::tests::misaligned_superpage_ppn_is_reserved_fault ... ok
+test pte::tests::permission_checks_are_independent ... ok
+test pte::tests::reserved_high_bits_are_fault ... ok
+test pte::tests::reserved_w_without_r_is_fault ... ok
+test tlb::tests::asid_isolation_holds ... ok
+test tlb::tests::global_entries_visible_across_asids_and_survive_asid_flush ... ok
+test tlb::tests::lru_eviction_drops_oldest ... ok
+test tlb::tests::page_flush_removes_only_target ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/mmu_teach-411d2fa9f8fdc72c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/api.rs (target/debug/deps/api-9fc70b8851fef031)
+
+running 5 tests
+test page_fault_is_200_discriminated_not_500 ... ok
+test happy_path_translate_returns_200_and_paddr ... ok
+test input_conflict_exhausted_have_distinct_status_and_kind ... ok
+test cross_page_access_and_run_log_carry_diagnostic_state ... ok
+test snapshot_save_and_load_preserves_translation ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/contracts.rs (target/debug/deps/contracts-3138d45ad485659d)
+
+running 13 tests
+test frame_exhaustion_is_reported_as_resource_error ... ok
+test cross_page_write_succeeds_with_per_page_translation ... ok
+test execute_permission_is_checked_independently ... ok
+test global_mapping_is_visible_across_asids ... ok
+test fault_categories_are_distinguished ... ok
+test cross_page_write_fails_second_page_when_permission_downgraded ... ok
+test superpage_and_basepage_overlap_rejected_both_directions ... ok
+test stale_tlb_serves_old_permission_until_sfence ... ok
+test superpage_physical_address_matches_oracle ... ok
+test unmap_reclaims_empty_tables_and_translation_faults ... ok
+test same_vaddr_in_two_processes_translates_to_distinct_paddrs ... ok
+test permission_downgrade_is_visible_after_automatic_flush ... ok
+test one_gib_page_translates_and_requires_alignment ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests mmu_teach
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+## clippy -D warnings ##
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.11s
