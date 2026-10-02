@@ -1,0 +1,7 @@
+# build artifacts
+/bin/
+# local run state
+/run/
+*.db
+*.db-wal
+*.db-shm

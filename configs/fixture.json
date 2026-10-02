@@ -1,0 +1,11 @@
+{
+  "listen": "127.0.0.1:5020",
+  "control_listen": "127.0.0.1:15020",
+  "sqlite_db": "run/audit.db",
+  "workers": 8,
+  "latency": "none",
+  "jitter_slot_ms": 2,
+  "units": [
+    {"unit_id": 1, "register_count": 125, "initial_values": [4660, 13124]}
+  ]
+}
