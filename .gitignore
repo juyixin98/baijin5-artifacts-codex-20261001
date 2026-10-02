@@ -1,0 +1,11 @@
+/build/
+/third_party/cmake-local/
+/third_party/debs/
+/third_party/cmake-bin/
+/third_party/*.tar.gz
+/third_party/*.tar.gz.part
+/third_party/*.tgz
+/third_party/dl*.log
+/data/
+*.o
+*.a
