@@ -1,0 +1,14 @@
+{
+  "listen": "127.0.0.1:8971",
+  "db_path": "berd-audit.db",
+  "limits": {
+    "max_tag_bytes": 4,
+    "max_length_bytes": 8,
+    "max_depth": 32,
+    "max_nodes": 10000,
+    "max_input_bytes": 1048576,
+    "max_integer_bytes": 1024,
+    "max_bitstring_bytes": 1048576,
+    "allow_indefinite": true
+  }
+}
