@@ -1,0 +1,10 @@
+[project]
+name = "lookahead-limiter"
+version = "0.1.0"
+description = "Streaming lookahead limiter for synthetic PCM with latency compensation and gain trajectory"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

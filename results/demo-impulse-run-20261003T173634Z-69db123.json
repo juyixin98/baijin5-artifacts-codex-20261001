@@ -1,0 +1,43 @@
+{
+  "run_id": "run-20261003T173634Z-69db123",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "fastapi": "0.141.1",
+    "git_sha": "69db123"
+  },
+  "fixture": {
+    "id": "impulse",
+    "sha256": "8d40a77dd692cd7d4864fae080dde91f30137f33e0135b3042620e6a5d32b21a",
+    "meta": {
+      "n": 4096,
+      "index": 1000,
+      "amplitude": 2.0,
+      "channels": 2
+    }
+  },
+  "config": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "threshold": 0.5,
+    "lookahead_ms": 5.0,
+    "attack_ms": 0.5,
+    "release_ms": 50.0,
+    "peak_mode": "sample",
+    "lookahead_samples": 240,
+    "attack_coeff": 0.9591894571091382,
+    "release_coeff": 0.9995834201268338,
+    "algorithm_version": "lookahead-limiter/v1"
+  },
+  "metrics": {
+    "frames": 4096,
+    "latency_samples": 240,
+    "input_peak": 2.0,
+    "output_peak": 0.5000653207009724,
+    "promised_ceiling": 0.5000653207009725,
+    "ceiling_ok": true,
+    "gain_min": 0.2500326603504862
+  }
+}

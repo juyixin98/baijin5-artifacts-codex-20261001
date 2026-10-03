@@ -1,0 +1,102 @@
+{
+  "config": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "threshold": 0.5,
+    "lookahead_ms": 5.0,
+    "attack_ms": 0.5,
+    "release_ms": 50.0,
+    "peak_mode": "sample",
+    "lookahead_samples": 240,
+    "attack_coeff": 0.9591894571091382,
+    "release_coeff": 0.9995834201268338,
+    "algorithm_version": "lookahead-limiter/v1"
+  },
+  "fixtures": {
+    "impulse": {
+      "file": "impulse.npz",
+      "description": "1-sample impulse amp=2.0 at frame 1000 of 4096",
+      "meta": {
+        "n": 4096,
+        "index": 1000,
+        "amplitude": 2.0,
+        "channels": 2
+      },
+      "sha256": "8d40a77dd692cd7d4864fae080dde91f30137f33e0135b3042620e6a5d32b21a",
+      "frames": 4096,
+      "channels": 2,
+      "input_peak": 2.0,
+      "promised_ceiling": 0.5000653207009725
+    },
+    "stereo_imbalanced": {
+      "file": "stereo_imbalanced.npz",
+      "description": "sine 1000.0Hz L=2.0 R=0.2, 9600 frames",
+      "meta": {
+        "n": 9600,
+        "freq": 1000.0,
+        "left_amp": 2.0,
+        "right_amp": 0.2,
+        "sr": 48000
+      },
+      "sha256": "79dc9503ba34b815eaef3c31dce2df1b5f8024baec90411d6e8b29dd45a2b71c",
+      "frames": 9600,
+      "channels": 2,
+      "input_peak": 2.0,
+      "promised_ceiling": 0.5000653207009725
+    },
+    "sustained_sine": {
+      "file": "sustained_sine.npz",
+      "description": "sustained sine 1000.0Hz amp=0.9, 14400 frames",
+      "meta": {
+        "n": 14400,
+        "freq": 1000.0,
+        "amp": 0.9,
+        "sr": 48000,
+        "channels": 2
+      },
+      "sha256": "06d1ba70cfc2d5790d3b1a4e5be830c2e5398182d8806368e51322e81d5b0b12",
+      "frames": 14400,
+      "channels": 2,
+      "input_peak": 0.9,
+      "promised_ceiling": 0.5000174188535926
+    },
+    "boundary_burst": {
+      "file": "boundary_burst.npz",
+      "description": "burst amp=3.0 at frames (1022, 1023, 1024) (block=1024) over 0.3 sine",
+      "meta": {
+        "n": 5000,
+        "block_size": 1024,
+        "positions": [
+          1022,
+          1023,
+          1024
+        ],
+        "amp": 3.0,
+        "bg_amp": 0.3,
+        "sr": 48000,
+        "channels": 2
+      },
+      "sha256": "1eab23acfdfd1d7200d5af159f0ccb494af246ea0239ae7f50d0eea133fd848b",
+      "frames": 5000,
+      "channels": 2,
+      "input_peak": 3.0,
+      "promised_ceiling": 0.5001088678349542
+    },
+    "intersample_crest": {
+      "file": "intersample_crest.npz",
+      "description": "sine 10000.0Hz amp=0.502 with half-sample phase offset, 4800 frames",
+      "meta": {
+        "n": 4800,
+        "freq": 10000.0,
+        "amp": 0.502,
+        "sr": 48000,
+        "channels": 2
+      },
+      "sha256": "c9e37ce8a107620d7092955ab87cd62193258ae70fa36a21ec7583d86f68dcb4",
+      "frames": 4800,
+      "channels": 2,
+      "input_peak": 0.4977053204097317,
+      "promised_ceiling": 0.5
+    }
+  }
+}
