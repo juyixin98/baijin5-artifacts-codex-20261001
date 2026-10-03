@@ -1,0 +1,37 @@
+# Runtime configuration for the MSA backend.
+# Every value here is part of the scientific contract of a run: a config
+# snapshot is stored next to each result in the provenance database.
+
+app:
+  name: msa-backend
+  # SQLite provenance database. Relative paths resolve against the repo root.
+  database_path: data/provenance.sqlite3
+  log_level: INFO
+
+algorithm:
+  # --- sequence weighting -------------------------------------------------
+  # Sequences whose pairwise identity (over positions where BOTH are
+  # non-gap) is >= identity_threshold are near-duplicates and share one
+  # cluster. Each cluster contributes total weight 1.0, split equally among
+  # its members, so duplicated evidence is not amplified by copy count.
+  identity_threshold: 0.95
+  # --- ambiguous characters ------------------------------------------------
+  # Fixed policy: an IUPAC degenerate symbol spreads its weight UNIFORMLY
+  # over the concrete bases it represents (N -> 0.25 each of A/C/G/T,
+  # R -> 0.5 A / 0.5 G, ...). This policy is NOT configurable at runtime;
+  # the flag exists only to make the choice explicit in provenance records.
+  ambiguity_policy: uniform_split
+  # --- gap handling --------------------------------------------------------
+  # Gaps never enter the residue distribution. Column statistics are
+  # normalised by the non-gap weight of that column only, independently of
+  # the global weight total.
+  gap_symbol: "-"
+  # --- conservation calls --------------------------------------------------
+  # A column is "conserved" only if the top residue frequency reaches
+  # conservation_threshold AND effective_coverage >= min_effective_coverage.
+  # Below the coverage floor the column is reported as
+  # "insufficient_coverage" -- never as a strong conservation claim.
+  conservation_threshold: 0.6
+  min_effective_coverage: 2.0
+  # DNA alphabet; information content tops out at log2(4) = 2 bits.
+  alphabet: [A, C, G, T]

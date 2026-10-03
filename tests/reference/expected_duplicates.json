@@ -1,0 +1,133 @@
+{
+  "fixture": "data/fixtures/duplicates.fa",
+  "derivation": "hand-computed per tests/reference/independent_calc.py spec (stdlib-only, independent of src/msa_backend)",
+  "weights": {
+    "ref": 0.3333333333333333,
+    "dup1": 0.3333333333333333,
+    "dup2": 0.3333333333333333,
+    "var": 1.0
+  },
+  "total_weight": 2.0,
+  "columns": [
+    {
+      "column_index": 1,
+      "distribution": {
+        "A": 1.0,
+        "C": 0.0,
+        "G": 0.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "A",
+      "status": "conserved"
+    },
+    {
+      "column_index": 2,
+      "distribution": {
+        "A": 0.0,
+        "C": 1.0,
+        "G": 0.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "C",
+      "status": "conserved"
+    },
+    {
+      "column_index": 3,
+      "distribution": {
+        "A": 0.0,
+        "C": 0.0,
+        "G": 1.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "G",
+      "status": "conserved"
+    },
+    {
+      "column_index": 4,
+      "distribution": {
+        "A": 0.0,
+        "C": 0.0,
+        "G": 0.0,
+        "T": 1.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "T",
+      "status": "conserved"
+    },
+    {
+      "column_index": 5,
+      "distribution": {
+        "A": 1.0,
+        "C": 0.0,
+        "G": 0.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "A",
+      "status": "conserved"
+    },
+    {
+      "column_index": 6,
+      "distribution": {
+        "A": 0.0,
+        "C": 1.0,
+        "G": 0.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "C",
+      "status": "conserved"
+    },
+    {
+      "column_index": 7,
+      "distribution": {
+        "A": 0.0,
+        "C": 0.0,
+        "G": 1.0,
+        "T": 0.0
+      },
+      "entropy_bits": -0.0,
+      "information_content_bits": 2.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "G",
+      "status": "conserved"
+    },
+    {
+      "column_index": 8,
+      "distribution": {
+        "A": 0.5,
+        "C": 0.0,
+        "G": 0.0,
+        "T": 0.5
+      },
+      "entropy_bits": 1.0,
+      "information_content_bits": 1.0,
+      "effective_coverage": 2.0,
+      "gap_fraction": 0.0,
+      "consensus": "a",
+      "status": "variable"
+    }
+  ]
+}
