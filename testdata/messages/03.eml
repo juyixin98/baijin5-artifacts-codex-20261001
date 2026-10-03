@@ -1,0 +1,9 @@
+From: erin@example.test
+To: frank@example.test
+Subject: Build results
+Date: Wed, 07 Jan 2026 09:15:00 +0000
+Message-ID: <m3@example.test>
+
+Build 1042 succeeded.
+Tests: 318 passed, 0 failed.
+Artifacts uploaded to the local bucket.

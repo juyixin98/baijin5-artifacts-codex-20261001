@@ -1,0 +1,27 @@
+* OK imapd fixture service ready
+* 5 EXISTS
+* 0 RECENT
+* FLAGS (\Deleted \Seen)
+* OK [UIDVALIDITY 20260105] UIDs valid
+* OK [UIDNEXT 6] predicted next UID
+* OK [PERMANENTFLAGS (\Deleted \Seen)] flags permitted
+g1 OK [READ-WRITE] SELECT completed
+* 1 FETCH (FLAGS (\Seen) UID 1 RFC822.SIZE 188)
+* 2 FETCH (FLAGS () UID 2 RFC822.SIZE 235)
+* 3 FETCH (FLAGS () UID 3 RFC822.SIZE 239)
+* 4 FETCH (FLAGS () UID 4 RFC822.SIZE 173)
+* 5 FETCH (FLAGS () UID 5 RFC822.SIZE 406)
+g2 OK FETCH completed
+g3 OK STORE completed
+* 4 EXPUNGE
+g4 OK EXPUNGE completed
+* 1 FETCH (UID 1 FLAGS (\Seen))
+* 2 FETCH (UID 2 FLAGS ())
+* 3 FETCH (UID 3 FLAGS ())
+* 4 FETCH (UID 5 FLAGS ())
+g5 OK FETCH completed
+* 4 FETCH (UID 5 RFC822.SIZE 406)
+g6 OK UID FETCH completed
+g7 OK NOOP completed
+* BYE imapd logging out
+g8 OK LOGOUT completed

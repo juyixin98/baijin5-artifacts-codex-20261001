@@ -1,0 +1,4 @@
+testlogs/
+*.db
+imapd
+imapdemo
