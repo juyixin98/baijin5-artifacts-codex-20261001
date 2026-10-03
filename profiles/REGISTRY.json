@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "srgb",
+      "file": "sRGB.icc",
+      "sha256": "a48304557987a1eb9f23137b4e53cbdc46fdc444827248a1465252f375775460",
+      "color_space": "RGB",
+      "device_class": "mntr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "sRGB",
+      "provenance": "colord icc-profiles (system /usr/share/color/icc/colord)"
+    },
+    {
+      "id": "adobe-rgb",
+      "file": "AdobeRGB1998.icc",
+      "sha256": "1502cc6576ecce2080489b42f2529559ffb63d9d493004135f5afba1053bdcd3",
+      "color_space": "RGB",
+      "device_class": "mntr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "Compatible with Adobe RGB (1998)",
+      "provenance": "colord icc-profiles"
+    },
+    {
+      "id": "prophoto-rgb",
+      "file": "ProPhotoRGB.icc",
+      "sha256": "8c6f3b57ed1b782965dfcc912aa4cd5adc002ee7976d9a099f547900000c413e",
+      "color_space": "RGB",
+      "device_class": "mntr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "ProPhoto RGB",
+      "provenance": "colord icc-profiles"
+    },
+    {
+      "id": "swapped-rg",
+      "file": "SwappedRedAndGreen.icc",
+      "sha256": "b6e91f076dbf7d88b45580fe8bd7023db920b376c0ae2c3b184e774e35166b9b",
+      "color_space": "RGB",
+      "device_class": "mntr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "Swapped Red and Green",
+      "provenance": "colord icc-profiles (channel-order test)"
+    },
+    {
+      "id": "gray-gs",
+      "file": "default_gray.icc",
+      "sha256": "d3aaaa8ad45ec8a0108fd393a07488073ee24561fd5ed2d1f88c59771278cabd",
+      "color_space": "GRAY",
+      "device_class": "mntr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "Artifex Software sGray ICC Profile",
+      "provenance": "ghostscript ICC profiles"
+    },
+    {
+      "id": "lab-d50",
+      "file": "lab.icc",
+      "sha256": "ba46e78e9723a02b36ec823c8df90ac3f2e9272a52980c6f5ad403068609286f",
+      "color_space": "Lab",
+      "device_class": "spac",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": false,
+      "description": "Lab2Lab",
+      "provenance": "ghostscript ICC profiles (CIE L*a*b* PCS profile)"
+    },
+    {
+      "id": "fogra39-cmyk",
+      "file": "FOGRA39L_coated.icc",
+      "sha256": "3ff7ca2a650ad47a8d2a929eb23ef162ccf979d013ade56e441c1f55156a261f",
+      "color_space": "CMYK",
+      "device_class": "prtr",
+      "roles": [
+        "source",
+        "target"
+      ],
+      "cmyk_restricted": true,
+      "description": "FOGRA39L Coated",
+      "provenance": "colord icc-profiles (FOGRA39L coated, ArgyllCMS)"
+    }
+  ]
+}
