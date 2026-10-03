@@ -1,0 +1,7 @@
+[ 27%] Built target polyeval_contract
+[ 38%] Built target polyeval_kernel
+[ 50%] Built target polyeval_explainer
+[ 61%] Built target polyeval_bench
+[ 77%] Built target polyeval_driver
+[ 88%] Built target polyeval
+[100%] Built target polyeval_tests

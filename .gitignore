@@ -1,0 +1,7 @@
+build/
+build-slice/
+dl/
+tools/cmake/
+third_party/
+*.o
+*.a

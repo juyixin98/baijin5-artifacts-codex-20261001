@@ -1,0 +1,18 @@
+# Three independent requests. Modes differ across requests but never mix
+# within one. Blank lines separate requests.
+request: demo-exact
+mode: exact
+coeff: 1 2 3
+points: 0 1 2 3 -2 2
+memory_bytes: 4096
+
+request: demo-field
+mode: field
+prime: 17
+coeff: 1 2 3
+points: 0 1 2 3 16 2
+
+request: demo-mixed-invalid
+mode: exact
+coeff: 1 2
+points: F:3

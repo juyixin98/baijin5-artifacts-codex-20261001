@@ -1,0 +1,5 @@
+request: rsa-ish-small
+mode: field
+prime: 1000000007
+coeff: 123456789 987654321 314159265 271828182
+points: 0 1 2 1000000006 1 2

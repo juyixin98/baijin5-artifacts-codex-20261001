@@ -1,0 +1,15 @@
+{"ts":"2026-10-03T19:49:29","seq":1,"version":"1.0.0","request_id":"demo-mixed-invalid","phase":"parse","location":"contract.cpp","status":"failure","detail":"line 18: F:-prefixed number 'F:3' used in EXACT request (points)"}
+{"ts":"2026-10-03T19:49:29","seq":2,"version":"1.0.0","request_id":"demo-exact","phase":"request","location":"driver.cpp:run","status":"ok","detail":"mode=EXACT points=6 degree=2"}
+{"ts":"2026-10-03T19:49:29","seq":3,"version":"1.0.0","request_id":"demo-exact","phase":"batch","location":"driver.cpp:resolve_batch","status":"ok","detail":"mode=EXACT batch=6 slots=36"}
+{"ts":"2026-10-03T19:49:29","seq":4,"version":"1.0.0","request_id":"demo-exact","phase":"build","location":"driver.cpp:run_exact","status":"ok","detail":"product tree for [0,6)"}
+{"ts":"2026-10-03T19:49:29","seq":5,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[0] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":6,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[1] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":7,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[2] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":8,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[3] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":9,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[4] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":10,"version":"1.0.0","request_id":"demo-exact","phase":"crosscheck","location":"driver.cpp:run_exact","status":"ok","detail":"point[5] Horner compare"}
+{"ts":"2026-10-03T19:49:29","seq":11,"version":"1.0.0","request_id":"demo-exact","phase":"response","location":"driver.cpp:run","status":"ok","detail":"OK results=6"}
+{"ts":"2026-10-03T19:49:29","seq":12,"version":"1.0.0","request_id":"demo-field","phase":"request","location":"driver.cpp:run","status":"ok","detail":"mode=FIELD points=6 degree=2"}
+{"ts":"2026-10-03T19:49:29","seq":13,"version":"1.0.0","request_id":"demo-field","phase":"build","location":"driver.cpp:run_field","status":"ok","detail":"product tree for [0,6)"}
+{"ts":"2026-10-03T19:49:29","seq":14,"version":"1.0.0","request_id":"demo-field","phase":"descend","location":"driver.cpp:run_field","status":"ok","detail":"field remainder tree complete p=17"}
+{"ts":"2026-10-03T19:49:29","seq":15,"version":"1.0.0","request_id":"demo-field","phase":"response","location":"driver.cpp:run","status":"ok","detail":"OK results=6"}

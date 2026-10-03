@@ -1,0 +1,37 @@
+{
+  "_comment": "Pinned, locally vendored dependencies. No system install, no root, no containers. scripts/setup_deps.sh verifies every sha256.",
+  "toolchain": {
+    "compiler": "g++ (Ubuntu 13.3.0; C++20)",
+    "cmake_strategy": "extract official Ubuntu noble .deb packages into tools/cmake (apt-get download; no sudo)"
+  },
+  "cmake_debs": [
+    {"name": "cmake",        "version": "3.28.3-1build7",        "sha256": "4b0a7f8c0daf27b26b46997d994ae5d1ee7a3d11dfcda9f7627bb1462c162295"},
+    {"name": "cmake-data",   "version": "3.28.3-1build7",        "sha256": "20a3b644211ce82f35c24f1f5052199adeb0ac159978a8740fd6c0959611557f"},
+    {"name": "librhash0",    "version": "1.4.3-3build1",         "sha256": "e9ee69963ff1a56378b9c5ffdd21ea0feaec9647c522349b7612b25103490528"},
+    {"name": "libjsoncpp25", "version": "1.9.5-6build1",         "sha256": "8efea5b75952f3ad1c40e6b5b31de687c297ea29f87f8b63efebb55e13467211"}
+  ],
+  "eigen": {
+    "name": "Eigen",
+    "version": "3.4.0",
+    "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+    "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72",
+    "provides": "third_party/eigen/Eigen/Dense"
+  },
+  "boost_multiprecision": {
+    "release_tag": "boost-1.86.0",
+    "url_template": "https://codeload.github.com/boostorg/{repo}/tar.gz/refs/tags/boost-1.86.0",
+    "note": "Sparse header-only subset needed by Boost.Multiprecision::cpp_int; verified by a compile+run probe.",
+    "repos": [
+      {"repo": "multiprecision", "sha256": "3db5628fcc3fd2afc6f8c634ab151259f86902bff80af1fe328b270a0e9a84ef"},
+      {"repo": "assert",          "sha256": "a62ec2074cc389dda32595ec7a9f4af68e658c70ed9c1ac32b467a48b176116d"},
+      {"repo": "config",          "sha256": "bfed17bec038b8e94f5f18d13af9e7200548fb855fa33f02e41d220f5cf5b41a"},
+      {"repo": "core",            "sha256": "54154ffc20f8cfccc14bf7866b199ccd4786d32ba35ed3e151454575b89d09f7"},
+      {"repo": "integer",         "sha256": "a31a1b7eebc2d279484ef000fecaa34715f18dad150d5d70af0a6092cf4ee7f1"},
+      {"repo": "predef",          "sha256": "54659a4ffec272b8edd6a130b49e427968be6b92daed272c059b517e1453219a"},
+      {"repo": "static_assert",   "sha256": "751d8b84e3602a2a62f2ed473c8089c6e773388152b72591d9e34a3b4a0c7551"},
+      {"repo": "throw_exception", "sha256": "d1f238c2a3cc9185208fe11a9d5962c0f5e431dc1dc9d49335ca10fc67616cf0"},
+      {"repo": "type_traits",     "sha256": "13e9eeaa5fb31459af7a00a2e0be48d2eff9b51e7ba6f45a87da239086f3d428"}
+    ],
+    "provides": "third_party/boost/boost/multiprecision/cpp_int.hpp"
+  }
+}

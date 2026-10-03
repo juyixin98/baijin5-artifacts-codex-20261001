@@ -1,0 +1,37 @@
+[PASS] exact_basic_concrete_values
+[PASS] exact_duplicate_points_keep_order_no_divzero
+[PASS] exact_zero_polynomial
+[PASS] exact_constant_polynomial
+[PASS] exact_single_point
+[PASS] exact_non_power_of_two_sizes
+[PASS] exact_randomised_vs_independent_horner
+[PASS] exact_large_integers_exact
+[PASS] field_basic_concrete_residue
+[PASS] field_duplicate_points
+[PASS] field_random_prime_and_points
+[PASS] field_wrapping_is_residue
+[PASS] primality_check_exact
+[PASS] product_tree_slot_counts
+[PASS] choose_batch_respects_budget
+[PASS] batched_results_identical_to_unbatched
+[PASS] parse_exact_request
+[PASS] parse_field_request_canonical
+[PASS] parse_rejects_mixed_mode_prefix
+[PASS] parse_rejects_field_with_signed
+[PASS] parse_rejects_out_of_range_residue
+[PASS] parse_rejects_non_prime
+[PASS] parse_rejects_empty_points
+[PASS] parse_rejects_missing_mode_and_coeff
+[PASS] parse_unknown_key_is_parse_error
+[PASS] parse_bad_number_literal
+[PASS] parse_multiple_requests_isolated_failures_preserve_order
+[PASS] driver_exact_end_to_end_concrete
+[PASS] driver_field_end_to_end
+[PASS] driver_batch_size_change_keeps_results
+[PASS] driver_memory_budget_batches_but_consistent
+[PASS] driver_impossible_budget_is_failure_category
+[PASS] driver_crosscheck_uncertainty_flagged_separately
+[PASS] config_parse_reports_invalid_value
+[PASS] driver_complexity_stats_recorded
+
+35/35 cases passed

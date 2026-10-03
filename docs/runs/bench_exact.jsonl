@@ -1,0 +1,5 @@
+{"mode":"exact","n":16,"degree":8,"tree_ms":0.017596,"horner_ms":0.0022,"multiply_scalar_ops":199,"remainder_scalar_ops":128,"tree_slots":111}
+{"mode":"exact","n":32,"degree":8,"tree_ms":0.05869,"horner_ms":0.003886,"multiply_scalar_ops":687,"remainder_scalar_ops":256,"tree_slots":255}
+{"mode":"exact","n":64,"degree":8,"tree_ms":0.276743,"horner_ms":0.010376,"multiply_scalar_ops":2463,"remainder_scalar_ops":512,"tree_slots":575}
+{"mode":"exact","n":128,"degree":8,"tree_ms":1.26891,"horner_ms":0.03124,"multiply_scalar_ops":9151,"remainder_scalar_ops":1024,"tree_slots":1279}
+{"mode":"exact","n":256,"degree":8,"tree_ms":7.60133,"horner_ms":0.046917,"multiply_scalar_ops":34943,"remainder_scalar_ops":2048,"tree_slots":2815}
