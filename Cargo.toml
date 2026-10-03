@@ -1,0 +1,18 @@
+[package]
+name = "io-queue-runtime"
+version = "0.1.0"
+edition = "2021"
+description = "Teaching runtime for local IO submission/completion queues with cancellation and connection generations"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "1"
+toml = "0.8"
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+tempfile = "3"

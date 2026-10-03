@@ -1,0 +1,9 @@
+# Example configuration for the demo binary.
+# All keys are optional; missing keys fall back to the defaults shown here.
+
+capacity = 8
+buffer_count = 8
+default_timeout_ms = 5000
+journal_path = "var/journal.jsonl"
+journal_sample_n = 1
+diag_addr = "127.0.0.1:7878"
