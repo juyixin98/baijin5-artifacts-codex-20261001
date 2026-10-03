@@ -1,0 +1,10 @@
+# Pinned to the versions this project was developed and validated against.
+numpy==2.4.6
+scipy==1.15.3
+pillow==10.2.0
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+# test-only
+pytest==9.1.1
+httpx==0.28.1
