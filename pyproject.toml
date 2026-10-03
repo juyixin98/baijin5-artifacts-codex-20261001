@@ -1,0 +1,9 @@
+[project]
+name = "pyramid-service"
+version = "1.0.0"
+description = "Local multi-resolution image pyramid with tiled region queries"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
