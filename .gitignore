@@ -1,0 +1,9 @@
+/build/
+/third_party/cmake/
+/third_party/eigen-src/
+/third_party/*.tar.gz
+/third_party/*.tgz
+*.o
+*.a
+/data/*.cft
+compile_commands.json
