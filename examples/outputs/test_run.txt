@@ -1,0 +1,20 @@
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                   Stmts   Miss  Cover   Missing
+----------------------------------------------------
+txmap/__init__.py          1      0   100%
+txmap/config.py           19      0   100%
+txmap/diagnostics.py      15      0   100%
+txmap/intervals.py        35      0   100%
+txmap/main.py             12      0   100%
+txmap/mapping.py         155      2    99%   173, 243
+txmap/models.py          106      8    92%   23, 56, 75, 77, 80, 101, 103, 128
+txmap/provenance.py       45      0   100%
+txmap/reference.py        49     13    73%   23, 29, 45, 48, 51, 55, 59, 66, 71-75
+txmap/service.py          88     16    82%   67-81, 109-113, 117-123, 146-147
+txmap/store.py            47      0   100%
+----------------------------------------------------
+TOTAL                    572     39    93%
+Required test coverage of 80% reached. Total coverage: 93.18%
+======================== 43 passed, 1 warning in 0.70s =========================

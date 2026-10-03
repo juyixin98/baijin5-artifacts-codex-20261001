@@ -1,0 +1,16 @@
+{
+    "request_id": "demo-intronic",
+    "records": [
+        {
+            "request_id": "demo-intronic",
+            "endpoint": "genomic_to_transcript",
+            "transcript_id": "txA",
+            "status": "REJECTED",
+            "reason": "INTRONIC",
+            "input_redacted": "{\"position\":20,\"transcript_id\":\"txA\"}",
+            "output_redacted": "{\"mapped\":null,\"position\":20,\"reason\":\"INTRONIC\",\"status\":\"REJECTED\",\"transcript_id\":\"txA\"}",
+            "input_sha256": "383594d1841e6e14c1209f9bd93db7c22768bde43cc3fc943e148ef7e13a957b",
+            "created_at": "2026-10-03T12:43:41.342455+00:00"
+        }
+    ]
+}

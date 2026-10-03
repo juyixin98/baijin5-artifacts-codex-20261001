@@ -1,0 +1,62 @@
+{
+  "contig": "chrSyn1",
+  "coordinate_system": "0-based half-open [start, end)",
+  "transcripts": [
+    {
+      "id": "txA",
+      "gene": "geneA",
+      "contig": "chrSyn1",
+      "strand": "+",
+      "exons": [
+        [
+          10,
+          20
+        ],
+        [
+          30,
+          45
+        ],
+        [
+          60,
+          70
+        ]
+      ]
+    },
+    {
+      "id": "txB",
+      "gene": "geneB",
+      "contig": "chrSyn1",
+      "strand": "-",
+      "exons": [
+        [
+          15,
+          25
+        ],
+        [
+          40,
+          50
+        ],
+        [
+          80,
+          100
+        ]
+      ]
+    },
+    {
+      "id": "txC",
+      "gene": "geneC",
+      "contig": "chrSyn1",
+      "strand": "+",
+      "exons": [
+        [
+          12,
+          18
+        ],
+        [
+          65,
+          75
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+    "request_id": "demo-ooc",
+    "status": "REJECTED",
+    "reason": "OUT_OF_CONTIG",
+    "transcript_id": "txA",
+    "position": 120,
+    "mapped": null
+}

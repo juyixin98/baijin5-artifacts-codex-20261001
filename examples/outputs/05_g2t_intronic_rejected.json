@@ -1,0 +1,8 @@
+{
+    "request_id": "demo-intronic",
+    "status": "REJECTED",
+    "reason": "INTRONIC",
+    "transcript_id": "txA",
+    "position": 20,
+    "mapped": null
+}

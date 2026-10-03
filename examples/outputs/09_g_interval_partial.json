@@ -1,0 +1,28 @@
+{
+    "request_id": "demo-partial",
+    "status": "PARTIAL",
+    "reason": "OK",
+    "transcript_id": "txA",
+    "mapped_length": 4,
+    "fragments": [
+        {
+            "g_start": 18,
+            "g_end": 20,
+            "t_start": 8,
+            "t_end": 10
+        },
+        {
+            "g_start": 30,
+            "g_end": 32,
+            "t_start": 10,
+            "t_end": 12
+        }
+    ],
+    "gaps": [
+        {
+            "g_start": 20,
+            "g_end": 30,
+            "reason": "INTRONIC"
+        }
+    ]
+}

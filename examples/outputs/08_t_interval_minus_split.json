@@ -1,0 +1,22 @@
+{
+    "request_id": "demo-split",
+    "status": "OK",
+    "reason": "OK",
+    "transcript_id": "txB",
+    "mapped_length": 4,
+    "fragments": [
+        {
+            "g_start": 80,
+            "g_end": 82,
+            "t_start": 18,
+            "t_end": 20
+        },
+        {
+            "g_start": 48,
+            "g_end": 50,
+            "t_start": 20,
+            "t_end": 22
+        }
+    ],
+    "gaps": []
+}

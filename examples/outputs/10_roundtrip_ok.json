@@ -1,0 +1,19 @@
+{
+    "request_id": "demo-roundtrip",
+    "status": "OK",
+    "forward": {
+        "status": "OK",
+        "reason": "OK",
+        "transcript_id": "txA",
+        "position": 44,
+        "mapped": 24
+    },
+    "backward": {
+        "status": "OK",
+        "reason": "OK",
+        "transcript_id": "txA",
+        "position": 24,
+        "mapped": 44
+    },
+    "identity": true
+}

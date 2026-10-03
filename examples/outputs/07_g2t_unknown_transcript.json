@@ -1,0 +1,8 @@
+{
+    "request_id": "demo-unknown-tx",
+    "status": "REJECTED",
+    "reason": "UNKNOWN_TRANSCRIPT",
+    "transcript_id": "txZZZ",
+    "position": 50,
+    "mapped": null
+}
