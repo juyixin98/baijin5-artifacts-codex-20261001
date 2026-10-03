@@ -1,0 +1,89 @@
+== waiting for server ==
+
+### health
+$ curl -sS -w \nHTTP %{http_code}\n http://127.0.0.1:8137/health
+{"status":"ok","request_id":"de689092bdae44419db7c2f85b5d981d"}
+HTTP 200
+
+### list transcripts
+$ curl -sS -w \nHTTP %{http_code}\n http://127.0.0.1:8137/transcripts
+{"transcripts":[{"transcript_id":"T1_PLUS","chrom":"syn1","strand":"+","mature_length":80,"genomic_span":[100,240],"exons":[[100,130],[160,180],[210,240]]},{"transcript_id":"T2_MINUS","chrom":"syn2","strand":"-","mature_length":75,"genomic_span":[500,640],"exons":[[500,530],[560,585],[620,640]]},{"transcript_id":"T3_ADJACENT","chrom":"syn1","strand":"+","mature_length":25,"genomic_span":[40,65],"exons":[[40,50],[50,65]]}]}
+HTTP 200
+
+### PLUS point tx=30 -> genomic (expect 160)
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/tx-to-genomic/point -H content-type: application/json -d {"transcript_id":"T1_PLUS","position":30,"request_id":"smoke-1"}
+{"status":"mapped","request_id":"smoke-1","audit_id":"86463b8a48114cb8ba90071a457e77e2","result":{"transcript_id":"T1_PLUS","strand":"+","tx_position":30,"genomic_position":160,"exon_index":1}}
+HTTP 200
+
+### PLUS interval tx[25,55) -> 3 fragments, 30 nt
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/tx-to-genomic/interval -H content-type: application/json -d {"transcript_id":"T1_PLUS","start":25,"end":55,"request_id":"smoke-2"}
+{"status":"mapped","request_id":"smoke-2","audit_id":"21c03eb746ee405d8c147d051c96b26d","result":{"transcript_id":"T1_PLUS","strand":"+","tx_start":25,"tx_end":55,"length":30,"mapped_length":30,"fragment_count":3,"fragments":[{"tx_start":25,"tx_end":30,"genomic_start":125,"genomic_end":130,"length":5,"exon_index":0,"genomic_order":0},{"tx_start":30,"tx_end":50,"genomic_start":160,"genomic_end":180,"length":20,"exon_index":1,"genomic_order":1},{"tx_start":50,"tx_end":55,"genomic_start":210,"genomic_end":215,"length":5,"exon_index":2,"genomic_order":2}]}}
+HTTP 200
+
+### MINUS point genomic=639 -> tx=0
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/genomic-to-tx/point -H content-type: application/json -d {"transcript_id":"T2_MINUS","position":639,"request_id":"smoke-3"}
+{"status":"mapped","request_id":"smoke-3","audit_id":"93d9f64b6097431391d680404d7c90f1","result":{"transcript_id":"T2_MINUS","strand":"-","tx_position":0,"genomic_position":639,"exon_index":2}}
+HTTP 200
+
+### MINUS interval tx[15,50) -> descending-genomic fragments
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/tx-to-genomic/interval -H content-type: application/json -d {"transcript_id":"T2_MINUS","start":15,"end":50,"request_id":"smoke-4"}
+{"status":"mapped","request_id":"smoke-4","audit_id":"4bd67e5be95740b9a0226757ab4ded05","result":{"transcript_id":"T2_MINUS","strand":"-","tx_start":15,"tx_end":50,"length":35,"mapped_length":35,"fragment_count":3,"fragments":[{"tx_start":15,"tx_end":20,"genomic_start":620,"genomic_end":625,"length":5,"exon_index":2,"genomic_order":2},{"tx_start":20,"tx_end":45,"genomic_start":560,"genomic_end":585,"length":25,"exon_index":1,"genomic_order":1},{"tx_start":45,"tx_end":50,"genomic_start":525,"genomic_end":530,"length":5,"exon_index":0,"genomic_order":0}]}}
+HTTP 200
+
+### ABNORMAL intronic point g=145 (expect 422 intronic_position)
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/genomic-to-tx/point -H content-type: application/json -d {"transcript_id":"T1_PLUS","position":145,"request_id":"smoke-5"}
+{"error":{"code":"intronic_position","detail":"genomic_position is intronic and must not be hard-snapped to an exon","key_state":{"genomic_position":145,"span_start":100,"span_end":240,"prev_exon":[100,130],"next_exon":[160,180]}},"request_id":"smoke-5"}
+HTTP 422
+
+### ABNORMAL region over intron [125,165) (expect 422 region_not_mappable)
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/genomic-to-tx/interval -H content-type: application/json -d {"transcript_id":"T1_PLUS","start":125,"end":165,"request_id":"smoke-6"}
+{"error":{"code":"region_not_mappable","detail":"genomic interval overlaps intronic/intergenic sequence; it must not be hard-mapped","key_state":{"genomic_start":125,"genomic_end":165,"covered":10,"requested":40,"intronic_gaps":[[130,160]]}},"request_id":"smoke-6"}
+HTTP 422
+
+### ABNORMAL out of range tx=80 (expect 422 coordinate_out_of_range)
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/tx-to-genomic/point -H content-type: application/json -d {"transcript_id":"T1_PLUS","position":80,"request_id":"smoke-7"}
+{"error":{"code":"coordinate_out_of_range","detail":"tx_position beyond mature transcript end","key_state":{"tx_position":80,"mature_length":80}},"request_id":"smoke-7"}
+HTTP 422
+
+### ABNORMAL unknown transcript (expect 404)
+$ curl -sS -w \nHTTP %{http_code}\n -X POST http://127.0.0.1:8137/map/tx-to-genomic/point -H content-type: application/json -d {"transcript_id":"GHOST","position":0,"request_id":"smoke-8"}
+{"error":{"code":"transcript_not_found","detail":"unknown transcript id","key_state":{"transcript_id":"GHOST","known":["T1_PLUS","T2_MINUS","T3_ADJACENT"]}},"request_id":"smoke-8"}
+HTTP 404
+
+### audit trail for smoke-2 (accepted interval)
+$ curl -sS -w \nHTTP %{http_code}\n http://127.0.0.1:8137/audit/smoke-2
+{"request_id":"smoke-2","count":1,"records":[{"audit_id":"21c03eb746ee405d8c147d051c96b26d","request_id":"smoke-2","transcript_id":"T1_PLUS","direction":"tx_to_genomic","mode":"interval","input_json":{"end":55,"start":25},"status":"mapped","result_json":{"fragment_count":3,"fragments":[{"exon_index":0,"genomic_end":130,"genomic_order":0,"genomic_start":125,"length":5,"tx_end":30,"tx_start":25},{"exon_index":1,"genomic_end":180,"genomic_order":1,"genomic_start":160,"length":20,"tx_end":50,"tx_start":30},{"exon_index":2,"genomic_end":215,"genomic_order":2,"genomic_start":210,"length":5,"tx_end":55,"tx_start":50}],"length":30,"mapped_length":30,"strand":"+","transcript_id":"T1_PLUS","tx_end":55,"tx_start":25},"error_code":null,"error_detail":null,"created_at":"2026-10-03T15:28:11.982194+00:00"}]}
+HTTP 200
+
+### audit trail for smoke-5 (rejected intronic)
+$ curl -sS -w \nHTTP %{http_code}\n http://127.0.0.1:8137/audit/smoke-5
+{"request_id":"smoke-5","count":1,"records":[{"audit_id":"ad1127490d44456e9b39f3aba8951adc","request_id":"smoke-5","transcript_id":"T1_PLUS","direction":"genomic_to_tx","mode":"point","input_json":{"position":145},"status":"rejected","result_json":null,"error_code":"intronic_position","error_detail":"genomic_position is intronic and must not be hard-snapped to an exon","created_at":"2026-10-03T15:28:12.016630+00:00"}]}
+HTTP 200
+
+== server log ==
+INFO:     Started server process [2454301]
+INFO:     Waiting for application startup.
+2026-10-03 23:28:11,716 INFO txmap [bootstrap] service_start :: {"fixture": "/home/admin/Downloads/xinbiaozhul/opp513/b/data/fixtures/transcripts.json", "transcripts": ["T1_PLUS", "T2_MINUS", "T3_ADJACENT"]}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59300 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59312 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59318 - "GET /transcripts HTTP/1.1" 200 OK
+2026-10-03 23:28:11,973 INFO txmap [smoke-1] mapping_accepted :: {"direction": "tx_to_genomic", "mode": "point", "position": 30, "transcript_id": "T1_PLUS"}
+INFO:     127.0.0.1:59332 - "POST /map/tx-to-genomic/point HTTP/1.1" 200 OK
+2026-10-03 23:28:11,984 INFO txmap [smoke-2] mapping_accepted :: {"direction": "tx_to_genomic", "end": 55, "fragments": 3, "mode": "interval", "start": 25, "transcript_id": "T1_PLUS"}
+INFO:     127.0.0.1:59338 - "POST /map/tx-to-genomic/interval HTTP/1.1" 200 OK
+2026-10-03 23:28:11,995 INFO txmap [smoke-3] mapping_accepted :: {"direction": "genomic_to_tx", "mode": "point", "position": 639, "transcript_id": "T2_MINUS"}
+INFO:     127.0.0.1:59350 - "POST /map/genomic-to-tx/point HTTP/1.1" 200 OK
+2026-10-03 23:28:12,006 INFO txmap [smoke-4] mapping_accepted :: {"direction": "tx_to_genomic", "end": 50, "fragments": 3, "mode": "interval", "start": 15, "transcript_id": "T2_MINUS"}
+INFO:     127.0.0.1:59362 - "POST /map/tx-to-genomic/interval HTTP/1.1" 200 OK
+2026-10-03 23:28:12,018 WARNING txmap [smoke-5] mapping_rejected :: {"detail": "genomic_position is intronic and must not be hard-snapped to an exon", "error_code": "intronic_position", "key_state": {"genomic_position": 145, "next_exon": [160, 180], "prev_exon": [100, 130], "span_end": 240, "span_start": 100}, "path": "/map/genomic-to-tx/point"}
+INFO:     127.0.0.1:59378 - "POST /map/genomic-to-tx/point HTTP/1.1" 422 Unprocessable Entity
+2026-10-03 23:28:12,029 WARNING txmap [smoke-6] mapping_rejected :: {"detail": "genomic interval ove...<82 chars>", "error_code": "region_not_mappable", "key_state": {"covered": 10, "genomic_end": 165, "genomic_start": 125, "intronic_gaps": [[130, 160]], "requested": 40}, "path": "/map/genomic-to-tx/interval"}
+INFO:     127.0.0.1:59380 - "POST /map/genomic-to-tx/interval HTTP/1.1" 422 Unprocessable Entity
+2026-10-03 23:28:12,039 WARNING txmap [smoke-7] mapping_rejected :: {"detail": "tx_position beyond mature transcript end", "error_code": "coordinate_out_of_range", "key_state": {"mature_length": 80, "tx_position": 80}, "path": "/map/tx-to-genomic/point"}
+INFO:     127.0.0.1:59396 - "POST /map/tx-to-genomic/point HTTP/1.1" 422 Unprocessable Entity
+2026-10-03 23:28:12,049 WARNING txmap [smoke-8] mapping_rejected :: {"detail": "unknown transcript id", "error_code": "transcript_not_found", "key_state": {"known": ["T1_PLUS", "T2_MINUS", "T3_ADJACENT"], "transcript_id": "GHOST"}, "path": "/map/tx-to-genomic/point"}
+INFO:     127.0.0.1:59404 - "POST /map/tx-to-genomic/point HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59420 - "GET /audit/smoke-2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59424 - "GET /audit/smoke-5 HTTP/1.1" 200 OK

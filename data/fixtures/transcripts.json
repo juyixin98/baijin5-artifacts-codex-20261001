@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "coordinate_system": {
+    "genome": "0-based-half-open",
+    "transcript": "0-based-half-open",
+    "note": "end-exclusive intervals on both reference systems; see docs/DESIGN.md"
+  },
+  "chromosomes": [
+    {"name": "syn1", "length": 300, "pattern": "ACGT"},
+    {"name": "syn2", "length": 750, "pattern": "ACGT"}
+  ],
+  "transcripts": [
+    {
+      "id": "T1_PLUS",
+      "chrom": "syn1",
+      "strand": "+",
+      "exons": [[100, 130], [160, 180], [210, 240]],
+      "comment": "30 + 20 + 30 = 80 nt mature; introns [130,160) and [180,210)"
+    },
+    {
+      "id": "T2_MINUS",
+      "chrom": "syn2",
+      "strand": "-",
+      "exons": [[500, 530], [560, 585], [620, 640]],
+      "comment": "30 + 25 + 20 = 75 nt mature; tx order E2,E1,E0; introns [530,560), [585,620)"
+    },
+    {
+      "id": "T3_ADJACENT",
+      "chrom": "syn1",
+      "strand": "+",
+      "exons": [[40, 50], [50, 65]],
+      "comment": "back-to-back exons (zero-base intron) for boundary semantics"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Direct runtime/test dependencies, pinned to the verified local environment.
+# For the fully resolved lock (all transitive pins) see requirements.lock.
+fastapi==0.141.1
+uvicorn==0.54.0
+numpy==2.4.6
+pydantic==2.13.5
+httpx==0.28.1
+pytest==9.1.1
+pytest-cov==7.1.0

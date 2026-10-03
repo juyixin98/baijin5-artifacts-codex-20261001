@@ -1,0 +1,103 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/admin/Downloads/xinbiaozhul/opp513/b
+configfile: pyproject.toml
+plugins: cov-7.1.0, anyio-4.15.1
+collecting ... collected 69 items
+
+tests/test_api.py::test_health PASSED                                    [  1%]
+tests/test_api.py::test_list_and_get_transcript PASSED                   [  2%]
+tests/test_api.py::test_tx_to_genomic_point_plus PASSED                  [  4%]
+tests/test_api.py::test_genomic_to_tx_point_minus_roundtrip PASSED       [  5%]
+tests/test_api.py::test_interval_split_across_exons PASSED               [  7%]
+tests/test_api.py::test_intronic_point_rejected_with_category PASSED     [  8%]
+tests/test_api.py::test_region_over_intron_rejected PASSED               [ 10%]
+tests/test_api.py::test_genomic_to_tx_interval_success_minus PASSED      [ 11%]
+tests/test_api.py::test_out_of_range_and_invalid_categories PASSED       [ 13%]
+tests/test_api.py::test_schema_rejects_negative_and_wrong_type PASSED    [ 14%]
+tests/test_api.py::test_client_supplied_request_id_groups_audit PASSED   [ 15%]
+tests/test_api.py::test_adjacent_exon_boundary_mappable PASSED           [ 17%]
+tests/test_diagnostics.py::test_redacts_sensitive_keys PASSED            [ 18%]
+tests/test_diagnostics.py::test_long_string_truncated_but_length_hinted PASSED [ 20%]
+tests/test_diagnostics.py::test_log_event_emits_request_id_and_redacts PASSED [ 21%]
+tests/test_mapping.py::test_plus_hand_computed_points PASSED             [ 23%]
+tests/test_mapping.py::test_plus_exon_end_exclusive_on_genomic_side PASSED [ 24%]
+tests/test_mapping.py::test_plus_intronic_flanks_reported PASSED         [ 26%]
+tests/test_mapping.py::test_plus_interval_spanning_intron_splits_in_order PASSED [ 27%]
+tests/test_mapping.py::test_plus_interval_inside_single_exon PASSED      [ 28%]
+tests/test_mapping.py::test_plus_exon_boundary_aligned_interval PASSED   [ 30%]
+tests/test_mapping.py::test_plus_genomic_interval_overlapping_intron_rejected PASSED [ 31%]
+tests/test_mapping.py::test_plus_genomic_interval_purely_intronic_rejected PASSED [ 33%]
+tests/test_mapping.py::test_plus_genomic_interval_single_exon_roundtrip PASSED [ 34%]
+tests/test_mapping.py::test_minus_hand_computed_points PASSED            [ 36%]
+tests/test_mapping.py::test_minus_intronic_not_snapped PASSED            [ 37%]
+tests/test_mapping.py::test_minus_interval_splits_with_descending_genome_ascending_tx PASSED [ 39%]
+tests/test_mapping.py::test_minus_genomic_to_tx_interval_inverts PASSED  [ 40%]
+tests/test_mapping.py::test_minus_genomic_interval_over_intron_rejected PASSED [ 42%]
+tests/test_mapping.py::test_adjacent_exons_no_gap PASSED                 [ 43%]
+tests/test_mapping.py::test_exon_value_object_half_open_contains PASSED  [ 44%]
+tests/test_mapping.py::test_error_to_dict_serializes_code_and_state PASSED [ 46%]
+tests/test_mapping.py::test_adjacent_boundary_is_exonic_on_both_sides PASSED [ 47%]
+tests/test_mapping.py::test_nonexistent_tx_position_categories PASSED    [ 49%]
+tests/test_mapping.py::test_nonexistent_genomic_positions PASSED         [ 50%]
+tests/test_mapping.py::test_invalid_interval_shapes PASSED               [ 52%]
+tests/test_mapping.py::test_negative_vs_below_domain_categories PASSED   [ 53%]
+tests/test_mapping.py::test_every_base_matches_independent_oracle_plus PASSED [ 55%]
+tests/test_mapping.py::test_every_base_matches_independent_oracle_minus PASSED [ 56%]
+tests/test_mapping.py::test_batch_status_categories PASSED               [ 57%]
+tests/test_mapping.py::test_oracle_site_classification_matches_batch PASSED [ 59%]
+tests/test_mapping.py::test_length_conservation_all_exonic_intervals PASSED [ 60%]
+tests/test_parsing.py::test_fixture_hand_checked_structure PASSED        [ 62%]
+tests/test_parsing.py::test_missing_file_rejected PASSED                 [ 63%]
+tests/test_parsing.py::test_bad_json_rejected PASSED                     [ 65%]
+tests/test_parsing.py::test_overlapping_exons_rejected PASSED            [ 66%]
+tests/test_parsing.py::test_reversed_exons_rejected PASSED               [ 68%]
+tests/test_parsing.py::test_half_open_zero_or_negative_length_rejected PASSED [ 69%]
+tests/test_parsing.py::test_exon_beyond_chromosome_rejected PASSED       [ 71%]
+tests/test_parsing.py::test_unknown_strand_and_chromosome_rejected PASSED [ 72%]
+tests/test_parsing.py::test_adjacent_exons_accepted PASSED               [ 73%]
+tests/test_parsing.py::test_duplicate_transcript_id_rejected PASSED      [ 75%]
+tests/test_sequence.py::test_complement_and_reverse_complement_basic PASSED [ 76%]
+tests/test_sequence.py::test_genomic_subsequence_is_pattern_periodic PASSED [ 78%]
+tests/test_sequence.py::test_genomic_subsequence_rejects_bad_interval PASSED [ 79%]
+tests/test_sequence.py::test_plus_transcript_sequence_hand_checked PASSED [ 81%]
+tests/test_sequence.py::test_minus_transcript_sequence_orientation PASSED [ 82%]
+tests/test_sequence.py::test_minus_bases_match_point_mapping PASSED      [ 84%]
+tests/test_sequence.py::test_minus_sequence_crosschecked_against_independent_oracle PASSED [ 85%]
+tests/test_service.py::test_round_trip_persistence PASSED                [ 86%]
+tests/test_service.py::test_unknown_transcript_isolation PASSED          [ 88%]
+tests/test_service.py::test_identity_isolation_same_coordinate_different_answer PASSED [ 89%]
+tests/test_service.py::test_rejected_intronic_request_is_audited PASSED  [ 91%]
+tests/test_service.py::test_accepted_interval_audit_holds_fragments PASSED [ 92%]
+tests/test_service.py::test_region_not_mappable_audited_with_gaps PASSED [ 94%]
+tests/test_service.py::test_request_ids_partition_audit_trails PASSED    [ 95%]
+tests/test_service.py::test_list_transcripts_exposes_fixture PASSED      [ 97%]
+tests/test_service.py::test_unknown_audit_id_returns_none PASSED         [ 98%]
+tests/test_service.py::test_repository_context_manager_and_direct_audit_query PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_api.py::test_health
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/txmap/__init__.py           1      0      0      0   100%
+src/txmap/api/__init__.py       0      0      0      0   100%
+src/txmap/api/app.py           90      0      4      2    98%   50->52, 60->exit
+src/txmap/api/schemas.py       54      0      2      0   100%
+src/txmap/config.py            17      0      0      0   100%
+src/txmap/diagnostics.py       30      0     12      0   100%
+src/txmap/errors.py            21      0      0      0   100%
+src/txmap/mapping.py          215      0     68      2    99%   315->317, 317->319
+src/txmap/models.py            63      0      0      0   100%
+src/txmap/parsing.py           70      0      8      0   100%
+src/txmap/sequence.py          24      0      6      0   100%
+src/txmap/service.py           60      0      4      0   100%
+src/txmap/storage.py           63      0      8      0   100%
+-----------------------------------------------------------------------
+TOTAL                         708      0    112      4    99%
+======================== 69 passed, 1 warning in 2.78s =========================
