@@ -1,0 +1,6 @@
+{
+  "nperseg": 5,
+  "hop": 2,
+  "nfft": 5,
+  "window": "hann"
+}

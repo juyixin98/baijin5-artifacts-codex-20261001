@@ -1,0 +1,6 @@
+{
+  "direction": "analyze",
+  "nperseg": 8,
+  "hop": 3,
+  "onesided": true
+}

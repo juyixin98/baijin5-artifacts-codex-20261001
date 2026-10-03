@@ -1,0 +1,32 @@
+# Exact, resolved dependency set verified with the test suite on
+# Python 3.12.3 (Linux x86_64). Install with:
+#   python3 -m pip install -r requirements.lock
+#
+# Runtime
+numpy==2.4.6
+scipy==1.15.3
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+pydantic_core==2.46.5
+starlette==1.7.0
+annotated-types==0.8.0
+anyio==4.15.1
+click==8.1.6
+h11==0.16.0
+idna==3.6
+typing_extensions==4.16.0
+typing-inspection==0.4.4
+python-multipart==0.0.32
+
+# Tests
+pytest==9.1.1
+pytest-cov==7.1.0
+coverage==7.16.1
+httpx==0.28.1
+httpcore==1.0.9
+iniconfig==2.3.0
+packaging==24.0
+pluggy==1.6.0
+certifi==2023.11.17
+PyYAML==6.0.1
