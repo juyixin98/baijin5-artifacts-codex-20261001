@@ -1,0 +1,8 @@
+q1	chrDemo	1	60		+	demo	0	4M2D4M
+q2	chrDemo	3	60		+	demo	0	6M
+q3	chrDemo	8	10		-	demo	0	3M
+q4	chrDemo	0	60		+	demo	1	5M
+q5	chrDemo	18	60		+	demo	0	5M
+q6	chrGhost	0	60		+	demo	0	2M
+this-row-is-malformed
+q7	chrDemo	0	60		+	demo	0	9Q
