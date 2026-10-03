@@ -1,0 +1,200 @@
+{
+  "version": {
+    "service": "0.1.0",
+    "python": "3.12.3",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "pillow": "10.2.0",
+    "fastapi": "0.141.1"
+  },
+  "seam_ok": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "run_id": "4ca5ce51993441e0",
+        "input_sha256": "b0c38078171cfd9363f809e3ac5a70cf8e509e86491b98b6b6a7c449181c37ac",
+        "path_original_cols": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "energy": 0.0,
+        "mode": "gradient",
+        "max_displacement": 1,
+        "final_row_ties": 4,
+        "versions": {
+          "service": "0.1.0",
+          "python": "3.12.3",
+          "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+          "numpy": "2.4.6",
+          "scipy": "1.15.3",
+          "pillow": "10.2.0",
+          "fastapi": "0.141.1"
+        }
+      }
+    }
+  },
+  "carve_ok": {
+    "http": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "run_id": "232a98bc7ec5466c",
+        "input_sha256": "b0c38078171cfd9363f809e3ac5a70cf8e509e86491b98b6b6a7c449181c37ac",
+        "original_shape": [
+          5,
+          6
+        ],
+        "seams": [
+          {
+            "index": 0,
+            "path_original_cols": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "energy": 0.0,
+            "mode": "gradient",
+            "width_before": 6,
+            "width_after": 5
+          },
+          {
+            "index": 1,
+            "path_original_cols": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "energy": 0.0,
+            "mode": "gradient",
+            "width_before": 5,
+            "width_after": 4
+          },
+          {
+            "index": 2,
+            "path_original_cols": [
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "energy": 0.0,
+            "mode": "gradient",
+            "width_before": 4,
+            "width_after": 3
+          }
+        ],
+        "versions": {
+          "service": "0.1.0",
+          "python": "3.12.3",
+          "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+          "numpy": "2.4.6",
+          "scipy": "1.15.3",
+          "pillow": "10.2.0",
+          "fastapi": "0.141.1"
+        }
+      }
+    }
+  },
+  "job": {
+    "http": 202,
+    "final": {
+      "ok": true,
+      "data": {
+        "job_id": "09e217855f914f73",
+        "run_id": "496e4e0309094fc0",
+        "status": "succeeded",
+        "progress": {
+          "done": 3,
+          "total": 3
+        },
+        "result": {
+          "seams": [
+            {
+              "index": 0,
+              "path_original_cols": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "energy": 0.0,
+              "mode": "gradient",
+              "width_before": 6,
+              "width_after": 5
+            },
+            {
+              "index": 1,
+              "path_original_cols": [
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "energy": 0.0,
+              "mode": "gradient",
+              "width_before": 5,
+              "width_after": 4
+            },
+            {
+              "index": 2,
+              "path_original_cols": [
+                4,
+                4,
+                4,
+                4,
+                4
+              ],
+              "energy": 0.0,
+              "mode": "gradient",
+              "width_before": 4,
+              "width_after": 3
+            }
+          ],
+          "final_width": 3
+        },
+        "error": null
+      }
+    }
+  },
+  "seam_no_legal": {
+    "http": 422,
+    "body": {
+      "ok": false,
+      "error": {
+        "category": "NO_LEGAL_SEAM",
+        "message": "protection mask blocks every seam",
+        "details": {
+          "blocked_at_row": 2,
+          "width": 6
+        },
+        "run_id": "656d1eaba7d34b7f"
+      }
+    }
+  },
+  "seam_invalid_image": {
+    "http": 422,
+    "body": {
+      "ok": false,
+      "error": {
+        "category": "INVALID_IMAGE",
+        "message": "image_b64 is not valid base64",
+        "details": {
+          "error": "Only base64 data is allowed"
+        },
+        "run_id": "60f041ca1e894a83"
+      }
+    }
+  }
+}
