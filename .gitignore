@@ -1,0 +1,5 @@
+# build caches
+**/.rlc-cache/
+examples/shop/.rlc-cache/
+# generated evidence (regenerate with scripts/verify.sh)
+evidence/

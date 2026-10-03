@@ -1,0 +1,13 @@
+{
+  "project": "shop",
+  "source_dir": "../examples/shop/src",
+  "cache_dir": "../examples/shop/.rlc-cache",
+  "entry_module": "app",
+  "entry_func": "main",
+  "redact_literals": false,
+  "modules": [
+    {"name": "pricing", "file": "pricing.rl"},
+    {"name": "report",  "file": "report.rl"},
+    {"name": "app",     "file": "app.rl"}
+  ]
+}

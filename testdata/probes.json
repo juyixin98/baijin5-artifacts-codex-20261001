@@ -1,0 +1,35 @@
+{
+  "note": "Expected results are hand-authored fixtures, independent of the SUT.",
+  "probes": [
+    {
+      "name": "quote_one_unit",
+      "target": "report.quote",
+      "args": [{"type": "int", "int": 10}, {"type": "int", "int": 1}],
+      "expect": {"kind": "value", "type": "int", "int": 122}
+    },
+    {
+      "name": "quote_three_units",
+      "target": "app.main",
+      "args": [{"type": "int", "int": 3}],
+      "expect": {"kind": "value", "type": "int", "int": 362}
+    },
+    {
+      "name": "unit_price_basic",
+      "target": "pricing.unit_price",
+      "args": [{"type": "int", "int": 0}],
+      "expect": {"kind": "value", "type": "int", "int": 50}
+    },
+    {
+      "name": "bulk_price_basic",
+      "target": "pricing.bulk_price",
+      "args": [{"type": "int", "int": 10}, {"type": "int", "int": 2}],
+      "expect": {"kind": "value", "type": "int", "int": 240}
+    },
+    {
+      "name": "generic_first_int",
+      "target": "report.first<int>",
+      "args": [{"type": "int", "int": 41}],
+      "expect": {"kind": "value", "type": "int", "int": 41}
+    }
+  ]
+}
