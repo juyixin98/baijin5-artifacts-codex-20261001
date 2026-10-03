@@ -1,0 +1,10 @@
+{
+  "sequences": ">synthetic_1\nACGTACGTACGT\n>synthetic_2\nTTACGGTAACCT\n",
+  "motif_counts": [
+    [4.0, 0.0, 0.0, 0.0],
+    [0.0, 4.0, 0.0, 0.0]
+  ],
+  "pvalue_threshold": 0.1,
+  "unknown_policy": "skip",
+  "label": "example: AC-dinucleotide detector on synthetic sequences"
+}
