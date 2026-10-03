@@ -1,0 +1,4 @@
+target/
+data/
+fixtures/pages/
+fixtures/snapshot.json

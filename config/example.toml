@@ -1,0 +1,25 @@
+# ARC cache engine configuration.
+# All keys optional; shown here with their defaults.
+
+# Cache capacity in pages. 0 is defined: read-through / write-through.
+# 2 makes the bundled fixtures/trace.jsonl demonstrate scan resistance:
+# the one-shot scan (pages 11-14) cannot evict the hot pair (1, 2).
+capacity = 2
+
+# Directory with page-<id>.bin fixture files (the local backing store).
+page_store_dir = "fixtures/pages"
+
+# Snapshot file for POST /v1/snapshot and /v1/restore.
+snapshot_path = "fixtures/snapshot.json"
+
+# HTTP listen address for `arc-cache serve`.
+listen = "127.0.0.1:18080"
+
+# Log raw page ids in diagnostics instead of redacted pg#<hash> fingerprints.
+log_raw_keys = false
+
+# Number of diagnostic decision records retained (ring buffer).
+diag_capacity = 256
+
+# Take a stats sample every N requests (GET /v1/stats/history).
+sample_interval = 4

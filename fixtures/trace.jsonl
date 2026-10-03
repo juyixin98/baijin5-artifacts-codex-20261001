@@ -1,0 +1,14 @@
+# Sample replay trace: hot pair, one-shot scan, hot pair again.
+# Format: {"request_id": "...", "op": "read"|"write", "page": <id>, "data_hex": "..."}
+{"request_id": "t01", "op": "read", "page": 1}
+{"request_id": "t02", "op": "read", "page": 2}
+{"request_id": "t03", "op": "read", "page": 1}
+{"request_id": "t04", "op": "read", "page": 2}
+{"request_id": "t05", "op": "read", "page": 11}
+{"request_id": "t06", "op": "read", "page": 12}
+{"request_id": "t07", "op": "read", "page": 13}
+{"request_id": "t08", "op": "read", "page": 14}
+{"request_id": "t09", "op": "read", "page": 1}
+{"request_id": "t10", "op": "read", "page": 2}
+{"request_id": "t11", "op": "write", "page": 3, "data_hex": "deadbeef"}
+{"request_id": "t12", "op": "read", "page": 3}
