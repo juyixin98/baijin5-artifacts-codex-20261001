@@ -1,0 +1,17 @@
+[package]
+name = "trs-cli"
+version = "0.1.0"
+edition = "2021"
+description = "Command line front-end: check / verify / gen-fixtures"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+trs-syntax = { path = "../trs-syntax" }
+trs-proof = { path = "../trs-proof" }
+trs-core = { path = "../trs-core" }
+trs-verify = { path = "../trs-verify" }
+
+[[bin]]
+name = "trs-cli"
+path = "src/main.rs"

@@ -1,0 +1,9 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/trs-syntax",
+    "crates/trs-proof",
+    "crates/trs-core",
+    "crates/trs-verify",
+    "crates/trs-cli",
+]

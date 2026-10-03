@@ -1,0 +1,8 @@
+[package]
+name = "trs-syntax"
+version = "0.1.0"
+edition = "2021"
+description = "Logical syntax for term rewriting systems: terms, rules, signatures, certificates, validation, error contract"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

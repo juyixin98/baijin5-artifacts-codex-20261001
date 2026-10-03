@@ -1,0 +1,12 @@
+[package]
+name = "trs-core"
+version = "0.1.0"
+edition = "2021"
+description = "Inference core: checks linear-interpretation termination certificates and emits proof records"
+
+[dependencies]
+trs-syntax = { path = "../trs-syntax" }
+trs-proof = { path = "../trs-proof" }
+
+[dev-dependencies]
+serde_json = "1"

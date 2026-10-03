@@ -1,0 +1,14 @@
+[package]
+name = "trs-verify"
+version = "0.1.0"
+edition = "2021"
+description = "Independent checker: re-derives the verdict from scratch and audits a proof record against it"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+trs-syntax = { path = "../trs-syntax" }
+trs-proof = { path = "../trs-proof" }
+
+[dev-dependencies]
+serde_json = "1"
+trs-core = { path = "../trs-core" }
