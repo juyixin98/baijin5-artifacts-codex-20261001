@@ -1,0 +1,19 @@
+[project]
+name = "tiled-filter-service"
+version = "0.1.0"
+description = "Tiled convolution and separable filtering service for very large images"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "slow: subprocess-based memory benchmarks (still local, ~1 min)",
+]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/memprobe.py"]
+
+[tool.coverage.report]
+show_missing = true
