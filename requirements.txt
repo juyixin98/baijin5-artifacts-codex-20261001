@@ -1,0 +1,9 @@
+# Pinned dependency versions, verified on Python 3.12.
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+numpy==2.4.6
+
+# Test-only dependencies
+pytest==9.1.1
+httpx==0.28.1
