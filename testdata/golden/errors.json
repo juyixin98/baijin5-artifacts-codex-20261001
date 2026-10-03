@@ -1,0 +1,6 @@
+{
+  "unknown_module_dir": {"kind": "import_missing"},
+  "private_cross_module_dir": {"kind": "unknown_symbol"},
+  "type_mismatch_dir": {"kind": "type_mismatch"},
+  "divzero": {"runtime_category": "division_by_zero"}
+}

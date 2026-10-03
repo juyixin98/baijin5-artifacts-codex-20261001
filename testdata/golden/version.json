@@ -1,0 +1,7 @@
+{
+  "scenario": "version-major",
+  "old_semver": "1.9.0",
+  "new_semver": "2.0.0",
+  "version_rejected": true,
+  "same_source_changes": 0
+}

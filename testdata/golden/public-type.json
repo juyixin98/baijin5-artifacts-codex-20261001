@@ -1,0 +1,9 @@
+{
+  "scenario": "public-type",
+  "changes_include": [
+    {"module": "core", "name": "Count", "class": "removed"},
+    {"module": "core", "name": "Label", "class": "added"},
+    {"module": "core", "name": "Tag", "class": "public_signature"}
+  ],
+  "invalidated_include": ["core.Count", "core.Label", "core.Tag"]
+}

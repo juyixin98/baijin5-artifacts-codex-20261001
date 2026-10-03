@@ -1,0 +1,11 @@
+{
+  "scenario": "inline-const",
+  "run_old": "405",
+  "run_new": "445",
+  "changes_include": [
+    {"module": "core", "name": "Offset", "class": "inline_const"},
+    {"module": "core", "name": "Calc", "class": "public_body"}
+  ],
+  "invalidated_include": ["core.Offset", "core.Calc", "app.Run"],
+  "not_invalidated": ["core.secret", "core.Count", "core.Scale[int]"]
+}

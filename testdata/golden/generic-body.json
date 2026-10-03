@@ -1,0 +1,10 @@
+{
+  "scenario": "generic-body",
+  "run_old": "405",
+  "run_new": "405",
+  "changes": [
+    {"module": "core", "name": "Scale[int]", "class": "generic_body"}
+  ],
+  "invalidated_include": ["core.Scale[int]", "core.Calc", "app.Run"],
+  "not_invalidated": ["core.Offset", "core.secret", "core.Count"]
+}

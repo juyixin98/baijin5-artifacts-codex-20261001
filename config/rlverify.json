@@ -1,0 +1,41 @@
+{
+  "fingerprint_schema": "fp-v1",
+  "compile_semver": "1.0.0",
+  "entrypoint": "Run",
+  "call_depth_limit": 256,
+  "scenarios": {
+    "private-body": {
+      "old": "testdata/scenarios/private-body_old",
+      "new": "testdata/scenarios/private-body_new"
+    },
+    "inline-const": {
+      "old": "testdata/scenarios/inline-const_old",
+      "new": "testdata/scenarios/inline-const_new"
+    },
+    "generic-body": {
+      "old": "testdata/scenarios/generic-body_old",
+      "new": "testdata/scenarios/generic-body_new"
+    },
+    "public-type": {
+      "old": "testdata/scenarios/public-type_old",
+      "new": "testdata/scenarios/public-type_new"
+    },
+    "version": {
+      "old": "testdata/scenarios/version-old",
+      "new": "testdata/scenarios/version-new",
+      "old_semver": "1.9.0",
+      "new_semver": "2.0.0"
+    },
+    "sensitive-const": {
+      "old": "testdata/scenarios/sensitive_old",
+      "new": "testdata/scenarios/sensitive_new"
+    }
+  },
+  "error_fixtures": {
+    "unknown_module": "testdata/scenarios/errors",
+    "private_cross_module": "testdata/scenarios/errors2",
+    "type_mismatch": "testdata/scenarios/errors3",
+    "division_by_zero": "testdata/scenarios/errors4"
+  },
+  "sensitive_fixture": "testdata/scenarios/sensitive"
+}

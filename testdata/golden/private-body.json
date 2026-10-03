@@ -1,0 +1,10 @@
+{
+  "scenario": "private-body",
+  "run_old": "405",
+  "run_new": "406",
+  "changes": [
+    {"module": "core", "name": "secret", "class": "private_body_only"}
+  ],
+  "invalidated": ["core.secret"],
+  "not_invalidated": ["core.Calc", "app.Run", "core.Offset", "core.Scale[int]"]
+}
