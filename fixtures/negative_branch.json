@@ -1,0 +1,22 @@
+{
+  "name": "negative_branch",
+  "description": "Non-additive 4-taxon matrix. NJ joins (A,C) first (Q=-30, four-way tie broken lexicographically) yielding limb A=-2.5; the final 3-point step yields limb B=-2.5. Hand-computed.",
+  "labels": ["A", "B", "C", "D"],
+  "matrix": [
+    [0, 4, 3, 3],
+    [4, 0, 3, 3],
+    [3, 3, 0, 20],
+    [3, 3, 20, 0]
+  ],
+  "expected": {
+    "newick_report": "(B:-2.5,D:5.5,(A:-2.5,C:5.5):4.5);",
+    "newick_clamp": "(B:0,D:5.5,(A:0,C:5.5):4.5);",
+    "total_absolute_residual_report": 18.0,
+    "total_absolute_residual_clamp": 24.0,
+    "negative_events": [
+      {"step_index": 0, "node_label": "A", "original": -2.5},
+      {"step_index": 1, "node_label": "B", "original": -2.5}
+    ],
+    "first_step": {"chosen_labels": ["A", "C"], "q_value": -30.0, "tie_count": 4}
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "duplicates",
+  "description": "additive4 extended with leaf E duplicating D exactly (identical rows, d(D,E)=0). D and E must be co-located: same attachment node, zero-length branches (cherry topology is non-identifiable at zero distance, so co-location is the contract).",
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "matrix": [
+    [
+      0,
+      3,
+      6,
+      7,
+      7
+    ],
+    [
+      3,
+      0,
+      7,
+      8,
+      8
+    ],
+    [
+      6,
+      7,
+      0,
+      5,
+      5
+    ],
+    [
+      7,
+      8,
+      5,
+      0,
+      0
+    ],
+    [
+      7,
+      8,
+      5,
+      0,
+      0
+    ]
+  ],
+  "expected": {
+    "sister_labels": [
+      "D",
+      "E"
+    ],
+    "sister_branch_lengths": [
+      0.0,
+      0.0
+    ],
+    "total_absolute_residual": 0.0
+  }
+}
