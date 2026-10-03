@@ -1,0 +1,10 @@
+[project]
+name = "partitioned-convolver-service"
+version = "0.1.0"
+description = "Low-latency partitioned-FFT convolution backend for long impulse responses and chunked audio"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

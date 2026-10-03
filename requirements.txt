@@ -1,0 +1,8 @@
+# Pinned runtime + test dependencies (versions verified in the target environment).
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+numpy==2.4.6
+scipy==1.15.3
+httpx==0.28.1
+pytest==9.1.1
