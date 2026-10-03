@@ -1,0 +1,10 @@
+[project]
+name = "coverage-depth"
+version = "0.1.0"
+description = "Synthetic alignment interval coverage depth backend"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

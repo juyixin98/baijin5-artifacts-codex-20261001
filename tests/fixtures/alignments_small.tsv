@@ -1,0 +1,18 @@
+# Synthetic alignment fixture for a 40-base reference "chrS".
+# Columns: read_id  ref  start(0-based)  mapq  flags  cigar
+# r1 has a 5-base skipped region (5N): only the flanks count.
+r1	chrS	5	30	0	5M5N5M
+# r2 overlaps both flanks of r1.
+r2	chrS	8	30	0	10M
+# r3 is a mate pair (two records, one read_id) overlapping by 5 bases:
+# the overlap must be counted once, not twice.
+r3	chrS	20	30	0	10M
+r3	chrS	25	30	0	10M
+# r4 is a flagged PCR duplicate: rejected despite mapq 60.
+r4	chrS	0	60	0x400	40M
+# r5 is below the mapq threshold: rejected.
+r5	chrS	0	10	0	10M
+# r6 has unknown mapq: undecidable, excluded from coverage.
+r6	chrS	0	*	0	10M
+# r7 hangs off the end of the reference: rejected out of bounds.
+r7	chrS	35	30	0	10M
