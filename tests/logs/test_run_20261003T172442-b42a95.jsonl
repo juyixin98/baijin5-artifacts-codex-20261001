@@ -1,0 +1,2 @@
+{"event": "session_start", "versions": {"python": "3.12.3", "numpy": "2.4.6", "scipy": "1.15.3", "fastapi": "0.141.1", "mfcc_backend": "1.0.0", "pytest": "9.1.1"}, "run_id": "20261003T172442-b42a95", "ts": 1791019482.393475}
+{"event": "test_outcome", "test": "tests/test_api.py::test_nan_samples_rejected_with_invalid_audio", "outcome": "failed", "duration_s": 0.008382, "run_id": "20261003T172442-b42a95", "ts": 1791019483.1789696}

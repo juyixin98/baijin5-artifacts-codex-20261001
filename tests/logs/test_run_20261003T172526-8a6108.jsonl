@@ -1,0 +1,1 @@
+{"event": "session_start", "versions": {"python": "3.12.3", "numpy": "2.4.6", "scipy": "1.15.3", "fastapi": "0.141.1", "mfcc_backend": "1.0.0", "pytest": "9.1.1"}, "run_id": "20261003T172526-8a6108", "ts": 1791019526.9425752}
