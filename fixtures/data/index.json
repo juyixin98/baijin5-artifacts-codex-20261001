@@ -1,0 +1,66 @@
+{
+  "fixtures": [
+    {
+      "name": "hand_4x4",
+      "png": "hand_4x4.png",
+      "shape": [
+        4,
+        4
+      ],
+      "sha256": "8ba00e4109a8b3db7fc004bab8ea3d17da9328b7b153227d9c33be4bb493ca50",
+      "description": "hand-computable grayscale ramp; min seam = column 0"
+    },
+    {
+      "name": "uniform_5x5",
+      "png": "uniform_5x5.png",
+      "shape": [
+        5,
+        5
+      ],
+      "sha256": "b391a6d3671d076e2e5357cf12e475d7a029c8b989b97ef46bd81528db5362ea",
+      "description": "constant image; all seams tie -> deterministic tie-break path"
+    },
+    {
+      "name": "grad_8x6",
+      "png": "grad_8x6.png",
+      "shape": [
+        8,
+        6
+      ],
+      "sha256": "d7c1ccd78a6ae6ea7bf3357dacc21cc8e07bc490e989896483edda126560fd4a",
+      "description": "smooth gradient + bright vertical bar at column 3"
+    },
+    {
+      "name": "rgb_10x8",
+      "png": "rgb_10x8.png",
+      "shape": [
+        10,
+        8,
+        3
+      ],
+      "sha256": "f05e12c0218c764782194a85ff892a484b04230056ad0f56a1e796ede425003a",
+      "description": "seeded RGB noise, Gaussian-smoothed (scipy)"
+    },
+    {
+      "name": "protected_row_6x6",
+      "png": "protected_row_6x6.png",
+      "shape": [
+        6,
+        6
+      ],
+      "sha256": "4570511c3c32c3409af5a59938927555bb8a745ad1a17bfdba09e4241e44e2b0",
+      "description": "row 2 fully protected",
+      "mask": "protected_row_6x6.mask.json"
+    },
+    {
+      "name": "random_12x10",
+      "png": "random_12x10.png",
+      "shape": [
+        12,
+        10
+      ],
+      "sha256": "fa49fe207e780aa0549e82cd6feac7dd7fb63e8cb56c8aef7eb0d22a0c557793",
+      "description": "seeded noise for multi-seam carve tests"
+    }
+  ]
+}

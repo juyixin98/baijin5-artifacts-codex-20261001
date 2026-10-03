@@ -1,0 +1,10 @@
+{
+  "name": "grad_8x6",
+  "png": "grad_8x6.png",
+  "shape": [
+    8,
+    6
+  ],
+  "sha256": "d7c1ccd78a6ae6ea7bf3357dacc21cc8e07bc490e989896483edda126560fd4a",
+  "description": "smooth gradient + bright vertical bar at column 3"
+}

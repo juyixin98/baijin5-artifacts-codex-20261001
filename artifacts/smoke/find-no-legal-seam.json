@@ -1,0 +1,2 @@
+{"error":{"category":"NO_LEGAL_SEAM","detail":"no legal seam: every top-to-bottom path crosses a protected pixel","run_id":"f8fec88a814b"}}
+HTTP 409

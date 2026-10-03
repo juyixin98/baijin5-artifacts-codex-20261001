@@ -1,0 +1,10 @@
+# Locked to the versions this repo was developed and verified against
+# (see artifacts/test-run.log for the exact runtime report).
+fastapi==0.141.1
+numpy==2.4.6
+scipy==1.15.3
+pillow==10.2.0
+uvicorn==0.54.0
+# test / dev
+pytest==9.1.1
+httpx==0.28.1

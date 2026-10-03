@@ -1,0 +1,10 @@
+{
+  "name": "uniform_5x5",
+  "png": "uniform_5x5.png",
+  "shape": [
+    5,
+    5
+  ],
+  "sha256": "b391a6d3671d076e2e5357cf12e475d7a029c8b989b97ef46bd81528db5362ea",
+  "description": "constant image; all seams tie -> deterministic tie-break path"
+}

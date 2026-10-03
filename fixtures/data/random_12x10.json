@@ -1,0 +1,10 @@
+{
+  "name": "random_12x10",
+  "png": "random_12x10.png",
+  "shape": [
+    12,
+    10
+  ],
+  "sha256": "fa49fe207e780aa0549e82cd6feac7dd7fb63e8cb56c8aef7eb0d22a0c557793",
+  "description": "seeded noise for multi-seam carve tests"
+}

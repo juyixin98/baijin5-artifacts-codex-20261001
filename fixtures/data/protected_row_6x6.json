@@ -1,0 +1,11 @@
+{
+  "name": "protected_row_6x6",
+  "png": "protected_row_6x6.png",
+  "shape": [
+    6,
+    6
+  ],
+  "sha256": "4570511c3c32c3409af5a59938927555bb8a745ad1a17bfdba09e4241e44e2b0",
+  "description": "row 2 fully protected",
+  "mask": "protected_row_6x6.mask.json"
+}

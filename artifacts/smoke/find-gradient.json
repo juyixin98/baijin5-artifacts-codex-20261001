@@ -1,0 +1,1 @@
+{"run_id":"e7acac7ffa45","input_sha256":"8ba00e4109a8b3db7fc004bab8ea3d17da9328b7b153227d9c33be4bb493ca50","versions":{"python":"3.12.3","numpy":"2.4.6","scipy":"1.15.3","pillow":"10.2.0","seamcarve":"0.1.0"},"energy_mode":"gradient","seam":{"points":[[0,0],[1,0],[2,0],[3,0]],"columns":[0,0,0,0],"energy":120.0}}

@@ -1,0 +1,11 @@
+{
+  "name": "rgb_10x8",
+  "png": "rgb_10x8.png",
+  "shape": [
+    10,
+    8,
+    3
+  ],
+  "sha256": "f05e12c0218c764782194a85ff892a484b04230056ad0f56a1e796ede425003a",
+  "description": "seeded RGB noise, Gaussian-smoothed (scipy)"
+}

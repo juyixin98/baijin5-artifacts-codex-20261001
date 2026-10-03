@@ -1,0 +1,13 @@
+INFO:     Started server process [2349449]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8137 (Press CTRL+C to quit)
+INFO:     127.0.0.1:48638 - "GET /v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48650 - "GET /v1/version HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39800 - "POST /v1/seam/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39804 - "POST /v1/carve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39818 - "POST /v1/seam/find HTTP/1.1" 409 Conflict
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2349449]

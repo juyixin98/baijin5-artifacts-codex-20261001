@@ -1,0 +1,10 @@
+{
+  "name": "hand_4x4",
+  "png": "hand_4x4.png",
+  "shape": [
+    4,
+    4
+  ],
+  "sha256": "8ba00e4109a8b3db7fc004bab8ea3d17da9328b7b153227d9c33be4bb493ca50",
+  "description": "hand-computable grayscale ramp; min seam = column 0"
+}
