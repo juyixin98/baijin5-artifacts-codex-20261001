@@ -1,0 +1,5 @@
+# Exact Chebyshev coefficients of f(x)=x^2 on [2,4], degree 2.
+# x = 3 + t ; x^2 = 9.5 T0 + 6 T1 + 0.5 T2 (series convention).
+0	9.5	1e-12
+1	6.0	1e-12
+2	0.5	1e-12

@@ -1,0 +1,8 @@
+# Exact Chebyshev coefficients of f(t)=t^4 on [-1,1], degree 4.
+# Columns: degree k, exact coefficient (series convention), tolerance.
+# Source: hand-derived identity 8 t^4 = 3 T0 + 4 T2 + T4.
+0	0.375	1e-14
+1	0.0	1e-14
+2	0.5	1e-14
+3	0.0	1e-14
+4	0.125	1e-14
