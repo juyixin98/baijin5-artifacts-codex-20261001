@@ -1,0 +1,7 @@
+{
+  "description": "single 0.95 impulse at sample 1000 in silence; verifies latency, attack anticipation and release recovery",
+  "impulse_amplitude": 0.95,
+  "impulse_index": 1000,
+  "num_samples": 2048,
+  "sample_rate": 8000.0
+}

@@ -1,0 +1,10 @@
+# Locked dependencies (verified on Python 3.12.3, Linux x86_64)
+numpy==2.4.6
+scipy==1.15.3
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+# test / tooling
+pytest==9.1.1
+pytest-cov==7.1.0
+httpx==0.28.1

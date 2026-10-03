@@ -1,0 +1,20 @@
+[project]
+name = "lookahead-limiter"
+version = "0.1.0"
+description = "Streaming lookahead limiter for synthetic PCM with latency compensation and gain trajectory output"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.15.3",
+    "fastapi==0.141.1",
+    "uvicorn==0.54.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-ra --cov=limiter --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.run]
+source = ["src/limiter"]
+omit = []

@@ -1,0 +1,6 @@
+{
+  "channel_ratio": 0.2,
+  "description": "left 0.9 / right 0.18 sine; verifies linked gain preserves the inter-channel ratio and both channels stay under ceiling",
+  "num_samples": 4096,
+  "sample_rate": 8000.0
+}

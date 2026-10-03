@@ -1,0 +1,6 @@
+{
+  "amplitude": 0.95,
+  "description": "continuous 0.95 sine; verifies steady-state gain converges to threshold/amplitude and ceiling holds indefinitely",
+  "num_samples": 8192,
+  "sample_rate": 8000.0
+}

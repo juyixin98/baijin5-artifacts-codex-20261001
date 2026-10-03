@@ -1,0 +1,7 @@
+{
+  "description": "0.95 impulse at sample 256 then silence; verifies the gain recovers at the configured release rate",
+  "impulse_amplitude": 0.95,
+  "impulse_index": 256,
+  "num_samples": 2048,
+  "sample_rate": 8000.0
+}

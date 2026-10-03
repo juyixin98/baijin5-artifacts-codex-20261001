@@ -1,0 +1,8 @@
+{
+  "amplitude": 0.55,
+  "description": "fs/4 sine at pi/4 phase; sample peak ~0.389 stays under threshold while reconstructed true peak 0.55 exceeds it; discriminates sample-peak vs true-peak limiting",
+  "frequency_hz": 2000.0,
+  "num_samples": 2048,
+  "phase_rad": 0.7853981633974483,
+  "sample_rate": 8000.0
+}

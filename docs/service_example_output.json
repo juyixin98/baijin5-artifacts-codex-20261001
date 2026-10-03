@@ -1,0 +1,12 @@
+{
+  "endpoint": "POST /v1/limit",
+  "input_peak": 0.95,
+  "input_samples": 8192,
+  "latency_samples": 16,
+  "min_gain": 0.5275655090813393,
+  "output_peak": 0.5011872336272722,
+  "output_samples": 8192,
+  "run_id": "example-sustained",
+  "sample_peak_ceiling_ok": true,
+  "threshold_linear": 0.5011872336272722
+}

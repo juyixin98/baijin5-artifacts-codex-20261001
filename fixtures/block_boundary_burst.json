@@ -1,0 +1,11 @@
+{
+  "block_size": 512,
+  "burst_range": [
+    504,
+    520
+  ],
+  "description": "0.9 sine burst spanning samples [504, 520) across the 512 block boundary on a 0.05 noise floor; verifies block-independent gain and ceiling at chunk edges",
+  "num_samples": 4096,
+  "sample_rate": 8000.0,
+  "seed": 20260927
+}

@@ -1,0 +1,85 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/admin/Downloads/xinbiaozhul/opp508/a
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0, anyio-4.15.1
+collecting ... collected 52 items
+
+tests/test_api.py::TestHealth::test_health_reports_versions PASSED       [  1%]
+tests/test_api.py::TestLimitEndpoint::test_processes_fixture_and_reports_ceiling PASSED [  3%]
+tests/test_api.py::TestLimitEndpoint::test_run_id_echoed_and_stable PASSED [  5%]
+tests/test_api.py::TestLimitEndpoint::test_block_size_parameter_changes_nothing PASSED [  7%]
+tests/test_api.py::TestErrorCategories::test_empty_channels_400 PASSED   [  9%]
+tests/test_api.py::TestErrorCategories::test_ragged_channels_400 PASSED  [ 11%]
+tests/test_api.py::TestErrorCategories::test_invalid_config_400 PASSED   [ 13%]
+tests/test_api.py::TestErrorCategories::test_non_finite_signal_400 PASSED [ 15%]
+tests/test_api.py::TestErrorCategories::test_missing_body_422_not_success PASSED [ 17%]
+tests/test_api.py::TestRunLogging::test_logs_carry_run_id_versions_and_input_hash PASSED [ 19%]
+tests/test_envelope.py::TestConfigCoefficients::test_coefficients_match_closed_form PASSED [ 21%]
+tests/test_envelope.py::TestConfigCoefficients::test_attack_below_one_release_above_one PASSED [ 23%]
+tests/test_envelope.py::TestConfigCoefficients::test_invalid_configs_rejected PASSED [ 25%]
+tests/test_envelope.py::TestRequiredGain::test_hand_computed PASSED      [ 26%]
+tests/test_envelope.py::TestRequiredGain::test_never_exceeds_one PASSED  [ 28%]
+tests/test_envelope.py::TestAttackLimitedMinimum::test_hand_computed_ramp PASSED [ 30%]
+tests/test_envelope.py::TestAttackLimitedMinimum::test_structural_ceiling_and_slew PASSED [ 32%]
+tests/test_envelope.py::TestAttackLimitedMinimum::test_smooth_required_gain_has_strict_slew PASSED [ 34%]
+tests/test_envelope.py::TestReleasePass::test_hand_computed_recovery PASSED [ 36%]
+tests/test_envelope.py::TestReleasePass::test_state_carryover PASSED     [ 38%]
+tests/test_envelope.py::TestGainTrajectoryInvariants::test_no_hard_clip_slew_bounds PASSED [ 40%]
+tests/test_envelope.py::TestGainTrajectoryInvariants::test_gain_reaches_required_value_at_peak PASSED [ 42%]
+tests/test_peak_ceiling.py::TestSamplePeakCeiling::test_sustained_peaks_never_exceed_threshold PASSED [ 44%]
+tests/test_peak_ceiling.py::TestSamplePeakCeiling::test_sustained_steady_state_gain PASSED [ 46%]
+tests/test_peak_ceiling.py::TestSamplePeakCeiling::test_block_boundary_burst_ceiling PASSED [ 48%]
+tests/test_peak_ceiling.py::TestStereoLinking::test_imbalanced_channels_share_one_gain PASSED [ 50%]
+tests/test_peak_ceiling.py::TestGainRecovery::test_release_time_constant PASSED [ 51%]
+tests/test_peak_ceiling.py::TestGainRecovery::test_attack_anticipation_within_lookahead PASSED [ 53%]
+tests/test_peak_ceiling.py::TestTruePeakMode::test_true_peak_ceiling_on_intersample_content PASSED [ 55%]
+tests/test_peak_ceiling.py::TestTruePeakMode::test_sample_peak_mode_ignores_intersample_overshoot PASSED [ 57%]
+tests/test_reference.py::test_core_matches_independent_reference[short_impulse] PASSED [ 59%]
+tests/test_reference.py::test_core_matches_independent_reference[stereo_imbalance] PASSED [ 61%]
+tests/test_reference.py::test_core_matches_independent_reference[sustained_peaks] PASSED [ 63%]
+tests/test_reference.py::test_core_matches_independent_reference[block_boundary_burst] PASSED [ 65%]
+tests/test_reference.py::test_core_matches_independent_reference[gain_recovery] PASSED [ 67%]
+tests/test_reference.py::test_reference_matches_across_block_sizes[1] PASSED [ 69%]
+tests/test_reference.py::test_reference_matches_across_block_sizes[63] PASSED [ 71%]
+tests/test_reference.py::test_reference_matches_across_block_sizes[1000] PASSED [ 73%]
+tests/test_stream.py::TestLatency::test_impulse_delayed_by_exactly_lookahead PASSED [ 75%]
+tests/test_stream.py::TestLatency::test_delay_compensation_realigns PASSED [ 76%]
+tests/test_stream.py::TestLatency::test_total_output_accounts_for_latency PASSED [ 78%]
+tests/test_stream.py::TestFlush::test_tail_samples_not_dropped PASSED    [ 80%]
+tests/test_stream.py::TestFlush::test_double_flush_and_process_after_flush_rejected PASSED [ 82%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[1] PASSED [ 84%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[7] PASSED [ 86%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[256] PASSED [ 88%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[512] PASSED [ 90%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[1024] PASSED [ 92%]
+tests/test_stream.py::TestBlockSizeIndependence::test_output_identical_across_chunking[4096] PASSED [ 94%]
+tests/test_stream.py::TestInputValidation::test_wrong_channel_count_rejected PASSED [ 96%]
+tests/test_stream.py::TestInputValidation::test_non_finite_rejected PASSED [ 98%]
+tests/test_stream.py::TestInputValidation::test_mono_stream PASSED       [100%]
+
+=============================== warnings summary ===============================
+../../../../.local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/admin/.local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+src/limiter/__init__.py       5      0   100%
+src/limiter/api.py           50      3    94%   67, 89-90
+src/limiter/config.py        53      4    92%   67, 73, 75, 77
+src/limiter/envelope.py      34      1    97%   42
+src/limiter/offline.py       30      1    97%   35
+src/limiter/peaks.py         23      2    91%   39, 45
+src/limiter/runlog.py        22      0   100%
+src/limiter/stream.py       109      3    97%   48, 150, 194
+-------------------------------------------------------
+TOTAL                       326     14    96%
+Required test coverage of 80% reached. Total coverage: 95.71%
+======================== 52 passed, 1 warning in 3.89s =========================
