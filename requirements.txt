@@ -1,0 +1,8 @@
+# Locked to the versions used for the verification run (Python 3.12).
+fastapi==0.141.1
+uvicorn==0.54.0
+numpy==2.4.6
+pydantic==2.13.5
+PyYAML==6.0.1
+pytest==9.1.1
+httpx==0.28.1

@@ -1,0 +1,10 @@
+app_name: haplotype-phasing-service
+# Exact enumeration costs 2**(n-1) candidates per block; 16 sites = 32768.
+max_enum_sites: 16
+# Phred cost applied to observations without a quality value.
+default_quality: 10
+# Qualities are clamped to [0, max_quality]; correction cost == quality.
+max_quality: 60
+# Cap on alternative optima listed per block when ties occur.
+max_reported_solutions: 8
+db_path: ./data/provenance.db

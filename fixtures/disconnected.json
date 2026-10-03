@@ -1,0 +1,19 @@
+{
+  "sample": "synth-disconnected",
+  "variants": [
+    {"id": "v1", "chrom": "chrSynth", "pos": 101, "ref": "A", "alt": "G"},
+    {"id": "v2", "chrom": "chrSynth", "pos": 150, "ref": "C", "alt": "T"},
+    {"id": "v3", "chrom": "chrSynth", "pos": 900, "ref": "G", "alt": "A"},
+    {"id": "v4", "chrom": "chrSynth", "pos": 950, "ref": "T", "alt": "C"}
+  ],
+  "reads": [
+    {"read_id": "r1", "variant_id": "v1", "allele": "A", "quality": 30},
+    {"read_id": "r1", "variant_id": "v2", "allele": "C", "quality": 30},
+    {"read_id": "r2", "variant_id": "v1", "allele": "G", "quality": 30},
+    {"read_id": "r2", "variant_id": "v2", "allele": "T", "quality": 30},
+    {"read_id": "r3", "variant_id": "v3", "allele": "G", "quality": 30},
+    {"read_id": "r3", "variant_id": "v4", "allele": "T", "quality": 30},
+    {"read_id": "r4", "variant_id": "v3", "allele": "A", "quality": 30},
+    {"read_id": "r4", "variant_id": "v4", "allele": "C", "quality": 30}
+  ]
+}
