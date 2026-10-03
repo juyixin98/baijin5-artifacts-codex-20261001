@@ -1,0 +1,9 @@
+[project]
+name = "motifscan"
+version = "0.1.0"
+description = "PWM motif scanning with exact significance calibration for synthetic DNA"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

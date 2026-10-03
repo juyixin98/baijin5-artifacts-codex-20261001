@@ -1,0 +1,14 @@
+{
+  "sequences": [
+    {"id": "synthetic-1", "sequence": "CAGTAGCTAG"},
+    {"id": "synthetic-2", "sequence": "TTAGNNTCAG"}
+  ],
+  "motif": {
+    "name": "M2-demo",
+    "matrix": [[4.0, 0.0, 0.0, 0.0], [0.0, 0.0, 4.0, 0.0]]
+  },
+  "background": {"A": 0.25, "C": 0.25, "G": 0.25, "T": 0.25},
+  "pseudocount": 1.0,
+  "alpha": 0.1,
+  "unknown_base_policy": "skip"
+}

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+motifscan.db
+.pytest_cache/
+.coverage
