@@ -1,0 +1,112 @@
+{
+  "request_id": "ee71557abf71",
+  "status": "uncertain",
+  "shift": {
+    "dy": 3.999660065831102,
+    "dx": 3.9991662597181805
+  },
+  "integer_shift": {
+    "dy": 4.0,
+    "dx": 4.0
+  },
+  "subpixel_offset": {
+    "dy": -0.0003399341688982741,
+    "dx": -0.0008337402818196755
+  },
+  "confidence": 0.5,
+  "psr": 557.46,
+  "second_peak_ratio": 1.0,
+  "overlap_fraction": 0.9385,
+  "peaks": [
+    {
+      "dy": 4,
+      "dx": 4,
+      "value": 0.9467925047846009
+    },
+    {
+      "dy": -4,
+      "dx": -4,
+      "value": 0.036948802309087994
+    },
+    {
+      "dy": 12,
+      "dx": 4,
+      "value": 0.024906044326315074
+    },
+    {
+      "dy": 4,
+      "dx": 12,
+      "value": 0.022354882106578648
+    },
+    {
+      "dy": -20,
+      "dx": -4,
+      "value": 0.021803946725578807
+    }
+  ],
+  "ambiguity_peaks": [
+    {
+      "dy": 4,
+      "dx": 4,
+      "value": 0.022426711853741756
+    },
+    {
+      "dy": -4,
+      "dx": -4,
+      "value": 0.02242578492138181
+    },
+    {
+      "dy": 12,
+      "dx": -4,
+      "value": 0.020420035250605914
+    },
+    {
+      "dy": -12,
+      "dx": 4,
+      "value": 0.020418235178257985
+    },
+    {
+      "dy": -4,
+      "dx": 12,
+      "value": 0.020408579982415798
+    }
+  ],
+  "failures": [],
+  "uncertainties": [
+    "AMBIGUOUS_PEAKS"
+  ],
+  "diagnostics": {
+    "shape": [
+      128,
+      128
+    ],
+    "window": "hann",
+    "pad_factor": 2,
+    "valid_shift_range": {
+      "dy": [
+        -64,
+        64
+      ],
+      "dx": [
+        -64,
+        64
+      ]
+    },
+    "degenerate_fraction": 0.0,
+    "ambiguity_degenerate_fraction": 0.977051,
+    "eps": 2.7383270213022677e-06,
+    "ambiguity_eps": 2738.327021302268,
+    "kernel_versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.15.3"
+    },
+    "elapsed_ms": 9.794,
+    "versions": {
+      "app": "0.1.0",
+      "python": "3.12.3",
+      "numpy": "2.4.6",
+      "scipy": "1.15.3",
+      "pillow": "10.2.0"
+    }
+  }
+}

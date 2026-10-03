@@ -1,0 +1,71 @@
+{
+  "request_id": "ee21dc35f17a",
+  "status": "ok",
+  "global_shift": {
+    "dy": 11.990221920805029,
+    "dx": -6.994580117047882
+  },
+  "spread_px": 0.0008,
+  "tiles_total": 4,
+  "tiles_used": 4,
+  "tiles": [
+    {
+      "origin": [
+        0,
+        0
+      ],
+      "status": "ok",
+      "shift": {
+        "dy": 11.989893899061677,
+        "dx": -6.993903407599116
+      },
+      "confidence": 0.8617,
+      "failures": [],
+      "uncertainties": []
+    },
+    {
+      "origin": [
+        0,
+        64
+      ],
+      "status": "ok",
+      "shift": {
+        "dy": 11.991714551628576,
+        "dx": -6.994580117047882
+      },
+      "confidence": 0.9246,
+      "failures": [],
+      "uncertainties": []
+    },
+    {
+      "origin": [
+        64,
+        0
+      ],
+      "status": "ok",
+      "shift": {
+        "dy": 11.990221920805029,
+        "dx": -6.993233413898628
+      },
+      "confidence": 0.8936,
+      "failures": [],
+      "uncertainties": []
+    },
+    {
+      "origin": [
+        64,
+        64
+      ],
+      "status": "ok",
+      "shift": {
+        "dy": 11.989899480144668,
+        "dx": -6.994974282492904
+      },
+      "confidence": 0.918,
+      "failures": [],
+      "uncertainties": []
+    }
+  ],
+  "failures": [],
+  "uncertainties": []
+}

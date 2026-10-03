@@ -1,0 +1,549 @@
+{
+  "app_version": "0.1.0",
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "scipy": "1.15.3",
+    "pillow": "10.2.0"
+  },
+  "config": {
+    "window": "hann",
+    "pad_factor": 2,
+    "eps_ratio": 1e-12,
+    "psr_failure": 3.0,
+    "psr_ok": 6.0,
+    "ambiguity_ratio": 0.8,
+    "min_overlap": 0.5
+  },
+  "convention": "img_b[y, x] ~= img_a[y - dy, x - dx]",
+  "fixtures": [
+    {
+      "name": "integer_shift",
+      "category": "integer_shift",
+      "note": "Known integer translation of aperiodic texture.",
+      "expected_status": "ok",
+      "status": "ok",
+      "shift": [
+        11.996198376524337,
+        -6.998225249427698
+      ],
+      "confidence": 0.9454,
+      "psr": 278.582,
+      "overlap_fraction": 0.8567,
+      "failures": [],
+      "uncertainties": [],
+      "ambiguity_peaks": [
+        {
+          "dy": 12,
+          "dx": -7,
+          "value": 0.85817
+        },
+        {
+          "dy": -24,
+          "dx": 15,
+          "value": 0.01947
+        },
+        {
+          "dy": -8,
+          "dx": 5,
+          "value": 0.01749
+        },
+        {
+          "dy": -14,
+          "dx": 22,
+          "value": 0.01624
+        },
+        {
+          "dy": -30,
+          "dx": 12,
+          "value": 0.01585
+        }
+      ],
+      "ground_truth_shift": [
+        12.0,
+        -7.0
+      ],
+      "localization_error_px": 0.0042,
+      "reference": {
+        "best_shift": [
+          12,
+          -7
+        ],
+        "best_score": 1.0,
+        "evaluated_shifts": 1681
+      },
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'ok', got 'ok'"
+        },
+        {
+          "name": "localization_within_tolerance",
+          "passed": true,
+          "detail": "error 0.0042px vs tolerance 0.15px"
+        },
+        {
+          "name": "reference_matches_ground_truth",
+          "passed": true,
+          "detail": "reference (12, -7) vs ground truth (12, -7)"
+        },
+        {
+          "name": "kernel_matches_reference",
+          "passed": true,
+          "detail": "kernel (12, -7) vs reference (12, -7)"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 192.6
+    },
+    {
+      "name": "subpixel_shift",
+      "category": "subpixel_shift",
+      "note": "Known subpixel translation; exercises parabolic refinement.",
+      "expected_status": "ok",
+      "status": "ok",
+      "shift": [
+        5.2850452208029335,
+        -3.679317773133139
+      ],
+      "confidence": 0.9657,
+      "psr": 16.695,
+      "overlap_fraction": 0.9312,
+      "failures": [],
+      "uncertainties": [],
+      "ambiguity_peaks": [
+        {
+          "dy": 5,
+          "dx": -4,
+          "value": 0.11315
+        },
+        {
+          "dy": -2,
+          "dx": -3,
+          "value": 0.03403
+        },
+        {
+          "dy": -5,
+          "dx": 5,
+          "value": 0.03365
+        },
+        {
+          "dy": 9,
+          "dx": 2,
+          "value": 0.0328
+        },
+        {
+          "dy": -1,
+          "dx": 0,
+          "value": 0.03229
+        }
+      ],
+      "ground_truth_shift": [
+        5.4,
+        -3.65
+      ],
+      "localization_error_px": 0.1186,
+      "reference": {
+        "best_shift": [
+          5,
+          -4
+        ],
+        "best_score": 0.99293,
+        "evaluated_shifts": 625
+      },
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'ok', got 'ok'"
+        },
+        {
+          "name": "localization_within_tolerance",
+          "passed": true,
+          "detail": "error 0.1186px vs tolerance 0.2px"
+        },
+        {
+          "name": "reference_matches_ground_truth",
+          "passed": true,
+          "detail": "reference (5, -4) vs ground truth (5, -4)"
+        },
+        {
+          "name": "kernel_matches_reference",
+          "passed": true,
+          "detail": "kernel (5, -4) vs reference (5, -4)"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 85.9
+    },
+    {
+      "name": "brightness_change",
+      "category": "brightness_change",
+      "note": "Gain 0.65 + offset 35 on B; normalisation must absorb it.",
+      "expected_status": "ok",
+      "status": "ok",
+      "shift": [
+        8.188019919614216,
+        6.294865651044693
+      ],
+      "confidence": 0.949,
+      "psr": 17.134,
+      "overlap_fraction": 0.89,
+      "failures": [],
+      "uncertainties": [],
+      "ambiguity_peaks": [
+        {
+          "dy": 8,
+          "dx": 6,
+          "value": 0.11711
+        },
+        {
+          "dy": 3,
+          "dx": -21,
+          "value": 0.03661
+        },
+        {
+          "dy": 6,
+          "dx": -1,
+          "value": 0.03478
+        },
+        {
+          "dy": -7,
+          "dx": -16,
+          "value": 0.03435
+        },
+        {
+          "dy": 11,
+          "dx": -2,
+          "value": 0.03435
+        }
+      ],
+      "ground_truth_shift": [
+        8.25,
+        6.4
+      ],
+      "localization_error_px": 0.122,
+      "reference": {
+        "best_shift": [
+          8,
+          6
+        ],
+        "best_score": 0.99407,
+        "evaluated_shifts": 1089
+      },
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'ok', got 'ok'"
+        },
+        {
+          "name": "localization_within_tolerance",
+          "passed": true,
+          "detail": "error 0.1220px vs tolerance 0.3px"
+        },
+        {
+          "name": "reference_matches_ground_truth",
+          "passed": true,
+          "detail": "reference (8, 6) vs ground truth (8, 6)"
+        },
+        {
+          "name": "kernel_matches_reference",
+          "passed": true,
+          "detail": "kernel (8, 6) vs reference (8, 6)"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 137.3
+    },
+    {
+      "name": "periodic_texture",
+      "category": "periodic_texture",
+      "note": "Period-16 checkerboard: lattice replica peaks must be flagged.",
+      "expected_status": "uncertain",
+      "status": "uncertain",
+      "shift": [
+        3.999660065831102,
+        3.9991662597181805
+      ],
+      "confidence": 0.5,
+      "psr": 557.46,
+      "overlap_fraction": 0.9385,
+      "failures": [],
+      "uncertainties": [
+        "AMBIGUOUS_PEAKS"
+      ],
+      "ambiguity_peaks": [
+        {
+          "dy": 4,
+          "dx": 4,
+          "value": 0.94679
+        },
+        {
+          "dy": -4,
+          "dx": -4,
+          "value": 0.03695
+        },
+        {
+          "dy": 12,
+          "dx": 4,
+          "value": 0.02491
+        },
+        {
+          "dy": 4,
+          "dx": 12,
+          "value": 0.02235
+        },
+        {
+          "dy": -20,
+          "dx": -4,
+          "value": 0.0218
+        }
+      ],
+      "ground_truth_shift": [
+        4.0,
+        4.0
+      ],
+      "localization_error_px": 0.0009,
+      "reference": null,
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'uncertain', got 'uncertain'"
+        },
+        {
+          "name": "reasons_listed",
+          "passed": true,
+          "detail": "failures=[] uncertainties=['AMBIGUOUS_PEAKS']"
+        },
+        {
+          "name": "reason:AMBIGUOUS_PEAKS",
+          "passed": true,
+          "detail": "reasons present: ['AMBIGUOUS_PEAKS']"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 11.8
+    },
+    {
+      "name": "constant_image",
+      "category": "constant_image",
+      "note": "Zero-variance pair: cross-power spectrum is all zeros.",
+      "expected_status": "failed",
+      "status": "failed",
+      "shift": null,
+      "confidence": 0.0,
+      "psr": null,
+      "overlap_fraction": null,
+      "failures": [
+        "DEGENERATE_SPECTRUM"
+      ],
+      "uncertainties": [],
+      "ambiguity_peaks": [
+        {
+          "dy": 64,
+          "dx": 64,
+          "value": 0.0
+        },
+        {
+          "dy": 64,
+          "dx": 61,
+          "value": 0.0
+        },
+        {
+          "dy": 64,
+          "dx": 58,
+          "value": 0.0
+        },
+        {
+          "dy": 64,
+          "dx": 55,
+          "value": 0.0
+        },
+        {
+          "dy": 64,
+          "dx": 52,
+          "value": 0.0
+        }
+      ],
+      "ground_truth_shift": [
+        3.0,
+        3.0
+      ],
+      "localization_error_px": null,
+      "reference": null,
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'failed', got 'failed'"
+        },
+        {
+          "name": "reasons_listed",
+          "passed": true,
+          "detail": "failures=['DEGENERATE_SPECTRUM'] uncertainties=[]"
+        },
+        {
+          "name": "reason:DEGENERATE_SPECTRUM",
+          "passed": true,
+          "detail": "reasons present: ['DEGENERATE_SPECTRUM']"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 9.6
+    },
+    {
+      "name": "low_overlap",
+      "category": "low_overlap",
+      "note": "Shift 52/128 px per axis -> ~35% overlap, below the 50% bar.",
+      "expected_status": "not_ok",
+      "status": "uncertain",
+      "shift": [
+        51.982475934627445,
+        51.87410358394401
+      ],
+      "confidence": 0.5084,
+      "psr": 11.913,
+      "overlap_fraction": 0.3532,
+      "failures": [],
+      "uncertainties": [
+        "AMBIGUOUS_PEAKS",
+        "INSUFFICIENT_OVERLAP"
+      ],
+      "ambiguity_peaks": [
+        {
+          "dy": 52,
+          "dx": 52,
+          "value": 0.08525
+        },
+        {
+          "dy": 20,
+          "dx": -13,
+          "value": 0.04008
+        },
+        {
+          "dy": 12,
+          "dx": 8,
+          "value": 0.03622
+        },
+        {
+          "dy": -15,
+          "dx": -12,
+          "value": 0.03502
+        },
+        {
+          "dy": -6,
+          "dx": 5,
+          "value": 0.03482
+        }
+      ],
+      "ground_truth_shift": [
+        52.0,
+        52.0
+      ],
+      "localization_error_px": 0.1271,
+      "reference": {
+        "best_shift": [
+          52,
+          52
+        ],
+        "best_score": 1.0,
+        "evaluated_shifts": 14641
+      },
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'not_ok', got 'uncertain'"
+        },
+        {
+          "name": "reasons_listed",
+          "passed": true,
+          "detail": "failures=[] uncertainties=['AMBIGUOUS_PEAKS', 'INSUFFICIENT_OVERLAP']"
+        },
+        {
+          "name": "reason:INSUFFICIENT_OVERLAP",
+          "passed": true,
+          "detail": "reasons present: ['AMBIGUOUS_PEAKS', 'INSUFFICIENT_OVERLAP']"
+        },
+        {
+          "name": "reference_matches_ground_truth",
+          "passed": true,
+          "detail": "reference (52, 52) vs ground truth (52, 52)"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 1286.5
+    },
+    {
+      "name": "independent_pair",
+      "category": "independent_pair",
+      "note": "Two unrelated textures: true non-overlap, no valid shift.",
+      "expected_status": "not_ok",
+      "status": "uncertain",
+      "shift": [
+        -9.001023166915163,
+        1.8734812171543838
+      ],
+      "confidence": 0.2882,
+      "psr": 6.938,
+      "overlap_fraction": 0.9161,
+      "failures": [],
+      "uncertainties": [
+        "LOW_CONFIDENCE"
+      ],
+      "ambiguity_peaks": [
+        {
+          "dy": -9,
+          "dx": 2,
+          "value": 0.04963
+        },
+        {
+          "dy": -14,
+          "dx": 5,
+          "value": 0.03841
+        },
+        {
+          "dy": 2,
+          "dx": 3,
+          "value": 0.03657
+        },
+        {
+          "dy": 3,
+          "dx": 32,
+          "value": 0.03555
+        },
+        {
+          "dy": 14,
+          "dx": -13,
+          "value": 0.03512
+        }
+      ],
+      "ground_truth_shift": null,
+      "localization_error_px": null,
+      "reference": null,
+      "checks": [
+        {
+          "name": "status_as_expected",
+          "passed": true,
+          "detail": "expected 'not_ok', got 'uncertain'"
+        },
+        {
+          "name": "reasons_listed",
+          "passed": true,
+          "detail": "failures=[] uncertainties=['LOW_CONFIDENCE']"
+        }
+      ],
+      "passed": true,
+      "elapsed_ms": 11.2
+    }
+  ],
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0,
+    "all_passed": true
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "request_id": "d2db0babe30d",
+  "status": "ok",
+  "shift": {
+    "dy": 11.996198376524337,
+    "dx": -6.998225249427698
+  },
+  "integer_shift": {
+    "dy": 12.0,
+    "dx": -7.0
+  },
+  "subpixel_offset": {
+    "dy": -0.0038016234756631747,
+    "dx": 0.001774750572301839
+  },
+  "confidence": 0.9454,
+  "psr": 278.582,
+  "second_peak_ratio": 0.1092,
+  "overlap_fraction": 0.8567,
+  "peaks": [
+    {
+      "dy": 12,
+      "dx": -7,
+      "value": 0.8581668475507696
+    },
+    {
+      "dy": -24,
+      "dx": 15,
+      "value": 0.019465151359821298
+    },
+    {
+      "dy": -8,
+      "dx": 5,
+      "value": 0.017493902750091408
+    },
+    {
+      "dy": -14,
+      "dx": 22,
+      "value": 0.016236490241039698
+    },
+    {
+      "dy": -30,
+      "dx": 12,
+      "value": 0.01584598466056865
+    }
+  ],
+  "ambiguity_peaks": [
+    {
+      "dy": 12,
+      "dx": -7,
+      "value": 0.04023055860362437
+    },
+    {
+      "dy": 5,
+      "dx": 2,
+      "value": 0.004394618005509325
+    },
+    {
+      "dy": 1,
+      "dx": -9,
+      "value": 0.003407190476928437
+    },
+    {
+      "dy": 19,
+      "dx": -16,
+      "value": 0.0034027044563544797
+    },
+    {
+      "dy": 13,
+      "dx": 5,
+      "value": 0.0032952280129016857
+    }
+  ],
+  "failures": [],
+  "uncertainties": [],
+  "diagnostics": {
+    "shape": [
+      128,
+      128
+    ],
+    "window": "hann",
+    "pad_factor": 2,
+    "valid_shift_range": {
+      "dy": [
+        -64,
+        64
+      ],
+      "dx": [
+        -64,
+        64
+      ]
+    },
+    "degenerate_fraction": 0.0,
+    "ambiguity_degenerate_fraction": 0.956131,
+    "eps": 1.211338017591286e-06,
+    "ambiguity_eps": 1211.338017591286,
+    "kernel_versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.15.3"
+    },
+    "elapsed_ms": 12.831,
+    "versions": {
+      "app": "0.1.0",
+      "python": "3.12.3",
+      "numpy": "2.4.6",
+      "scipy": "1.15.3",
+      "pillow": "10.2.0"
+    }
+  }
+}

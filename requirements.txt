@@ -1,0 +1,7 @@
+# Runtime dependencies (see requirements-lock.txt for the exact verified set).
+fastapi>=0.141
+uvicorn>=0.54
+numpy>=2.4
+scipy>=1.15
+pillow>=10.2
+pydantic>=2.13

@@ -1,0 +1,103 @@
+{
+  "request_id": "9a20ef5d46f1",
+  "status": "failed",
+  "shift": null,
+  "integer_shift": null,
+  "subpixel_offset": null,
+  "confidence": 0.0,
+  "psr": null,
+  "second_peak_ratio": null,
+  "overlap_fraction": null,
+  "peaks": [
+    {
+      "dy": 64,
+      "dx": 64,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 61,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 58,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 55,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 52,
+      "value": 0.0
+    }
+  ],
+  "ambiguity_peaks": [
+    {
+      "dy": 64,
+      "dx": 64,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 61,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 58,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 55,
+      "value": 0.0
+    },
+    {
+      "dy": 64,
+      "dx": 52,
+      "value": 0.0
+    }
+  ],
+  "failures": [
+    "DEGENERATE_SPECTRUM"
+  ],
+  "uncertainties": [],
+  "diagnostics": {
+    "shape": [
+      128,
+      128
+    ],
+    "window": "hann",
+    "pad_factor": 2,
+    "valid_shift_range": {
+      "dy": [
+        -64,
+        64
+      ],
+      "dx": [
+        -64,
+        64
+      ]
+    },
+    "degenerate_fraction": 1.0,
+    "ambiguity_degenerate_fraction": 1.0,
+    "eps": 0.0,
+    "ambiguity_eps": 0.0,
+    "kernel_versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.15.3"
+    },
+    "elapsed_ms": 8.399,
+    "versions": {
+      "app": "0.1.0",
+      "python": "3.12.3",
+      "numpy": "2.4.6",
+      "scipy": "1.15.3",
+      "pillow": "10.2.0"
+    }
+  }
+}

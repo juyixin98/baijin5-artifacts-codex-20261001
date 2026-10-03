@@ -1,0 +1,129 @@
+{
+  "canvas_size": 256,
+  "window_size": 128,
+  "convention": "img_b[y, x] ~= img_a[y - dy, x - dx]",
+  "fixtures": [
+    {
+      "name": "integer_shift",
+      "category": "integer_shift",
+      "ground_truth_shift": [
+        12.0,
+        -7.0
+      ],
+      "expected_status": "ok",
+      "expected_reasons": [],
+      "tolerance_px": 0.15,
+      "reference_max_shift": 20,
+      "note": "Known integer translation of aperiodic texture.",
+      "files": [
+        "integer_shift_a.png",
+        "integer_shift_b.png"
+      ]
+    },
+    {
+      "name": "subpixel_shift",
+      "category": "subpixel_shift",
+      "ground_truth_shift": [
+        5.4,
+        -3.65
+      ],
+      "expected_status": "ok",
+      "expected_reasons": [],
+      "tolerance_px": 0.2,
+      "reference_max_shift": 12,
+      "note": "Known subpixel translation; exercises parabolic refinement.",
+      "files": [
+        "subpixel_shift_a.png",
+        "subpixel_shift_b.png"
+      ]
+    },
+    {
+      "name": "brightness_change",
+      "category": "brightness_change",
+      "ground_truth_shift": [
+        8.25,
+        6.4
+      ],
+      "expected_status": "ok",
+      "expected_reasons": [],
+      "tolerance_px": 0.3,
+      "reference_max_shift": 16,
+      "note": "Gain 0.65 + offset 35 on B; normalisation must absorb it.",
+      "files": [
+        "brightness_change_a.png",
+        "brightness_change_b.png"
+      ]
+    },
+    {
+      "name": "periodic_texture",
+      "category": "periodic_texture",
+      "ground_truth_shift": [
+        4.0,
+        4.0
+      ],
+      "expected_status": "uncertain",
+      "expected_reasons": [
+        "AMBIGUOUS_PEAKS"
+      ],
+      "tolerance_px": null,
+      "reference_max_shift": null,
+      "note": "Period-16 checkerboard: lattice replica peaks must be flagged.",
+      "files": [
+        "periodic_texture_a.png",
+        "periodic_texture_b.png"
+      ]
+    },
+    {
+      "name": "constant_image",
+      "category": "constant_image",
+      "ground_truth_shift": [
+        3.0,
+        3.0
+      ],
+      "expected_status": "failed",
+      "expected_reasons": [
+        "DEGENERATE_SPECTRUM"
+      ],
+      "tolerance_px": null,
+      "reference_max_shift": null,
+      "note": "Zero-variance pair: cross-power spectrum is all zeros.",
+      "files": [
+        "constant_image_a.png",
+        "constant_image_b.png"
+      ]
+    },
+    {
+      "name": "low_overlap",
+      "category": "low_overlap",
+      "ground_truth_shift": [
+        52.0,
+        52.0
+      ],
+      "expected_status": "not_ok",
+      "expected_reasons": [
+        "INSUFFICIENT_OVERLAP"
+      ],
+      "tolerance_px": null,
+      "reference_max_shift": 60,
+      "note": "Shift 52/128 px per axis -> ~35% overlap, below the 50% bar.",
+      "files": [
+        "low_overlap_a.png",
+        "low_overlap_b.png"
+      ]
+    },
+    {
+      "name": "independent_pair",
+      "category": "independent_pair",
+      "ground_truth_shift": null,
+      "expected_status": "not_ok",
+      "expected_reasons": [],
+      "tolerance_px": null,
+      "reference_max_shift": null,
+      "note": "Two unrelated textures: true non-overlap, no valid shift.",
+      "files": [
+        "independent_pair_a.png",
+        "independent_pair_b.png"
+      ]
+    }
+  ]
+}

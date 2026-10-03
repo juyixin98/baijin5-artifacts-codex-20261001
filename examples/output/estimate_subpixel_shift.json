@@ -1,0 +1,110 @@
+{
+  "request_id": "815f5477b230",
+  "status": "ok",
+  "shift": {
+    "dy": 5.2850452208029335,
+    "dx": -3.679317773133139
+  },
+  "integer_shift": {
+    "dy": 5.0,
+    "dx": -4.0
+  },
+  "subpixel_offset": {
+    "dy": 0.28504522080293304,
+    "dx": 0.320682226866861
+  },
+  "confidence": 0.9657,
+  "psr": 16.695,
+  "second_peak_ratio": 0.0685,
+  "overlap_fraction": 0.9312,
+  "peaks": [
+    {
+      "dy": 5,
+      "dx": -4,
+      "value": 0.11314778674770723
+    },
+    {
+      "dy": -2,
+      "dx": -3,
+      "value": 0.03403142011501894
+    },
+    {
+      "dy": -5,
+      "dx": 5,
+      "value": 0.03365472086686026
+    },
+    {
+      "dy": 9,
+      "dx": 2,
+      "value": 0.0327960146364528
+    },
+    {
+      "dy": -1,
+      "dx": 0,
+      "value": 0.032294811020235833
+    }
+  ],
+  "ambiguity_peaks": [
+    {
+      "dy": 5,
+      "dx": -4,
+      "value": 0.041250450593475055
+    },
+    {
+      "dy": 12,
+      "dx": 5,
+      "value": 0.0028268696420623136
+    },
+    {
+      "dy": -1,
+      "dx": -12,
+      "value": 0.0026660934051407383
+    },
+    {
+      "dy": -9,
+      "dx": -17,
+      "value": 0.0025084137649723616
+    },
+    {
+      "dy": -3,
+      "dx": 5,
+      "value": 0.002362587166796079
+    }
+  ],
+  "failures": [],
+  "uncertainties": [],
+  "diagnostics": {
+    "shape": [
+      128,
+      128
+    ],
+    "window": "hann",
+    "pad_factor": 2,
+    "valid_shift_range": {
+      "dy": [
+        -64,
+        64
+      ],
+      "dx": [
+        -64,
+        64
+      ]
+    },
+    "degenerate_fraction": 0.0,
+    "ambiguity_degenerate_fraction": 0.957169,
+    "eps": 1.07953250554848e-06,
+    "ambiguity_eps": 1079.53250554848,
+    "kernel_versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.15.3"
+    },
+    "elapsed_ms": 10.782,
+    "versions": {
+      "app": "0.1.0",
+      "python": "3.12.3",
+      "numpy": "2.4.6",
+      "scipy": "1.15.3",
+      "pillow": "10.2.0"
+    }
+  }
+}
