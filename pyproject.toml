@@ -1,0 +1,10 @@
+[project]
+name = "wsola-backend"
+version = "0.1.0"
+description = "Audio-only WSOLA time-stretch backend with per-segment match offsets"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-q"
