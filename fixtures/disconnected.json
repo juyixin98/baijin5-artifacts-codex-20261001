@@ -1,0 +1,31 @@
+{
+  "sample_id": "synthetic-disconnected",
+  "sites": [
+    {"id": "s1", "chrom": "chrSynth1", "position": 100, "ref": "A", "alt": "G"},
+    {"id": "s2", "chrom": "chrSynth1", "position": 150, "ref": "C", "alt": "T"},
+    {"id": "s3", "chrom": "chrSynth1", "position": 900, "ref": "G", "alt": "A"},
+    {"id": "s4", "chrom": "chrSynth1", "position": 960, "ref": "T", "alt": "C"},
+    {"id": "s5", "chrom": "chrSynth1", "position": 5000, "ref": "C", "alt": "G"}
+  ],
+  "reads": [
+    {"id": "r1", "calls": [
+      {"site": "s1", "allele": "ref", "qual": 30},
+      {"site": "s2", "allele": "ref", "qual": 30}
+    ]},
+    {"id": "r2", "calls": [
+      {"site": "s1", "allele": "alt", "qual": 30},
+      {"site": "s2", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r3", "calls": [
+      {"site": "s3", "allele": "alt", "qual": 30},
+      {"site": "s4", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r4", "calls": [
+      {"site": "s3", "allele": "ref", "qual": 30},
+      {"site": "s4", "allele": "ref", "qual": 30}
+    ]},
+    {"id": "r5", "calls": [
+      {"site": "s5", "allele": "ref", "qual": 30}
+    ]}
+  ]
+}

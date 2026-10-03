@@ -1,0 +1,6 @@
+{
+  "max_quality": 60,
+  "max_enum_sites": 20,
+  "provenance_db_path": "data/provenance.db",
+  "fixtures_dir": "fixtures"
+}

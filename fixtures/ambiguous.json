@@ -1,0 +1,25 @@
+{
+  "sample_id": "synthetic-ambiguous",
+  "sites": [
+    {"id": "s1", "chrom": "chrSynth1", "position": 100, "ref": "A", "alt": "G"},
+    {"id": "s2", "chrom": "chrSynth1", "position": 150, "ref": "C", "alt": "T"}
+  ],
+  "reads": [
+    {"id": "r1", "calls": [
+      {"site": "s1", "allele": "ref", "qual": 30},
+      {"site": "s2", "allele": "ref", "qual": 30}
+    ]},
+    {"id": "r2", "calls": [
+      {"site": "s1", "allele": "alt", "qual": 30},
+      {"site": "s2", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r3", "calls": [
+      {"site": "s1", "allele": "ref", "qual": 30},
+      {"site": "s2", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r4", "calls": [
+      {"site": "s1", "allele": "alt", "qual": 30},
+      {"site": "s2", "allele": "ref", "qual": 30}
+    ]}
+  ]
+}

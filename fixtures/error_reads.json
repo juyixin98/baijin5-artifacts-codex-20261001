@@ -1,0 +1,31 @@
+{
+  "sample_id": "synthetic-error-reads",
+  "sites": [
+    {"id": "s1", "chrom": "chrSynth1", "position": 100, "ref": "A", "alt": "G"},
+    {"id": "s2", "chrom": "chrSynth1", "position": 150, "ref": "C", "alt": "T"},
+    {"id": "s3", "chrom": "chrSynth1", "position": 220, "ref": "G", "alt": "A"}
+  ],
+  "reads": [
+    {"id": "r1", "calls": [
+      {"site": "s1", "allele": "ref", "qual": 30},
+      {"site": "s2", "allele": "ref", "qual": 30}
+    ]},
+    {"id": "r2", "calls": [
+      {"site": "s1", "allele": "alt", "qual": 30},
+      {"site": "s2", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r3", "calls": [
+      {"site": "s2", "allele": "ref", "qual": 30},
+      {"site": "s3", "allele": "ref", "qual": 30}
+    ]},
+    {"id": "r4", "calls": [
+      {"site": "s2", "allele": "alt", "qual": 30},
+      {"site": "s3", "allele": "alt", "qual": 30}
+    ]},
+    {"id": "r_err", "calls": [
+      {"site": "s1", "allele": "alt", "qual": 25},
+      {"site": "s2", "allele": "ref", "qual": 30},
+      {"site": "s3", "allele": "ref", "qual": 30}
+    ]}
+  ]
+}
