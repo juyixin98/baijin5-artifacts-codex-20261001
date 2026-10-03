@@ -1,0 +1,7 @@
+# 5-cycle (odd cycle); chi = 3
+n 5
+e 0 1
+e 1 2
+e 2 3
+e 3 4
+e 4 0

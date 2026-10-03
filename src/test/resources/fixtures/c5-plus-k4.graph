@@ -1,0 +1,13 @@
+# disconnected union C5 + K4; chi = max(3,4) = 4
+n 9
+e 0 1
+e 1 2
+e 2 3
+e 3 4
+e 4 0
+e 5 6
+e 5 7
+e 5 8
+e 6 7
+e 6 8
+e 7 8

@@ -1,0 +1,12 @@
+# wheel W6: hub 0 plus odd 5-rim; chi = 4
+n 6
+e 0 1
+e 0 2
+e 0 3
+e 0 4
+e 0 5
+e 1 2
+e 2 3
+e 3 4
+e 4 5
+e 5 1

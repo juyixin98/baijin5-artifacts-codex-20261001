@@ -1,0 +1,6 @@
+# disconnected union K3 + K2; chi = max(3,2) = 3
+n 5
+e 0 1
+e 1 2
+e 2 0
+e 3 4

@@ -1,0 +1,6 @@
+# 4-cycle (even cycle); chi = 2
+n 4
+e 0 1
+e 1 2
+e 2 3
+e 3 0

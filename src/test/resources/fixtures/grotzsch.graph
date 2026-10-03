@@ -1,0 +1,23 @@
+# Groetzsch graph = Mycielski(C5); triangle-free 4-chromatic; chi = 4
+# v0..v4 form the C5; u5..u9 each join the C5-neighbours of v(i-5); w10 joins all u.
+n 11
+e 0 1
+e 1 2
+e 2 3
+e 3 4
+e 4 0
+e 5 1
+e 5 4
+e 6 0
+e 6 2
+e 7 1
+e 7 3
+e 8 2
+e 8 4
+e 9 0
+e 9 3
+e 5 10
+e 6 10
+e 7 10
+e 8 10
+e 9 10
