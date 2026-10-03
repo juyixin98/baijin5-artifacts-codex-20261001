@@ -1,0 +1,5 @@
+{
+  "sakoe_chiba_radius": 8,
+  "smoothing_window": 5,
+  "max_sequence_length": 100000
+}
