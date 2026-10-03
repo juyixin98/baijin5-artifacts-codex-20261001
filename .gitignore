@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# Local generated state
+data/*.db
+data/*.db-*
+logs/*.log
+
+# Local env
+.env

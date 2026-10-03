@@ -1,0 +1,8 @@
+>read_exact_28bp substring of reference offset 50
+TTTTTTTTTTGATTACAGATTACAGATT
+>read_revcomp_28bp reverse complement of the exact substring
+AATCTGTAATCTGTAATCAAAAAAAAAA
+>read_short_13bp tail window length k+w-1=13 from offset 60
+GATTACAGATTAC
+>read_novel_27bp constructed to share no expected minimizer
+GGCTAGGCTAGGCTAGGCTAGGCTAGG
