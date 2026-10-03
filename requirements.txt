@@ -1,0 +1,5 @@
+# Runtime dependencies (pinned)
+cryptography==41.0.7
+fastapi==0.141.1
+pycryptodome==3.23.0
+uvicorn==0.32.1

@@ -1,0 +1,21 @@
+{
+  "tenants": [
+    {
+      "tenant": "tenant-alpha",
+      "display_name": "Alpha (synthetic)"
+    },
+    {
+      "tenant": "tenant-beta",
+      "display_name": "Beta (synthetic)"
+    },
+    {
+      "tenant": "tenant-gamma",
+      "display_name": "Alpha (synthetic)"
+    }
+  ],
+  "purposes": [
+    "encryption",
+    "signing",
+    "backup"
+  ]
+}
