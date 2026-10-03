@@ -1,0 +1,27 @@
+# DTW service defaults. Every field here is part of the fixed behavior contract:
+# metric, step pattern and window are deliberately NOT free parameters of the
+# public API beyond the documented bounds, so that results stay comparable.
+dtw:
+  # Local distance between two feature frames. Fixed to euclidean.
+  metric: euclidean
+  # Symmetric step pattern {(1,1), (1,0), (0,1)} with a slope constraint:
+  # at most max_consecutive_run consecutive non-diagonal steps in the same
+  # direction, so a path can never compress/expand one axis without bound.
+  step_pattern: symmetric
+  max_consecutive_run: 2
+  # Sakoe-Chiba band half-width: cells with |i - j| > window are forbidden.
+  # null means "no band" (full matrix); the service resolves null to this value.
+  sakoe_chiba_window: 10
+  # Normalized cost denominator convention. Fixed to "path_length":
+  # normalized_cost = total_cost / number_of_matched_pairs (len(path)).
+  normalization: path_length
+  # Storage policy. "banded" keeps only O(n * (2*window+1)) cells; "dense"
+  # materializes the full n x m accumulator. "auto" picks banded whenever a
+  # finite window is configured.
+  storage: auto
+
+stream:
+  # Sliding buffer length (frames per side) for the streaming state.
+  buffer_size: 256
+  # How many snapshot decisions are kept for inspection.
+  snapshot_history: 32
