@@ -1,0 +1,22 @@
+==== Procrustes fit report v1.0.0 ====
+request_id   : profile-rigid2d
+mode         : rigid (rotation-only, det=+1)
+outcome      : OK (status=Success)
+points       : d=2 n=6 total_weight=10
+covariance   : rank=2/2 singular_values=[25.868484, 8.1315165]
+spread       : source=34 target=34
+scale        : 1
+rotation R   :
+0.8660254      -0.5
+      0.5 0.8660254
+translation t:   4.5 -1.25
+weighted RMS residual : 6.0910684e-16
+weighted residual sum : 3.7101114e-30
+
+-- INPUT SUMMARY --
+source centroid :  0.4 -0.3
+target centroid :  4.9964102 -1.3098076
+p (first up to 5 cols):
+-2 -1  0  1  2
+-1  1  2  0 -2
+============================

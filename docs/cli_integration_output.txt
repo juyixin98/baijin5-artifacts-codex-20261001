@@ -1,0 +1,21 @@
+[cli] rigid2d happy path
+  ok  - exit code 0 on success
+  ok  - report shows OK outcome
+  ok  - report carries profile request id
+  ok  - report shows near-zero residual
+  ok  - logs carry request id and version
+[cli] similarity2d via command-line flags
+  ok  - exit code 0
+  ok  - scale recovered as 1.75
+  ok  - request id echoed
+[cli] collinear2d rotation-only vs reflection ambiguity
+  ok  - rotation-only collinear is OK
+  ok  - non-unique still exits 0
+  ok  - non-unique outcome shown
+  ok  - uncertainty section present
+[cli] hard failures
+  ok  - malformed CSV exits 2
+  ok  - failure logged with request id
+  ok  - failure severity recorded
+  ok  - invalid mode exits 2
+[cli] integration tests PASSED

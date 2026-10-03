@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/gen_data.dir/gen_data.cpp.o CMakeFiles/gen_data.dir/__/__/src/app/src/io_csv.cpp.o -o gen_data  ../../src/contracts/libcontracts.a

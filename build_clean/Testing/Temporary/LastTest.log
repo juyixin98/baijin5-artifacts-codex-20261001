@@ -1,0 +1,167 @@
+Start testing: Oct 03 14:20 CST
+----------------------------------------------------------
+1/9 Testing: test_rigid_slice
+1/9 Test: test_rigid_slice
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_rigid_slice"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_rigid_slice" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+slice test OK: rigid 90deg fit, rms=0
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_rigid_slice" end time: Oct 03 14:20 CST
+"test_rigid_slice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/9 Testing: test_rigid_2d_3d
+2/9 Test: test_rigid_2d_3d
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_rigid_2d_3d"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_rigid_2d_3d" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] rigid_2d_3d (21 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_rigid_2d_3d" end time: Oct 03 14:20 CST
+"test_rigid_2d_3d" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/9 Testing: test_reflection
+3/9 Test: test_reflection
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_reflection"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_reflection" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] reflection_modes (14 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_reflection" end time: Oct 03 14:20 CST
+"test_reflection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/9 Testing: test_similarity
+4/9 Test: test_similarity
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_similarity"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_similarity" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] similarity_scale (28 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_similarity" end time: Oct 03 14:20 CST
+"test_similarity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/9 Testing: test_degenerate
+5/9 Test: test_degenerate
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_degenerate"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_degenerate" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] degenerate_multisolution (31 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_degenerate" end time: Oct 03 14:20 CST
+"test_degenerate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/9 Testing: test_validation
+6/9 Test: test_validation
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_validation"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_validation" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] input_validation (24 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_validation" end time: Oct 03 14:20 CST
+"test_validation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: test_logging_report
+7/9 Test: test_logging_report
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit/test_logging_report"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/unit
+"test_logging_report" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] logging_report (42 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_logging_report" end time: Oct 03 14:20 CST
+"test_logging_report" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: end_to_end_fixtures
+8/9 Test: end_to_end_fixtures
+Command: "/home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/integration/test_end_to_end" "/home/admin/Downloads/xinbiaozhul/opp839/b/data"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b/build_clean/tests/integration
+"end_to_end_fixtures" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[PASS] end_to_end_fixtures (42 checks)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"end_to_end_fixtures" end time: Oct 03 14:20 CST
+"end_to_end_fixtures" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/9 Testing: cli_shell_integration
+9/9 Test: cli_shell_integration
+Command: "/usr/bin/bash" "/home/admin/Downloads/xinbiaozhul/opp839/b/tests/integration/test_cli.sh"
+Directory: /home/admin/Downloads/xinbiaozhul/opp839/b
+"cli_shell_integration" start time: Oct 03 14:20 CST
+Output:
+----------------------------------------------------------
+[cli] rigid2d happy path
+  ok  - exit code 0 on success
+  ok  - report shows OK outcome
+  ok  - report carries profile request id
+  ok  - report shows near-zero residual
+  ok  - logs carry request id and version
+[cli] similarity2d via command-line flags
+  ok  - exit code 0
+  ok  - scale recovered as 1.75
+  ok  - request id echoed
+[cli] collinear2d rotation-only vs reflection ambiguity
+  ok  - rotation-only collinear is OK
+  ok  - non-unique still exits 0
+  ok  - non-unique outcome shown
+  ok  - uncertainty section present
+[cli] hard failures
+  ok  - malformed CSV exits 2
+  ok  - failure logged with request id
+  ok  - failure severity recorded
+  ok  - invalid mode exits 2
+[cli] integration tests PASSED
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"cli_shell_integration" end time: Oct 03 14:20 CST
+"cli_shell_integration" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 03 14:20 CST

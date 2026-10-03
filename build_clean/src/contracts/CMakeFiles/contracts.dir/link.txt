@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcontracts.a CMakeFiles/contracts.dir/src/contracts.cpp.o
+/usr/bin/ranlib libcontracts.a

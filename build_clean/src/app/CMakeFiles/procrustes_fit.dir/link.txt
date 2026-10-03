@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/procrustes_fit.dir/src/main.cpp.o CMakeFiles/procrustes_fit.dir/src/io_csv.cpp.o CMakeFiles/procrustes_fit.dir/src/config_ini.cpp.o -o procrustes_fit  ../kernel/libkernel.a ../contracts/libcontracts.a ../diag/libdiag.a ../contracts/libcontracts.a

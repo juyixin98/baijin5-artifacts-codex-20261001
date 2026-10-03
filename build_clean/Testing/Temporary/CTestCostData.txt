@@ -1,0 +1,10 @@
+test_rigid_slice 1 0.00198196
+test_rigid_2d_3d 1 0.00190871
+test_reflection 1 0.00185044
+test_similarity 1 0.0017047
+test_degenerate 1 0.00181126
+test_validation 1 0.00167293
+test_logging_report 1 0.00173332
+end_to_end_fixtures 1 0.00345173
+cli_shell_integration 1 0.0427085
+---

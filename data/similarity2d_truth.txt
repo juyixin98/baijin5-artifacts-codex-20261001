@@ -1,0 +1,10 @@
+# Independent ground truth, hand-generated (not produced by the
+# fitting kernel). Format: readable key=value text.
+scenario=similarity2d
+mode=similarity
+reflection=deny
+theta_rad=-0.78539816339744828
+scale=1.75
+t0=-2
+t1=5
+rms=0

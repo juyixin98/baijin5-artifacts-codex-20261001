@@ -1,0 +1,8 @@
+Weighted Procrustes kernel benchmark (3000 iterations/case)
+rigid2d   n=4   : 7.97814 us/fit  (rms=1.00396e-15)
+rigid2d   n=100 : 14.245 us/fit  (rms=9.95292e-16)
+simil2d   n=100 : 14.3529 us/fit  (rms=9.23405e-15)
+rigid3d   n=100 : 18.6536 us/fit  (rms=2.92937e-15)
+rigid3d   n=1000: 67.7984 us/fit  (rms=3.0859e-15)
+simil3d   n=1000 reflection: 70.2482 us/fit  (rms=5.96463e-15)
+all benchmark sanity checks passed

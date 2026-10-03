@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/test_rigid_slice.dir/test_rigid_slice.cpp.o -o test_rigid_slice  ../../src/kernel/libkernel.a ../../src/contracts/libcontracts.a ../../src/diag/libdiag.a ../../src/contracts/libcontracts.a

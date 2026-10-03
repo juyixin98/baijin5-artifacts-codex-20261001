@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/bench_procrustes.dir/bench_procrustes.cpp.o -o bench_procrustes  ../src/kernel/libkernel.a ../src/contracts/libcontracts.a ../src/diag/libdiag.a ../src/contracts/libcontracts.a

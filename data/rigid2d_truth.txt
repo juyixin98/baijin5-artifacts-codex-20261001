@@ -1,0 +1,14 @@
+# Independent ground truth, hand-generated (not produced by the
+# fitting kernel). Format: readable key=value text.
+scenario=rigid2d
+mode=rigid
+reflection=deny
+theta_rad=0.52359877559829882
+R00=0.86602540378443871
+R01=-0.49999999999999994
+R10=0.49999999999999994
+R11=0.86602540378443871
+t0=4.5
+t1=-1.25
+scale=1
+rms=0

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdiag.a CMakeFiles/diag.dir/src/logger.cpp.o CMakeFiles/diag.dir/src/report.cpp.o
+/usr/bin/ranlib libdiag.a

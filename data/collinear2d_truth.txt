@@ -1,0 +1,10 @@
+# Independent ground truth, hand-generated (not produced by the
+# fitting kernel). Format: readable key=value text.
+scenario=collinear2d
+rank=1
+rotation_only=unique (det must be +1)
+reflection_allowed=non-unique (two exact minimizers)
+t0=4
+t1=-2
+scale=1
+rms=0

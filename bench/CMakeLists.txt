@@ -1,0 +1,3 @@
+add_executable(bench_procrustes bench_procrustes.cpp)
+target_compile_features(bench_procrustes PRIVATE cxx_std_20)
+target_link_libraries(bench_procrustes PRIVATE kernel contracts diag)
