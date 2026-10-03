@@ -1,0 +1,73 @@
+# Hand-authored differential expectation table (independent oracle).
+# Naming in kept/dropped sets: "<object-name>:<section-name>", where
+# object-name is the .object name declared inside the .asm source.
+spec = 1
+
+# Weak provider alone: 2 + 2 = 4.
+case weak_only
+objects = ws_main.mkobj ws_weak.mkobj
+entry = main
+expect = ok
+return = 4
+kept = ws_main.o:.text.main ws_weak.o:.text.provider
+
+# Strong provider overrides weak: weak section is reclaimed: 2 + 40 = 42.
+case weak_strong_override
+objects = ws_main.mkobj ws_weak.mkobj ws_strong.mkobj
+entry = main
+expect = ok
+return = 42
+kept = ws_main.o:.text.main ws_strong.o:.text.provider
+dropped = ws_weak.o:.text.provider
+
+# Mutual recursion across two objects: iseven(10) = 1.
+case circular_iseven
+objects = circ_main.mkobj circ_even.mkobj circ_odd.mkobj
+entry = main
+expect = ok
+return = 1
+kept = circ_main.o:.text.main circ_even.o:.text.iseven circ_odd.o:.text.isodd
+
+# Strong undefined symbol in a reachable section is diagnosed.
+case undefined_symbol
+objects = undef_main.mkobj
+entry = main
+expect = error:undefined-symbol
+undefined = ghost
+
+# Unreferenced section referencing a missing symbol is reclaimed silently.
+case dead_section_reclaimed
+objects = dead_main.mkobj dead_unused.mkobj
+entry = main
+expect = ok
+return = 7
+kept = dead_main.o:.text.main
+dropped = dead_unused.o:.text.unused
+
+# Exported symbol is an indirect GC root; keep section is also a root.
+case exported_and_keep_roots
+objects = export_main.mkobj export_api.mkobj
+entry = main
+expect = ok
+return = 7
+kept = export_main.o:.text.main export_api.o:.text.api export_api.o:.data.tbl
+
+# Two strong definitions: deterministic conflict, link never happens.
+case multiple_strong_conflict
+objects = conflict_a.mkobj conflict_b.mkobj
+entry = x
+expect = error:multiple-strong-definition
+
+# Transitive chain main -> a -> b -> c across four objects.
+case transitive_chain
+objects = chain_main.mkobj chain_a.mkobj chain_b.mkobj chain_c.mkobj
+entry = main
+expect = ok
+return = 7
+kept = chain_main.o:.text.main chain_a.o:.text.a chain_b.o:.text.b chain_c.o:.text.c
+
+# Weak-undefined external links; executing the null call is a runtime error.
+case weak_null_runtime
+objects = weaknull_main.mkobj
+entry = main
+expect = error:runtime
