@@ -1,0 +1,26 @@
+# Default configuration for the geodesic reconstruction service.
+# Every value can be overridden with an environment variable named GEOREC_<KEY>,
+# e.g. GEOREC_CONNECTIVITY=8 GEOREC_ON_VIOLATION=clip.
+
+# Neighborhood: 4 or 8 (fixed per deployment, not per pixel).
+connectivity = 4
+
+# Boundary rule is fixed and NOT configurable at runtime: out-of-bounds
+# neighbors are ignored ("edge-ignore"). Recorded here for documentation only.
+boundary_rule = "edge-ignore"
+
+# What to do when the marker exceeds the mask somewhere:
+#   "reject" -> refuse the request with MARKER_EXCEEDS_MASK
+#   "clip"   -> explicitly clip marker := min(marker, mask) and report clipped=true
+on_violation = "reject"
+
+# Numerical kernel: "queue" (FIFO propagation), "sync" (whole-image iteration
+# to fixed point) or "tiled" (chunked sweeps). All three are equivalent.
+algorithm = "queue"
+
+# Tile size used by the "tiled" algorithm.
+tile_height = 64
+tile_width = 64
+
+# Hard input size limit (pixels per image).
+max_pixels = 4000000

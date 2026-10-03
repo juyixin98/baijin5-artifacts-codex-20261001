@@ -1,0 +1,10 @@
+[project]
+name = "geodesic-recon"
+version = "0.1.0"
+description = "Geodesic dilation reconstruction service (grayscale/binary marker under mask)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+addopts = "-q"
