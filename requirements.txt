@@ -1,0 +1,10 @@
+# Top-level dependencies. Exact pins are in requirements-lock.txt.
+fastapi
+uvicorn
+cryptography
+pycryptodome
+
+# Development / test
+pytest
+pytest-cov
+httpx
