@@ -1,0 +1,23 @@
+# cdc-server startup configuration.
+# Precedence: built-in defaults < this file < environment
+# (CDC_LISTEN, CDC_MAX_BODY_BYTES, CDC_MAX_CONCURRENT).
+
+listen = "127.0.0.1:8080"
+
+[chunk]
+# Minimum chunk size; no boundary is emitted before this many bytes.
+min_size = 16384
+# Target average chunk size is 2^avg_bits bytes (here: 64 KiB).
+avg_bits = 16
+# Hard maximum; a chunk is forced at this size regardless of the hash.
+max_size = 262144
+
+[limits]
+# Maximum request body accepted by /v1/chunk and /v1/verify.
+max_body_bytes = 67108864
+# Maximum chunks per manifest.
+max_chunks = 65536
+# Maximum concurrently processed requests; excess requests wait.
+max_concurrent = 64
+# Per-request processing timeout, seconds.
+request_timeout_secs = 30

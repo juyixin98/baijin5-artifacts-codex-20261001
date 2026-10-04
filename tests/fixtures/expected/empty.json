@@ -1,0 +1,12 @@
+{
+  "boundaries": [],
+  "chunk_lengths": [],
+  "chunk_sha256": [],
+  "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "params": {
+    "avg_bits": 10,
+    "max_size": 4096,
+    "min_size": 256
+  },
+  "total_len": 0
+}
