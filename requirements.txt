@@ -1,0 +1,10 @@
+# Direct dependencies, pinned to the exact versions used in CI/dev.
+# Install: pip install -r requirements.txt
+numpy==2.4.6
+scipy==1.15.3
+fastapi==0.141.1
+uvicorn==0.54.0
+pydantic==2.13.5
+# Test-only dependencies.
+pytest==9.1.1
+httpx==0.28.1
