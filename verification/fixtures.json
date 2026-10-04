@@ -1,0 +1,189 @@
+{
+  "norm_version": "nfkc-casefold-v1",
+  "index_bits": 16,
+  "index_key_v1": "68cb879c466a1bd32ccddd6c0e1907bd82a665508d9cbf5e175e08dcdcecc13e",
+  "field_types": {
+    "lookup:email": "email",
+    "alias:email": "email",
+    "lookup:phone": "phone",
+    "lookup:name": "name"
+  },
+  "records": [
+    {
+      "record_id": "r1",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "  Alice@Example.COM "
+    },
+    {
+      "record_id": "r2",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "alice@example.com"
+    },
+    {
+      "record_id": "r3",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "ａｌｉｃｅ＠ｅｘａｍｐｌｅ．ｃｏｍ"
+    },
+    {
+      "record_id": "r4",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "bob@example.com"
+    },
+    {
+      "record_id": "r5",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": null
+    },
+    {
+      "record_id": "r6",
+      "field": "phone",
+      "purpose": "lookup:phone",
+      "value": "1 (555) 010-1234"
+    },
+    {
+      "record_id": "r7",
+      "field": "phone",
+      "purpose": "lookup:phone",
+      "value": "15550101234"
+    },
+    {
+      "record_id": "r8",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "collide27@example.com"
+    },
+    {
+      "record_id": "r9",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "collide472@example.com"
+    },
+    {
+      "record_id": "r10",
+      "field": "email",
+      "purpose": "alias:email",
+      "value": "dave@example.com"
+    },
+    {
+      "record_id": "r11",
+      "field": "name",
+      "purpose": "lookup:name",
+      "value": "  Alice   Smith "
+    }
+  ],
+  "queries": [
+    {
+      "name": "canonical-case-pad",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "ALICE@example.com",
+      "expected_confirmed": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    },
+    {
+      "name": "fullwidth-form",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "Ａｌｉｃｅ＠Ｅｘａｍｐｌｅ．Ｃｏｍ",
+      "expected_confirmed": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    },
+    {
+      "name": "plain-bob",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "bob@example.com",
+      "expected_confirmed": [
+        "r4"
+      ]
+    },
+    {
+      "name": "absent",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "carol@example.com",
+      "expected_confirmed": []
+    },
+    {
+      "name": "phone-punctuation",
+      "field": "phone",
+      "purpose": "lookup:phone",
+      "value": "1-555-010-1234",
+      "expected_confirmed": [
+        "r6",
+        "r7"
+      ]
+    },
+    {
+      "name": "forced-collision-a",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "collide27@example.com",
+      "expected_confirmed": [
+        "r8"
+      ],
+      "expect_filtered": true
+    },
+    {
+      "name": "forced-collision-b",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "collide472@example.com",
+      "expected_confirmed": [
+        "r9"
+      ],
+      "expect_filtered": true
+    },
+    {
+      "name": "domain-separation",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "dave@example.com",
+      "expected_confirmed": []
+    },
+    {
+      "name": "name-whitespace-case",
+      "field": "name",
+      "purpose": "lookup:name",
+      "value": "alice smith",
+      "expected_confirmed": [
+        "r11"
+      ]
+    }
+  ],
+  "index_probes": [
+    {
+      "record_id": "r1",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "  Alice@Example.COM "
+    },
+    {
+      "record_id": "r4",
+      "field": "email",
+      "purpose": "lookup:email",
+      "value": "bob@example.com"
+    },
+    {
+      "record_id": "r6",
+      "field": "phone",
+      "purpose": "lookup:phone",
+      "value": "1 (555) 010-1234"
+    }
+  ],
+  "null_case": {
+    "field": "email",
+    "purpose": "lookup:email"
+  }
+}

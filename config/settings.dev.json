@@ -1,0 +1,23 @@
+{
+  "database_path": "data/dev.db",
+  "audit_log_path": "data/audit.log",
+  "allow_plaintext_read": true,
+  "index_bits": 64,
+  "norm_version": "nfkc-casefold-v1",
+  "purposes": {
+    "lookup:email": "email",
+    "alias:email": "email",
+    "lookup:phone": "phone",
+    "lookup:name": "name"
+  },
+  "keys": {
+    "enc": {
+      "1": "d95df0b78cea1707b5a35c9874a3cb9b35a15fad2be190dbffa2b7878168651a"
+    },
+    "index": {
+      "1": "f670782faa2deb2e16b425356b333b9eecb9640c3bda5a7418e146bf5dff40ec"
+    }
+  },
+  "active_enc_version": 1,
+  "active_index_version": 1
+}

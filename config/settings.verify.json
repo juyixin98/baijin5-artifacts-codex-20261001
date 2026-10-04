@@ -1,0 +1,23 @@
+{
+  "database_path": "data/verify.db",
+  "audit_log_path": "data/verify-audit.log",
+  "allow_plaintext_read": true,
+  "index_bits": 16,
+  "norm_version": "nfkc-casefold-v1",
+  "purposes": {
+    "lookup:email": "email",
+    "alias:email": "email",
+    "lookup:phone": "phone",
+    "lookup:name": "name"
+  },
+  "keys": {
+    "enc": {
+      "1": "ba32408153d0539991fafad19d0901e9ee8b27333b63abef0b02675f877e9880"
+    },
+    "index": {
+      "1": "68cb879c466a1bd32ccddd6c0e1907bd82a665508d9cbf5e175e08dcdcecc13e"
+    }
+  },
+  "active_enc_version": 1,
+  "active_index_version": 1
+}
