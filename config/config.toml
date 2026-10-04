@@ -1,0 +1,43 @@
+# SCRAM-SHA-256 local test service configuration.
+# LOCAL TEST ONLY - do not point this file at production accounts.
+
+[server]
+# Binds to loopback only; the service never accepts non-local traffic by default.
+host = "127.0.0.1"
+port = 8765
+# Database stores salted SCRAM verifiers (StoredKey/ServerKey), never plaintext passwords.
+database_path = "data/scram_test.db"
+audit_log_path = "logs/audit.jsonl"
+
+[crypto]
+# Only HMAC-SHA-256 based SCRAM is implemented.
+mechanism = "SCRAM-SHA-256"
+plus_mechanism = "SCRAM-SHA-256-PLUS"
+# RFC 7677 section 4: iteration count SHOULD be at least 4096.
+iteration_count = 4096
+# 32-byte salt per RFC 5802 section 2.2 recommendation.
+salt_bytes = 32
+# Server nonce fragment length; client fragment is expected at least this many raw bytes.
+server_nonce_bytes = 24
+client_nonce_min_bytes = 16
+nonce_max_bytes = 128
+
+[session]
+# States older than this are rejected (seconds since creation).
+ttl_seconds = 120
+# Completed/failed sessions are removed immediately, but a defensive cap exists.
+max_active = 4096
+
+[limits]
+# Wire message size cap, attribute count cap, username length cap.
+max_message_bytes = 4096
+max_attributes = 8
+max_username_chars = 128
+
+[channel_binding]
+# Explicit channel binding support scope:
+#   "none"  -> only the SCRAM-SHA-256 non-PLUS mechanism is offered
+#   "tls-server-end-point" -> PLUS may be used, requiring the server TLS certificate hash
+mode = "none"
+# When mode = "tls-server-end-point", name of the header carrying the hex cert hash.
+cert_hash_header = "X-Tls-Server-End-Point-Sha256"

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scram-auth-local"
+version = "1.0.0"
+description = "Local test-only SCRAM-SHA-256 / SCRAM-SHA-256-PLUS client and server state machines"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.34.0",
+    "pydantic==2.10.4",
+    "cryptography==44.0.0",
+    "pycryptodome==3.20.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: PBKDF2-heavy tests",
+]
+
+[tool.coverage.run]
+source = ["src/scram_auth"]
+branch = true
+omit = ["src/scram_auth/main.py"]
