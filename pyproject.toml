@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sae"
+version = "0.1.0"
+description = "Segmented authenticated encryption service for large messages"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn==0.34.0",
+    "cryptography==44.0.0",
+    "pycryptodome==3.21.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.4", "httpx==0.28.1"]
+
+[tool.setuptools.packages.find]
+include = ["sae*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
