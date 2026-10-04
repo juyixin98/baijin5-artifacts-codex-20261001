@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local runtime data
+data/*.db
+data/*.db-*
+logs/
+!logs/.gitkeep
+
+# Virtual environments
+.venv/
+venv/

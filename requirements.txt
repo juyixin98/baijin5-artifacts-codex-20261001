@@ -1,0 +1,8 @@
+# Direct runtime dependencies (minimum versions known to work).
+# The fully resolved environment used during development is in
+# requirements.lock.txt.
+fastapi>=0.110
+uvicorn>=0.29
+numpy>=1.26
+pydantic>=2.6
+httpx>=0.27

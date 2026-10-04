@@ -1,0 +1,8 @@
+{"enzymes": [
+  {
+    "name": "trypsin_syn",
+    "cut_after": "KR",
+    "not_before": "P",
+    "description": "Synthetic trypsin: cut after K/R unless followed by P."
+  }
+]}
