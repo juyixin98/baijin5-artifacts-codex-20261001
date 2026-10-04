@@ -1,0 +1,15 @@
+# cdc-service startup configuration.
+# Run with: cargo run -- config/default.toml
+
+listen = "127.0.0.1:8080"
+
+[limits]
+max_input_bytes = 67108864   # 64 MiB
+max_body_bytes  = 83886080   # 80 MiB (container uploads are larger than raw input)
+max_chunks      = 1000000
+
+[chunker]
+min_size  = 2048
+max_size  = 65536
+mask_bits = 13               # average chunk ~ 2^13 = 8192 bytes
+pattern   = 0                # cut when (hash & mask) == pattern
