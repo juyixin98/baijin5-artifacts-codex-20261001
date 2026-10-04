@@ -1,0 +1,19 @@
+[package]
+name = "resolution-checker"
+version = "0.1.0"
+edition = "2021"
+description = "Streaming independent checker for propositional CNF resolution proofs"
+license = "MIT"
+
+[lib]
+name = "resolution_checker"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rescheck"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
