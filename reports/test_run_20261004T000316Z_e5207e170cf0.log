@@ -1,0 +1,4 @@
+2026-10-04 08:03:16,149 INFO RUN START run_id=e5207e170cf0 python=3.12.3 pytest=9.1.1 phe=1.5.0 fastapi=0.142.2 cryptography=50.0.2
+2026-10-04 08:03:16,161 INFO TEST START run_id=e5207e170cf0 node=tests/test_crypto_adapter.py::test_scalar_multiplication_matches_pow_reference
+2026-10-04 08:03:16,602 INFO TEST FAILED run_id=e5207e170cf0 node=tests/test_crypto_adapter.py::test_scalar_multiplication_matches_pow_reference duration=0.030s
+2026-10-04 08:03:16,603 INFO RUN END run_id=e5207e170cf0 exitstatus=1 passed=0 failed=1 skipped=n/a

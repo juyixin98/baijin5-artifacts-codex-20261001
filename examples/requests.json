@@ -1,0 +1,29 @@
+{
+  "comment": "示例请求体（配合 README 的 curl 命令使用）。ciphertext 需由 scripts/client_encrypt.py 用批次公钥现场生成，此处仅为结构示意。",
+  "create_batch": {
+    "method": "POST",
+    "path": "/batches",
+    "body": {
+      "label": "demo",
+      "key_size": 2048,
+      "max_plaintext_abs": 1000000,
+      "max_coefficient_abs": 1000,
+      "max_aggregate_abs": 1000000000
+    }
+  },
+  "submit_contribution": {
+    "method": "POST",
+    "path": "/batches/{batch_id}/contributions",
+    "body": {
+      "participant_id": "participant-0",
+      "key_id": "sha256:<批次公钥指纹>",
+      "ciphertext": "<十进制密文字符串>",
+      "coefficient": 2,
+      "plaintext_fixture": 3
+    }
+  },
+  "aggregate": {"method": "POST", "path": "/batches/{batch_id}/aggregate"},
+  "decrypt": {"method": "POST", "path": "/batches/{batch_id}/decrypt"},
+  "verify": {"method": "POST", "path": "/batches/{batch_id}/verify"},
+  "audit": {"method": "GET", "path": "/batches/{batch_id}/audit"}
+}

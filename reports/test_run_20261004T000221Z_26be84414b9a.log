@@ -1,0 +1,17 @@
+2026-10-04 08:02:21,571 INFO RUN START run_id=26be84414b9a python=3.12.3 pytest=9.1.1 phe=1.5.0 fastapi=0.142.2 cryptography=50.0.2
+2026-10-04 08:02:21,653 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_hand_computed_weighted_sum
+2026-10-04 08:02:22,528 INFO CASE hand_computed run_id=26be84414b9a inputs=[3, -2, 7] weights=[2, 5, -1] expected=-11 actual=-11
+2026-10-04 08:02:22,528 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_hand_computed_weighted_sum duration=0.075s
+2026-10-04 08:02:22,529 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_negative_weights_produce_negative_total
+2026-10-04 08:02:22,912 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_negative_weights_produce_negative_total duration=0.057s
+2026-10-04 08:02:22,912 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_zero_coefficient_contributes_nothing
+2026-10-04 08:02:23,228 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_zero_coefficient_contributes_nothing duration=0.055s
+2026-10-04 08:02:23,229 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_client_encrypt_rejects_out_of_range_plaintext
+2026-10-04 08:02:23,327 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_client_encrypt_rejects_out_of_range_plaintext duration=0.000s
+2026-10-04 08:02:23,328 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_coefficient_out_of_range_rejected
+2026-10-04 08:02:23,498 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_coefficient_out_of_range_rejected duration=0.015s
+2026-10-04 08:02:23,499 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_mixed_keys_rejected
+2026-10-04 08:02:23,813 INFO TEST PASSED run_id=26be84414b9a node=tests/test_aggregation.py::test_mixed_keys_rejected duration=0.088s
+2026-10-04 08:02:23,813 INFO TEST START run_id=26be84414b9a node=tests/test_aggregation.py::test_spoofed_key_id_fails_closed_at_decrypt_or_verify
+2026-10-04 08:02:24,232 INFO TEST FAILED run_id=26be84414b9a node=tests/test_aggregation.py::test_spoofed_key_id_fails_closed_at_decrypt_or_verify duration=0.306s
+2026-10-04 08:02:24,233 INFO RUN END run_id=26be84414b9a exitstatus=1 passed=40 failed=1 skipped=n/a

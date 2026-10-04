@@ -1,0 +1,87 @@
+2026-10-04 08:14:02,953 INFO RUN START run_id=233caaa335d9 python=3.12.3 pytest=9.1.1 phe=1.5.0 fastapi=0.142.2 cryptography=50.0.2
+2026-10-04 08:14:02,975 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_hand_computed_weighted_sum
+2026-10-04 08:14:03,128 INFO CASE hand_computed run_id=233caaa335d9 inputs=[3, -2, 7] weights=[2, 5, -1] expected=-11 actual=-11
+2026-10-04 08:14:03,128 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_hand_computed_weighted_sum duration=0.089s
+2026-10-04 08:14:03,129 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_negative_weights_produce_negative_total
+2026-10-04 08:14:03,454 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_negative_weights_produce_negative_total duration=0.069s
+2026-10-04 08:14:03,455 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_zero_coefficient_contributes_nothing
+2026-10-04 08:14:03,575 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_zero_coefficient_contributes_nothing duration=0.055s
+2026-10-04 08:14:03,576 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_client_encrypt_rejects_out_of_range_plaintext
+2026-10-04 08:14:03,813 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_client_encrypt_rejects_out_of_range_plaintext duration=0.000s
+2026-10-04 08:14:03,813 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_coefficient_out_of_range_rejected
+2026-10-04 08:14:03,932 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_coefficient_out_of_range_rejected duration=0.016s
+2026-10-04 08:14:03,933 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_mixed_keys_rejected
+2026-10-04 08:14:04,287 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_mixed_keys_rejected duration=0.282s
+2026-10-04 08:14:04,288 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_spoofed_key_id_fails_closed_at_decrypt_or_verify
+2026-10-04 08:14:04,515 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_spoofed_key_id_fails_closed_at_decrypt_or_verify duration=0.092s
+2026-10-04 08:14:04,515 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_aggregate_bound_exceeded_rejected
+2026-10-04 08:14:04,658 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_aggregate_bound_exceeded_rejected duration=0.134s
+2026-10-04 08:14:04,659 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_decode_ambiguous_on_malicious_plaintext
+2026-10-04 08:14:04,776 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_decode_ambiguous_on_malicious_plaintext duration=0.108s
+2026-10-04 08:14:04,777 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_state_machine
+2026-10-04 08:14:04,986 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_state_machine duration=0.052s
+2026-10-04 08:14:04,987 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_unknown_batch_raises_not_found
+2026-10-04 08:14:04,995 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_unknown_batch_raises_not_found duration=0.000s
+2026-10-04 08:14:04,996 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_pass_on_honest_run
+2026-10-04 08:14:05,306 INFO CASE verify_pass run_id=233caaa335d9 expected=-14 report={'batch_id': 'ed7a0210743b4503', 'status': 'PASS', 'checks': [{'name': 'ciphertext_reaggregation', 'ok': True, 'basis': 'prod(pow(c_i, w_i mod n, n^2)) mod n^2 == stored aggregate'}, {'name': 'independent_decrypt_decode', 'ok': True, 'basis': 'textbook Paillier decrypt + bounded signed decode', 'raw_residue': '123951375023335527536257677839802004850918540604949332131724192202581337411647581549781047623343488848062367482116677504382242688776928125324178155136006364453545196773078127597151449829609180420719681054479474079889064602146579023165129465887990244084772915852786848969597313832266572593394311855664805774409'}, {'name': 'plaintext_reference', 'ok': True, 'basis': 'sum(w_i * m_i) over stored plaintext fixtures', 'expected': -14}, {'name': 'cross_agreement', 'ok': True, 'basis': 'all derivable plaintexts must be equal', 'values': [-14, -14, -14]}], 'expected_plaintext': -14, 'service_plaintext': -14, 'independent_plaintext': -14}
+2026-10-04 08:14:05,307 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_pass_on_honest_run duration=0.116s
+2026-10-04 08:14:05,308 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_fails_on_tampered_fixture
+2026-10-04 08:14:05,440 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_fails_on_tampered_fixture duration=0.072s
+2026-10-04 08:14:05,440 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_unverifiable_without_fixtures
+2026-10-04 08:14:05,624 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_verification_unverifiable_without_fixtures duration=0.052s
+2026-10-04 08:14:05,625 INFO TEST START run_id=233caaa335d9 node=tests/test_aggregation.py::test_raw_residue_matches_independent_reference
+2026-10-04 08:14:05,777 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_aggregation.py::test_raw_residue_matches_independent_reference duration=0.037s
+2026-10-04 08:14:05,778 INFO TEST START run_id=233caaa335d9 node=tests/test_api.py::test_full_flow_over_http
+2026-10-04 08:14:06,056 INFO CASE api_full_flow run_id=233caaa335d9 expected=-11 actual=-11
+2026-10-04 08:14:06,092 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_api.py::test_full_flow_over_http duration=0.259s
+2026-10-04 08:14:06,094 INFO TEST START run_id=233caaa335d9 node=tests/test_api.py::test_error_responses_carry_category
+2026-10-04 08:14:06,654 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_api.py::test_error_responses_carry_category duration=0.542s
+2026-10-04 08:14:06,655 INFO TEST START run_id=233caaa335d9 node=tests/test_api.py::test_meta_reports_versions_and_scope
+2026-10-04 08:14:06,675 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_api.py::test_meta_reports_versions_and_scope duration=0.002s
+2026-10-04 08:14:06,676 INFO TEST START run_id=233caaa335d9 node=tests/test_api.py::test_health
+2026-10-04 08:14:06,697 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_api.py::test_health duration=0.002s
+2026-10-04 08:14:06,699 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_encrypt_decrypt_roundtrip
+2026-10-04 08:14:06,879 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_encrypt_decrypt_roundtrip duration=0.076s
+2026-10-04 08:14:06,879 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_addition_matches_plaintext_reference
+2026-10-04 08:14:06,914 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_addition_matches_plaintext_reference duration=0.034s
+2026-10-04 08:14:06,914 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_addition_matches_raw_modular_reference
+2026-10-04 08:14:06,948 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_addition_matches_raw_modular_reference duration=0.033s
+2026-10-04 08:14:06,948 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_negative_scalar_multiplication
+2026-10-04 08:14:06,982 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_negative_scalar_multiplication duration=0.034s
+2026-10-04 08:14:06,983 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_scalar_multiplication_matches_pow_reference
+2026-10-04 08:14:07,028 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_scalar_multiplication_matches_pow_reference duration=0.044s
+2026-10-04 08:14:07,028 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_weighted_sum_matches_independent_aggregate
+2026-10-04 08:14:07,107 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_weighted_sum_matches_independent_aggregate duration=0.078s
+2026-10-04 08:14:07,107 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_independent_textbook_decrypt_agrees_with_adapter
+2026-10-04 08:14:07,148 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_independent_textbook_decrypt_agrees_with_adapter duration=0.040s
+2026-10-04 08:14:07,148 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_homomorphic_operations_are_deterministic
+2026-10-04 08:14:07,207 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_homomorphic_operations_are_deterministic duration=0.058s
+2026-10-04 08:14:07,207 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_validate_ciphertext_rejects_out_of_range
+2026-10-04 08:14:07,208 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_validate_ciphertext_rejects_out_of_range duration=0.000s
+2026-10-04 08:14:07,208 INFO TEST START run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_key_fingerprint_distinguishes_keys
+2026-10-04 08:14:07,267 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_crypto_adapter.py::test_key_fingerprint_distinguishes_keys duration=0.059s
+2026-10-04 08:14:07,268 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_positive_hand_computed
+2026-10-04 08:14:07,269 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_positive_hand_computed duration=0.000s
+2026-10-04 08:14:07,269 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_negative_hand_computed
+2026-10-04 08:14:07,270 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_negative_hand_computed duration=0.000s
+2026-10-04 08:14:07,270 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_boundary_values
+2026-10-04 08:14:07,271 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_boundary_values duration=0.000s
+2026-10-04 08:14:07,271 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_out_of_range_raises_category
+2026-10-04 08:14:07,271 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_out_of_range_raises_category duration=0.000s
+2026-10-04 08:14:07,272 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_rejects_non_integer
+2026-10-04 08:14:07,272 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_rejects_non_integer duration=0.000s
+2026-10-04 08:14:07,273 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_positive_and_negative_hand_computed
+2026-10-04 08:14:07,273 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_positive_and_negative_hand_computed duration=0.000s
+2026-10-04 08:14:07,274 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_ambiguous_zone_raises_not_negative
+2026-10-04 08:14:07,274 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_ambiguous_zone_raises_not_negative duration=0.000s
+2026-10-04 08:14:07,274 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_matches_independent_reference
+2026-10-04 08:14:07,275 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_decode_matches_independent_reference duration=0.000s
+2026-10-04 08:14:07,275 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_matches_independent_reference
+2026-10-04 08:14:07,276 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_encode_matches_independent_reference duration=0.000s
+2026-10-04 08:14:07,276 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_coefficient_bounds
+2026-10-04 08:14:07,277 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_coefficient_bounds duration=0.000s
+2026-10-04 08:14:07,277 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_params_validation_against_modulus
+2026-10-04 08:14:07,277 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_params_validation_against_modulus duration=0.000s
+2026-10-04 08:14:07,278 INFO TEST START run_id=233caaa335d9 node=tests/test_encoding.py::test_params_self_validation
+2026-10-04 08:14:07,278 INFO TEST PASSED run_id=233caaa335d9 node=tests/test_encoding.py::test_params_self_validation duration=0.000s
+2026-10-04 08:14:07,279 INFO RUN END run_id=233caaa335d9 exitstatus=0 passed=41 failed=0 skipped=n/a
