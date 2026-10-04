@@ -1,0 +1,204 @@
+{
+  "description": "Hand-authored expected outcomes for short synthetic sequences. Fragment boundaries/sequences are written by hand from the explicit cleavage rules; neutral masses are frozen values produced by scripts/derive_expected_masses.py (a separate NumPy-free derivation) and re-checked at runtime by an independent NumPy formula oracle. Coordinates are 0-based half-open offsets into the parent sequence.",
+  "cases": [
+    {
+      "case_name": "trypsin_basic_mc0",
+      "sequence": "AAKAAAKAA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 0,
+      "fragment_count": 3,
+      "cleavage_bonds": [3, 7],
+      "blocked_bonds": [],
+      "has_ambiguous": false,
+      "mass_uncertain": false,
+      "fragments": [
+        {"start": 0, "end": 3, "sequence": "AAK", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 3, "end": 7, "sequence": "AAAK", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": false},
+        {"start": 7, "end": 9, "sequence": "AA", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AAK": 288.179755262,
+        "AAAK": 359.216869045,
+        "AA": 160.084792251
+      }
+    },
+    {
+      "case_name": "trypsin_mc1_spans",
+      "sequence": "AAKAAAKAA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 1,
+      "fragment_count": 5,
+      "cleavage_bonds": [3, 7],
+      "blocked_bonds": [],
+      "fragments": [
+        {"start": 0, "end": 3, "sequence": "AAK", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 0, "end": 7, "sequence": "AAKAAAK", "empty": false, "missed_cleavages": 1, "n_terminal": true, "c_terminal": false},
+        {"start": 3, "end": 7, "sequence": "AAAK", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": false},
+        {"start": 3, "end": 9, "sequence": "AAAKAA", "empty": false, "missed_cleavages": 1, "n_terminal": false, "c_terminal": true},
+        {"start": 7, "end": 9, "sequence": "AA", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AAK": 288.179755262,
+        "AAAK": 359.216869045,
+        "AA": 160.084792251
+      }
+    },
+    {
+      "case_name": "trypsin_mc2_full_spans",
+      "sequence": "AAKAAAKAA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 2,
+      "fragment_count": 6,
+      "fragments": [
+        {"start": 0, "end": 3, "sequence": "AAK", "missed_cleavages": 0, "n_terminal": true},
+        {"start": 0, "end": 7, "sequence": "AAKAAAK", "missed_cleavages": 1, "n_terminal": true},
+        {"start": 0, "end": 9, "sequence": "AAKAAAKAA", "missed_cleavages": 2, "n_terminal": true, "c_terminal": true},
+        {"start": 3, "end": 7, "sequence": "AAAK", "missed_cleavages": 0},
+        {"start": 3, "end": 9, "sequence": "AAAKAA", "missed_cleavages": 1, "c_terminal": true},
+        {"start": 7, "end": 9, "sequence": "AA", "missed_cleavages": 0, "c_terminal": true}
+      ]
+    },
+    {
+      "case_name": "trypsin_consecutive_sites_mc0",
+      "sequence": "AKKA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 0,
+      "fragment_count": 3,
+      "cleavage_bonds": [2, 3],
+      "fragments": [
+        {"start": 0, "end": 2, "sequence": "AK", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 2, "end": 3, "sequence": "K", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": false},
+        {"start": 3, "end": 4, "sequence": "A", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AK": 217.142641478,
+        "K": 146.105527695,
+        "A": 89.047678467
+      }
+    },
+    {
+      "case_name": "trypsin_consecutive_sites_mc1",
+      "sequence": "AKKA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 1,
+      "fragment_count": 5,
+      "fragments": [
+        {"start": 0, "end": 2, "sequence": "AK", "missed_cleavages": 0, "n_terminal": true},
+        {"start": 0, "end": 3, "sequence": "AKK", "missed_cleavages": 1, "n_terminal": true},
+        {"start": 2, "end": 3, "sequence": "K", "missed_cleavages": 0},
+        {"start": 2, "end": 4, "sequence": "KA", "missed_cleavages": 1, "c_terminal": true},
+        {"start": 3, "end": 4, "sequence": "A", "missed_cleavages": 0, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AK": 217.142641478,
+        "K": 146.105527695,
+        "A": 89.047678467
+      }
+    },
+    {
+      "case_name": "trypsin_blocked_by_proline",
+      "sequence": "AKPAA",
+      "enzyme": "trypsin",
+      "missed_cleavages": 0,
+      "fragment_count": 1,
+      "cleavage_bonds": [],
+      "blocked_bonds": [2],
+      "fragments": [
+        {"start": 0, "end": 5, "sequence": "AKPAA", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AKPAA": 456.269632892
+      }
+    },
+    {
+      "case_name": "aspn_nterminal_d_gives_empty_segment",
+      "sequence": "DAAD",
+      "enzyme": "asp_n",
+      "missed_cleavages": 0,
+      "fragment_count": 3,
+      "cleavage_bonds": [3],
+      "blocked_bonds": [],
+      "fragments": [
+        {"start": 0, "end": 0, "sequence": "", "empty": true, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 0, "end": 3, "sequence": "DAA", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 3, "end": 4, "sequence": "D", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "DAA": 275.111735274,
+        "D": 133.037507707
+      }
+    },
+    {
+      "case_name": "trypsin_cterminal_k_gives_empty_segment",
+      "sequence": "AK",
+      "enzyme": "trypsin",
+      "missed_cleavages": 0,
+      "fragment_count": 2,
+      "cleavage_bonds": [],
+      "blocked_bonds": [],
+      "fragments": [
+        {"start": 0, "end": 2, "sequence": "AK", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": true},
+        {"start": 2, "end": 2, "sequence": "", "empty": true, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AK": 217.142641478
+      }
+    },
+    {
+      "case_name": "chymotrypsin_blocked_and_cterminal_anchor",
+      "sequence": "AFPW",
+      "enzyme": "chymotrypsin",
+      "missed_cleavages": 0,
+      "fragment_count": 2,
+      "cleavage_bonds": [],
+      "blocked_bonds": [2],
+      "fragments": [
+        {"start": 0, "end": 4, "sequence": "AFPW", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": true},
+        {"start": 4, "end": 4, "sequence": "", "empty": true, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AFPW": 519.248169173
+      }
+    },
+    {
+      "case_name": "ambiguous_B_mass_uncertain",
+      "sequence": "ABG",
+      "enzyme": "cnbr",
+      "missed_cleavages": 0,
+      "fragment_count": 1,
+      "has_ambiguous": true,
+      "mass_uncertain": true,
+      "fragments": [
+        {"start": 0, "end": 3, "sequence": "ABG", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": true}
+      ]
+    },
+    {
+      "case_name": "ambiguous_J_isobaric_mass_determinate",
+      "sequence": "AJG",
+      "enzyme": "cnbr",
+      "missed_cleavages": 0,
+      "fragment_count": 1,
+      "has_ambiguous": true,
+      "mass_uncertain": false,
+      "fragments": [
+        {"start": 0, "end": 3, "sequence": "AJG", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": true}
+      ]
+    },
+    {
+      "case_name": "cnbr_after_methionine_mc0",
+      "sequence": "AMAM",
+      "enzyme": "cnbr",
+      "missed_cleavages": 0,
+      "fragment_count": 3,
+      "cleavage_bonds": [2],
+      "fragments": [
+        {"start": 0, "end": 2, "sequence": "AM", "empty": false, "missed_cleavages": 0, "n_terminal": true, "c_terminal": false},
+        {"start": 2, "end": 4, "sequence": "AM", "empty": false, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true},
+        {"start": 4, "end": 4, "sequence": "", "empty": true, "missed_cleavages": 0, "n_terminal": false, "c_terminal": true}
+      ],
+      "fragment_masses": {
+        "AM": 220.088163552
+      }
+    }
+  ]
+}

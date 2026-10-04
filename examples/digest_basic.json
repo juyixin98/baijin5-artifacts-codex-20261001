@@ -1,0 +1,7 @@
+{
+  "sequence": "AAKAAAKAA",
+  "enzyme": "trypsin",
+  "missed_cleavages": 1,
+  "charges": [1, 2],
+  "include_residues": true
+}

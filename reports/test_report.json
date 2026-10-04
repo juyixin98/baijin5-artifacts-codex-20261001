@@ -1,0 +1,387 @@
+{
+  "service_version": "1.0.0",
+  "started_at": 1791092697.8479831,
+  "results": [
+    {
+      "nodeid": "tests/test_api.py::test_health_reports_version",
+      "outcome": "passed",
+      "duration_ms": 18.939
+    },
+    {
+      "nodeid": "tests/test_api.py::test_enzymes_lists_rules_and_blocks",
+      "outcome": "passed",
+      "duration_ms": 15.435
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_returns_concrete_fragments_and_provenance",
+      "outcome": "passed",
+      "duration_ms": 21.585
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_reports_charge_mz",
+      "outcome": "passed",
+      "duration_ms": 19.804
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_unsupported_residue_is_422_with_category",
+      "outcome": "passed",
+      "duration_ms": 17.588
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_empty_sequence_is_422",
+      "outcome": "passed",
+      "duration_ms": 18.694
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_invalid_enzyme_is_422",
+      "outcome": "passed",
+      "duration_ms": 15.959
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_invalid_charge_is_422",
+      "outcome": "passed",
+      "duration_ms": 15.497
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_custom_rule_with_blocking_context",
+      "outcome": "passed",
+      "duration_ms": 21.439
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_ambiguous_flags_uncertainty",
+      "outcome": "passed",
+      "duration_ms": 22.452
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_j_isobaric_is_determinate",
+      "outcome": "passed",
+      "duration_ms": 21.263
+    },
+    {
+      "nodeid": "tests/test_api.py::test_digest_schema_validation_error_is_structured",
+      "outcome": "passed",
+      "duration_ms": 15.318
+    },
+    {
+      "nodeid": "tests/test_api.py::test_run_can_be_retrieved_after_digest",
+      "outcome": "passed",
+      "duration_ms": 26.743
+    },
+    {
+      "nodeid": "tests/test_api.py::test_missing_run_is_404_category",
+      "outcome": "passed",
+      "duration_ms": 15.164
+    },
+    {
+      "nodeid": "tests/test_api.py::test_validate_endpoint_pass_and_fail",
+      "outcome": "passed",
+      "duration_ms": 29.939
+    },
+    {
+      "nodeid": "tests/test_api.py::test_validate_unknown_run_id_is_404",
+      "outcome": "passed",
+      "duration_ms": 16.029
+    },
+    {
+      "nodeid": "tests/test_api.py::test_empty_n_segment_is_exposed_over_http",
+      "outcome": "passed",
+      "duration_ms": 20.37
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_trypsin_basic_boundaries",
+      "outcome": "passed",
+      "duration_ms": 0.696
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_trypsin_missed_cleavages_enumerate_every_span_once",
+      "outcome": "passed",
+      "duration_ms": 0.734
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_missed_cleavages_above_site_count_caps_at_whole_protein",
+      "outcome": "passed",
+      "duration_ms": 0.526
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_consecutive_cleavage_sites",
+      "outcome": "passed",
+      "duration_ms": 0.544
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_trypsin_blocked_by_proline_is_recorded_as_blocked",
+      "outcome": "passed",
+      "duration_ms": 0.537
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_proline_block_does_not_block_other_bonds",
+      "outcome": "passed",
+      "duration_ms": 0.491
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_asp_n_nterminal_d_emits_explicit_empty_n_segment",
+      "outcome": "passed",
+      "duration_ms": 0.629
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_cterminal_rule_residue_emits_explicit_empty_c_segment",
+      "outcome": "passed",
+      "duration_ms": 0.451
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_identical_sequences_keep_distinct_positions",
+      "outcome": "passed",
+      "duration_ms": 0.549
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_fragment_positions_are_absolute_parent_coordinates",
+      "outcome": "passed",
+      "duration_ms": 0.645
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_no_cleavage_sites_returns_whole_terminal_fragment",
+      "outcome": "passed",
+      "duration_ms": 0.478
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_custom_rule_with_blocking_context",
+      "outcome": "passed",
+      "duration_ms": 0.545
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_evaluate_sites_reports_rule_residue_position",
+      "outcome": "passed",
+      "duration_ms": 0.309
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_pepsin_before_rule_nside_proline_block",
+      "outcome": "passed",
+      "duration_ms": 0.615
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_fixed_modification_applies_to_every_target",
+      "outcome": "passed",
+      "duration_ms": 0.895
+    },
+    {
+      "nodeid": "tests/test_digest.py::test_variable_modification_enumerates_subsets",
+      "outcome": "passed",
+      "duration_ms": 0.491
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_water_mass_matches_hand_constant",
+      "outcome": "passed",
+      "duration_ms": 0.344
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_canonical_residue_masses_match_hand_constants",
+      "outcome": "passed",
+      "duration_ms": 0.395
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_determinate_peptide_mass_is_specific_number",
+      "outcome": "passed",
+      "duration_ms": 0.537
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_single_residue_peptide_includes_one_water",
+      "outcome": "passed",
+      "duration_ms": 0.407
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_ambiguous_B_gives_uncertain_interval_spanning_N_and_D",
+      "outcome": "passed",
+      "duration_ms": 0.57
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_ambiguous_J_isobaric_is_determinate_despite_identity_ambiguity",
+      "outcome": "passed",
+      "duration_ms": 0.486
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_empty_segment_has_zero_mass",
+      "outcome": "passed",
+      "duration_ms": 0.948
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_mz_formula_specific_values",
+      "outcome": "passed",
+      "duration_ms": 0.33
+    },
+    {
+      "nodeid": "tests/test_mass.py::test_mz_rejects_non_positive_charge",
+      "outcome": "passed",
+      "duration_ms": 0.549
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_nterminal_mod_applies_only_to_nterminal_fragment",
+      "outcome": "passed",
+      "duration_ms": 5.189
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_terminal_mod_on_internal_fragment_is_absent",
+      "outcome": "passed",
+      "duration_ms": 4.999
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_fixed_mod_targeting_ambiguous_residue_is_rejected",
+      "outcome": "passed",
+      "duration_ms": 3.019
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_unknown_modification_key_is_rejected",
+      "outcome": "passed",
+      "duration_ms": 2.123
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_mod_form_limit_is_enforced",
+      "outcome": "passed",
+      "duration_ms": 3.359
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_missed_cleavages_out_of_range_is_rejected",
+      "outcome": "passed",
+      "duration_ms": 0.692
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_custom_rule_rejects_unsupported_residue",
+      "outcome": "passed",
+      "duration_ms": 1.082
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_custom_rule_requires_a_cleavage_side",
+      "outcome": "passed",
+      "duration_ms": 1.088
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_resolved_mods_partition_fixed_and_variable",
+      "outcome": "passed",
+      "duration_ms": 0.359
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_cterminal_variable_mod_binary_on_terminal_fragment",
+      "outcome": "passed",
+      "duration_ms": 5.868
+    },
+    {
+      "nodeid": "tests/test_modifications.py::test_cterminal_fixed_amidation_applies_only_to_cterminal",
+      "outcome": "passed",
+      "duration_ms": 4.655
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_normalize_strips_whitespace_and_uppercases",
+      "outcome": "passed",
+      "duration_ms": 0.293
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_parses_canonical_residues_with_positions",
+      "outcome": "passed",
+      "duration_ms": 0.4
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_ambiguous_letters_are_parseable",
+      "outcome": "passed",
+      "duration_ms": 0.831
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_j_isobaric_interval_collapses",
+      "outcome": "passed",
+      "duration_ms": 0.348
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_empty_sequence_is_rejected",
+      "outcome": "passed",
+      "duration_ms": 0.318
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_unsupported_character_reports_position_and_category",
+      "outcome": "passed",
+      "duration_ms": 0.46
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_sequence_too_long_is_rejected",
+      "outcome": "passed",
+      "duration_ms": 0.307
+    },
+    {
+      "nodeid": "tests/test_parse.py::test_selenocysteine_is_supported",
+      "outcome": "passed",
+      "duration_ms": 0.341
+    },
+    {
+      "nodeid": "tests/test_storage.py::test_run_and_fragments_are_persisted",
+      "outcome": "passed",
+      "duration_ms": 5.094
+    },
+    {
+      "nodeid": "tests/test_storage.py::test_get_missing_run_returns_none",
+      "outcome": "passed",
+      "duration_ms": 0.653
+    },
+    {
+      "nodeid": "tests/test_storage.py::test_list_runs_orders_newest_first",
+      "outcome": "passed",
+      "duration_ms": 8.159
+    },
+    {
+      "nodeid": "tests/test_storage.py::test_uncertain_mass_status_is_persisted_distinctly",
+      "outcome": "passed",
+      "duration_ms": 4.602
+    },
+    {
+      "nodeid": "tests/test_storage.py::test_validation_record_is_persisted",
+      "outcome": "passed",
+      "duration_ms": 7.266
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_all_frozen_cases_pass",
+      "outcome": "passed",
+      "duration_ms": 76.004
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_each_frozen_case_name_present",
+      "outcome": "passed",
+      "duration_ms": 85.175
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_wrong_boundary_expectation_is_fail_not_success",
+      "outcome": "passed",
+      "duration_ms": 7.396
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_wrong_cleavage_bond_expectation_is_fail",
+      "outcome": "passed",
+      "duration_ms": 7.404
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_aggregate_is_fail_when_any_case_fails",
+      "outcome": "passed",
+      "duration_ms": 12.934
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_independent_mass_oracle_matches_frozen_constants",
+      "outcome": "passed",
+      "duration_ms": 0.438
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_expectation_with_unsupported_residue_is_recorded_as_fail",
+      "outcome": "passed",
+      "duration_ms": 3.199
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_validation_accepts_existing_run_id",
+      "outcome": "passed",
+      "duration_ms": 12.626
+    },
+    {
+      "nodeid": "tests/test_validation.py::test_fragment_mass_reference_disagreeing_with_oracle_is_fail",
+      "outcome": "passed",
+      "duration_ms": 6.861
+    }
+  ],
+  "finished_at": 1791092700.3613758,
+  "elapsed_ms": 2513.393,
+  "total": 75,
+  "passed": 75,
+  "failed": 0,
+  "exit_status": 0
+}

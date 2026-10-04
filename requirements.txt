@@ -1,0 +1,10 @@
+# Direct dependencies (fully resolved & locked in requirements.lock)
+fastapi==0.142.2
+uvicorn[standard]==0.54.0
+numpy==2.5.3
+pydantic==2.13.5
+pydantic-settings==2.15.0
+# Test / local diagnostics
+pytest==9.1.1
+pytest-cov==7.1.0
+httpx==0.28.1

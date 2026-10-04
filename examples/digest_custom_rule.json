@@ -1,0 +1,10 @@
+{
+  "sequence": "APAA",
+  "enzyme": "custom",
+  "custom_rule": {
+    "name": "after-A-except-P",
+    "cleave_after": "A",
+    "cterm_block": "P"
+  },
+  "missed_cleavages": 0
+}
