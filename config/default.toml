@@ -1,0 +1,21 @@
+# rbp-column service configuration.
+# Path override: RBP_CONFIG=/path/to/file.toml
+# Individual overrides: RBP_HOST, RBP_PORT
+
+# HTTP layer limits (top-level keys must precede the [sections]).
+max_http_body_bytes = 4194304
+max_encode_values = 4194304
+
+[server]
+host = "127.0.0.1"
+port = 8080
+
+[encoder]
+# Runs of at least this many equal values become RLE blocks.
+rle_min_run = 8
+
+[budget]
+# Decode-side resource limits (pre-decode validation).
+max_blocks = 65536
+max_values = 16777216
+max_bytes = 67108864

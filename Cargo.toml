@@ -1,0 +1,25 @@
+[package]
+name = "rbp-column"
+version = "0.1.0"
+edition = "2021"
+description = "Hybrid RLE / bit-pack block codec for u64 integer columns, with an Axum interop service"
+license = "MIT"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+hex = "0.4"
+toml = "0.8"
+tower-http = { version = "0.6", features = ["limit", "trace"] }
+
+[dev-dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+
+[profile.test]
+debug-assertions = true
+overflow-checks = true
