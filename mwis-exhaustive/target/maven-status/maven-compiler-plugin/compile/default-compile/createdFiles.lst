@@ -1,0 +1,3 @@
+com/local/mwis/exhaustive/BruteForceMwis.class
+com/local/mwis/exhaustive/InputTooLargeException.class
+com/local/mwis/exhaustive/ExhaustiveResult.class

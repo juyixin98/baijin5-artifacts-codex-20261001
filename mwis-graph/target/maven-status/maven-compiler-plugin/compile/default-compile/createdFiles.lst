@@ -1,0 +1,7 @@
+com/local/mwis/graph/DecompositionValidator.class
+com/local/mwis/graph/TreeDecomposition.class
+com/local/mwis/graph/FailureCategory.class
+com/local/mwis/graph/ValidationFailure.class
+com/local/mwis/graph/Graph.class
+com/local/mwis/graph/ValidationResult.class
+com/local/mwis/graph/Edge.class

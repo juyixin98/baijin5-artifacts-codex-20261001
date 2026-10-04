@@ -1,0 +1,11 @@
+com/local/mwis/core/MwisSolver.class
+com/local/mwis/core/BagTooWideException.class
+com/local/mwis/core/SolverOptions.class
+com/local/mwis/core/BudgetExceededException.class
+com/local/mwis/core/NiceDecomposition.class
+com/local/mwis/core/SolverStats.class
+com/local/mwis/core/NiceNode.class
+com/local/mwis/core/NiceNode$Kind.class
+com/local/mwis/core/NiceDecompositionBuilder.class
+com/local/mwis/core/SolveResult.class
+com/local/mwis/core/MwisSolver$1.class

@@ -1,0 +1,16 @@
+{
+  "requestId" : "demo-broken-disconnected",
+  "graph" : {
+    "vertexCount" : 4,
+    "edges" : [ [ 0, 2 ], [ 2, 3 ] ]
+  },
+  "weights" : [ "1", "1", "1", "1" ],
+  "decomposition" : {
+    "bags" : [ [ 0, 2 ], [ 1 ], [ 2, 3 ] ],
+    "treeEdges" : [ [ 0, 1 ], [ 1, 2 ] ],
+    "root" : 0
+  },
+  "options" : {
+    "runExhaustiveCrossCheck" : false
+  }
+}

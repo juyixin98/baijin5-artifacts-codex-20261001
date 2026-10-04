@@ -1,0 +1,7 @@
+com/local/mwis/service/SolveRequest.class
+com/local/mwis/service/FailureInfo.class
+com/local/mwis/service/MwisService.class
+com/local/mwis/service/ServiceStatus.class
+com/local/mwis/service/LogEntry.class
+com/local/mwis/service/ServiceVersion.class
+com/local/mwis/service/SolveReport.class

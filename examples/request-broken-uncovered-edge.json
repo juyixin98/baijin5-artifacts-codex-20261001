@@ -1,0 +1,16 @@
+{
+  "requestId" : "demo-broken-uncovered-edge",
+  "graph" : {
+    "vertexCount" : 3,
+    "edges" : [ [ 0, 1 ], [ 1, 2 ], [ 0, 2 ] ]
+  },
+  "weights" : [ "1", "2", "3" ],
+  "decomposition" : {
+    "bags" : [ [ 0, 1 ], [ 1, 2 ] ],
+    "treeEdges" : [ [ 0, 1 ] ],
+    "root" : 0
+  },
+  "options" : {
+    "runExhaustiveCrossCheck" : false
+  }
+}

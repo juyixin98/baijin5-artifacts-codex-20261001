@@ -1,0 +1,16 @@
+{
+  "requestId" : "demo-path-4",
+  "graph" : {
+    "vertexCount" : 4,
+    "edges" : [ [ 0, 1 ], [ 1, 2 ], [ 2, 3 ] ]
+  },
+  "weights" : [ "3", "2", "5", "1" ],
+  "decomposition" : {
+    "bags" : [ [ 0, 1 ], [ 1, 2 ], [ 2, 3 ] ],
+    "treeEdges" : [ [ 0, 1 ], [ 1, 2 ] ],
+    "root" : 0
+  },
+  "options" : {
+    "runExhaustiveCrossCheck" : true
+  }
+}

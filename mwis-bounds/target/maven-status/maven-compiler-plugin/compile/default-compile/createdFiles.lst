@@ -1,0 +1,5 @@
+com/local/mwis/bounds/CertificateCheck.class
+com/local/mwis/bounds/OptimalityAssessment.class
+com/local/mwis/bounds/OptimalityAssessment$Status.class
+com/local/mwis/bounds/UpperBounds.class
+com/local/mwis/bounds/CertificateVerifier.class
