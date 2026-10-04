@@ -1,0 +1,33 @@
+[package]
+name = "psi-dh"
+version = "0.1.0"
+edition = "2021"
+description = "Teaching-grade two-party Diffie-Hellman private set intersection over ristretto255"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "signal"] }
+curve25519-dalek = { version = "4.1", features = ["rand_core", "zeroize"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+sha2 = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+thiserror = "2"
+hex = "0.4"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "blocking"] }
+clap = { version = "4", features = ["derive"] }
+zeroize = "1"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
+
+[[bin]]
+name = "psi-server"
+path = "src/bin/psi_server.rs"
+
+[[bin]]
+name = "psi-client"
+path = "src/bin/psi_client.rs"
