@@ -1,0 +1,86 @@
+{
+  "abstain_carol": {
+    "ranking": [
+      "bob",
+      "alice"
+    ],
+    "seed": "81cd51760bac01ac49a86d18040dcf8b849abe60ff89c9916f857506fb2284f2",
+    "winner": "bob"
+  },
+  "commitment_set_hash": "40eac6e406d0c2eb8ca2a94a11450932aa1f7d9da3d6dec043723cd76a62ec11",
+  "commitments": {
+    "alice": "f0b12b03d2e912bf5707774364acf53621bd23f6444c068036a78a3df6967177",
+    "bob": "ca9cf523741537c1fa58f2f843d7cec0c6b7da005ad0ec135a416c021d3f5e82",
+    "carol": "ca162d9c217dffed982a5953fc8c14eeb28e17dc54ed368cc6010edfd65e6273"
+  },
+  "flip_demo": {
+    "abstain_carol": {
+      "ranking": [
+        "dave",
+        "bob",
+        "erin",
+        "alice"
+      ],
+      "seed": "df32eb72e90233735463f569bc3195b41188f8ee11331184150d89f3b284ce88",
+      "winner": "dave"
+    },
+    "full": {
+      "ranking": [
+        "bob",
+        "carol",
+        "alice",
+        "erin",
+        "dave"
+      ],
+      "seed": "8b49f630fd36f6de78f1c9245b6a449c61e093b69e8cb6950c63f79e851b480a",
+      "winner": "bob"
+    },
+    "participants": [
+      "alice",
+      "bob",
+      "carol",
+      "dave",
+      "erin"
+    ],
+    "round_id": "round-flip",
+    "salts": {
+      "alice": "c3463314285ce500e6d13a6ebc6df982b5626d166e24016ba53029ba9ed97cf5",
+      "bob": "34b0f57b60c95122721103a2103192bfd7a57cd130392e190b16c8591f876c25",
+      "carol": "7a680c74a02b23abc91e90f22e0c8169e53be34df945e82cdcd4ad8cc48c2151",
+      "dave": "3565e8f728c899fa73250a5dac47948634e11f38c1c9a4b299cd48d837df7a86",
+      "erin": "ced30c9ee4cd0a4ff7bbc89d241d97730b17ee5e9a9aa98eea6ce42ee0397ca4"
+    },
+    "values": {
+      "alice": "1bd98b9645c735f08e05bbb2d127da894e74c0442203a9ffca39604fba84cc6e",
+      "bob": "283e10df4776637771b0a7072a8bd0dfbcbcb9c95d788c63f3cc8f9d7229a1fd",
+      "carol": "e728282a430a2b67a58831298a374f125473d60ac81a9828ef687fdbec71cf96",
+      "dave": "cd6a34f32d3aa2c9ce953cfe7723579af3c8bc3a4fe7e4f912541c25f4a0be42",
+      "erin": "5088ad1a71b559022e7c1f20c16a8a295f6c2f3b36efc20388e33d6bb2407cad"
+    }
+  },
+  "full_reveal": {
+    "ranking": [
+      "bob",
+      "carol",
+      "alice"
+    ],
+    "seed": "9de371d95ea4934cee110c8bf20bf517d477d9aef8055301bbc85ac83994c574",
+    "winner": "bob"
+  },
+  "participants": [
+    "alice",
+    "bob",
+    "carol"
+  ],
+  "round_id": "round-test",
+  "salts": {
+    "alice": "c3463314285ce500e6d13a6ebc6df982b5626d166e24016ba53029ba9ed97cf5",
+    "bob": "34b0f57b60c95122721103a2103192bfd7a57cd130392e190b16c8591f876c25",
+    "carol": "7a680c74a02b23abc91e90f22e0c8169e53be34df945e82cdcd4ad8cc48c2151"
+  },
+  "values": {
+    "alice": "1bd98b9645c735f08e05bbb2d127da894e74c0442203a9ffca39604fba84cc6e",
+    "bob": "283e10df4776637771b0a7072a8bd0dfbcbcb9c95d788c63f3cc8f9d7229a1fd",
+    "carol": "e728282a430a2b67a58831298a374f125473d60ac81a9828ef687fdbec71cf96"
+  }
+}

@@ -1,0 +1,30 @@
+[project]
+name = "commit-reveal-draw"
+version = "0.1.0"
+description = "Local multi-party commit-reveal protocol with seed-driven deterministic draw (synthetic fixtures only)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "cryptography>=41.0",
+    "pycryptodome>=3.20",
+    "pydantic>=2.6",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]
+addopts = "-ra"
