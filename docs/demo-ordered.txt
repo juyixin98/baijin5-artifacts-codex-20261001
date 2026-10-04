@@ -1,0 +1,10 @@
+sealed 5000 bytes into 5 segments
+  segment   0: accepted=True received=1/5 complete=False rid=demo-seg-0
+  segment   1: accepted=True received=2/5 complete=False rid=demo-seg-1
+  segment   2: accepted=True received=3/5 complete=False rid=demo-seg-2
+  segment   3: accepted=True received=4/5 complete=False rid=demo-seg-3
+  segment   4: accepted=True received=5/5 complete=True rid=demo-seg-4
+finalize: {'accepted': True, 'complete': True, 'message_id': 'run-ordered', 'seqno': -1, 'received': 5, 'total_segments': 5, 'replay': False}
+released sha256: 34398b85297bf7d9dfb59b8d511d8bbb44ab23e891570e4395e7871475fc8afb
+expected sha256: 34398b85297bf7d9dfb59b8d511d8bbb44ab23e891570e4395e7871475fc8afb
+BYTE-IDENTICAL: True

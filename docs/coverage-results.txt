@@ -1,0 +1,35 @@
+........................................................................ [ 72%]
+...........................                                              [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /home/admin/Downloads/xinbiaozhul/opp521/a/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                   Stmts   Miss  Cover   Missing
+----------------------------------------------------
+app/__init__.py            1      0   100%
+app/__main__.py            3      3     0%   3-7
+app/api/__init__.py        0      0   100%
+app/api/deps.py           31      0   100%
+app/api/schemas.py        47      1    98%   26
+app/api/server.py        105      7    93%   45, 52-55, 178-180
+app/config.py             36      0   100%
+app/core/__init__.py       0      0   100%
+app/core/audit.py         33      3    91%   26, 34, 36
+app/core/crypto.py        68      3    96%   31, 49, 54
+app/core/errors.py        44      1    98%   41
+app/core/keyring.py       50      4    92%   44, 88, 91, 105
+app/core/protocol.py     103     10    90%   80, 86, 92, 98, 124, 192, 216, 224, 227, 234
+app/core/sender.py        31      3    90%   52, 55-56
+app/core/service.py      206     14    93%   87, 135, 166, 169, 184, 187, 196, 218, 269-271, 300, 306, 340-342
+app/core/staging.py       88     10    89%   34-35, 67-68, 117-120, 124-125
+app/core/verifier.py      63      3    95%   89, 103, 108
+app/db/__init__.py         0      0   100%
+app/db/store.py          101      7    93%   101-102, 172, 215, 230, 239-240
+----------------------------------------------------
+TOTAL                   1010     69    93%
+99 passed, 1 warning in 3.43s

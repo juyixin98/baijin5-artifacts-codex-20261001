@@ -1,0 +1,14 @@
+[incomplete finalize] HTTP 409 category=incomplete request_id=an-1-fin state={'received': 1, 'total': 2}
+[incomplete result] HTTP 409 (must not be 200)
+[tampered ciphertext] HTTP 400 category=auth_failed request_id=an-2 state={}
+[nonce reuse] HTTP 409 category=nonce_conflict request_id=an-3b state={'message_id': 'an-reuse', 'seqno': 0}
+[missing terminator] HTTP 422 category=truncation request_id=an-4b state={'seqno': 1}
+
+-- result availability for failed streams (all must be 409) --
+       an-tamper: result HTTP 409, stream status=failed
+        an-reuse: result HTTP 409, stream status=failed
+       an-noterm: result HTTP 409, stream status=failed
+
+-- audit trail (redacted) for an-reuse --
+        reject         rejected rid=an-3b :: nonce reused with different content {'seqno': 0}
+        accept segment_accepted rid=an-3a :: segment authenticated and staged {'segment_len': 4, 'seqno': 0}

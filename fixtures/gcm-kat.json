@@ -1,0 +1,9 @@
+{
+  "key_b64": "/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v4=",
+  "nonce_b64": "AAAAAAAAAAAAAAAA",
+  "aad_b64": "U1NFQTEtS0FU",
+  "plaintext_b64": "a25vd24gYW5zd2VyIHBsYWludGV4dCBibG9jaw==",
+  "ciphertext_tag_b64": "7MkSFqqYiY7LcSnPrRhftnxI6jQM6b0ipxW+/b47fczNtBCddEFw7BgjJTc=",
+  "tag_len": 16,
+  "ciphertext_sha256": "f24ac38655e748e314626ca34e02e6b51b6ab6d139636857c5c7bd2e86e70552"
+}

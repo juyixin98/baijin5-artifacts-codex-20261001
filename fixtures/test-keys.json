@@ -1,0 +1,6 @@
+{
+  "key_id": "kat-fixed-key",
+  "aead_key_b64": "AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8=",
+  "nonce_key_b64": "Hx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQA=",
+  "warning": "test fixture key only - do not use in production"
+}
