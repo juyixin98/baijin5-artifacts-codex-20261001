@@ -1,0 +1,55 @@
+{
+  "description": "Additive matrix whose NJ reconstruction requires a negative branch.",
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "matrix": [
+    [
+      0.0,
+      1.0,
+      2.0,
+      2.0
+    ],
+    [
+      1.0,
+      0.0,
+      10.0,
+      10.0
+    ],
+    [
+      2.0,
+      10.0,
+      0.0,
+      2.0
+    ],
+    [
+      2.0,
+      10.0,
+      2.0,
+      0.0
+    ]
+  ],
+  "expected": {
+    "allow": {
+      "newick": "((L0:-3.5,L1:4.5):2.25,(L2:1,L3:1):2.25);",
+      "residual_sum_abs": 0.0,
+      "negative_branch": {
+        "round": 0,
+        "node": 0,
+        "length": -3.5
+      }
+    },
+    "clamp": {
+      "residual_sum_abs": 10.5,
+      "residual_max_abs": 3.5,
+      "clamped": {
+        "round": 0,
+        "node": 0,
+        "raw_length": -3.5
+      }
+    }
+  }
+}

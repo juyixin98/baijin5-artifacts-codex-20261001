@@ -1,0 +1,18 @@
+{
+  "description": "FASTA with two identical sequences (duplicate leaves).",
+  "fasta": ">alpha\nAAAA\n>beta\nAAAA\n>gamma\nAACC\n>delta\nCCCC\n",
+  "expected": {
+    "newick": "((L0:0,L1:0):0.25,(L2:0,L3:0.5):0.25);",
+    "leaf_map": {
+      "L0": "alpha",
+      "L1": "beta",
+      "L2": "gamma",
+      "L3": "delta"
+    },
+    "residual_sum_abs": 0.0,
+    "zero_length_cherry": [
+      "alpha",
+      "beta"
+    ]
+  }
+}
