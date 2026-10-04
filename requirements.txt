@@ -1,0 +1,9 @@
+# Pinned runtime dependencies (exact versions; verified locally on Python 3.12).
+cryptography==41.0.7
+pycryptodome==3.21.0
+fastapi==0.141.1
+uvicorn==0.38.0
+
+# Pinned test/verification dependencies.
+pytest==9.1.1
+httpx==0.28.1

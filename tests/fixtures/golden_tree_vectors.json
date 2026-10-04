@@ -1,0 +1,66 @@
+{
+  "generator": "tools/independent_vector_gen.py (PyCryptodome only)",
+  "root_fixture": "tests/fixtures/test_root.hex",
+  "vectors": [
+    {
+      "tenant": "acme",
+      "purpose": "encryption",
+      "version": 1,
+      "context_hex": "",
+      "length": 32,
+      "key_id": "kdt1_3e44ec87770de722905dcdc1bf4f38b33242a23d",
+      "key_hex": "8ccf9162d09fc20dbd0a472051e68f0b4cec47580f335630aba8ddd4600aeadd",
+      "fingerprint": "1641f7cfa752b2c29878e0ccb7693912"
+    },
+    {
+      "tenant": "acme",
+      "purpose": "signing",
+      "version": 1,
+      "context_hex": "",
+      "length": 32,
+      "key_id": "kdt1_268b63f88d5edec0bb0c7ca2c1d27ca1451ff4fc",
+      "key_hex": "60fd00ce4a42476af669eff4d3549733b39c877da7406a5ef399eb49885d7a2a",
+      "fingerprint": "89b00b9dbaa7cf38ce2daa769bd93c79"
+    },
+    {
+      "tenant": "acme",
+      "purpose": "encryption",
+      "version": 2,
+      "context_hex": "",
+      "length": 32,
+      "key_id": "kdt1_7f0e01c58bdc156f685e5a21674bbf3a2afc16a5",
+      "key_hex": "6a262144290b4a428f53ed2c5a7b556a1824abf91eaf0b3ce8d2389d337f93d7",
+      "fingerprint": "f91b82353dc86e64d677df0338adab18"
+    },
+    {
+      "tenant": "globex",
+      "purpose": "encryption",
+      "version": 1,
+      "context_hex": "",
+      "length": 32,
+      "key_id": "kdt1_db6c6a44ca64491dc4e1fd7ac8e54b223c3df6d2",
+      "key_hex": "5d89f3a567bab4e50f8e95e302ce25c96fc5bf0708b43ca4ae0cd6d095692a08",
+      "fingerprint": "6e0b9b69015d7e87ceaec6d307f4b505"
+    },
+    {
+      "tenant": "acme",
+      "purpose": "encryption",
+      "version": 1,
+      "context_hex": "6f726465722d3432",
+      "length": 32,
+      "key_id": "kdt1_c9873a0b30a50321f23cc95e8ce067c7824ffe81",
+      "key_hex": "45af31b4882a19da29203fc4c3fc2dace4a22bee3cd23591cc264a3af2b0f591",
+      "fingerprint": "59fabf27b2d106d8924d7a1ff93efbf2"
+    },
+    {
+      "tenant": "acme",
+      "purpose": "encryption",
+      "version": 1,
+      "context_hex": "",
+      "length": 64,
+      "key_id": "kdt1_3e44ec87770de722905dcdc1bf4f38b33242a23d",
+      "key_hex": "8ccf9162d09fc20dbd0a472051e68f0b4cec47580f335630aba8ddd4600aeadd99faaa1208d174b6153e4dc0002ab811bcff2041def0682243a841ad8b673048",
+      "fingerprint": "d6f195ecd064e4d8793bc0974ff736e0"
+    }
+  ]
+}
