@@ -1,0 +1,2 @@
+{"run_id":"run-1791094060-000005","error":{"category":"invalid_input","code":"invalid_input","message":"table_a_b64: invalid base64: Invalid symbol 33, offset 0."}}
+HTTP 400

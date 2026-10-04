@@ -1,0 +1,2 @@
+{"run_id":"run-1791094060-000008","error":{"category":"resource_exhausted","code":"decode_incomplete","message":"decode stalled: 16 cells still hold unrecovered keys after peeling 0 keys; re-encode with a larger table","detail":{"hint":"table too small for this difference; re-encode both sides with more cells (roughly 1.5x the difference size) and retry","peeled":0,"remaining_nonzero_cells":16}}}
+HTTP 422

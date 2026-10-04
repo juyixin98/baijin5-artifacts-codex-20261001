@@ -1,0 +1,6 @@
+{
+  "comment": "Table shape used for the committed binary fixtures. Expected diffs in expected_only_*.txt are computed with sort/comm (scripts/gen_expected.sh), independent of the Rust kernel.",
+  "cells": 32,
+  "k": 3,
+  "seed": 5278865638494187777
+}
