@@ -1,0 +1,26 @@
+[package]
+name = "rib"
+version = "0.1.0"
+edition = "2021"
+description = "RLE + bit-pack hybrid block codec for integer columns, with an Axum service layer"
+
+[lib]
+name = "rib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rib-server"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
