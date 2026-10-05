@@ -1,0 +1,126 @@
+# Gauss-Legendre Quadrature Node Construction
+
+Backend library for the numerical construction of Gauss-Legendre quadrature
+rules (nodes and weights) on finite intervals, with an explicit error
+contract, an exactness/residual interpretation module, an independent
+cross-check benchmark, and a structured, replayable test log.
+
+Stack: C++20, CMake (project-local 3.30.5), Eigen 3.4.0 (project-local,
+hash-locked). No containers, no system package installs, no network at
+build/test time beyond the one-time dependency fetch.
+
+## Quick Start
+
+```sh
+scripts/bootstrap.sh   # one-time: fetch pinned CMake + Eigen into the project
+scripts/verify.sh      # build + run the full CTest suite
+```
+
+`verify.sh` runs three CTest entries:
+
+| CTest name | What it proves |
+|------------|----------------|
+| `unit_and_contract` | 223 behavior/contract checks (see below) |
+| `independent_benchmark` | Newton kernel vs. independent Golub-Welsch eigensolver, n = 2..256 |
+| `example_invocation` | the example program runs end to end |
+
+Every run writes JSONL logs to `build/logs/`, keyed by a unique
+`run_id` (UTC timestamp + pid + stream). Each check event records the
+expression, pass/fail, the measured and expected values, the tolerance, the
+source location and a human rationale; `state` events record key
+intermediate values (weight sums, residuals, iteration diagnostics), so a
+failure can be replayed from the log alone.
+
+## Example
+
+```sh
+./build/gauss_example
+```
+
+```cpp
+#include "gauss/legendre.hpp"
+#include "gauss/exactness.hpp"
+
+gauss::LegendreSolver solver;                    // default SolverOptions
+gauss::Result<gauss::GaussRule> r = solver.compute(16);
+if (!r) { /* inspect r.error().category / diagnostics */ }
+gauss::GaussRule rule = r.value().map_to(0.0, 1.0).value();
+double s = 0;
+for (size_t i = 0; i < rule.size(); ++i)
+  s += rule.weights()[i] * f(rule.nodes()[i]);   // quadrature sum
+
+auto report = gauss::analyze_exactness(solver.compute(8).value(), 5e-11);
+std::cout << report.value().summary();
+```
+
+Sample output of the example (n=16, exp(x) on [0,1]): absolute error
+`4.4e-16`; the n=8 exactness report verifies the theoretical ceiling
+degree 15 and reports the first failing degree 16.
+
+## Module Map
+
+| Path | Responsibility |
+|------|----------------|
+| `include/gauss/error.hpp`, `src/error.cpp` | Error taxonomy (`ErrorCategory`) + `Result<T>`: the failure contract shared by all modules |
+| `include/gauss/rule.hpp`, `src/rule.cpp` | `GaussRule` data contract (nodes/weights/interval), `map_to` affine remapping, `SolverOptions` |
+| `include/gauss/legendre.hpp`, `src/legendre.cpp` | Algorithm kernel: Newton refinement of Legendre roots (Tricomi seed, three-term recurrence, symmetry exploitation), weight formula `2/((1-x^2) P'_n^2)` |
+| `include/gauss/exactness.hpp`, `src/exactness.cpp` | Error interpretation: per-degree moment residuals vs. analytic moments, theoretical vs. verified precision ceiling, first failing degree |
+| `benchmark/golub_welsch.*` | Independent reference: Golub-Welsch via Eigen `SelfAdjointEigenSolver`; `benchmark/benchmark_main.cpp` prints the comparison table |
+| `tools/gen_reference_fixtures.cpp` | Fixture generator: hand-derived closed forms (A&S 25.4) for n = 1..5 -> TSV; never calls the kernel |
+| `tests/` | Self-contained test framework + 10 test cases (223 checks) |
+| `support/run_log.hpp` | Shared JSONL run log with unique run ids |
+| `examples/integrate_example.cpp` | End-to-end usage demo |
+
+## Error Contract
+
+All fallible operations return `gauss::Result<T>`. On failure,
+`error().category` is exactly one of:
+
+| Category | Meaning | Examples |
+|----------|---------|----------|
+| `invalid_input` | arguments outside the documented domain | order 0, `a >= b`, NaN bounds, negative tolerance |
+| `state_conflict` | object state forbids the operation | `map_to` / `analyze_exactness` on an empty rule |
+| `resource_exhaustion` | configured limits or allocation failed | order > `max_order`, `bad_alloc` |
+| `computation_failure` | the numerical algorithm failed | Newton iteration did not converge; no partial rule is ever returned |
+
+`error().diagnostics` carries key/value intermediate state (root index,
+iterations, last step, residual, configured limits) for replay.
+
+## Verified Behaviors (phase 2/3 acceptance)
+
+- Nodes bit-for-bit antisymmetric, weights bit-for-bit symmetric, all
+  weights > 0, weight sum = interval length (orders 1..100 tested).
+- An unconverged root yields `computation_failure` and **no** rule object;
+  tested by starving the Newton budget (`max_iterations = 1, 2`).
+- Polynomial exactness verified against analytic moments up to degree
+  2n-1 for n in {1,2,3,4,6,8,12,16,24,32}; first failing degree reported
+  exactly at 2n for n <= 16.
+- Kernel output matches hand-derived closed forms (n = 1..5, fixture TSV)
+  to 1e-13 and the independent Golub-Welsch eigensolver to 1e-12/1e-11
+  (n up to 256 in the benchmark runner).
+- Reference answers are never generated by the kernel itself.
+
+## Dependency Locking
+
+See `third_party/LOCK.md`. CMake 3.30.5 is verified against Kitware's
+official SHA-256 manifest at fetch time; Eigen 3.4.0 is verified against a
+pinned sha256. Both live inside the project tree (`tools/`, `third_party/`).
+The compiler is the system g++ 13.3.0 with `-std=c++20`.
+
+## Known Limitations
+
+- Double precision only. Node/weight accuracy degrades gently with order
+  (observed ~4e-15 node discrepancy vs. the eigensolver at n = 256);
+  `max_order` defaults to 512 and can be raised, but no extended-precision
+  path is provided.
+- Exactness analysis evaluates analytic moments as
+  `(b^(k+1) - a^(k+1))/(k+1)`; very large interval scales combined with
+  high degrees can overflow. The tested/documented range is moderate
+  intervals such as [-1,1] and [0,1].
+- For large n the true quadrature error of x^2n underflows any practical
+  tolerance, so "first failing degree == 2n" is only assertable for
+  n <= 16; the report documents this rather than hiding it.
+- The Golub-Welsch benchmark is O(n^3) and intended as a reference, not a
+  production path.
+- The test framework and logger are Linux-oriented (POSIX `getpid`,
+  `gmtime_r`); no Windows port is included.
