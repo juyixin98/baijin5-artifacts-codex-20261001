@@ -1,0 +1,5 @@
+{
+  "determinism_enumeration_threshold": 0,
+  "independent_check_threshold": 16,
+  "run_independent_check": false
+}

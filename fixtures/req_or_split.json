@@ -1,0 +1,15 @@
+{
+  "request_id": "req-or-split",
+  "label": "demo-sensitive-label",
+  "declared_vars": [1, 2],
+  "circuit": {
+    "root": 0,
+    "nodes": [
+      { "id": 0, "type": "or", "children": [1, 2] },
+      { "id": 1, "type": "lit", "var": 1, "phase": true },
+      { "id": 2, "type": "and", "children": [3, 4] },
+      { "id": 3, "type": "lit", "var": 1, "phase": false },
+      { "id": 4, "type": "lit", "var": 2, "phase": true }
+    ]
+  }
+}

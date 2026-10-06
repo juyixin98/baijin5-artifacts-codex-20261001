@@ -1,0 +1,18 @@
+{
+  "request_id": "req-and-disjoint",
+  "declared_vars": [1, 2, 3],
+  "circuit": {
+    "root": 0,
+    "nodes": [
+      { "id": 0, "type": "and", "children": [1, 2] },
+      { "id": 1, "type": "or", "children": [3, 4] },
+      { "id": 2, "type": "or", "children": [5, 6] },
+      { "id": 3, "type": "lit", "var": 1, "phase": true },
+      { "id": 4, "type": "and", "children": [7, 8] },
+      { "id": 5, "type": "lit", "var": 3, "phase": true },
+      { "id": 6, "type": "lit", "var": 3, "phase": false },
+      { "id": 7, "type": "lit", "var": 1, "phase": false },
+      { "id": 8, "type": "lit", "var": 2, "phase": true }
+    ]
+  }
+}
