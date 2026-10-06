@@ -1,0 +1,7 @@
+# Invalid program: the guard references z, which the pattern never binds.
+# The frontend must reject it with semantic_error / unbound variable.
+ctor A 1
+
+match v {
+  | A(x) if gt(z, 1) => "bad"
+}

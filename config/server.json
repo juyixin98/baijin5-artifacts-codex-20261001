@@ -1,0 +1,8 @@
+{
+  "addr": "127.0.0.1:8080",
+  "max_body_bytes": 1048576,
+  "diff_default_cases": 300,
+  "diff_max_depth": 4,
+  "diff_enum_depth": 3,
+  "diff_enum_limit": 2000
+}

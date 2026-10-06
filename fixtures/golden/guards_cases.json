@@ -1,0 +1,35 @@
+{
+  "program": "programs/guards.pmd",
+  "cases": [
+    {
+      "name": "first-guard-true-shortcircuits",
+      "value": {"ctor": "C", "args": [{"lit": 15}, {"lit": 3}]},
+      "expect": {"matched": true, "branch": 0, "label": "big-first",
+                 "bindings": {"x": {"lit": 15}},
+                 "effects": ["g1=true"]}
+    },
+    {
+      "name": "both-guards-false-in-order",
+      "value": {"ctor": "C", "args": [{"lit": 5}, {"lit": 3}]},
+      "expect": {"matched": true, "branch": 2, "label": "plain",
+                 "effects": ["g1=false", "g2=false"]}
+    },
+    {
+      "name": "second-guard-true",
+      "value": {"ctor": "C", "args": [{"lit": 5}, {"lit": -2}]},
+      "expect": {"matched": true, "branch": 1, "label": "neg-second",
+                 "bindings": {"y": {"lit": -2}},
+                 "effects": ["g1=false", "g2=true"]}
+    },
+    {
+      "name": "structural-miss-runs-no-guard",
+      "value": {"ctor": "D"},
+      "expect": {"matched": true, "branch": 3, "label": "unit", "effects": []}
+    },
+    {
+      "name": "guard-type-error",
+      "value": {"ctor": "C", "args": [{"lit": "a"}, {"lit": 0}]},
+      "expect": {"matched": false, "failure": "guard_error"}
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# Guard side effects: each effect(...) call records one trace entry.
+# Guards must run at most once, in branch order, and only after the
+# structural pattern of their own branch matched.
+ctor C 2
+ctor D 0
+
+match v {
+  | C(x, _) if effect("g1", gt(x, 10)) => "big-first"
+  | C(_, y) if effect("g2", lt(y, 0)) => "neg-second"
+  | C(_, _) => "plain"
+  | D => "unit"
+}

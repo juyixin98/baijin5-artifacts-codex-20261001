@@ -1,0 +1,47 @@
+{
+  "program": "programs/tree.pmd",
+  "cases": [
+    {
+      "name": "deep-left",
+      "value": {"ctor": "Node", "args": [
+                 {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]},
+                 {"ctor": "Leaf"}]},
+      "expect": {"matched": true, "branch": 0, "label": "deep-left",
+                 "bindings": {"x": {"ctor": "Leaf"}}}
+    },
+    {
+      "name": "deep-right",
+      "value": {"ctor": "Node", "args": [
+                 {"ctor": "Leaf"},
+                 {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]}]},
+      "expect": {"matched": true, "branch": 1, "label": "deep-right",
+                 "bindings": {"r": {"ctor": "Leaf"}}}
+    },
+    {
+      "name": "both-sides-deep-takes-first-rule",
+      "value": {"ctor": "Node", "args": [
+                 {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]},
+                 {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]}]},
+      "expect": {"matched": true, "branch": 1, "label": "deep-right",
+                 "bindings": {"r": {"ctor": "Leaf"}}}
+    },
+    {
+      "name": "shallow-node",
+      "value": {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]},
+      "expect": {"matched": true, "branch": 2, "label": "any-node"}
+    },
+    {
+      "name": "nested-right-not-leaf",
+      "value": {"ctor": "Node", "args": [
+                 {"ctor": "Leaf"},
+                 {"ctor": "Node", "args": [{"ctor": "Leaf"},
+                   {"ctor": "Node", "args": [{"ctor": "Leaf"}, {"ctor": "Leaf"}]}]}]},
+      "expect": {"matched": true, "branch": 2, "label": "any-node"}
+    },
+    {
+      "name": "bare-leaf",
+      "value": {"ctor": "Leaf"},
+      "expect": {"matched": true, "branch": 3, "label": "leaf"}
+    }
+  ]
+}

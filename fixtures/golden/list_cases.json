@@ -1,0 +1,65 @@
+{
+  "program": "programs/list.pmd",
+  "cases": [
+    {
+      "name": "empty-list",
+      "value": {"ctor": "Nil"},
+      "expect": {"matched": true, "branch": 4, "label": "empty", "effects": []}
+    },
+    {
+      "name": "single-even",
+      "value": {"ctor": "Cons", "args": [{"lit": 2}, {"ctor": "Nil"}]},
+      "expect": {"matched": true, "branch": 2, "label": "single-even",
+                 "bindings": {"x": {"lit": 2}}, "effects": []}
+    },
+    {
+      "name": "single-odd",
+      "value": {"ctor": "Cons", "args": [{"lit": 3}, {"ctor": "Nil"}]},
+      "expect": {"matched": true, "branch": 3, "label": "single", "effects": []}
+    },
+    {
+      "name": "pair-equal",
+      "value": {"ctor": "Cons", "args": [{"lit": 2},
+                 {"ctor": "Cons", "args": [{"lit": 2}, {"ctor": "Nil"}]}]},
+      "expect": {"matched": true, "branch": 0, "label": "pair-eq",
+                 "bindings": {"x": {"lit": 2}, "y": {"lit": 2}},
+                 "effects": ["pair-check=true"]}
+    },
+    {
+      "name": "pair-diff-falls-through",
+      "value": {"ctor": "Cons", "args": [{"lit": 2},
+                 {"ctor": "Cons", "args": [{"lit": 3}, {"ctor": "Nil"}]}]},
+      "expect": {"matched": true, "branch": 1, "label": "long",
+                 "bindings": {"x": {"lit": 2}},
+                 "effects": ["pair-check=false"]}
+    },
+    {
+      "name": "three-items",
+      "value": {"ctor": "Cons", "args": [{"lit": 1},
+                 {"ctor": "Cons", "args": [{"lit": 2},
+                   {"ctor": "Cons", "args": [{"lit": 3}, {"ctor": "Nil"}]}]}]},
+      "expect": {"matched": true, "branch": 1, "label": "long",
+                 "bindings": {"x": {"lit": 1}}, "effects": []}
+    },
+    {
+      "name": "literal-tail-no-match",
+      "value": {"ctor": "Cons", "args": [{"lit": 1}, {"lit": 5}]},
+      "expect": {"matched": false, "failure": "no_match"}
+    },
+    {
+      "name": "literal-root-no-match",
+      "value": {"lit": 42},
+      "expect": {"matched": false, "failure": "no_match"}
+    },
+    {
+      "name": "bad-arity-invalid",
+      "value": {"ctor": "Cons", "args": [{"lit": 1}]},
+      "expect": {"matched": false, "failure": "invalid_value"}
+    },
+    {
+      "name": "unknown-ctor-invalid",
+      "value": {"ctor": "Wat"},
+      "expect": {"matched": false, "failure": "invalid_value"}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Binary trees: nested constructor patterns on both children.
+ctor Leaf 0
+ctor Node 2
+
+match t {
+  | Node(Node(Leaf, x), Leaf) => "deep-left"
+  | Node(_, Node(r, Leaf)) => "deep-right"
+  | Node(_, _) => "any-node"
+  | Leaf => "leaf"
+}

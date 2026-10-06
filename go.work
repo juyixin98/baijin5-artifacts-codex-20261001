@@ -1,0 +1,10 @@
+go 1.22
+
+use (
+	./frontend
+	./ir
+	./runtime
+	./diff
+	./service
+	./tests
+)

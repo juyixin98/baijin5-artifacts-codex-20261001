@@ -1,0 +1,12 @@
+# Lists of integers: overlapping constructors, a guarded head branch and
+# nested tail patterns. Used by the black-box tests and the demo.
+ctor Nil 0
+ctor Cons 2
+
+match xs {
+  | Cons(x, Cons(y, Nil)) if effect("pair-check", eq(x, y)) => "pair-eq"
+  | Cons(x, Cons(_, _)) => "long"
+  | Cons(x, Nil) if even(x) => "single-even"
+  | Cons(_, Nil) => "single"
+  | Nil => "empty"
+}
