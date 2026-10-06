@@ -1,0 +1,21 @@
+[package]
+name = "rescheck"
+version = "0.1.0"
+edition = "2021"
+description = "Streaming independent checker for CNF unsatisfiability resolution proofs"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lib]
+name = "rescheck"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rescheck"
+path = "src/main.rs"
+
+[[bin]]
+name = "gen_fixtures"
+path = "src/bin/gen_fixtures.rs"

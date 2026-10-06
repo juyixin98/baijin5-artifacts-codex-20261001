@@ -1,0 +1,4 @@
+# Step 4 references parent 9, which was never introduced.
+c 1 1 0
+c 2 -1 2 0
+r 4 1 9 1 2 0
