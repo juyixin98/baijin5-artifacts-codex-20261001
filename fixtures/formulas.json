@@ -1,0 +1,124 @@
+{
+  "formulas": [
+    {
+      "name": "alt_forall_exists",
+      "expect": { "two": false },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": {
+          "op": "exists", "var": "y",
+          "body": { "op": "atom", "pred": "R", "args": [{ "var": "x" }, { "var": "y" }] }
+        }
+      }
+    },
+    {
+      "name": "alt_exists_forall_not",
+      "expect": { "two": true },
+      "formula": {
+        "op": "exists", "var": "x",
+        "body": {
+          "op": "forall", "var": "y",
+          "body": { "op": "not", "arg": { "op": "atom", "pred": "R", "args": [{ "var": "y" }, { "var": "x" }] } }
+        }
+      }
+    },
+    {
+      "name": "shadow_mixed",
+      "expect": { "two": true },
+      "formula": {
+        "op": "exists", "var": "x",
+        "body": {
+          "op": "and",
+          "args": [
+            { "op": "atom", "pred": "P", "args": [{ "var": "x" }] },
+            { "op": "forall", "var": "x", "body": { "op": "atom", "pred": "Q", "args": [{ "var": "x" }] } }
+          ]
+        }
+      }
+    },
+    {
+      "name": "shadow_neg",
+      "expect": { "two": false },
+      "formula": {
+        "op": "exists", "var": "x",
+        "body": {
+          "op": "and",
+          "args": [
+            { "op": "atom", "pred": "P", "args": [{ "var": "x" }] },
+            { "op": "forall", "var": "x", "body": { "op": "not", "arg": { "op": "atom", "pred": "P", "args": [{ "var": "x" }] } } }
+          ]
+        }
+      }
+    },
+    {
+      "name": "empty_rel_exists",
+      "expect": { "two": false },
+      "formula": { "op": "exists", "var": "x", "body": { "op": "atom", "pred": "E", "args": [{ "var": "x" }] } }
+    },
+    {
+      "name": "empty_rel_forall_not",
+      "expect": { "two": true },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": { "op": "not", "arg": { "op": "atom", "pred": "E", "args": [{ "var": "x" }] } }
+      }
+    },
+    {
+      "name": "eq_refl",
+      "expect": { "two": true, "empty-ok": true },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": { "op": "exists", "var": "y", "body": { "op": "eq", "left": { "var": "x" }, "right": { "var": "y" } } }
+      }
+    },
+    {
+      "name": "collide_names",
+      "expect": { "two": false },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": {
+          "op": "forall", "var": "a",
+          "body": { "op": "eq", "left": { "var": "x" }, "right": { "var": "a" } }
+        }
+      }
+    },
+    {
+      "name": "taut_or",
+      "expect": { "two": true },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": {
+          "op": "or",
+          "args": [
+            { "op": "atom", "pred": "P", "args": [{ "var": "x" }] },
+            { "op": "not", "arg": { "op": "atom", "pred": "P", "args": [{ "var": "x" }] } }
+          ]
+        }
+      }
+    },
+    {
+      "name": "forall_p_or_q",
+      "expect": { "two": true },
+      "formula": {
+        "op": "forall", "var": "x",
+        "body": {
+          "op": "or",
+          "args": [
+            { "op": "atom", "pred": "P", "args": [{ "var": "x" }] },
+            { "op": "atom", "pred": "Q", "args": [{ "var": "x" }] }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vacuous_forall",
+      "expect": { "two": false, "empty-ok": true },
+      "formula": { "op": "forall", "var": "x", "body": { "op": "atom", "pred": "P", "args": [{ "var": "x" }] } }
+    },
+    {
+      "name": "vacuous_exists",
+      "expect": { "two": true, "empty-ok": false },
+      "formula": { "op": "exists", "var": "x", "body": { "op": "atom", "pred": "P", "args": [{ "var": "x" }] } }
+    }
+  ]
+}

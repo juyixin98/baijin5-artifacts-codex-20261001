@@ -1,0 +1,11 @@
+{
+  "name": "two",
+  "allow_empty_domain": false,
+  "domain": ["a", "b"],
+  "predicates": [
+    { "name": "P", "arity": 1, "tuples": [["a"]] },
+    { "name": "Q", "arity": 1, "tuples": [["a"], ["b"]] },
+    { "name": "R", "arity": 2, "tuples": [["a", "b"]] },
+    { "name": "E", "arity": 1, "tuples": [] }
+  ]
+}

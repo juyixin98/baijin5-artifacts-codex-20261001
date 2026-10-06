@@ -1,0 +1,6 @@
+{
+  "name": "empty-forbidden",
+  "allow_empty_domain": false,
+  "domain": [],
+  "predicates": []
+}

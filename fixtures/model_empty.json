@@ -1,0 +1,8 @@
+{
+  "name": "empty-ok",
+  "allow_empty_domain": true,
+  "domain": [],
+  "predicates": [
+    { "name": "P", "arity": 1, "tuples": [] }
+  ]
+}
