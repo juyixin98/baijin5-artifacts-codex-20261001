@@ -1,0 +1,6 @@
+# Zero-area rectangles never conflict. B is 0x1: x in {0,1,2} are all legal,
+# even x=1 which sits on A's edge line. Expect: SAT, 3 solutions with --all.
+run demo-zero
+grid 2 1
+rect A 1 1 mandatory at 0 0
+rect B 0 1 mandatory

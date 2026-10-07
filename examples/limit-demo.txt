@@ -1,0 +1,8 @@
+# Node limit 3 on a problem that needs real search.
+# Expect: LIMIT, category RESOURCE_EXHAUSTED, exit code 12.
+run demo-limit
+grid 4 4
+rect A 1 1 mandatory
+rect B 1 1 mandatory
+rect C 1 1 mandatory
+limits 3 10000

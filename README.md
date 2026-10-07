@@ -1,0 +1,104 @@
+# rect-nonoverlap-kernel
+
+Rectangle non-overlap constraint kernel with optional presence markers.
+Java 21 + Maven + standard library only (JUnit 5 is the single test-scoped
+dependency). No containers, no external services; all data is local fixtures.
+
+## Semantics
+
+- **Integer domain.** All coordinates and sizes are integers (`long`,
+  magnitude bounded by 10^9, validated on input).
+- **Geometry.** A rectangle at `(x, y)` with size `(w, h)` occupies the
+  half-open region `[x, x+w) x [y, y+h)`. Two PRESENT rectangles conflict iff
+  their regions intersect with positive area. **Edge and corner touching is
+  legal.**
+- **Zero area.** `w == 0` or `h == 0` means an empty region: it never
+  conflicts with anything (it still picks a position from its domain, so it
+  contributes layouts). Degenerate rectangles neither prune others nor get
+  pruned.
+- **Presence markers.** Each rectangle is `mandatory` (always PRESENT) or
+  `optional` (UNDECIDED until search decides PRESENT/ABSENT).
+  - Only PRESENT rectangles with a fixed position prune others ("anchors").
+  - An UNDECIDED rectangle never prunes others: it may turn out ABSENT, so
+    treating it as mandatory would be unsound strong pruning.
+  - If anchors wipe out an UNDECIDED rectangle's domain, it is forced ABSENT.
+    That is **not** a failure.
+  - If anchors wipe out a PRESENT rectangle's domain, that is a
+    `STATE_CONFLICT` (UNSAT).
+
+## Modules
+
+| package | responsibility |
+| --- | --- |
+| `rectkernel.model` | constraint model: `Problem`, `RectSpec`, `Domain`, input validation |
+| `rectkernel.state` | mutable search state: `Presence`, `RectState`, `SearchState` (copy/restore) |
+| `rectkernel.propagate` | propagation kernel: four-direction pruning to fixpoint |
+| `rectkernel.search` | search scheduling: branching, backtracking, resource limits, solutions |
+| `rectkernel.evidence` | independent evidence: `Overlap` geometry, `BruteForceEnumerator`, `RunLog` |
+| `rectkernel.error` | error contract: `ErrorCategory`, `KernelException` |
+| `rectkernel.cli` | service entry: problem-file parser + `Main` |
+
+Data contract between modules: `model` produces validated immutable specs;
+`state` holds mutable per-rectangle solving state; `propagate` only mutates
+state and reports `STATE_CONFLICT` via `KernelException`; `search` copies
+state per branch and maps outcomes to `SolveStatus`; `evidence` reads models
+but shares no logic with the kernel.
+
+## Error semantics
+
+| category | meaning | exit code |
+| --- | --- | --- |
+| `INPUT_ERROR` | malformed file, bad number, negative size, empty/inverted domain, domain escaping grid, duplicate id | 11 |
+| `STATE_CONFLICT` | mandatory rectangles provably overlap / mandatory domain wipe-out: UNSAT | 10 |
+| `RESOURCE_EXHAUSTED` | node, time or solution cap reached: status LIMIT, satisfiability unknown | 12 |
+| `COMPUTATION_FAILED` | unexpected internal failure (bug guard) | 13 |
+
+SAT exits 0. A LIMIT is never reported as SAT or UNSAT.
+
+## Problem file format
+
+```
+# comment
+run <runId>                                   # optional, default generated
+grid <W> <H>                                  # required, before any rect
+limits <maxNodes> <maxTimeMillis>             # optional
+rect <id> <w> <h> mandatory                   # domain defaults to whole grid
+rect <id> <w> <h> optional  at <x> <y>        # fixed position
+rect <id> <w> <h> mandatory domain <xmin> <xmax> <ymin> <ymax>
+```
+
+## Build, test, run
+
+```sh
+mvn test                              # full test suite (33 tests)
+mvn -q -DskipTests package            # build executable jar
+java -jar target/rect-nonoverlap-kernel-1.0.0.jar solve examples/sat-basic.txt --all
+scripts/demo.sh                       # build + run all examples, prints exit codes
+scripts/verify.sh                     # tests + surefire summary
+```
+
+CLI options: `--all` (enumerate solutions, cap 100000), `--max-nodes N`,
+`--max-time-ms N`, `--log-dir DIR`.
+
+## Logs and replay
+
+Every run emits structured events (`seq`, `run`, `kind`, reason) to
+`target/run-logs/run-<runId>.log`: branch decisions, prunes with old/new
+bounds, forced absences, conflicts, backtracks, limits, solutions and final
+stats. The randomized cross-check logs its seed (`20261007`), case number and
+full problem text per case to `target/run-logs/cross-check-<seed>.log`, so any
+mismatch can be replayed exactly. Tests additionally assert on log contents
+(e.g. that a backtrack event with a reason exists).
+
+## Independent evidence
+
+- `BruteForceEnumerator` enumerates presence sets and layouts by direct
+  pairwise `Overlap` checks and shares no code with the kernel.
+- `CrossCheckTest` compares full layout sets between solver and enumerator on
+  300 seeded random small problems (degenerate sizes and optional rectangles
+  included), plus fully hand-computed references for presence sets, zero-area
+  layouts and edge touching.
+- `SolverTest`/`PropagatorTest` expectations are hand-computed constants, not
+  generated by the kernel. (This setup already caught one real bug: a
+  zero-area rectangle strictly inside another's span was misclassified as
+  overlapping by the reference geometry before the cross-check ran.)

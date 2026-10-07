@@ -1,0 +1,5 @@
+# Two 2x1 rectangles on a 4x2 grid: plenty of room, SAT.
+run demo-sat
+grid 4 2
+rect A 2 1 mandatory
+rect B 2 1 mandatory

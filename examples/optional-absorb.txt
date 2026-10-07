@@ -1,0 +1,6 @@
+# Same geometry as unsat-overlap, but B is optional:
+# B is forced ABSENT (not a failure). Expect: SAT, exit code 0.
+run demo-optional
+grid 2 2
+rect A 2 2 mandatory
+rect B 1 1 optional

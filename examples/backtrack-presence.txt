@@ -1,0 +1,8 @@
+# O optional on a 2-cell row with two mandatory unit rects.
+# Trying O=PRESENT leaves one cell for A and B -> conflict ->
+# search backtracks to O=ABSENT. Expect: SAT, 2 solutions with --all.
+run demo-backtrack
+grid 2 1
+rect O 1 1 optional at 0 0
+rect A 1 1 mandatory
+rect B 1 1 mandatory

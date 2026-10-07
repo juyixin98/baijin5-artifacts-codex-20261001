@@ -1,0 +1,6 @@
+# A fills the whole grid; mandatory B has no legal cell.
+# Expect: UNSAT, category STATE_CONFLICT, exit code 10.
+run demo-unsat
+grid 2 2
+rect A 2 2 mandatory
+rect B 1 1 mandatory
